@@ -1,4 +1,280 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Neural Networks Quiz</title>
-<style>body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:20px;line-height:1.6}h1{text-align:center;color:#333}.question{border:1px solid #ccc;padding:15px;margin:15px 0;background-color:#f9f9f9}.question h3{margin-top:0}.options{margin:10px 0}.options label{display:block;padding:5px 0}code{background-color:#e8e8e8;padding:2px 6px;font-family:'Courier New',monospace}pre{background-color:#e8e8e8;padding:10px;overflow-x:auto;font-family:'Courier New',monospace}button{background-color:#4CAF50;color:white;padding:10px 30px;border:none;cursor:pointer;font-size:16px;display:block;margin:20px auto}button:hover{background-color:#45a049}.feedback{margin-top:10px;padding:10px;display:none}.correct{background-color:#d4edda;color:#155724;border:1px solid #c3e6cb}.incorrect{background-color:#f8d7da;color:#721c24;border:1px solid #f5c6cb}#score{text-align:center;font-size:20px;font-weight:bold;margin:20px 0;display:none}</style></head><body>
-<h1>Neural Networks Quiz</h1><p style="text-align:center;">Answer all questions and click Submit to see your score.</p><div class="question" id="q1"><h3>Question 1:</h3><p>What is a Perceptron?</p><div class="options"><label><input type="radio" name="q1" value="a"> A multi-layer network</label><label><input type="radio" name="q1" value="b"> A single-layer NN with one neuron taking several inputs and giving single output</label><label><input type="radio" name="q1" value="c"> A clustering algorithm</label><label><input type="radio" name="q1" value="d"> A regression model</label></div><div class="feedback" id="f1"></div></div><div class="question" id="q2"><h3>Question 2:</h3><p>Single-layer Perceptrons are restricted to:</p><div class="options"><label><input type="radio" name="q2" value="a"> Any problem type</label><label><input type="radio" name="q2" value="b"> Linearly separable problems</label><label><input type="radio" name="q2" value="c"> Non-linear problems only</label><label><input type="radio" name="q2" value="d"> Unsupervised problems</label></div><div class="feedback" id="f2"></div></div><div class="question" id="q3"><h3>Question 3:</h3><p>What does a bias value do in a neural network?</p><div class="options"><label><input type="radio" name="q3" value="a"> Removes neurons</label><label><input type="radio" name="q3" value="b"> Shifts the activation function up or down</label><label><input type="radio" name="q3" value="c"> Increases complexity</label><label><input type="radio" name="q3" value="d"> Reduces weights</label></div><div class="feedback" id="f3"></div></div><div class="question" id="q4"><h3>Question 4:</h3><p>The weight in a neural network shows:</p><div class="options"><label><input type="radio" name="q4" value="a"> The input data</label><label><input type="radio" name="q4" value="b"> The strength of a particular node in the learning problem</label><label><input type="radio" name="q4" value="c"> The output value</label><label><input type="radio" name="q4" value="d"> The activation function</label></div><div class="feedback" id="f4"></div></div><div class="question" id="q5"><h3>Question 5:</h3><p>What is the purpose of activation functions?</p><div class="options"><label><input type="radio" name="q5" value="a"> To remove data</label><label><input type="radio" name="q5" value="b"> To introduce non-linear complexities to the model</label><label><input type="radio" name="q5" value="c"> To normalize data</label><label><input type="radio" name="q5" value="d"> To reduce dimensions</label></div><div class="feedback" id="f5"></div></div><div class="question" id="q6"><h3>Question 6:</h3><p>Without activation functions, a neural network:</p><div class="options"><label><input type="radio" name="q6" value="a"> Cannot learn complicated data</label><label><input type="radio" name="q6" value="b"> Becomes faster</label><label><input type="radio" name="q6" value="c"> Becomes more accurate</label><label><input type="radio" name="q6" value="d"> Uses less memory</label></div><div class="feedback" id="f6"></div></div><div class="question" id="q7"><h3>Question 7:</h3><p>Which is the most widely used activation function for deep learning?</p><div class="options"><label><input type="radio" name="q7" value="a"> Sigmoid</label><label><input type="radio" name="q7" value="b"> Tanh</label><label><input type="radio" name="q7" value="c"> ReLU (Rectifier Function)</label><label><input type="radio" name="q7" value="d"> Linear</label></div><div class="feedback" id="f7"></div></div><div class="question" id="q8"><h3>Question 8:</h3><p>ReLU has the advantage of:</p><div class="options"><label><input type="radio" name="q8" value="a"> Better gradient propagation and sparse activations</label><label><input type="radio" name="q8" value="b"> Always negative outputs</label><label><input type="radio" name="q8" value="c"> Complex computation</label><label><input type="radio" name="q8" value="d"> Slow training</label></div><div class="feedback" id="f8"></div></div><div class="question" id="q9"><h3>Question 9:</h3><p>The formula for the output of the i-th hidden layer is:</p><div class="options"><label><input type="radio" name="q9" value="a"> y_i = w_i + X</label><label><input type="radio" name="q9" value="b"> y_i = w_i^T * X + b_i</label><label><input type="radio" name="q9" value="c"> y_i = X / w_i</label><label><input type="radio" name="q9" value="d"> y_i = b_i only</label></div><div class="feedback" id="f9"></div></div><div class="question" id="q10"><h3>Question 10:</h3><p>In backpropagation, weights are updated using:</p><div class="options"><label><input type="radio" name="q10" value="a"> Only forward propagation</label><label><input type="radio" name="q10" value="b"> Chain rule to compute derivatives</label><label><input type="radio" name="q10" value="c"> Random values</label><label><input type="radio" name="q10" value="d"> Input data directly</label></div><div class="feedback" id="f10"></div></div><div class="question" id="q11"><h3>Question 11:</h3><p>The four steps of weight updating in backpropagation are:</p><div class="options"><label><input type="radio" name="q11" value="a"> Load, Save, Delete, Update</label><label><input type="radio" name="q11" value="b"> Take batch, Forward prop, Backprop loss, Update weights</label><label><input type="radio" name="q11" value="c"> Input, Process, Output, Store</label><label><input type="radio" name="q11" value="d"> Train, Test, Validate, Deploy</label></div><div class="feedback" id="f11"></div></div><div class="question" id="q12"><h3>Question 12:</h3><p>What is the learning rate θ?</p><div class="options"><label><input type="radio" name="q12" value="a"> The size of the network</label><label><input type="radio" name="q12" value="b"> The pace at which weights get updated</label><label><input type="radio" name="q12" value="c"> The number of neurons</label><label><input type="radio" name="q12" value="d"> The activation threshold</label></div><div class="feedback" id="f12"></div></div><div class="question" id="q13"><h3>Question 13:</h3><p>The most popular adaptive learning rate method is:</p><div class="options"><label><input type="radio" name="q13" value="a"> SGD</label><label><input type="radio" name="q13" value="b"> Adam</label><label><input type="radio" name="q13" value="c"> Newton</label><label><input type="radio" name="q13" value="d"> Simple descent</label></div><div class="feedback" id="f13"></div></div><div class="question" id="q14"><h3>Question 14:</h3><p>Cross-entropy loss is used for:</p><div class="options"><label><input type="radio" name="q14" value="a"> Regression only</label><label><input type="radio" name="q14" value="b"> Neural network classification</label><label><input type="radio" name="q14" value="c"> Clustering</label><label><input type="radio" name="q14" value="d"> Data cleaning</label></div><div class="feedback" id="f14"></div></div><div class="question" id="q15"><h3>Question 15:</h3><p>What happens when learning rate is too high?</p><div class="options"><label><input type="radio" name="q15" value="a"> Slow convergence</label><label><input type="radio" name="q15" value="b"> Divergent behavior/oscillations</label><label><input type="radio" name="q15" value="c"> Perfect accuracy</label><label><input type="radio" name="q15" value="d"> No change</label></div><div class="feedback" id="f15"></div></div><div class="question" id="q16"><h3>Question 16:</h3><p>What happens when learning rate is too low?</p><div class="options"><label><input type="radio" name="q16" value="a"> Fast convergence</label><label><input type="radio" name="q16" value="b"> Slow convergence, many updates needed</label><label><input type="radio" name="q16" value="c"> Immediate solution</label><label><input type="radio" name="q16" value="d"> Network failure</label></div><div class="feedback" id="f16"></div></div><div class="question" id="q17"><h3>Question 17:</h3><p>The vanishing gradient problem occurs when:</p><div class="options"><label><input type="radio" name="q17" value="a"> Gradients become too small</label><label><input type="radio" name="q17" value="b"> Gradients become too large</label><label><input type="radio" name="q17" value="c"> No gradients exist</label><label><input type="radio" name="q17" value="d"> Gradients are perfect</label></div><div class="feedback" id="f17"></div></div><div class="question" id="q18"><h3>Question 18:</h3><p>The exploding gradient problem occurs when:</p><div class="options"><label><input type="radio" name="q18" value="a"> Gradients become tiny</label><label><input type="radio" name="q18" value="b"> Gradients become excessively large making learning unstable</label><label><input type="radio" name="q18" value="c"> No updates happen</label><label><input type="radio" name="q18" value="d"> Learning is perfect</label></div><div class="feedback" id="f18"></div></div><div class="question" id="q19"><h3>Question 19:</h3><p>Which activation typically outputs values between 0 and 1?</p><div class="options"><label><input type="radio" name="q19" value="a"> ReLU</label><label><input type="radio" name="q19" value="b"> Sigmoid</label><label><input type="radio" name="q19" value="c"> Linear</label><label><input type="radio" name="q19" value="d"> Step function</label></div><div class="feedback" id="f19"></div></div><div class="question" id="q20"><h3>Question 20:</h3><p>Which activation typically outputs values between -1 and 1?</p><div class="options"><label><input type="radio" name="q20" value="a"> ReLU</label><label><input type="radio" name="q20" value="b"> Sigmoid</label><label><input type="radio" name="q20" value="c"> Tanh</label><label><input type="radio" name="q20" value="d"> Linear</label></div><div class="feedback" id="f20"></div></div><div class="question" id="q21"><h3>Question 21:</h3><p>ReLU activation is defined as:</p><div class="options"><label><input type="radio" name="q21" value="a"> min(0, x)</label><label><input type="radio" name="q21" value="b"> max(0, x)</label><label><input type="radio" name="q21" value="c"> x²</label><label><input type="radio" name="q21" value="d"> 1/(1+e^-x)</label></div><div class="feedback" id="f21"></div></div><div class="question" id="q22"><h3>Question 22:</h3><p>Leaky ReLU solves which ReLU problem?</p><div class="options"><label><input type="radio" name="q22" value="a"> Too fast</label><label><input type="radio" name="q22" value="b"> Dying neurons (dead ReLU)</label><label><input type="radio" name="q22" value="c"> Too complex</label><label><input type="radio" name="q22" value="d"> Too simple</label></div><div class="feedback" id="f22"></div></div><div class="question" id="q23"><h3>Question 23:</h3><p>In the Sigmoid formula 1/(1+e^-x), as x→∞:</p><div class="options"><label><input type="radio" name="q23" value="a"> Output→0</label><label><input type="radio" name="q23" value="b"> Output→1</label><label><input type="radio" name="q23" value="c"> Output→-1</label><label><input type="radio" name="q23" value="d"> Output→∞</label></div><div class="feedback" id="f23"></div></div><div class="question" id="q24"><h3>Question 24:</h3><p>In the Sigmoid formula, as x→-∞:</p><div class="options"><label><input type="radio" name="q24" value="a"> Output→0</label><label><input type="radio" name="q24" value="b"> Output→1</label><label><input type="radio" name="q24" value="c"> Output→-1</label><label><input type="radio" name="q24" value="d"> Output→∞</label></div><div class="feedback" id="f24"></div></div><div class="question" id="q25"><h3>Question 25:</h3><p>A neural network with multiple layers can:</p><div class="options"><label><input type="radio" name="q25" value="a"> Only solve linear problems</label><label><input type="radio" name="q25" value="b"> Approximate curves and complex shapes</label><label><input type="radio" name="q25" value="c"> Only classify 2 classes</label><label><input type="radio" name="q25" value="d"> Not use backpropagation</label></div><div class="feedback" id="f25"></div></div><div class="question" id="q26"><h3>Question 26:</h3><p>The input layer in a neural network:</p><div class="options"><label><input type="radio" name="q26" value="a"> Processes data</label><label><input type="radio" name="q26" value="b"> Picks up input data and passes to next layer</label><label><input type="radio" name="q26" value="c"> Makes predictions</label><label><input type="radio" name="q26" value="d"> Calculates loss</label></div><div class="feedback" id="f26"></div></div><div class="question" id="q27"><h3>Question 27:</h3><p>The hidden layers in a neural network:</p><div class="options"><label><input type="radio" name="q27" value="a"> Store final results</label><label><input type="radio" name="q27" value="b"> Do core calculations, feature extraction, transformations</label><label><input type="radio" name="q27" value="c"> Only normalize data</label><label><input type="radio" name="q27" value="d"> Delete outliers</label></div><div class="feedback" id="f27"></div></div><div class="question" id="q28"><h3>Question 28:</h3><p>The output layer:</p><div class="options"><label><input type="radio" name="q28" value="a"> Takes input data</label><label><input type="radio" name="q28" value="b"> Delivers the final result</label><label><input type="radio" name="q28" value="c"> Does preprocessing</label><label><input type="radio" name="q28" value="d"> Normalizes inputs</label></div><div class="feedback" id="f28"></div></div><div class="question" id="q29"><h3>Question 29:</h3><p>Forward propagation in a neural network:</p><div class="options"><label><input type="radio" name="q29" value="a"> Updates weights</label><label><input type="radio" name="q29" value="b"> Computes predictions from input to output</label><label><input type="radio" name="q29" value="c"> Only works backwards</label><label><input type="radio" name="q29" value="d"> Deletes data</label></div><div class="feedback" id="f29"></div></div><div class="question" id="q30"><h3>Question 30:</h3><p>Why do we need multiple hidden layers?</p><div class="options"><label><input type="radio" name="q30" value="a"> To slow down training</label><label><input type="radio" name="q30" value="b"> Each layer learns different levels of abstraction</label><label><input type="radio" name="q30" value="c"> To use more memory</label><label><input type="radio" name="q30" value="d"> To make it complicated</label></div><div class="feedback" id="f30"></div></div><button onclick="submitQuiz()">Submit Quiz</button><div id="score"></div><script>const answers={q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"a",q7:"c",q8:"a",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"a",q18:"b",q19:"b",q20:"c",q21:"b",q22:"b",q23:"b",q24:"a",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};const explanations={q1:"Perceptron is a single-layer NN with one neuron.",q2:"Single-layer perceptrons can only solve linearly separable problems.",q3:"Bias allows shifting the activation function.",q4:"Weights show the strength/importance of nodes.",q5:"Activation functions introduce non-linearity.",q6:"Without activation, NNs can't learn complex patterns.",q7:"ReLU is most widely used for deep learning.",q8:"ReLU has better gradient prop and sparse activation.",q9:"y_i = w_i^T * X + b_i is the summation formula.",q10:"Backpropagation uses chain rule for derivatives.",q11:"The 4 steps: batch, forward prop, backprop, update weights.",q12:"Learning rate controls how fast weights update.",q13:"Adam is the most popular adaptive learning rate method.",q14:"Cross-entropy loss is used in NN classification.",q15:"Too high learning rate causes oscillations/divergence.",q16:"Too low learning rate means slow, many iterations.",q17:"Vanishing gradient: gradients too small, stops learning.",q18:"Exploding gradient: gradients too large, unstable learning.",q19:"Sigmoid outputs values between 0 and 1.",q20:"Tanh outputs between -1 and 1.",q21:"ReLU = max(0, x).",q22:"Leaky ReLU prevents dying neurons.",q23:"As x→∞, sigmoid→1.",q24:"As x→-∞, sigmoid→0.",q25:"Multiple layers approximate complex shapes.",q26:"Input layer picks up and passes data forward.",q27:"Hidden layers do calculations and feature extraction.",q28:"Output layer delivers final predictions/results.",q29:"Forward prop computes predictions input→output.",q30:"Multiple layers learn different abstraction levels."};function submitQuiz(){let correct=0;const total=Object.keys(answers).length;for(let q in answers){const selected=document.querySelector(`input[name="${q}"]:checked`);const feedback=document.getElementById("f"+q.substring(1));if(selected){if(selected.value===answers[q]){correct++;feedback.className="feedback correct";feedback.textContent="✓ Correct! "+explanations[q];}else{feedback.className="feedback incorrect";feedback.textContent="✗ Incorrect. "+explanations[q];}}else{feedback.className="feedback incorrect";feedback.textContent="✗ No answer selected. "+explanations[q];}feedback.style.display="block";}const percentage=((correct/total)*100).toFixed(1);const scoreDiv=document.getElementById("score");scoreDiv.textContent=`Your Score: ${correct}/${total} (${percentage}%)`;scoreDiv.style.display="block";window.scrollTo(0,0);}</script></body></html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Neural Networks Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Neural Networks Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
+
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Sigmoid activation function outputs values in range:</p><div class="options"><label><input type="radio" name="q1" value="a"> [-1, 1]</label><label><input type="radio" name="q1" value="b"> [0, 1]</label><label><input type="radio" name="q1" value="c"> [0, ∞]</label><label><input type="radio" name="q1" value="d"> (-∞, ∞)</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question" id="q2"><h3>Question 2:</h3><p>ReLU (Rectified Linear Unit) function is:</p><div class="options"><label><input type="radio" name="q2" value="a"> min(0, x)</label><label><input type="radio" name="q2" value="b"> 1/(1+e^-x)</label><label><input type="radio" name="q2" value="c"> max(0, x)</label><label><input type="radio" name="q2" value="d"> tanh(x)</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Tanh activation outputs values in range:</p><div class="options"><label><input type="radio" name="q3" value="a"> [0, 1]</label><label><input type="radio" name="q3" value="b"> [-1, 1]</label><label><input type="radio" name="q3" value="c"> [0, ∞]</label><label><input type="radio" name="q3" value="d"> [-∞, ∞]</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Backpropagation is used for:</p><div class="options"><label><input type="radio" name="q4" value="a"> Forward pass only</label><label><input type="radio" name="q4" value="b"> Computing gradients to update weights</label><label><input type="radio" name="q4" value="c"> Data preprocessing</label><label><input type="radio" name="q4" value="d"> Feature extraction</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Why do we need activation functions?</p><div class="options"><label><input type="radio" name="q5" value="a"> To make training faster</label><label><input type="radio" name="q5" value="b"> To introduce non-linearity</label><label><input type="radio" name="q5" value="c"> To reduce overfitting</label><label><input type="radio" name="q5" value="d"> To normalize data</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Forward propagation:</p><div class="options"><label><input type="radio" name="q6" value="a"> Updates weights</label><label><input type="radio" name="q6" value="b"> Computes predictions from input to output</label><label><input type="radio" name="q6" value="c"> Computes gradients</label><label><input type="radio" name="q6" value="d"> Validates the model</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Hidden layers in neural networks:</p><div class="options"><label><input type="radio" name="q7" value="a"> Are always visible to users</label><label><input type="radio" name="q7" value="b"> Perform core computations and feature extraction</label><label><input type="radio" name="q7" value="c"> Only exist in CNNs</label><label><input type="radio" name="q7" value="d"> Are optional</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>The bias term in neural networks:</p><div class="options"><label><input type="radio" name="q8" value="a"> Is always zero</label><label><input type="radio" name="q8" value="b"> Allows shifting the activation function</label><label><input type="radio" name="q8" value="c"> Only used in output layer</label><label><input type="radio" name="q8" value="d"> Decreases accuracy</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>ReLU is most widely used because:</p><div class="options"><label><input type="radio" name="q9" value="a"> It's complex</label><label><input type="radio" name="q9" value="b"> Better gradient propagation, simple computation, sparse activation</label><label><input type="radio" name="q9" value="c"> Always gives best results</label><label><input type="radio" name="q9" value="d"> It's the oldest</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Leaky ReLU differs from ReLU by:</p><div class="options"><label><input type="radio" name="q10" value="a"> Being faster</label><input type="radio" name="q10" value="b"> Having small negative slope instead of zero for x<0</label><label><input type="radio" name="q10" value="c"> Having no slope</label><label><input type="radio" name="q10" value="d"> Only working on images</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Weights in neural networks are initially:</p><div class="options"><label><input type="radio" name="q11" value="a"> All zeros</label><label><input type="radio" name="q11" value="b"> All ones</label><label><input type="radio" name="q11" value="c"> Randomly initialized</label><label><input type="radio" name="q11" value="d"> Manually set</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Chain rule is used in:</p><div class="options"><label><input type="radio" name="q12" value="a"> Forward propagation</label><label><input type="radio" name="q12" value="b"> Backpropagation to compute gradients</label><label><input type="radio" name="q12" value="c"> Data loading</label><label><input type="radio" name="q12" value="d"> Normalization</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Vanishing gradient problem occurs when:</p><div class="options"><label><input type="radio" name="q13" value="a"> Gradients become too large</label><label><input type="radio" name="q13" value="b"> Gradients become extremely small (close to zero)</label><label><input type="radio" name="q13" value="c"> No gradients computed</label><label><input type="radio" name="q13" value="d"> Weights don't update</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Exploding gradient problem means:</p><div class="options"><label><input type="radio" name="q14" value="a"> Gradients become too small</label><label><input type="radio" name="q14" value="b"> Gradients become extremely large, causing instability</label><label><input type="radio" name="q14" value="c"> Model trains perfectly</label><label><input type="radio" name="q14" value="d"> Loss is zero</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Feed-forward neural network means:</p><div class="options"><label><input type="radio" name="q15" value="a"> Data can flow in any direction</label><label><input type="radio" name="q15" value="b"> Data flows only from input to output (no loops)</label><label><input type="radio" name="q15" value="c"> Only works for images</label><label><input type="radio" name="q15" value="d"> Uses recurrent connections</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Softmax activation is typically used in:</p><div class="options"><label><input type="radio" name="q16" value="a"> Hidden layers</label><label><input type="radio" name="q16" value="b"> Output layer for multi-class classification</label><label><input type="radio" name="q16" value="c"> Input layer</label><label><input type="radio" name="q16" value="d"> Never used</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Perceptron is:</p><div class="options"><label><input type="radio" name="q17" value="a"> Multi-layer network</label><label><input type="radio" name="q17" value="b"> Simplest neural network (single layer)</label><label><input type="radio" name="q17" value="c"> Only for images</label><label><input type="radio" name="q17" value="d"> A type of CNN</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Deep learning refers to:</p><div class="options"><label><input type="radio" name="q18" value="a"> Networks with many hidden layers</label><label><input type="radio" name="q18" value="b"> Networks with one layer</label><label><input type="radio" name="q18" value="c"> Only CNNs</label><label><input type="radio" name="q18" value="d"> Only RNNs</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Epoch means:</p><div class="options"><label><input type="radio" name="q19" value="a"> One forward pass</label><label><input type="radio" name="q19" value="b"> One complete pass through entire training dataset</label><label><input type="radio" name="q19" value="c"> One batch</label><label><input type="radio" name="q19" value="d"> One weight update</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Batch in neural networks refers to:</p><div class="options"><label><input type="radio" name="q20" value="a"> Entire dataset</label><label><input type="radio" name="q20" value="b"> Subset of data processed together before weight update</label><label><input type="radio" name="q20" value="c"> One sample</label><label><input type="radio" name="q20" value="d"> Output layer</label></div><div class="feedback" id="f20"></div></div>
+
+        <div class="question" id="q21"><h3>Question 21:</h3><p>Universal Approximation Theorem states:</p><div class="options"><label><input type="radio" name="q21" value="a"> NNs can't learn anything</label><label><input type="radio" name="q21" value="b"> NNs with enough neurons can approximate any continuous function</label><label><input type="radio" name="q21" value="c"> Only linear functions</label><label><input type="radio" name="q21" value="d"> Only works for images</label></div><div class="feedback" id="f21"></div></div>
+
+        <div class="question" id="q22"><h3>Question 22:</h3><p>Dropout is used for:</p><div class="options"><label><input type="radio" name="q22" value="a"> Faster training</label><label><input type="radio" name="q22" value="b"> Preventing overfitting by randomly disabling neurons</label><label><input type="radio" name="q22" value="c"> Increasing accuracy always</label><label><input type="radio" name="q22" value="d"> Data augmentation</label></div><div class="feedback" id="f22"></div></div>
+
+        <div class="question" id="q23"><h3>Question 23:</h3><p>Loss function measures:</p><div class="options"><label><input type="radio" name="q23" value="a"> Training speed</label><label><input type="radio" name="q23" value="b"> Difference between predictions and actual values</label><label><input type="radio" name="q23" value="c"> Number of layers</label><label><input type="radio" name="q23" value="d"> Network size</label></div><div class="feedback" id="f23"></div></div>
+
+        <div class="question" id="q24"><h3>Question 24:</h3><p>Gradient descent updates weights in direction:</p><div class="options"><label><input type="radio" name="q24" value="a"> Of increasing loss</label><label><input type="radio" name="q24" value="b"> Opposite to gradient (to minimize loss)</label><label><input type="radio" name="q24" value="c"> Random</label><label><input type="radio" name="q24" value="d"> Perpendicular to gradient</label></div><div class="feedback" id="f24"></div></div>
+
+        <div class="question" id="q25"><h3>Question 25:</h3><p>Learning rate controls:</p><div class="options"><label><input type="radio" name="q25" value="a"> Number of epochs</label><label><input type="radio" name="q25" value="b"> Size of weight updates</label><label><input type="radio" name="q25" value="c"> Batch size</label><label><input type="radio" name="q25" value="d"> Network architecture</label></div><div class="feedback" id="f25"></div></div>
+
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Overfitting means:</p><div class="options"><label><input type="radio" name="q26" value="a"> Model generalizes well</label><label><input type="radio" name="q26" value="b"> Model memorizes training data, performs poorly on new data</label><label><input type="radio" name="q26" value="c"> Model is too simple</label><label><input type="radio" name="q26" value="d"> Training is too fast</label></div><div class="feedback" id="f26"></div></div>
+
+        <div class="question" id="q27"><h3>Question 27:</h3><p>Underfitting means:</p><div class="options"><label><input type="radio" name="q27" value="a"> Model is too complex</label><label><input type="radio" name="q27" value="b"> Model is too simple, can't capture patterns</label><label><input type="radio" name="q27" value="c"> Perfect performance</label><label><input type="radio" name="q27" value="d"> Model trains too long</label></div><div class="feedback" id="f27"></div></div>
+
+        <div class="question" id="q28"><h3>Question 28:</h3><p>Early stopping prevents:</p><div class="options"><label><input type="radio" name="q28" value="a"> Training from starting</label><label><input type="radio" name="q28" value="b"> Overfitting by stopping when validation performance degrades</label><label><input type="radio" name="q28" value="c"> Learning anything</label><label><input type="radio" name="q28" value="d"> Using GPUs</label></div><div class="feedback" id="f28"></div></div>
+
+        <div class="question" id="q29"><h3>Question 29:</h3><p>Batch normalization:</p><div class="options"><label><input type="radio" name="q29" value="a"> Only works on images</label><label><input type="radio" name="q29" value="b"> Normalizes layer inputs to improve training stability</label><label><input type="radio" name="q29" value="c"> Removes all batches</label><label><input type="radio" name="q29" value="d"> Increases training time dramatically</label></div><div class="feedback" id="f29"></div></div>
+
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Sparse activation means:</p><div class="options"><label><input type="radio" name="q30" value="a"> All neurons fire</label><label><input type="radio" name="q30" value="b"> Only some neurons activate (like ReLU setting negatives to 0)</label><label><input type="radio" name="q30" value="c"> No neurons fire</label><label><input type="radio" name="q30" value="d"> Dense connections</label></div><div class="feedback" id="f30"></div></div>
+    </div>
+
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Why can't we initialize all weights to zero?</p><div class="options"><label><input type="radio" name="q1" value="a"> It's too slow</label><label><input type="radio" name="q1" value="b"> All neurons learn same features (symmetry problem); gradients are identical</label><label><input type="radio" name="q1" value="c"> It works perfectly</label><label><input type="radio" name="q1" value="d"> GPUs don't support it</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question" id="q2"><h3>Question 2:</h3><p>Without activation functions, stacking multiple layers just creates:</p><div class="options"><label><input type="radio" name="q2" value="a"> More powerful network</label><label><input type="radio" name="q2" value="b"> Equivalent to single linear layer (linear combinations stay linear)</label><label><input type="radio" name="q2" value="c"> Faster training</label><label><input type="radio" name="q2" value="d"> Better accuracy</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Sigmoid suffers from vanishing gradient because:</p><div class="options"><label><input type="radio" name="q3" value="a"> It's too fast</label><label><input type="radio" name="q3" value="b"> Gradient saturates (becomes very small) at extreme values</label><label><input type="radio" name="q3" value="c"> It has no gradient</label><label><input type="radio" name="q3" value="d"> It's always increasing</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question" id="q4"><h3>Question 4:</h3><p>ReLU can suffer from "dying ReLU" problem when:</p><div class="options"><label><input type="radio" name="q4" value="a"> Neurons get stuck outputting 0, stop learning (negative inputs always → 0)</label><label><input type="radio" name="q4" value="b"> It works too well</label><label><input type="radio" name="q4" value="c"> Too many neurons active</label><label><input type="radio" name="q4" value="d"> Impossible to happen</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>You have 3 inputs, 4 hidden neurons, 2 outputs. How many weights (excluding bias)?</p><div class="options"><label><input type="radio" name="q5" value="a"> 9</label><label><input type="radio" name="q5" value="b"> 20 (3×4 + 4×2)</label><label><input type="radio" name="q5" value="c"> 12</label><label><input type="radio" name="q5" value="d"> 24</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Deeper networks can represent functions with:</p><div class="options"><label><input type="radio" name="q6" value="a"> Only linear patterns</label><label><input type="radio" name="q6" value="b"> More complex patterns using fewer neurons per layer</label><label><input type="radio" name="q6" value="c"> No advantages</label><label><input type="radio" name="q6" value="d"> Only simple patterns</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Softmax outputs sum to:</p><div class="options"><label><input type="radio" name="q7" value="a"> 0</label><label><input type="radio" name="q7" value="b"> Number of classes</label><label><input type="radio" name="q7" value="c"> 1 (probability distribution)</label><label><input type="radio" name="q7" value="d"> Infinity</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Binary classification output typically uses:</p><div class="options"><label><input type="radio" name="q8" value="a"> Softmax with 2 outputs</label><label><input type="radio" name="q8" value="b"> Single sigmoid output</label><label><input type="radio" name="q8" value="c"> ReLU</label><label><input type="radio" name="q8" value="d"> Tanh</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Large learning rate can cause:</p><div class="options"><label><input type="radio" name="q9" value="a"> Faster guaranteed convergence</label><label><input type="radio" name="q9" value="b"> Overshooting minimum, oscillation, or divergence</label><label><input type="radio" name="q9" value="c"> Perfect training</label><label><input type="radio" name="q9" value="d"> Slower training only</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Batch size of 1 is called:</p><div class="options"><label><input type="radio" name="q10" value="a"> Batch gradient descent</label><label><input type="radio" name="q10" value="b"> Stochastic gradient descent (SGD)</label><label><input type="radio" name="q10" value="c"> Mini-batch gradient descent</label><label><input type="radio" name="q10" value="d"> Full batch</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Why use mini-batches instead of full batch?</p><div class="options"><label><input type="radio" name="q11" value="a"> Less accurate</label><label><input type="radio" name="q11" value="b"> Faster updates, better memory usage, regularization effect</label><label><input type="radio" name="q11" value="c"> Slower training</label><label><input type="radio" name="q11" value="d"> No advantages</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Dropout rate of 0.5 means:</p><div class="options"><label><input type="radio" name="q12" value="a"> Drop 5% of neurons</label><label><input type="radio" name="q12" value="b"> Drop 50% of neurons randomly during training</label><label><input type="radio" name="q12" value="c"> Keep 5% of neurons</label><label><input type="radio" name="q12" value="d"> No dropout</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Why does dropout prevent overfitting?</p><div class="options"><label><input type="radio" name="q13" value="a"> Makes training faster</label><label><input type="radio" name="q13" value="b"> Forces network to learn robust features, not rely on specific neurons</label><label><input type="radio" name="q13" value="c"> Increases model size</label><label><input type="radio" name="q13" value="d"> Adds more layers</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>During testing/inference, dropout is:</p><div class="options"><label><input type="radio" name="q14" value="a"> Kept at same rate</label><label><input type="radio" name="q14" value="b"> Turned off (use all neurons)</label><label><input type="radio" name="q14" value="c"> Increased to 1.0</label><label><input type="radio" name="q14" value="d"> Random</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Gradient clipping helps with:</p><div class="options"><label><input type="radio" name="q15" value="a"> Vanishing gradients</label><label><input type="radio" name="q15" value="b"> Exploding gradients by capping maximum gradient value</label><label><input type="radio" name="q15" value="c"> Increasing gradients</label><label><input type="radio" name="q15" value="d"> Removing gradients</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Why is ReLU preferred over sigmoid in hidden layers?</p><div class="options"><label><input type="radio" name="q16" value="a"> Sigmoid is always better</label><label><input type="radio" name="q16" value="b"> ReLU doesn't saturate for positive values, better gradient flow</label><label><input type="radio" name="q16" value="c"> ReLU is more complex</label><label><input type="radio" name="q16" value="d"> No difference</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Weight regularization (L2) adds penalty for:</p><div class="options"><label><input type="radio" name="q17" value="a"> Small weights</label><label><input type="radio" name="q17" value="b"> Large weights (encourages smaller weights)</label><label><input type="radio" name="q17" value="c"> Any weights</label><label><input type="radio" name="q17" value="d"> No penalty</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Training loss decreasing but validation loss increasing indicates:</p><div class="options"><label><input type="radio" name="q18" value="a"> Perfect training</label><label><input type="radio" name="q18" value="b"> Overfitting - model memorizing training data</label><label><input type="radio" name="q18" value="c"> Underfitting</label><label><input type="radio" name="q18" value="d"> Need more layers</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Xavier/Glorot initialization is designed to:</p><div class="options"><label><input type="radio" name="q19" value="a"> Set all weights to 1</label><label><input type="radio" name="q19" value="b"> Keep variance of activations similar across layers</label><label><input type="radio" name="q19" value="c"> Maximize weights</label><label><input type="radio" name="q19" value="d"> Set all weights to 0</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>If all neurons in a layer output same value, this suggests:</p><div class="options"><label><input type="radio" name="q20" value="a"> Perfect training</label><label><input type="radio" name="q20" value="b"> Symmetry problem (weights initialized identically or saturated activation)</label><label><input type="radio" name="q20" value="c"> Optimal performance</label><label><input type="radio" name="q20" value="d"> Normal behavior</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
+    <script>
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"b",q2:"c",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"c",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"a",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"b",q3:"b",q4:"a",q5:"b",q6:"b",q7:"c",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        
+        const easyExplanations = {
+            q1:"Sigmoid: σ(x) = 1/(1+e^-x) outputs values between 0 and 1.",
+            q2:"ReLU(x) = max(0,x). Outputs x if positive, 0 if negative.",
+            q3:"Tanh outputs values between -1 and 1.",
+            q4:"Backpropagation computes gradients using chain rule to update weights.",
+            q5:"Activation functions introduce non-linearity; without them, NN is just linear.",
+            q6:"Forward propagation: input → hidden layers → output.",
+            q7:"Hidden layers perform computations and extract features.",
+            q8:"Bias allows shifting the activation function output.",
+            q9:"ReLU: better gradient flow, simple, sparse (half neurons ≈ 0).",
+            q10:"Leaky ReLU: small slope for negative values instead of 0.",
+            q11:"Weights randomly initialized to break symmetry.",
+            q12:"Chain rule used in backpropagation to compute gradients.",
+            q13:"Vanishing gradient: gradients become very small, weights barely update.",
+            q14:"Exploding gradient: gradients become very large, causing instability.",
+            q15:"Feed-forward: data flows input → output without loops.",
+            q16:"Softmax for multi-class: outputs probabilities that sum to 1.",
+            q17:"Perceptron: simplest NN with single layer.",
+            q18:"Deep learning: networks with many (multiple) hidden layers.",
+            q19:"Epoch: one complete pass through entire training dataset.",
+            q20:"Batch: subset of data processed before weight update.",
+            q21:"Universal Approximation: NN with enough neurons can approximate any function.",
+            q22:"Dropout: randomly disable neurons to prevent overfitting.",
+            q23:"Loss function measures prediction error.",
+            q24:"Gradient descent moves opposite to gradient (downhill).",
+            q25:"Learning rate controls step size of weight updates.",
+            q26:"Overfitting: model memorizes training data, poor generalization.",
+            q27:"Underfitting: model too simple, can't learn patterns.",
+            q28:"Early stopping: stop training when validation performance degrades.",
+            q29:"Batch norm: normalizes layer inputs for stable training.",
+            q30:"Sparse activation: only some neurons activate (ReLU zeros out negatives)."
+        };
+        
+        const hardExplanations = {
+            q1:"Zero initialization: all neurons compute same function → same gradients → learn same features. Need random initialization to break symmetry.",
+            q2:"Without activation: f(W₂·(W₁·x)) = (W₂·W₁)·x = W·x, just a linear transformation. Need non-linearity to learn complex patterns.",
+            q3:"Sigmoid saturates at 0 and 1. Gradient ≈0 at extremes. Deep networks: tiny gradients multiply → vanishing.",
+            q4:"Dying ReLU: If neuron always gets negative input, output always 0 → gradient always 0 → weights never update → neuron 'dies'.",
+            q5:"Weights: input→hidden = 3×4=12, hidden→output = 4×2=8. Total = 20.",
+            q6:"Depth provides exponential expressiveness: can represent complex functions with fewer neurons per layer than wide shallow networks.",
+            q7:"Softmax converts scores to probabilities that sum to 1.",
+            q8:"Binary classification: single sigmoid output (0 to 1) or 2 softmax outputs. Sigmoid more common for binary.",
+            q9:"Large learning rate: jumps too far → overshoots minimum → oscillates or diverges.",
+            q10:"Batch size 1 = stochastic gradient descent (SGD).",
+            q11:"Mini-batches: faster updates than full batch, less noisy than SGD, better memory, regularization from sampling variability.",
+            q12:"Dropout 0.5: randomly drop 50% of neurons each iteration.",
+            q13:"Dropout forces network not to rely on any single neuron → learns robust, distributed features.",
+            q14:"During testing: use all neurons (no dropout). Training dropout is like training ensemble.",
+            q15:"Gradient clipping: if gradient norm > threshold, scale it down. Prevents exploding gradients.",
+            q16:"ReLU doesn't saturate for positive values (gradient = 1), sigmoid saturates at both ends (gradient ≈ 0).",
+            q17:"L2 regularization adds λ·||w||² to loss → penalizes large weights → encourages smaller weights.",
+            q18:"Train↓ Val↑ = overfitting. Model memorizing training specifics, not learning general patterns.",
+            q19:"Xavier/Glorot initialization: variance of inputs ≈ variance of outputs → prevents vanishing/exploding activations.",
+            q20:"All neurons same output = symmetry problem. Either initialized same or activation saturated. Need to break symmetry."
+        };
+
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

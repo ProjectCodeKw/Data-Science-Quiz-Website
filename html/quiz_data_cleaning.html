@@ -1,415 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Cleaning & Feature Engineering Quiz - Data Science Quizzes</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Data Cleaning Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Data Cleaning & Feature Engineering Quiz</h1>
-        <p><a href="../index.html">Back to Home</a></p>
-    </header>
+    <h1>Data Cleaning Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
 
-    <main class="quiz-container">
-        <div class="score" id="score"></div>
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Data scientists spend approximately what percentage of their time on data cleaning?</p><div class="options"><label><input type="radio" name="q1" value="a"> 10-20%</label><label><input type="radio" name="q1" value="b"> 30-40%</label><label><input type="radio" name="q1" value="c"> 60-80%</label><label><input type="radio" name="q1" value="d"> 90-95%</label></div><div class="feedback" id="f1"></div></div>
 
-        <div class="question">
-            <h3>Q1. Data scientists spend approximately what percentage of their time on data cleaning?</h3>
-            <div class="options">
-                <label><input type="radio" name="q1" value="a"> 20-30%</label>
-                <label><input type="radio" name="q1" value="b"> 40-50%</label>
-                <label><input type="radio" name="q1" value="c"> 60-80%</label>
-                <label><input type="radio" name="q1" value="d"> 90-95%</label>
-            </div>
-            <div class="feedback" id="f1"></div>
-        </div>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>The Z-score method flags outliers when values are beyond:</p><div class="options"><label><input type="radio" name="q2" value="a"> ±1 standard deviation</label><label><input type="radio" name="q2" value="b"> ±2 standard deviations</label><label><input type="radio" name="q2" value="c"> ±3 standard deviations</label><label><input type="radio" name="q2" value="d"> ±5 standard deviations</label></div><div class="feedback" id="f2"></div></div>
 
-        <div class="question">
-            <h3>Q2. Which of the following is NOT a data cleaning operation?</h3>
-            <div class="options">
-                <label><input type="radio" name="q2" value="a"> Removal of duplicates</label>
-                <label><input type="radio" name="q2" value="b"> Normalization</label>
-                <label><input type="radio" name="q2" value="c"> Training a model</label>
-                <label><input type="radio" name="q2" value="d"> Imputation</label>
-            </div>
-            <div class="feedback" id="f2"></div>
-        </div>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>IQR (Interquartile Range) method defines outliers as values beyond:</p><div class="options"><label><input type="radio" name="q3" value="a"> Q1 - 1.5×IQR or Q3 + 1.5×IQR</label><label><input type="radio" name="q3" value="b"> Q1 - 2×IQR or Q3 + 2×IQR</label><label><input type="radio" name="q3" value="c"> Mean ± 2×IQR</label><label><input type="radio" name="q3" value="d"> Median ± 1.5×IQR</label></div><div class="feedback" id="f3"></div></div>
 
-        <div class="question">
-            <h3>Q3. What does the Z-Score method use to detect outliers?</h3>
-            <div class="options">
-                <label><input type="radio" name="q3" value="a"> Median and mode</label>
-                <label><input type="radio" name="q3" value="b"> Standard deviations from the mean (typically ±3)</label>
-                <label><input type="radio" name="q3" value="c"> Quartiles only</label>
-                <label><input type="radio" name="q3" value="d"> Maximum and minimum values</label>
-            </div>
-            <div class="feedback" id="f3"></div>
-        </div>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Standardization (Z-score scaling) transforms data to have:</p><div class="options"><label><input type="radio" name="q4" value="a"> Range [0, 1]</label><label><input type="radio" name="q4" value="b"> Mean = 0, std = 1</label><label><input type="radio" name="q4" value="c"> Sum = 0</label><label><input type="radio" name="q4" value="d"> Median = 1</label></div><div class="feedback" id="f4"></div></div>
 
-        <div class="question">
-            <h3>Q4. In the IQR method, outliers are typically defined as values beyond:</h3>
-            <div class="options">
-                <label><input type="radio" name="q4" value="a"> Q1 - 1.5×IQR or Q3 + 1.5×IQR</label>
-                <label><input type="radio" name="q4" value="b"> Q1 - 2×IQR or Q3 + 2×IQR</label>
-                <label><input type="radio" name="q4" value="c"> Q1 - 3×IQR or Q3 + 3×IQR</label>
-                <label><input type="radio" name="q4" value="d"> Q2 ± 1.5×IQR</label>
-            </div>
-            <div class="feedback" id="f4"></div>
-        </div>
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Min-Max normalization scales data to:</p><div class="options"><label><input type="radio" name="q5" value="a"> Mean 0, std 1</label><label><input type="radio" name="q5" value="b"> Range [0, 1]</label><label><input type="radio" name="q5" value="c"> Range [-1, 1]</label><label><input type="radio" name="q5" value="d"> Any custom range</label></div><div class="feedback" id="f5"></div></div>
 
-        <div class="question">
-            <h3>Q5. What is the purpose of "capping" or "flooring" outliers?</h3>
-            <div class="options">
-                <label><input type="radio" name="q5" value="a"> To remove them entirely from the dataset</label>
-                <label><input type="radio" name="q5" value="b"> To replace extreme values with threshold values</label>
-                <label><input type="radio" name="q5" value="c"> To convert them to missing values</label>
-                <label><input type="radio" name="q5" value="d"> To ignore them during analysis</label>
-            </div>
-            <div class="feedback" id="f5"></div>
-        </div>
+        <div class="question" id="q6"><h3>Question 6:</h3><p>MCAR stands for:</p><div class="options"><label><input type="radio" name="q6" value="a"> Missing Completely At Random</label><label><input type="radio" name="q6" value="b"> Multiple Classification And Regression</label><label><input type="radio" name="q6" value="c"> Mean Centered At Range</label><label><input type="radio" name="q6" value="d"> Missing Categorical And Real</label></div><div class="feedback" id="f6"></div></div>
 
-        <div class="question">
-            <h3>Q6. When should outliers be kept in the dataset?</h3>
-            <div class="options">
-                <label><input type="radio" name="q6" value="a"> Always</label>
-                <label><input type="radio" name="q6" value="b"> When they are genuine and meaningful (e.g., fraud detection)</label>
-                <label><input type="radio" name="q6" value="c"> Never</label>
-                <label><input type="radio" name="q6" value="d"> Only when there are less than 5 outliers</label>
-            </div>
-            <div class="feedback" id="f6"></div>
-        </div>
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Listwise deletion removes:</p><div class="options"><label><input type="radio" name="q7" value="a"> Only the missing values</label><label><input type="radio" name="q7" value="b"> Entire rows with any missing values</label><label><input type="radio" name="q7" value="c"> Entire columns with missing values</label><label><input type="radio" name="q7" value="d"> Outliers only</label></div><div class="feedback" id="f7"></div></div>
 
-        <div class="question">
-            <h3>Q7. What is binning/discretization in data cleaning?</h3>
-            <div class="options">
-                <label><input type="radio" name="q7" value="a"> Removing duplicate records</label>
-                <label><input type="radio" name="q7" value="b"> Grouping continuous values into discrete bins</label>
-                <label><input type="radio" name="q7" value="c"> Filling missing values</label>
-                <label><input type="radio" name="q7" value="d"> Normalizing data to [0,1] range</label>
-            </div>
-            <div class="feedback" id="f7"></div>
-        </div>
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Mean imputation is best used when:</p><div class="options"><label><input type="radio" name="q8" value="a"> Data has many outliers</label><label><input type="radio" name="q8" value="b"> Missing data is less than 5% and MCAR</label><label><input type="radio" name="q8" value="c"> Data is categorical</label><label><input type="radio" name="q8" value="d"> You want to preserve variance</label></div><div class="feedback" id="f8"></div></div>
 
-        <div class="question">
-            <h3>Q8. Which imputation method uses other features to predict missing values?</h3>
-            <div class="options">
-                <label><input type="radio" name="q8" value="a"> Mean imputation</label>
-                <label><input type="radio" name="q8" value="b"> Forward fill</label>
-                <label><input type="radio" name="q8" value="c"> Predictive imputation</label>
-                <label><input type="radio" name="q8" value="d"> Mode imputation</label>
-            </div>
-            <div class="feedback" id="f8"></div>
-        </div>
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Forward fill in time series means:</p><div class="options"><label><input type="radio" name="q9" value="a"> Fill with future values</label><label><input type="radio" name="q9" value="b"> Fill with the last observed value</label><label><input type="radio" name="q9" value="c"> Fill with mean</label><label><input type="radio" name="q9" value="d"> Remove the row</label></div><div class="feedback" id="f9"></div></div>
 
-        <div class="question">
-            <h3>Q9. What is the main advantage of imputation over deletion of missing data?</h3>
-            <div class="options">
-                <label><input type="radio" name="q9" value="a"> It's always more accurate</label>
-                <label><input type="radio" name="q9" value="b"> It preserves sample size</label>
-                <label><input type="radio" name="q9" value="c"> It's faster to compute</label>
-                <label><input type="radio" name="q9" value="d"> It requires no assumptions</label>
-            </div>
-            <div class="feedback" id="f9"></div>
-        </div>
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Capping/flooring outliers means:</p><div class="options"><label><input type="radio" name="q10" value="a"> Removing them entirely</label><label><input type="radio" name="q10" value="b"> Replacing extreme values with threshold values</label><label><input type="radio" name="q10" value="c"> Transforming with log</label><label><input type="radio" name="q10" value="d"> Keeping them unchanged</label></div><div class="feedback" id="f10"></div></div>
 
-        <div class="question">
-            <h3>Q10. What does the formula (X - X_min) / (X_max - X_min) perform?</h3>
-            <div class="options">
-                <label><input type="radio" name="q10" value="a"> Standardization</label>
-                <label><input type="radio" name="q10" value="b"> Min-Max normalization (scaling to [0,1])</label>
-                <label><input type="radio" name="q10" value="c"> Log transformation</label>
-                <label><input type="radio" name="q10" value="d"> Binning</label>
-            </div>
-            <div class="feedback" id="f10"></div>
-        </div>
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Label encoding assigns:</p><div class="options"><label><input type="radio" name="q11" value="a"> One-hot vectors to categories</label><label><input type="radio" name="q11" value="b"> Unique integers to each category</label><label><input type="radio" name="q11" value="c"> Random numbers</label><label><input type="radio" name="q11" value="d"> Binary values only</label></div><div class="feedback" id="f11"></div></div>
 
-        <div class="question">
-            <h3>Q11. Which Pandas function generates a Boolean mask indicating missing values?</h3>
-            <div class="options">
-                <label><input type="radio" name="q11" value="a"> dropna()</label>
-                <label><input type="radio" name="q11" value="b"> fillna()</label>
-                <label><input type="radio" name="q11" value="c"> isnull()</label>
-                <label><input type="radio" name="q11" value="d"> replace()</label>
-            </div>
-            <div class="feedback" id="f11"></div>
-        </div>
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Fuzzy matching is used to detect:</p><div class="options"><label><input type="radio" name="q12" value="a"> Outliers</label><label><input type="radio" name="q12" value="b"> Missing values</label><label><input type="radio" name="q12" value="c"> Similar but not identical duplicates</label><label><input type="radio" name="q12" value="d"> Data types</label></div><div class="feedback" id="f12"></div></div>
 
-        <div class="question">
-            <h3>Q12. What will <code>data.dropna(axis='columns', how='all')</code> do?</h3>
-            <div class="options">
-                <label><input type="radio" name="q12" value="a"> Drop all rows with any NaN values</label>
-                <label><input type="radio" name="q12" value="b"> Drop columns where all values are NaN</label>
-                <label><input type="radio" name="q12" value="c"> Drop all columns with any NaN values</label>
-                <label><input type="radio" name="q12" value="d"> Drop rows where all values are NaN</label>
-            </div>
-            <div class="feedback" id="f12"></div>
-        </div>
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Predictive imputation uses:</p><div class="options"><label><input type="radio" name="q13" value="a"> Mean values</label><label><input type="radio" name="q13" value="b"> Other features to predict missing values</label><label><input type="radio" name="q13" value="c"> Random sampling</label><label><input type="radio" name="q13" value="d"> Forward fill</label></div><div class="feedback" id="f13"></div></div>
 
-        <div class="question">
-            <h3>Q13. Given the code:</h3>
-            <div class="code">import pandas as pd
-import numpy as np
-data = pd.Series([1, np.nan, 2, None])
-print(len(data[data.notnull()]))</div>
-            <p>What will be printed?</p>
-            <div class="options">
-                <label><input type="radio" name="q13" value="a"> 4</label>
-                <label><input type="radio" name="q13" value="b"> 3</label>
-                <label><input type="radio" name="q13" value="c"> 2</label>
-                <label><input type="radio" name="q13" value="d"> 1</label>
-            </div>
-            <div class="feedback" id="f13"></div>
-        </div>
+        <div class="question" id="q14"><h3>Question 14:</h3><p>When should you keep outliers instead of removing them?</p><div class="options"><label><input type="radio" name="q14" value="a"> Never - always remove outliers</label><label><input type="radio" name="q14" value="b"> When they represent data entry errors</label><label><input type="radio" name="q14" value="c"> When they are genuine and meaningful (e.g., fraud detection)</label><label><input type="radio" name="q14" value="d"> When the dataset is small</label></div><div class="feedback" id="f14"></div></div>
 
-        <div class="question">
-            <h3>Q14. What does <code>fillna(method='ffill')</code> do?</h3>
-            <div class="options">
-                <label><input type="radio" name="q14" value="a"> Fill with the mean value</label>
-                <label><input type="radio" name="q14" value="b"> Fill forward (propagate last valid observation forward)</label>
-                <label><input type="radio" name="q14" value="c"> Fill with zeros</label>
-                <label><input type="radio" name="q14" value="d"> Fill backward</label>
-            </div>
-            <div class="feedback" id="f14"></div>
-        </div>
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Data validation checks that data:</p><div class="options"><label><input type="radio" name="q15" value="a"> Has no missing values</label><label><input type="radio" name="q15" value="b"> Meets specified criteria and business rules</label><label><input type="radio" name="q15" value="c"> Is perfectly clean</label><label><input type="radio" name="q15" value="d"> Has no outliers</label></div><div class="feedback" id="f15"></div></div>
 
-        <div class="question">
-            <h3>Q15. When working with NumPy arrays containing NaN values, which aggregation function will ignore missing values?</h3>
-            <div class="options">
-                <label><input type="radio" name="q15" value="a"> np.sum()</label>
-                <label><input type="radio" name="q15" value="b"> np.nansum()</label>
-                <label><input type="radio" name="q15" value="c"> np.mean()</label>
-                <label><input type="radio" name="q15" value="d"> np.total()</label>
-            </div>
-            <div class="feedback" id="f15"></div>
-        </div>
+        <div class="question" id="q16"><h3>Question 16:</h3><p>The formula for standardization is:</p><div class="options"><label><input type="radio" name="q16" value="a"> (X - min) / (max - min)</label><label><input type="radio" name="q16" value="b"> X / sum(X)</label><label><input type="radio" name="q16" value="c"> (X - mean) / std</label><label><input type="radio" name="q16" value="d"> log(X)</label></div><div class="feedback" id="f16"></div></div>
 
-        <div class="question">
-            <h3>Q16. What is feature engineering?</h3>
-            <div class="options">
-                <label><input type="radio" name="q16" value="a"> Only selecting the best features</label>
-                <label><input type="radio" name="q16" value="b"> The process of creating, transforming, and selecting features to improve model performance</label>
-                <label><input type="radio" name="q16" value="c"> Removing all outliers from features</label>
-                <label><input type="radio" name="q16" value="d"> Converting all features to categorical</label>
-            </div>
-            <div class="feedback" id="f16"></div>
-        </div>
+        <div class="question" id="q17"><h3>Question 17:</h3><p>MAR (Missing At Random) means:</p><div class="options"><label><input type="radio" name="q17" value="a"> Missingness is completely random</label><label><input type="radio" name="q17" value="b"> Missingness is related to observed data, not the missing value itself</label><label><input type="radio" name="q17" value="c"> Missingness is related to the missing value</label><label><input type="radio" name="q17" value="d"> There is no missing data</label></div><div class="feedback" id="f17"></div></div>
 
-        <div class="question">
-            <h3>Q17. Why do many algorithms (like KNN, SVM, Neural Networks) perform better when features are scaled?</h3>
-            <div class="options">
-                <label><input type="radio" name="q17" value="a"> It reduces the dataset size</label>
-                <label><input type="radio" name="q17" value="b"> Features on different scales can lead to biased models</label>
-                <label><input type="radio" name="q17" value="c"> It removes outliers</label>
-                <label><input type="radio" name="q17" value="d"> It fills missing values</label>
-            </div>
-            <div class="feedback" id="f17"></div>
-        </div>
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Pairwise deletion:</p><div class="options"><label><input type="radio" name="q18" value="a"> Removes all rows with missing data</label><label><input type="radio" name="q18" value="b"> Uses all available data for each analysis</label><label><input type="radio" name="q18" value="c"> Removes columns</label><label><input type="radio" name="q18" value="d"> Imputes with mean</label></div><div class="feedback" id="f18"></div></div>
 
-        <div class="question">
-            <h3>Q18. According to the lectures, feature engineering can improve model accuracy by:</h3>
-            <div class="options">
-                <label><input type="radio" name="q18" value="a"> 1-5%</label>
-                <label><input type="radio" name="q18" value="b"> 5-10%</label>
-                <label><input type="radio" name="q18" value="c"> 10-50%</label>
-                <label><input type="radio" name="q18" value="d"> 80-90%</label>
-            </div>
-            <div class="feedback" id="f18"></div>
-        </div>
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Log transformation is used to:</p><div class="options"><label><input type="radio" name="q19" value="a"> Remove outliers completely</label><label><input type="radio" name="q19" value="b"> Reduce impact of skewness and outliers</label><label><input type="radio" name="q19" value="c"> Normalize to [0,1]</label><label><input type="radio" name="q19" value="d"> Increase variance</label></div><div class="feedback" id="f19"></div></div>
 
-        <div class="question">
-            <h3>Q19. What is a benefit of binning continuous data?</h3>
-            <div class="options">
-                <label><input type="radio" name="q19" value="a"> It always improves accuracy</label>
-                <label><input type="radio" name="q19" value="b"> It handles outliers and captures non-linear relationships</label>
-                <label><input type="radio" name="q19" value="c"> It removes all missing values</label>
-                <label><input type="radio" name="q19" value="d"> It converts categorical to numerical</label>
-            </div>
-            <div class="feedback" id="f19"></div>
-        </div>
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Duplicates can:</p><div class="options"><label><input type="radio" name="q20" value="a"> Improve model accuracy</label><label><input type="radio" name="q20" value="b"> Bias analysis and inflate metrics</label><label><input type="radio" name="q20" value="c"> Fix missing data</label><label><input type="radio" name="q20" value="d"> Have no effect</label></div><div class="feedback" id="f20"></div></div>
 
-        <div class="question">
-            <h3>Q20. What does fuzzy matching (Levenshtein distance) help detect?</h3>
-            <div class="options">
-                <label><input type="radio" name="q20" value="a"> Outliers in numerical data</label>
-                <label><input type="radio" name="q20" value="b"> Similar but not identical duplicate records</label>
-                <label><input type="radio" name="q20" value="c"> Missing values</label>
-                <label><input type="radio" name="q20" value="d"> Data types</label>
-            </div>
-            <div class="feedback" id="f20"></div>
-        </div>
+        <div class="question" id="q21"><h3>Question 21:</h3><p>MNAR (Missing Not At Random) means:</p><div class="options"><label><input type="radio" name="q21" value="a"> Missingness depends on the missing value itself</label><label><input type="radio" name="q21" value="b"> Completely random</label><label><input type="radio" name="q21" value="c"> Depends only on observed data</label><label><input type="radio" name="q21" value="d"> No pattern exists</label></div><div class="feedback" id="f21"></div></div>
 
-        <div class="question">
-            <h3>Q21. In the data cleaning pipeline, which step should come FIRST?</h3>
-            <div class="options">
-                <label><input type="radio" name="q21" value="a"> Validate data</label>
-                <label><input type="radio" name="q21" value="b"> Handle missing data</label>
-                <label><input type="radio" name="q21" value="c"> Initial assessment (check data types, dimensions, missing values)</label>
-                <label><input type="radio" name="q21" value="d"> Remove duplicates</label>
-            </div>
-            <div class="feedback" id="f21"></div>
-        </div>
+        <div class="question" id="q22"><h3>Question 22:</h3><p>When should you avoid listwise deletion?</p><div class="options"><label><input type="radio" name="q22" value="a"> When missing data is less than 1%</label><label><input type="radio" name="q22" value="b"> When data is MCAR</label><label><input type="radio" name="q22" value="c"> When missing data exceeds 10%</label><label><input type="radio" name="q22" value="d"> Never - always use it</label></div><div class="feedback" id="f22"></div></div>
 
-        <div class="question">
-            <h3>Q22. Given the following code:</h3>
-            <div class="code">df = pd.DataFrame([[1, np.nan, 2],
-                   [np.nan, 3, 5]])
-result = df.dropna(axis='rows', thresh=2)</div>
-            <p>What does <code>thresh=2</code> specify?</p>
-            <div class="options">
-                <label><input type="radio" name="q22" value="a"> Drop rows with less than 2 NaN values</label>
-                <label><input type="radio" name="q22" value="b"> Drop rows with at least 2 non-NaN values required</label>
-                <label><input type="radio" name="q22" value="c"> Drop rows with exactly 2 NaN values</label>
-                <label><input type="radio" name="q22" value="d"> Keep only 2 rows</label>
-            </div>
-            <div class="feedback" id="f22"></div>
-        </div>
+        <div class="question" id="q23"><h3>Question 23:</h3><p>Standardization is preferred over normalization when:</p><div class="options"><label><input type="radio" name="q23" value="a"> Features have outliers</label><label><input type="radio" name="q23" value="b"> Data is already clean</label><label><input type="radio" name="q23" value="c"> You want [0,1] range</label><label><input type="radio" name="q23" value="d"> Dataset is small</label></div><div class="feedback" id="f23"></div></div>
 
-        <div class="question">
-            <h3>Q23. What is the main difference between None and NaN in Python for missing data?</h3>
-            <div class="options">
-                <label><input type="radio" name="q23" value="a"> There is no difference</label>
-                <label><input type="radio" name="q23" value="b"> None is a Python object, NaN is a floating-point value</label>
-                <label><input type="radio" name="q23" value="c"> NaN can only be used in lists</label>
-                <label><input type="radio" name="q23" value="d"> None is faster</label>
-            </div>
-            <div class="feedback" id="f23"></div>
-        </div>
+        <div class="question" id="q24"><h3>Question 24:</h3><p>Levenshtein distance is used for:</p><div class="options"><label><input type="radio" name="q24" value="a"> Outlier detection</label><label><input type="radio" name="q24" value="b"> Measuring similarity between strings (fuzzy matching)</label><label><input type="radio" name="q24" value="c"> Normalization</label><label><input type="radio" name="q24" value="d"> Imputation</label></div><div class="feedback" id="f24"></div></div>
 
-        <div class="question">
-            <h3>Q24. When a NaN value exists in an integer NumPy array, what happens to the array?</h3>
-            <div class="options">
-                <label><input type="radio" name="q24" value="a"> The array remains integer type</label>
-                <label><input type="radio" name="q24" value="b"> The array is upcast to floating-point</label>
-                <label><input type="radio" name="q24" value="c"> An error is raised</label>
-                <label><input type="radio" name="q24" value="d"> NaN is converted to 0</label>
-            </div>
-            <div class="feedback" id="f24"></div>
-        </div>
+        <div class="question" id="q25"><h3>Question 25:</h3><p>Backward fill uses:</p><div class="options"><label><input type="radio" name="q25" value="a"> Previous values</label><label><input type="radio" name="q25" value="b"> Next available value to fill missing data</label><label><input type="radio" name="q25" value="c"> Mean values</label><label><input type="radio" name="q25" value="d"> Mode values</label></div><div class="feedback" id="f25"></div></div>
 
-        <div class="question">
-            <h3>Q25. What will be the output of this code?</h3>
-            <div class="code">import pandas as pd
-import numpy as np
-data = pd.Series([1, np.nan, 2, None])
-print(data.fillna(0))</div>
-            <div class="options">
-                <label><input type="radio" name="q25" value="a"> Series with values [1, NaN, 2, None]</label>
-                <label><input type="radio" name="q25" value="b"> Series with values [1, 0, 2, 0]</label>
-                <label><input type="radio" name="q25" value="c"> Series with values [1, 2]</label>
-                <label><input type="radio" name="q25" value="d"> Error</label>
-            </div>
-            <div class="feedback" id="f25"></div>
-        </div>
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Label encoding should only be used for:</p><div class="options"><label><input type="radio" name="q26" value="a"> All categorical data</label><label><input type="radio" name="q26" value="b"> Numerical data</label><label><input type="radio" name="q26" value="c"> Ordinal data (with natural order)</label><label><input type="radio" name="q26" value="d"> Time series data</label></div><div class="feedback" id="f26"></div></div>
 
-        <div class="question">
-            <h3>Q26. What type of imputation is best suited for time series data?</h3>
-            <div class="options">
-                <label><input type="radio" name="q26" value="a"> Mean imputation</label>
-                <label><input type="radio" name="q26" value="b"> Mode imputation</label>
-                <label><input type="radio" name="q26" value="c"> Forward/Backward fill</label>
-                <label><input type="radio" name="q26" value="d"> Random imputation</label>
-            </div>
-            <div class="feedback" id="f26"></div>
-        </div>
+        <div class="question" id="q27"><h3>Question 27:</h3><p>The main disadvantage of mean imputation is:</p><div class="options"><label><input type="radio" name="q27" value="a"> It's too slow</label><label><input type="radio" name="q27" value="b"> It reduces variance and can introduce bias</label><label><input type="radio" name="q27" value="c"> It creates outliers</label><label><input type="radio" name="q27" value="d"> It only works with small datasets</label></div><div class="feedback" id="f27"></div></div>
 
-        <div class="question">
-            <h3>Q27. Poor data quality costs organizations approximately how much annually on average?</h3>
-            <div class="options">
-                <label><input type="radio" name="q27" value="a"> $1 million</label>
-                <label><input type="radio" name="q27" value="b"> $5 million</label>
-                <label><input type="radio" name="q27" value="c"> $15 million</label>
-                <label><input type="radio" name="q27" value="d"> $50 million</label>
-            </div>
-            <div class="feedback" id="f27"></div>
-        </div>
+        <div class="question" id="q28"><h3>Question 28:</h3><p>"Garbage in, garbage out" emphasizes:</p><div class="options"><label><input type="radio" name="q28" value="a"> Clean data is essential for accurate models</label><label><input type="radio" name="q28" value="b"> More data is always better</label><label><input type="radio" name="q28" value="c"> Complex models overcome bad data</label><label><input type="radio" name="q28" value="d"> Data cleaning is optional</label></div><div class="feedback" id="f28"></div></div>
 
-        <div class="question">
-            <h3>Q28. Which transformation is useful for reducing the impact of outliers in highly skewed data?</h3>
-            <div class="options">
-                <label><input type="radio" name="q28" value="a"> Min-Max scaling</label>
-                <label><input type="radio" name="q28" value="b"> Log or square root transformation</label>
-                <label><input type="radio" name="q28" value="c"> Mean imputation</label>
-                <label><input type="radio" name="q28" value="d"> One-hot encoding</label>
-            </div>
-            <div class="feedback" id="f28"></div>
-        </div>
+        <div class="question" id="q29"><h3>Question 29:</h3><p>Q1 and Q3 represent:</p><div class="options"><label><input type="radio" name="q29" value="a"> Minimum and maximum values</label><label><input type="radio" name="q29" value="b"> Mean and median</label><label><input type="radio" name="q29" value="c"> 25th and 75th percentiles</label><label><input type="radio" name="q29" value="d"> Standard deviations</label></div><div class="feedback" id="f29"></div></div>
 
-        <div class="question">
-            <h3>Q29. What is data validation in the data cleaning process?</h3>
-            <div class="options">
-                <label><input type="radio" name="q29" value="a"> Removing all outliers</label>
-                <label><input type="radio" name="q29" value="b"> Checking data meets specified criteria and business rules</label>
-                <label><input type="radio" name="q29" value="c"> Converting all data to strings</label>
-                <label><input type="radio" name="q29" value="d"> Splitting data into training and test sets</label>
-            </div>
-            <div class="feedback" id="f29"></div>
-        </div>
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Sensitivity analysis in MNAR situations helps:</p><div class="options"><label><input type="radio" name="q30" value="a"> Remove all missing data</label><label><input type="radio" name="q30" value="b"> Test how conclusions change under different assumptions</label><label><input type="radio" name="q30" value="c"> Automatically impute values</label><label><input type="radio" name="q30" value="d"> Detect outliers</label></div><div class="feedback" id="f30"></div></div>
+    </div>
 
-        <div class="question">
-            <h3>Q30. The principle "garbage in, garbage out" in data cleaning means:</h3>
-            <div class="options">
-                <label><input type="radio" name="q30" value="a"> All data should be deleted</label>
-                <label><input type="radio" name="q30" value="b"> Clean data is essential for accurate models</label>
-                <label><input type="radio" name="q30" value="c"> Data cleaning is not important</label>
-                <label><input type="radio" name="q30" value="d"> Only use data from garbage collection systems</label>
-            </div>
-            <div class="feedback" id="f30"></div>
-        </div>
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>You're detecting credit card fraud. Should you remove outliers in transaction amounts?</p><div class="options"><label><input type="radio" name="q1" value="a"> Yes - outliers always indicate errors</label><label><input type="radio" name="q1" value="b"> No - outliers ARE the fraud signal you're looking for</label><label><input type="radio" name="q1" value="c"> Yes - they'll hurt model performance</label><label><input type="radio" name="q1" value="d"> Only if they're beyond 3 standard deviations</label></div><div class="feedback" id="f1"></div></div>
 
-        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-    </main>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>High earners refuse to disclose salary in a survey. This is an example of:</p><div class="options"><label><input type="radio" name="q2" value="a"> MCAR - completely random</label><label><input type="radio" name="q2" value="b"> MAR - related to age</label><label><input type="radio" name="q2" value="c"> MNAR - missingness related to the salary value itself</label><label><input type="radio" name="q2" value="d"> Not a missing data problem</label></div><div class="feedback" id="f2"></div></div>
 
-    <footer class="footer">
-        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
-    </footer>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>You fill all missing ages with the mean age (35). What's the problem?</p><div class="options"><label><input type="radio" name="q3" value="a"> It's the best approach</label><label><input type="radio" name="q3" value="b"> Artificially reduces variance; everyone clusters at 35</label><label><input type="radio" name="q3" value="c"> Mean is always wrong</label><label><input type="radio" name="q3" value="d"> Should use median instead</label></div><div class="feedback" id="f3"></div></div>
 
-    <script src="../js/quiz.js"></script>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>You use label encoding on colors [Red, Blue, Green] → [0, 1, 2]. Why is this dangerous?</p><div class="options"><label><input type="radio" name="q4" value="a"> It's perfectly fine</label><label><input type="radio" name="q4" value="b"> Model may interpret ordering (Blue > Red) that doesn't exist</label><label><input type="radio" name="q4" value="c"> Colors should always be text</label><label><input type="radio" name="q4" value="d"> Numbers are too small</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>IQR method vs Z-score: when is IQR better?</p><div class="options"><label><input type="radio" name="q5" value="a"> Never - Z-score is always superior</label><label><input type="radio" name="q5" value="b"> When data is not normally distributed; IQR is robust to skewness</label><label><input type="radio" name="q5" value="c"> Only for small datasets</label><label><input type="radio" name="q5" value="d"> When you have no outliers</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>You standardize training data. How should you handle test data?</p><div class="options"><label><input type="radio" name="q6" value="a"> Standardize test data using its own mean/std</label><label><input type="radio" name="q6" value="b"> Use training data's mean/std to standardize test data</label><label><input type="radio" name="q6" value="c"> Don't standardize test data at all</label><label><input type="radio" name="q6" value="d"> Combine train and test, then standardize</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Your dataset has 1000 rows, 200 have missing values. Using listwise deletion leaves 800 rows. What's the risk?</p><div class="options"><label><input type="radio" name="q7" value="a"> No risk - perfectly fine</label><label><input type="radio" name="q7" value="b"> Lost 20% of data; if missing isn't random, introduces bias</label><label><input type="radio" name="q7" value="c"> Too much data remains</label><label><input type="radio" name="q7" value="d"> Should remove more rows</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Feature A: [1, 2, 3], Feature B: [1000, 2000, 3000]. Without scaling, what happens in gradient descent?</p><div class="options"><label><input type="radio" name="q8" value="a"> Perfect convergence</label><label><input type="radio" name="q8" value="b"> Slower convergence; oscillates more in Feature B direction</label><label><input type="radio" name="q8" value="c"> Faster convergence</label><label><input type="radio" name="q8" value="d"> No effect</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>You have ordinal data [Low, Medium, High]. Best encoding approach?</p><div class="options"><label><input type="radio" name="q9" value="a"> One-hot encoding always</label><label><input type="radio" name="q9" value="b"> Label encoding [0, 1, 2] is appropriate here (order matters)</label><label><input type="radio" name="q9" value="c"> Leave as text</label><label><input type="radio" name="q9" value="d"> Random integers</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Capping outliers at 95th percentile vs removing them - key difference?</p><div class="options"><label><input type="radio" name="q10" value="a"> No difference</label><label><input type="radio" name="q10" value="b"> Capping keeps data points; removal loses information entirely</label><label><input type="radio" name="q10" value="c"> Capping is always worse</label><label><input type="radio" name="q10" value="d"> Removal is faster</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Forward fill makes sense for time series but dangerous for what type of data?</p><div class="options"><label><input type="radio" name="q11" value="a"> Stock prices</label><label><input type="radio" name="q11" value="b"> Cross-sectional survey data (no time relationship)</label><label><input type="radio" name="q11" value="c"> Temperature readings</label><label><input type="radio" name="q11" value="d"> Sensor data</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>You find duplicate customer records with slightly different addresses. What should you do?</p><div class="options"><label><input type="radio" name="q12" value="a"> Delete all duplicates immediately</label><label><input type="radio" name="q12" value="b"> Use fuzzy matching to identify, then merge carefully</label><label><input type="radio" name="q12" value="c"> Keep all - more data is better</label><label><input type="radio" name="q12" value="d"> Delete the first occurrence</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Z-score gives you value of 4.5. Assuming normal distribution, this is:</p><div class="options"><label><input type="radio" name="q13" value="a"> Normal value</label><label><input type="radio" name="q13" value="b"> Moderate outlier</label><label><input type="radio" name="q13" value="c"> Extreme outlier (very rare)</label><label><input type="radio" name="q13" value="d"> Impossible value</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Predictive imputation vs mean imputation - when is predictive better?</p><div class="options"><label><input type="radio" name="q14" value="a"> Never - mean is always best</label><label><input type="radio" name="q14" value="b"> When missing values correlate with other features</label><label><input type="radio" name="q14" value="c"> When dataset is small</label><label><input type="radio" name="q14" value="d"> Only for categorical data</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Min-max normalization maps data to [0,1]. If you get a new test value LARGER than training max, what happens?</p><div class="options"><label><input type="radio" name="q15" value="a"> Error occurs</label><label><input type="radio" name="q15" value="b"> It gets normalized to a value > 1</label><label><input type="radio" name="q15" value="c"> It becomes 1</label><label><input type="radio" name="q15" value="d"> Automatically removed</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>You remove ALL rows with ANY missing data (30% of dataset gone). Later, test performance is poor. Why?</p><div class="options"><label><input type="radio" name="q16" value="a"> Should have removed more</label><label><input type="radio" name="q16" value="b"> Lost important patterns; if missingness wasn't random, introduced bias</label><label><input type="radio" name="q16" value="c"> Model is too simple</label><label><input type="radio" name="q16" value="d"> Need more features</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Standardization creates negative values. Is this a problem?</p><div class="options"><label><input type="radio" name="q17" value="a"> Yes - must be [0,1]</label><label><input type="radio" name="q17" value="b"> No - standardization centers at 0, negatives are expected and fine</label><label><input type="radio" name="q17" value="c"> Yes - indicates errors</label><label><input type="radio" name="q17" value="d"> Only a problem for neural networks</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>IQR = Q3 - Q1 = 20. Lower fence = Q1 - 1.5×20 = 10. You have a value of 5. This is:</p><div class="options"><label><input type="radio" name="q18" value="a"> Normal value</label><label><input type="radio" name="q18" value="b"> Outlier (below lower fence)</label><label><input type="radio" name="q18" value="c"> Exactly at the fence</label><label><input type="radio" name="q18" value="d"> Impossible to determine</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Age = 200 years in your dataset. Best action?</p><div class="options"><label><input type="radio" name="q19" value="a"> Keep it - might be real</label><label><input type="radio" name="q19" value="b"> Remove row - obvious data entry error</label><label><input type="radio" name="q19" value="c"> Cap at 95th percentile</label><label><input type="radio" name="q19" value="d"> Apply log transformation</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>You have 5 features, 10% missing in each independently. After listwise deletion, approximately how much data remains?</p><div class="options"><label><input type="radio" name="q20" value="a"> 90%</label><label><input type="radio" name="q20" value="b"> 50%</label><label><input type="radio" name="q20" value="c"> 59% (0.9^5 ≈ 0.59)</label><label><input type="radio" name="q20" value="d"> 100%</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
     <script>
-        const answers = {
-            q1: 'c', q2: 'c', q3: 'b', q4: 'a', q5: 'b',
-            q6: 'b', q7: 'b', q8: 'c', q9: 'b', q10: 'b',
-            q11: 'c', q12: 'b', q13: 'c', q14: 'b', q15: 'b',
-            q16: 'b', q17: 'b', q18: 'c', q19: 'b', q20: 'b',
-            q21: 'c', q22: 'b', q23: 'b', q24: 'b', q25: 'b',
-            q26: 'c', q27: 'c', q28: 'b', q29: 'b', q30: 'b'
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"c",q2:"c",q3:"a",q4:"b",q5:"b",q6:"a",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"c",q13:"b",q14:"c",q15:"b",q16:"c",q17:"b",q18:"b",q19:"b",q20:"b",q21:"a",q22:"c",q23:"a",q24:"b",q25:"b",q26:"c",q27:"b",q28:"a",q29:"c",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"c",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"c",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"c"};
+        
+        const easyExplanations = {
+            q1:"Data scientists spend 60-80% of their time on data cleaning.",
+            q2:"Z-score method flags outliers beyond ±3 standard deviations.",
+            q3:"IQR method: outliers are beyond Q1 - 1.5×IQR or Q3 + 1.5×IQR.",
+            q4:"Standardization creates mean = 0 and std = 1.",
+            q5:"Min-max normalization scales to [0, 1].",
+            q6:"MCAR = Missing Completely At Random.",
+            q7:"Listwise deletion removes entire rows with any missing values.",
+            q8:"Mean imputation works best with <5% missing data that's MCAR.",
+            q9:"Forward fill uses the last observed value to fill gaps.",
+            q10:"Capping/flooring replaces extreme values with threshold values.",
+            q11:"Label encoding assigns unique integers to categories.",
+            q12:"Fuzzy matching detects similar but not identical duplicates.",
+            q13:"Predictive imputation uses other features to predict missing values.",
+            q14:"Keep outliers when they're genuine and meaningful (like fraud cases).",
+            q15:"Data validation checks if data meets specified criteria and business rules.",
+            q16:"Standardization formula: (X - mean) / std.",
+            q17:"MAR: missingness related to observed data, not the missing value itself.",
+            q18:"Pairwise deletion uses all available data for each analysis.",
+            q19:"Log transformation reduces impact of skewness and outliers.",
+            q20:"Duplicates bias analysis and inflate metrics.",
+            q21:"MNAR: missingness depends on the missing value itself.",
+            q22:"Avoid listwise deletion when missing data exceeds 10%.",
+            q23:"Standardization preferred when features have outliers.",
+            q24:"Levenshtein distance measures string similarity for fuzzy matching.",
+            q25:"Backward fill uses next available value.",
+            q26:"Label encoding should only be used for ordinal data (natural order).",
+            q27:"Mean imputation reduces variance and can introduce bias.",
+            q28:"Clean data is essential for accurate models (GIGO principle).",
+            q29:"Q1 and Q3 are 25th and 75th percentiles.",
+            q30:"Sensitivity analysis tests how conclusions change under different assumptions."
+        };
+        
+        const hardExplanations = {
+            q1:"In fraud detection, outliers ARE the signal! Unusual transactions are exactly what you're trying to find. Removing them defeats the purpose.",
+            q2:"This is MNAR because the missingness (refusing to disclose) is directly related to the value itself (being a high earner). Classic MNAR example.",
+            q3:"Mean imputation artificially reduces variance - all missing values become 35, creating an unrealistic spike. Real ages have natural spread.",
+            q4:"Label encoding nominal data (no order) makes the model think Green(2) > Blue(1) > Red(0), creating false relationships. Use one-hot for nominal data.",
+            q5:"IQR is robust to outliers and doesn't assume normal distribution. Z-score assumes normality and is sensitive to extreme values.",
+            q6:"CRITICAL: Use training statistics on test data to avoid data leakage. Test data's own statistics would give falsely optimistic results.",
+            q7:"Losing 20% of data is significant. If those 200 rows aren't randomly missing, you've introduced systematic bias into your dataset.",
+            q8:"Large differences in feature scales cause gradient descent to oscillate more in the direction of larger-scale features, slowing convergence.",
+            q9:"For ordinal data (Low < Medium < High), the ordering is meaningful, so label encoding [0,1,2] correctly preserves that relationship.",
+            q10:"Capping keeps all data points but limits extreme values. Removal loses those observations entirely, which might lose important information.",
+            q11:"Forward fill assumes temporal continuity. For cross-sectional data (no time relationship), filling with previous row's value is meaningless.",
+            q12:"Similar addresses likely represent same customer. Use fuzzy matching (Levenshtein distance) to identify, then merge records carefully to avoid information loss.",
+            q13:"Z-score of 4.5 is extremely rare (>99.999% percentile). This is a very extreme outlier.",
+            q14:"Predictive imputation leverages correlations with other features. If age correlates with income/education, use those to predict missing ages.",
+            q15:"Min-max doesn't clip values. A test value larger than training max will be normalized to >1, which might cause issues with some models.",
+            q16:"If missing data isn't random (MCAR), deleting those rows removes important patterns, creating sample selection bias.",
+            q17:"Standardization centers at mean=0, so values below mean become negative. This is perfectly fine and expected.",
+            q18:"Value of 5 is below the lower fence of 10, making it an outlier by IQR method.",
+            q19:"Age of 200 is clearly a data entry error (typo: maybe 20.0?). Remove or correct it - it's not a real value.",
+            q20:"With 10% missing per feature independently, keeping only complete cases: 0.9 × 0.9 × 0.9 × 0.9 × 0.9 = 0.9^5 ≈ 59%."
         };
 
-        const explanations = {
-            q1: 'Data scientists spend 60-80% of their time on data cleaning.',
-            q2: 'Training a model is not a data cleaning operation.',
-            q3: 'Z-Score method uses standard deviations from mean, typically ±3.',
-            q4: 'IQR method defines outliers as values beyond Q1 - 1.5×IQR or Q3 + 1.5×IQR.',
-            q5: 'Capping replaces extreme values with threshold values (e.g., 95th percentile).',
-            q6: 'Outliers should be kept when genuine and meaningful, like in fraud detection.',
-            q7: 'Binning groups continuous values into discrete bins/categories.',
-            q8: 'Predictive imputation uses other features to predict missing values.',
-            q9: 'Imputation preserves sample size compared to deletion.',
-            q10: 'This formula performs Min-Max normalization, scaling to [0,1] range.',
-            q11: 'isnull() generates a Boolean mask indicating missing values.',
-            q12: 'This drops columns where all values are NaN.',
-            q13: 'Both np.nan and None are treated as missing, so 2 non-null values remain (1 and 2).',
-            q14: 'ffill fills forward by propagating last valid observation forward.',
-            q15: 'np.nansum() ignores NaN values during aggregation.',
-            q16: 'Feature engineering creates, transforms, and selects features to improve models.',
-            q17: 'Features on different scales can lead to biased models in distance-based algorithms.',
-            q18: 'Feature engineering can improve model accuracy by 10-50%.',
-            q19: 'Binning handles outliers and captures non-linear relationships.',
-            q20: 'Fuzzy matching detects similar but not identical duplicate records.',
-            q21: 'Initial assessment (checking data types, dimensions, missing values) comes first.',
-            q22: 'thresh=2 means at least 2 non-NaN values are required to keep the row.',
-            q23: 'None is a Python object, NaN is a floating-point value.',
-            q24: 'NaN causes integer arrays to be upcast to floating-point.',
-            q25: 'fillna(0) replaces all NaN and None values with 0.',
-            q26: 'Forward/Backward fill is best for time series to maintain temporal continuity.',
-            q27: 'Poor data quality costs organizations $15M annually on average.',
-            q28: 'Log or sqrt transformation reduces impact of outliers in skewed data.',
-            q29: 'Data validation checks data meets specified criteria and business rules.',
-            q30: 'Clean data is essential for accurate models - "garbage in, garbage out".'
-        };
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
 
-        initQuiz(answers, explanations);
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
