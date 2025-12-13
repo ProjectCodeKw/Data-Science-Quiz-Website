@@ -1,432 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regression Quiz - Data Science Quizzes</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Regression Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Regression Quiz</h1>
-        <p><a href="../index.html">Back to Home</a></p>
-    </header>
+    <h1>Regression Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
 
-    <main class="quiz-container">
-        <div class="score" id="score"></div>
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Linear regression is used for:</p><div class="options"><label><input type="radio" name="q1" value="a"> Classification only</label><label><input type="radio" name="q1" value="b"> Clustering</label><label><input type="radio" name="q1" value="c"> Predicting continuous values</label><label><input type="radio" name="q1" value="d"> Image recognition</label></div><div class="feedback" id="f1"></div></div>
 
-        <div class="question" id="q1">
-            <h3>Question 1:</h3>
-            <p>Regression maps:</p>
-            <div class="options">
-                <label><input type="radio" name="q1" value="a"> Categorical to categorical</label>
-                <label><input type="radio" name="q1" value="b"> One real-valued space to another</label>
-                <label><input type="radio" name="q1" value="c"> Text to numbers</label>
-                <label><input type="radio" name="q1" value="d"> Images to text</label>
-            </div>
-            <div class="feedback" id="f1"></div>
-        </div>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>The equation y = mx + b represents:</p><div class="options"><label><input type="radio" name="q2" value="a"> A circle</label><label><input type="radio" name="q2" value="b"> Simple linear regression</label><label><input type="radio" name="q2" value="c"> Quadratic function</label><label><input type="radio" name="q2" value="d"> Exponential decay</label></div><div class="feedback" id="f2"></div></div>
 
-        <div class="question" id="q2">
-            <h3>Question 2:</h3>
-            <p>Linear regression output is:</p>
-            <div class="options">
-                <label><input type="radio" name="q2" value="a"> Categorical</label>
-                <label><input type="radio" name="q2" value="b"> Continuous with constant slope</label>
-                <label><input type="radio" name="q2" value="c"> Always 0 or 1</label>
-                <label><input type="radio" name="q2" value="d"> Random</label>
-            </div>
-            <div class="feedback" id="f2"></div>
-        </div>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>In y = mx + b, 'm' represents:</p><div class="options"><label><input type="radio" name="q3" value="a"> The y-intercept</label><label><input type="radio" name="q3" value="b"> The input value</label><label><input type="radio" name="q3" value="c"> The output value</label><label><input type="radio" name="q3" value="d"> The slope</label></div><div class="feedback" id="f3"></div></div>
 
-        <div class="question" id="q3">
-            <h3>Question 3:</h3>
-            <p>Simple linear regression equation:</p>
-            <div class="options">
-                <label><input type="radio" name="q3" value="a"> y = mx</label>
-                <label><input type="radio" name="q3" value="b"> y = mx + b</label>
-                <label><input type="radio" name="q3" value="c"> y = x²</label>
-                <label><input type="radio" name="q3" value="d"> y = mx - b²</label>
-            </div>
-            <div class="feedback" id="f3"></div>
-        </div>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Mean Squared Error (MSE) calculates:</p><div class="options"><label><input type="radio" name="q4" value="a"> Sum of errors</label><label><input type="radio" name="q4" value="b"> Average of squared differences between actual and predicted</label><label><input type="radio" name="q4" value="c"> Maximum error</label><label><input type="radio" name="q4" value="d"> Median error</label></div><div class="feedback" id="f4"></div></div>
 
-        <div class="question" id="q4">
-            <h3>Question 4:</h3>
-            <p>In y = mx + b, what are m and b?</p>
-            <div class="options">
-                <label><input type="radio" name="q4" value="a"> Input data</label>
-                <label><input type="radio" name="q4" value="b"> Variables the algorithm learns (slope and intercept)</label>
-                <label><input type="radio" name="q4" value="c"> Output</label>
-                <label><input type="radio" name="q4" value="d"> Constants</label>
-            </div>
-            <div class="feedback" id="f4"></div>
-        </div>
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Gradient descent is used to:</p><div class="options"><label><input type="radio" name="q5" value="a"> Increase the cost function</label><label><input type="radio" name="q5" value="b"> Find optimal weights by minimizing cost</label><label><input type="radio" name="q5" value="c"> Delete data points</label><label><input type="radio" name="q5" value="d"> Add more features</label></div><div class="feedback" id="f5"></div></div>
 
-        <div class="question" id="q5">
-            <h3>Question 5:</h3>
-            <p>Multivariable regression uses:</p>
-            <div class="options">
-                <label><input type="radio" name="q5" value="a"> One variable</label>
-                <label><input type="radio" name="q5" value="b"> Multiple variables/features</label>
-                <label><input type="radio" name="q5" value="c"> No variables</label>
-                <label><input type="radio" name="q5" value="d"> Only categorical</label>
-            </div>
-            <div class="feedback" id="f5"></div>
-        </div>
+        <div class="question" id="q6"><h3>Question 6:</h3><p>The learning rate controls:</p><div class="options"><label><input type="radio" name="q6" value="a"> The number of features</label><label><input type="radio" name="q6" value="b"> The dataset size</label><label><input type="radio" name="q6" value="c"> The step size in gradient descent</label><label><input type="radio" name="q6" value="d"> The number of iterations</label></div><div class="feedback" id="f6"></div></div>
 
-        <div class="question" id="q6">
-            <h3>Question 6:</h3>
-            <p>Cost function tells:</p>
-            <div class="options">
-                <label><input type="radio" name="q6" value="a"> Input size</label>
-                <label><input type="radio" name="q6" value="b"> How well weights are adapted</label>
-                <label><input type="radio" name="q6" value="c"> Output format</label>
-                <label><input type="radio" name="q6" value="d"> Data type</label>
-            </div>
-            <div class="feedback" id="f6"></div>
-        </div>
+        <div class="question" id="q7"><h3>Question 7:</h3><p>A high learning rate can cause:</p><div class="options"><label><input type="radio" name="q7" value="a"> Faster convergence always</label><label><input type="radio" name="q7" value="b"> Slower training</label><label><input type="radio" name="q7" value="c"> The model to delete data</label><label><input type="radio" name="q7" value="d"> Overshooting the minimum</label></div><div class="feedback" id="f7"></div></div>
 
-        <div class="question" id="q7">
-            <h3>Question 7:</h3>
-            <p>Mean Squared Error (MSE) is:</p>
-            <div class="options">
-                <label><input type="radio" name="q7" value="a"> Sum of errors</label>
-                <label><input type="radio" name="q7" value="b"> Average of squared errors</label>
-                <label><input type="radio" name="q7" value="c"> Maximum error</label>
-                <label><input type="radio" name="q7" value="d"> Minimum error</label>
-            </div>
-            <div class="feedback" id="f7"></div>
-        </div>
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Multivariable regression uses:</p><div class="options"><label><input type="radio" name="q8" value="a"> Only one input feature</label><label><input type="radio" name="q8" value="b"> Multiple input features</label><label><input type="radio" name="q8" value="c"> No features</label><label><input type="radio" name="q8" value="d"> Only categorical features</label></div><div class="feedback" id="f8"></div></div>
 
-        <div class="question" id="q8">
-            <h3>Question 8:</h3>
-            <p>Gradient descent:</p>
-            <div class="options">
-                <label><input type="radio" name="q8" value="a"> Increases error</label>
-                <label><input type="radio" name="q8" value="b"> Moves weights opposite to gradient to decrease error</label>
-                <label><input type="radio" name="q8" value="c"> Random search</label>
-                <label><input type="radio" name="q8" value="d"> Removes data</label>
-            </div>
-            <div class="feedback" id="f8"></div>
-        </div>
+        <div class="question" id="q9"><h3>Question 9:</h3><p>The cost function tells us:</p><div class="options"><label><input type="radio" name="q9" value="a"> The input values</label><label><input type="radio" name="q9" value="b"> How well our model is performing</label><label><input type="radio" name="q9" value="c"> The output format</label><label><input type="radio" name="q9" value="d"> The dataset size</label></div><div class="feedback" id="f9"></div></div>
 
-        <div class="question" id="q9">
-            <h3>Question 9:</h3>
-            <p>Learning rate in gradient descent controls:</p>
-            <div class="options">
-                <label><input type="radio" name="q9" value="a"> Data size</label>
-                <label><input type="radio" name="q9" value="b"> Step size of weight updates</label>
-                <label><input type="radio" name="q9" value="c"> Number of features</label>
-                <label><input type="radio" name="q9" value="d"> Output range</label>
-            </div>
-            <div class="feedback" id="f9"></div>
-        </div>
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Partial derivatives are used in gradient descent to:</p><div class="options"><label><input type="radio" name="q10" value="a"> Delete features</label><label><input type="radio" name="q10" value="b"> Find the direction to update weights</label><label><input type="radio" name="q10" value="c"> Stop training</label><label><input type="radio" name="q10" value="d"> Increase error</label></div><div class="feedback" id="f10"></div></div>
 
-        <div class="question" id="q10">
-            <h3>Question 10:</h3>
-            <p>Partial derivatives in gradient descent:</p>
-            <div class="options">
-                <label><input type="radio" name="q10" value="a"> Not used</label>
-                <label><input type="radio" name="q10" value="b"> Used to find gradient direction</label>
-                <label><input type="radio" name="q10" value="c"> Random</label>
-                <label><input type="radio" name="q10" value="d"> Always 0</label>
-            </div>
-            <div class="feedback" id="f10"></div>
-        </div>
+        <div class="question" id="q11"><h3>Question 11:</h3><p>In the weight update formula w = w - η·∇w, η represents:</p><div class="options"><label><input type="radio" name="q11" value="a"> The cost</label><label><input type="radio" name="q11" value="b"> The learning rate</label><label><input type="radio" name="q11" value="c"> The gradient</label><label><input type="radio" name="q11" value="d"> The weight</label></div><div class="feedback" id="f11"></div></div>
 
-        <div class="question" id="q11">
-            <h3>Question 11:</h3>
-            <p>Why use gradient descent?</p>
-            <div class="options">
-                <label><input type="radio" name="q11" value="a"> To increase error</label>
-                <label><input type="radio" name="q11" value="b"> To find optimal weights minimizing cost</label>
-                <label><input type="radio" name="q11" value="c"> To delete data</label>
-                <label><input type="radio" name="q11" value="d"> To add features</label>
-            </div>
-            <div class="feedback" id="f11"></div>
-        </div>
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Batch gradient descent uses:</p><div class="options"><label><input type="radio" name="q12" value="a"> One sample at a time</label><label><input type="radio" name="q12" value="b"> All training samples for each update</label><label><input type="radio" name="q12" value="c"> Random samples</label><label><input type="radio" name="q12" value="d"> No samples</label></div><div class="feedback" id="f12"></div></div>
 
-        <div class="question" id="q12">
-            <h3>Question 12:</h3>
-            <p>Cost function for linear regression often uses:</p>
-            <div class="options">
-                <label><input type="radio" name="q12" value="a"> Maximum error</label>
-                <label><input type="radio" name="q12" value="b"> Squared errors</label>
-                <label><input type="radio" name="q12" value="c"> Absolute values only</label>
-                <label><input type="radio" name="q12" value="d"> Log values only</label>
-            </div>
-            <div class="feedback" id="f12"></div>
-        </div>
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Stochastic gradient descent uses:</p><div class="options"><label><input type="radio" name="q13" value="a"> All samples per update</label><label><input type="radio" name="q13" value="b"> One sample per update</label><label><input type="radio" name="q13" value="c"> No samples</label><label><input type="radio" name="q13" value="d"> Only test data</label></div><div class="feedback" id="f13"></div></div>
 
-        <div class="question" id="q13">
-            <h3>Question 13:</h3>
-            <p>What is the gradient?</p>
-            <div class="options">
-                <label><input type="radio" name="q13" value="a"> The cost</label>
-                <label><input type="radio" name="q13" value="b"> Slope of cost function using current weights</label>
-                <label><input type="radio" name="q13" value="c"> The output</label>
-                <label><input type="radio" name="q13" value="d"> The input</label>
-            </div>
-            <div class="feedback" id="f13"></div>
-        </div>
+        <div class="question" id="q14"><h3>Question 14:</h3><p>R-squared measures:</p><div class="options"><label><input type="radio" name="q14" value="a"> Training speed</label><label><input type="radio" name="q14" value="b"> Dataset size</label><label><input type="radio" name="q14" value="c"> Goodness of fit (how well model explains variance)</label><label><input type="radio" name="q14" value="d"> Number of features</label></div><div class="feedback" id="f14"></div></div>
 
-        <div class="question" id="q14">
-            <h3>Question 14:</h3>
-            <p>Derivative of cost w.r.t. weight gives:</p>
-            <div class="options">
-                <label><input type="radio" name="q14" value="a"> Output</label>
-                <label><input type="radio" name="q14" value="b"> Direction to adjust weight</label>
-                <label><input type="radio" name="q14" value="c"> Input value</label>
-                <label><input type="radio" name="q14" value="d"> Nothing</label>
-            </div>
-            <div class="feedback" id="f14"></div>
-        </div>
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Residuals are:</p><div class="options"><label><input type="radio" name="q15" value="a"> The input features</label><label><input type="radio" name="q15" value="b"> Differences between actual and predicted values</label><label><input type="radio" name="q15" value="c"> The weights</label><label><input type="radio" name="q15" value="d"> The learning rates</label></div><div class="feedback" id="f15"></div></div>
 
-        <div class="question" id="q15">
-            <h3>Question 15:</h3>
-            <p>In multivariable regression, features are:</p>
-            <div class="options">
-                <label><input type="radio" name="q15" value="a"> One variable x</label>
-                <label><input type="radio" name="q15" value="b"> Multiple variables x, y, z, etc</label>
-                <label><input type="radio" name="q15" value="c"> No variables</label>
-                <label><input type="radio" name="q15" value="d"> Output only</label>
-            </div>
-            <div class="feedback" id="f15"></div>
-        </div>
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Feature scaling helps gradient descent by:</p><div class="options"><label><input type="radio" name="q16" value="a"> Making it slower</label><label><input type="radio" name="q16" value="b"> Ensuring features are on similar scales for faster convergence</label><label><input type="radio" name="q16" value="c"> Removing features</label><label><input type="radio" name="q16" value="d"> Adding more data</label></div><div class="feedback" id="f16"></div></div>
 
-        <div class="question" id="q16">
-            <h3>Question 16:</h3>
-            <p>Coefficients/weights in multivariable regression:</p>
-            <div class="options">
-                <label><input type="radio" name="q16" value="a"> Single value</label>
-                <label><input type="radio" name="q16" value="b"> Weight for each feature (w1, w2, w3, ...)</label>
-                <label><input type="radio" name="q16" value="c"> Random</label>
-                <label><input type="radio" name="q16" value="d"> Not used</label>
-            </div>
-            <div class="feedback" id="f16"></div>
-        </div>
+        <div class="question" id="q17"><h3>Question 17:</h3><p>The gradient in gradient descent points in the direction of:</p><div class="options"><label><input type="radio" name="q17" value="a"> Steepest descent</label><label><input type="radio" name="q17" value="b"> Steepest ascent</label><label><input type="radio" name="q17" value="c"> Random direction</label><label><input type="radio" name="q17" value="d"> No direction</label></div><div class="feedback" id="f17"></div></div>
 
-        <div class="question" id="q17">
-            <h3>Question 17:</h3>
-            <p>Prediction in multivariable regression:</p>
-            <div class="options">
-                <label><input type="radio" name="q17" value="a"> w×x</label>
-                <label><input type="radio" name="q17" value="b"> Sum of (wi × xi) + bias</label>
-                <label><input type="radio" name="q17" value="c"> Random</label>
-                <label><input type="radio" name="q17" value="d"> Delete data</label>
-            </div>
-            <div class="feedback" id="f17"></div>
-        </div>
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Normalization in regression typically involves:</p><div class="options"><label><input type="radio" name="q18" value="a"> Deleting outliers</label><label><input type="radio" name="q18" value="b"> Scaling features to a similar range</label><label><input type="radio" name="q18" value="c"> Squaring all values</label><label><input type="radio" name="q18" value="d"> Adding random noise</label></div><div class="feedback" id="f18"></div></div>
 
-        <div class="question" id="q18">
-            <h3>Question 18:</h3>
-            <p>Too high learning rate causes:</p>
-            <div class="options">
-                <label><input type="radio" name="q18" value="a"> Slow convergence</label>
-                <label><input type="radio" name="q18" value="b"> Overshooting/divergence</label>
-                <label><input type="radio" name="q18" value="c"> Perfect result</label>
-                <label><input type="radio" name="q18" value="d"> No effect</label>
-            </div>
-            <div class="feedback" id="f18"></div>
-        </div>
+        <div class="question" id="q19"><h3>Question 19:</h3><p>The bias term (b) in y = mx + b allows:</p><div class="options"><label><input type="radio" name="q19" value="a"> The line to pass through the origin only</label><label><input type="radio" name="q19" value="b"> Vertical shifts of the regression line</label><label><input type="radio" name="q19" value="c"> Faster computation</label><label><input type="radio" name="q19" value="d"> More features</label></div><div class="feedback" id="f19"></div></div>
 
-        <div class="question" id="q19">
-            <h3>Question 19:</h3>
-            <p>Too low learning rate causes:</p>
-            <div class="options">
-                <label><input type="radio" name="q19" value="a"> Fast convergence</label>
-                <label><input type="radio" name="q19" value="b"> Slow convergence, many iterations</label>
-                <label><input type="radio" name="q19" value="c"> Immediate solution</label>
-                <label><input type="radio" name="q19" value="d"> Divergence</label>
-            </div>
-            <div class="feedback" id="f19"></div>
-        </div>
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Convergence in gradient descent means:</p><div class="options"><label><input type="radio" name="q20" value="a"> The cost stops decreasing significantly</label><label><input type="radio" name="q20" value="b"> The model deletes data</label><label><input type="radio" name="q20" value="c"> Training starts</label><label><input type="radio" name="q20" value="d"> Features are added</label></div><div class="feedback" id="f20"></div></div>
 
-        <div class="question" id="q20">
-            <h3>Question 20:</h3>
-            <p>Optimal learning rate:</p>
-            <div class="options">
-                <label><input type="radio" name="q20" value="a"> Always 0.1</label>
-                <label><input type="radio" name="q20" value="b"> Swiftly reaches minimum without overshooting</label>
-                <label><input type="radio" name="q20" value="c"> Always 1</label>
-                <label><input type="radio" name="q20" value="d"> Doesn't matter</label>
-            </div>
-            <div class="feedback" id="f20"></div>
-        </div>
+        <div class="question" id="q21"><h3>Question 21:</h3><p>Linear regression assumes the relationship between features and target is:</p><div class="options"><label><input type="radio" name="q21" value="a"> Non-linear</label><label><input type="radio" name="q21" value="b"> Exponential</label><label><input type="radio" name="q21" value="c"> Linear</label><label><input type="radio" name="q21" value="d"> Random</label></div><div class="feedback" id="f21"></div></div>
 
-        <div class="question" id="q21">
-            <h3>Question 21:</h3>
-            <p>Matrix multiplication in regression:</p>
-            <div class="options">
-                <label><input type="radio" name="q21" value="a"> Not used</label>
-                <label><input type="radio" name="q21" value="b"> Efficiently computes predictions for all samples</label>
-                <label><input type="radio" name="q21" value="c"> Slow method</label>
-                <label><input type="radio" name="q21" value="d"> Random</label>
-            </div>
-            <div class="feedback" id="f21"></div>
-        </div>
+        <div class="question" id="q22"><h3>Question 22:</h3><p>Matrix multiplication in regression is used for:</p><div class="options"><label><input type="radio" name="q22" value="a"> Deleting data</label><label><input type="radio" name="q22" value="b"> Efficient computation of predictions</label><label><input type="radio" name="q22" value="c"> Slowing down training</label><label><input type="radio" name="q22" value="d"> Adding noise</label></div><div class="feedback" id="f22"></div></div>
 
-        <div class="question" id="q22">
-            <h3>Question 22:</h3>
-            <p>Updating weights formula:</p>
-            <div class="options">
-                <label><input type="radio" name="q22" value="a"> w = w + gradient</label>
-                <label><input type="radio" name="q22" value="b"> w = w - (learning_rate × gradient)</label>
-                <label><input type="radio" name="q22" value="c"> w = gradient</label>
-                <label><input type="radio" name="q22" value="d"> w = 0</label>
-            </div>
-            <div class="feedback" id="f22"></div>
-        </div>
+        <div class="question" id="q23"><h3>Question 23:</h3><p>What happens when learning rate is too low?</p><div class="options"><label><input type="radio" name="q23" value="a"> Training is very fast</label><label><input type="radio" name="q23" value="b"> Model overfits immediately</label><label><input type="radio" name="q23" value="c"> Training is very slow, needs many iterations</label><label><input type="radio" name="q23" value="d"> Cost increases</label></div><div class="feedback" id="f23"></div></div>
 
-        <div class="question" id="q23">
-            <h3>Question 23:</h3>
-            <p>Iterations in gradient descent:</p>
-            <div class="options">
-                <label><input type="radio" name="q23" value="a"> Always 1</label>
-                <label><input type="radio" name="q23" value="b"> Repeat until convergence/error stops decreasing</label>
-                <label><input type="radio" name="q23" value="c"> Always 100</label>
-                <label><input type="radio" name="q23" value="d"> Random number</label>
-            </div>
-            <div class="feedback" id="f23"></div>
-        </div>
+        <div class="question" id="q24"><h3>Question 24:</h3><p>The purpose of the cost function is to:</p><div class="options"><label><input type="radio" name="q24" value="a"> Measure how far predictions are from actual values</label><label><input type="radio" name="q24" value="b"> Add more data</label><label><input type="radio" name="q24" value="c"> Delete outliers</label><label><input type="radio" name="q24" value="d"> Increase model complexity</label></div><div class="feedback" id="f24"></div></div>
 
-        <div class="question" id="q24">
-            <h3>Question 24:</h3>
-            <p>Regression can predict:</p>
-            <div class="options">
-                <label><input type="radio" name="q24" value="a"> Only categories</label>
-                <label><input type="radio" name="q24" value="b"> Continuous values like prices, temperatures</label>
-                <label><input type="radio" name="q24" value="c"> Only 0/1</label>
-                <label><input type="radio" name="q24" value="d"> Only integers</label>
-            </div>
-            <div class="feedback" id="f24"></div>
-        </div>
+        <div class="question" id="q25"><h3>Question 25:</h3><p>In multivariable regression, the prediction formula is:</p><div class="options"><label><input type="radio" name="q25" value="a"> y = mx + b</label><label><input type="radio" name="q25" value="b"> y = w₁x₁ + w₂x₂ + ... + wₙxₙ + b</label><label><input type="radio" name="q25" value="c"> y = x²</label><label><input type="radio" name="q25" value="d"> y = e^x</label></div><div class="feedback" id="f25"></div></div>
 
-        <div class="question" id="q25">
-            <h3>Question 25:</h3>
-            <p>Linear regression assumes:</p>
-            <div class="options">
-                <label><input type="radio" name="q25" value="a"> Non-linear relationship</label>
-                <label><input type="radio" name="q25" value="b"> Linear relationship between features and target</label>
-                <label><input type="radio" name="q25" value="c"> No relationship</label>
-                <label><input type="radio" name="q25" value="d"> Random relationship</label>
-            </div>
-            <div class="feedback" id="f25"></div>
-        </div>
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Which of the following is NOT an assumption of linear regression?</p><div class="options"><label><input type="radio" name="q26" value="a"> Linear relationship</label><label><input type="radio" name="q26" value="b"> Homoscedasticity</label><label><input type="radio" name="q26" value="c"> Independence of errors</label><label><input type="radio" name="q26" value="d"> Features must be categorical</label></div><div class="feedback" id="f26"></div></div>
 
-        <div class="question" id="q26">
-            <h3>Question 26:</h3>
-            <p>Feature scaling helps regression:</p>
-            <div class="options">
-                <label><input type="radio" name="q26" value="a"> Never</label>
-                <label><input type="radio" name="q26" value="b"> Ensures features on similar scale for better convergence</label>
-                <label><input type="radio" name="q26" value="c"> Makes it slower</label>
-                <label><input type="radio" name="q26" value="d"> Removes features</label>
-            </div>
-            <div class="feedback" id="f26"></div>
-        </div>
+        <div class="question" id="q27"><h3>Question 27:</h3><p>Gradient descent updates weights in the direction:</p><div class="options"><label><input type="radio" name="q27" value="a"> Of maximum cost increase</label><label><input type="radio" name="q27" value="b"> Opposite to the gradient</label><label><input type="radio" name="q27" value="c"> Random</label><label><input type="radio" name="q27" value="d"> Toward the origin</label></div><div class="feedback" id="f27"></div></div>
 
-        <div class="question" id="q27">
-            <h3>Question 27:</h3>
-            <p>Batch gradient descent uses:</p>
-            <div class="options">
-                <label><input type="radio" name="q27" value="a"> One sample</label>
-                <label><input type="radio" name="q27" value="b"> All training samples per iteration</label>
-                <label><input type="radio" name="q27" value="c"> No samples</label>
-                <label><input type="radio" name="q27" value="d"> Random sample</label>
-            </div>
-            <div class="feedback" id="f27"></div>
-        </div>
+        <div class="question" id="q28"><h3>Question 28:</h3><p>Overfitting in regression means:</p><div class="options"><label><input type="radio" name="q28" value="a"> Model performs well on both training and test data</label><label><input type="radio" name="q28" value="b"> Model learns training data too well, performs poorly on new data</label><label><input type="radio" name="q28" value="c"> Model is too simple</label><label><input type="radio" name="q28" value="d"> Training is too fast</label></div><div class="feedback" id="f28"></div></div>
 
-        <div class="question" id="q28">
-            <h3>Question 28:</h3>
-            <p>Stochastic gradient descent uses:</p>
-            <div class="options">
-                <label><input type="radio" name="q28" value="a"> All samples</label>
-                <label><input type="radio" name="q28" value="b"> One sample at a time</label>
-                <label><input type="radio" name="q28" value="c"> No samples</label>
-                <label><input type="radio" name="q28" value="d"> Only test data</label>
-            </div>
-            <div class="feedback" id="f28"></div>
-        </div>
+        <div class="question" id="q29"><h3>Question 29:</h3><p>The derivative of the cost function with respect to a weight tells us:</p><div class="options"><label><input type="radio" name="q29" value="a"> The final answer</label><label><input type="radio" name="q29" value="b"> How to adjust that weight to reduce cost</label><label><input type="radio" name="q29" value="c"> The input value</label><label><input type="radio" name="q29" value="d"> The dataset size</label></div><div class="feedback" id="f29"></div></div>
 
-        <div class="question" id="q29">
-            <h3>Question 29:</h3>
-            <p>R-squared measures:</p>
-            <div class="options">
-                <label><input type="radio" name="q29" value="a"> Error only</label>
-                <label><input type="radio" name="q29" value="b"> How well model fits data (goodness of fit)</label>
-                <label><input type="radio" name="q29" value="c"> Speed</label>
-                <label><input type="radio" name="q29" value="d"> Size</label>
-            </div>
-            <div class="feedback" id="f29"></div>
-        </div>
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Ridge regression adds what to prevent overfitting?</p><div class="options"><label><input type="radio" name="q30" value="a"> More features</label><label><input type="radio" name="q30" value="b"> L2 penalty term to cost function</label><label><input type="radio" name="q30" value="c"> More data</label><label><input type="radio" name="q30" value="d"> Higher learning rate</label></div><div class="feedback" id="f30"></div></div>
+    </div>
 
-        <div class="question" id="q30">
-            <h3>Question 30:</h3>
-            <p>Residuals in regression are:</p>
-            <div class="options">
-                <label><input type="radio" name="q30" value="a"> Inputs</label>
-                <label><input type="radio" name="q30" value="b"> Differences between actual and predicted values</label>
-                <label><input type="radio" name="q30" value="c"> Outputs</label>
-                <label><input type="radio" name="q30" value="d"> Weights</label>
-            </div>
-            <div class="feedback" id="f30"></div>
-        </div>
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>If gradient descent converges too quickly to a suboptimal solution, which is MOST likely the cause?</p><div class="options"><label><input type="radio" name="q1" value="a"> Learning rate is too low</label><label><input type="radio" name="q1" value="b"> Cost function has multiple local minima and got stuck</label><label><input type="radio" name="q1" value="c"> Features need more scaling</label><label><input type="radio" name="q1" value="d"> Batch size is too large</label></div><div class="feedback" id="f1"></div></div>
 
-        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-    </main>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>You train a model and get MSE=0 on training data. This indicates:</p><div class="options"><label><input type="radio" name="q2" value="a"> Perfect model that will generalize well</label><label><input type="radio" name="q2" value="b"> Serious overfitting - model memorized training data</label><label><input type="radio" name="q2" value="c"> Optimal convergence achieved</label><label><input type="radio" name="q2" value="d"> Need to increase learning rate</label></div><div class="feedback" id="f2"></div></div>
 
-    <footer class="footer">
-        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
-    </footer>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Why do we move OPPOSITE to the gradient direction in gradient descent?</p><div class="options"><label><input type="radio" name="q3" value="a"> Gradient points uphill; we want to go downhill to minimize cost</label><label><input type="radio" name="q3" value="b"> It's faster computationally</label><label><input type="radio" name="q3" value="c"> Opposite direction prevents overfitting</label><label><input type="radio" name="q3" value="d"> Following gradient would maximize cost</label></div><div class="feedback" id="f3"></div></div>
 
-    <script src="../js/quiz.js"></script>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Which statement about stochastic vs batch gradient descent is FALSE?</p><div class="options"><label><input type="radio" name="q4" value="a"> SGD updates weights more frequently</label><label><input type="radio" name="q4" value="b"> Batch GD has smoother convergence</label><label><input type="radio" name="q4" value="c"> SGD always finds better solutions than batch GD</label><label><input type="radio" name="q4" value="d"> SGD can escape local minima more easily</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Your regression line passes through (0,5) and has slope 2. Where does it intersect the x-axis?</p><div class="options"><label><input type="radio" name="q5" value="a"> x = -2.5</label><label><input type="radio" name="q5" value="b"> x = 2.5</label><label><input type="radio" name="q5" value="c"> x = -5</label><label><input type="radio" name="q5" value="d"> x = 0</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Feature A ranges 0-100, feature B ranges 0-1. Without scaling, gradient descent will:</p><div class="options"><label><input type="radio" name="q6" value="a"> Work perfectly fine</label><label><input type="radio" name="q6" value="b"> Oscillate more in direction of feature A</label><label><input type="radio" name="q6" value="c"> Converge faster</label><label><input type="radio" name="q6" value="d"> Always fail to converge</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>A model has R² = -0.5. What does this mean?</p><div class="options"><label><input type="radio" name="q7" value="a"> Impossible - R² can't be negative</label><label><input type="radio" name="q7" value="b"> Moderate fit</label><label><input type="radio" name="q7" value="c"> Model performs worse than just predicting the mean</label><label><input type="radio" name="q7" value="d"> 50% variance explained</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>You have 3 weights to learn. How many partial derivatives do you compute per gradient descent iteration?</p><div class="options"><label><input type="radio" name="q8" value="a"> 1 (just the cost)</label><label><input type="radio" name="q8" value="b"> 2 (for x and y)</label><label><input type="radio" name="q8" value="c"> 3 (one per weight)</label><label><input type="radio" name="q8" value="d"> Depends on dataset size</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Your cost oscillates wildly but generally decreases. Best action?</p><div class="options"><label><input type="radio" name="q9" value="a"> Increase learning rate</label><label><input type="radio" name="q9" value="b"> Decrease learning rate</label><label><input type="radio" name="q9" value="c"> Add more features</label><label><input type="radio" name="q9" value="d"> Stop training immediately</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Ridge regression penalizes large weights. Why does this prevent overfitting?</p><div class="options"><label><input type="radio" name="q10" value="a"> Smaller weights mean simpler, less flexible model</label><label><input type="radio" name="q10" value="b"> It removes features entirely</label><label><input type="radio" name="q10" value="c"> It increases training speed</label><label><input type="radio" name="q10" value="d"> It adds more data automatically</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>If all your features are perfectly correlated, linear regression will:</p><div class="options"><label><input type="radio" name="q11" value="a"> Work perfectly</label><label><input type="radio" name="q11" value="b"> Have unstable/undefined solutions (multicollinearity problem)</label><label><input type="radio" name="q11" value="c"> Converge faster</label><label><input type="radio" name="q11" value="d"> Automatically remove redundant features</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Mini-batch gradient descent is a compromise between batch and stochastic. Its main advantage?</p><div class="options"><label><input type="radio" name="q12" value="a"> Always finds global minimum</label><label><input type="radio" name="q12" value="b"> Balances convergence stability with update frequency</label><label><input type="radio" name="q12" value="c"> Never overfits</label><label><input type="radio" name="q12" value="d"> Requires no hyperparameters</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Your model: y = 3x + 2. If you double all x values in your dataset, what happens to the slope?</p><div class="options"><label><input type="radio" name="q13" value="a"> Doubles to 6</label><label><input type="radio" name="q13" value="b"> Halves to 1.5</label><label><input type="radio" name="q13" value="c"> Stays 3 (slope is invariant to input scaling if you retrain)</label><label><input type="radio" name="q13" value="d"> Becomes 5</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Gradient is zero at a point. This point could be:</p><div class="options"><label><input type="radio" name="q14" value="a"> Only a minimum</label><label><input type="radio" name="q14" value="b"> Only a maximum</label><label><input type="radio" name="q14" value="c"> Minimum, maximum, or saddle point</label><label><input type="radio" name="q14" value="d"> Never useful for optimization</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>You normalize features before training. Should you normalize test data the same way?</p><div class="options"><label><input type="radio" name="q15" value="a"> No, test data shouldn't be touched</label><label><input type="radio" name="q15" value="b"> Yes, using training data's mean and std (not test data's own statistics)</label><label><input type="radio" name="q15" value="c"> Yes, using test data's own mean and std</label><label><input type="radio" name="q15" value="d"> Doesn't matter</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Lasso (L1) vs Ridge (L2) regularization: what's a key difference?</p><div class="options"><label><input type="radio" name="q16" value="a"> No real difference</label><label><input type="radio" name="q16" value="b"> Lasso can shrink weights to exactly zero, Ridge cannot</label><label><input type="radio" name="q16" value="c"> Ridge is always better</label><label><input type="radio" name="q16" value="d"> Lasso is faster</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Your residuals show a clear pattern (not random). This suggests:</p><div class="options"><label><input type="radio" name="q17" value="a"> Perfect model</label><label><input type="radio" name="q17" value="b"> Model is missing important non-linear relationships</label><label><input type="radio" name="q17" value="c"> Need to increase learning rate</label><label><input type="radio" name="q17" value="d"> Too many features</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Linear regression finds a line that minimizes:</p><div class="options"><label><input type="radio" name="q18" value="a"> Sum of errors</label><label><input type="radio" name="q18" value="b"> Maximum error</label><label><input type="radio" name="q18" value="c"> Sum of squared vertical distances from points to line</label><label><input type="radio" name="q18" value="d"> Horizontal distances</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>If you add a highly correlated copy of an existing feature, what happens?</p><div class="options"><label><input type="radio" name="q19" value="a"> Model improves significantly</label><label><input type="radio" name="q19" value="b"> Predictions stay same but weight values become unstable</label><label><input type="radio" name="q19" value="c"> Gradient descent fails immediately</label><label><input type="radio" name="q19" value="d"> Cost function increases</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Training loss keeps decreasing but validation loss starts increasing. You should:</p><div class="options"><label><input type="radio" name="q20" value="a"> Train longer to improve validation</label><label><input type="radio" name="q20" value="b"> Stop training - model is starting to overfit</label><label><input type="radio" name="q20" value="c"> Increase learning rate dramatically</label><label><input type="radio" name="q20" value="d"> Remove all regularization</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
     <script>
-        const answers = {
-            q1: "b", q2: "b", q3: "b", q4: "b", q5: "b",
-            q6: "b", q7: "b", q8: "b", q9: "b", q10: "b",
-            q11: "b", q12: "b", q13: "b", q14: "b", q15: "b",
-            q16: "b", q17: "b", q18: "b", q19: "b", q20: "b",
-            q21: "b", q22: "b", q23: "b", q24: "b", q25: "b",
-            q26: "b", q27: "b", q28: "b", q29: "b", q30: "b"
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"c",q2:"b",q3:"d",q4:"b",q5:"b",q6:"c",q7:"d",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"c",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"a",q21:"c",q22:"b",q23:"c",q24:"a",q25:"b",q26:"d",q27:"b",q28:"b",q29:"b",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"b",q3:"a",q4:"c",q5:"a",q6:"b",q7:"c",q8:"c",q9:"b",q10:"a",q11:"b",q12:"b",q13:"b",q14:"c",q15:"b",q16:"b",q17:"b",q18:"c",q19:"b",q20:"b"};
+        
+        const easyExplanations = {
+            q1:"Linear regression predicts continuous values.",
+            q2:"y = mx + b is simple linear regression equation.",
+            q3:"m is the slope coefficient.",
+            q4:"MSE = average of (actual - predicted)².",
+            q5:"Gradient descent minimizes cost by finding optimal weights.",
+            q6:"Learning rate controls step size in weight updates.",
+            q7:"High learning rate can overshoot minimum.",
+            q8:"Multivariable uses multiple input features.",
+            q9:"Cost function measures model performance.",
+            q10:"Partial derivatives find gradient direction.",
+            q11:"η (eta) is the learning rate symbol.",
+            q12:"Batch GD uses all samples per update.",
+            q13:"Stochastic GD uses one sample per update.",
+            q14:"R² measures goodness of fit (0-1).",
+            q15:"Residual = actual - predicted.",
+            q16:"Feature scaling ensures similar ranges for faster convergence.",
+            q17:"Gradient points toward steepest ascent (we go opposite).",
+            q18:"Normalization scales features to similar range.",
+            q19:"Bias allows vertical shift of the line.",
+            q20:"Convergence: cost stops decreasing.",
+            q21:"Linear regression assumes linear relationships.",
+            q22:"Matrix multiplication computes predictions efficiently.",
+            q23:"Low learning rate = slow training.",
+            q24:"Cost function measures prediction error.",
+            q25:"Multivariable: y = w₁x₁ + w₂x₂ + ... + wₙxₙ + b.",
+            q26:"Features don't need to be categorical (can be continuous).",
+            q27:"We move opposite to gradient (toward lower cost).",
+            q28:"Overfitting = great on training, poor on test data.",
+            q29:"Derivative tells how to adjust weight to reduce cost.",
+            q30:"Ridge adds L2 penalty (sum of squared weights)."
+        };
+        
+        const hardExplanations = {
+            q1:"Fast convergence to bad solution suggests getting stuck in local minimum. Linear regression usually has one global minimum, but if cost surface is complex, this can happen.",
+            q2:"MSE=0 means perfect fit on training data, which usually indicates severe overfitting where the model memorized rather than learned patterns.",
+            q3:"Gradient points in direction of steepest increase. Since we want to minimize (go downhill), we move opposite to the gradient.",
+            q4:"FALSE: SGD doesn't always find better solutions. Its randomness can help escape local minima but also adds noise. Batch GD can find better solutions on smooth surfaces.",
+            q5:"Line is y=2x+5. At x-axis, y=0, so 0=2x+5, thus x=-2.5",
+            q6:"Large-range feature A will dominate gradient updates, causing oscillation in that direction. Feature scaling fixes this.",
+            q7:"R² CAN be negative (unlike correlation). Negative means your model is worse than just predicting the mean value every time!",
+            q8:"One partial derivative per parameter. 3 weights = 3 partial derivatives to compute the gradient.",
+            q9:"Wild oscillations suggest learning rate is too high, causing overshooting. Decrease it for smoother convergence.",
+            q10:"Penalizing large weights forces the model to use simpler patterns (smaller coefficients), reducing overfitting to training noise.",
+            q11:"Perfect multicollinearity makes the problem underdetermined - infinite solutions exist. Weights become unstable.",
+            q12:"Mini-batch combines benefits: more stable than SGD (uses multiple samples) but faster updates than batch GD.",
+            q13:"If you retrain after doubling inputs, the learned slope will halve to compensate. y=3x becomes y=1.5(2x) to maintain same predictions.",
+            q14:"Zero gradient indicates a critical point, which could be minimum, maximum, or saddle point. Need second derivative to determine which.",
+            q15:"CRITICAL: Use training statistics on test data! Using test data's own statistics would leak information and give falsely optimistic results.",
+            q16:"L1 (Lasso) creates sparse solutions by driving some weights to exactly zero (feature selection). L2 (Ridge) only shrinks weights toward zero.",
+            q17:"Patterned residuals (not random scatter) indicate systematic errors - model is missing non-linear relationships or important features.",
+            q18:"Linear regression minimizes vertical distances (residuals) squared. This is why it's called 'least squares'.",
+            q19:"Multicollinearity: predictions don't change (same information) but individual weight values become unreliable/unstable.",
+            q20:"Classic overfitting signal: training improves but validation worsens. Stop training now (early stopping)."
         };
 
-        const explanations = {
-            q1: "Regression maps real-valued space to another.",
-            q2: "Linear regression predicts continuous values.",
-            q3: "Simple linear: y = mx + b.",
-            q4: "m = slope, b = intercept (learned parameters).",
-            q5: "Multivariable uses multiple input features.",
-            q6: "Cost function evaluates weight quality.",
-            q7: "MSE averages squared prediction errors.",
-            q8: "Gradient descent reduces error by moving opposite gradient.",
-            q9: "Learning rate controls update step size.",
-            q10: "Partial derivatives give gradient direction.",
-            q11: "Gradient descent finds optimal weights.",
-            q12: "Linear regression often uses squared errors.",
-            q13: "Gradient is slope of cost function.",
-            q14: "Derivative shows how to adjust weight.",
-            q15: "Multiple features: x1, x2, x3, etc.",
-            q16: "One weight per feature.",
-            q17: "Prediction = Σ(wi × xi) + bias.",
-            q18: "Too high rate causes overshooting.",
-            q19: "Too low rate means slow progress.",
-            q20: "Optimal rate reaches minimum efficiently.",
-            q21: "Matrices enable efficient batch predictions.",
-            q22: "Update: w -= learning_rate × gradient.",
-            q23: "Iterate until convergence.",
-            q24: "Regression predicts continuous values.",
-            q25: "Assumes linear relationship.",
-            q26: "Scaling helps convergence in gradient descent.",
-            q27: "Batch uses all samples per iteration.",
-            q28: "Stochastic uses one sample at a time.",
-            q29: "R-squared measures goodness of fit.",
-            q30: "Residuals = actual - predicted."
-        };
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
 
-        initQuiz(answers, explanations);
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
