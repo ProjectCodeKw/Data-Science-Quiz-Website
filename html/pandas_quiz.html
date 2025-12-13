@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas Quiz - Data Science Quizzes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pandas Quiz</h1>
+        <p><a href="../index.html">Back to Home</a></p>
+    </header>
+
+    <main class="quiz-container">
+        <div class="score" id="score"></div>
+
+        <div class="question">
+            <h3>Q1. What is a Pandas Series?</h3>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Two-dimensional array</label>
+                <label><input type="radio" name="q1" value="b"> One-dimensional labeled array</label>
+                <label><input type="radio" name="q1" value="c"> Three-dimensional array</label>
+                <label><input type="radio" name="q1" value="d"> Database table</label>
+            </div>
+            <div class="feedback" id="f1"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q2. What is the output?</h3>
+            <div class="code">s = pd.Series([0.25, 0.5, 0.75], index=['a','b','c'])
+print(s['b'])</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> 1</label>
+                <label><input type="radio" name="q2" value="b"> 0.5</label>
+                <label><input type="radio" name="q2" value="c"> 'b'</label>
+                <label><input type="radio" name="q2" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f2"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q3. How to create Series from dictionary?</h3>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> dict.to_series()</label>
+                <label><input type="radio" name="q3" value="b"> pd.Series(dictionary)</label>
+                <label><input type="radio" name="q3" value="c"> pd.from_dict(dictionary)</label>
+                <label><input type="radio" name="q3" value="d"> Series.create(dictionary)</label>
+            </div>
+            <div class="feedback" id="f3"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q4. What are the two main components of a Series?</h3>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> rows and columns</label>
+                <label><input type="radio" name="q4" value="b"> values and index</label>
+                <label><input type="radio" name="q4" value="c"> keys and values</label>
+                <label><input type="radio" name="q4" value="d"> data and labels</label>
+            </div>
+            <div class="feedback" id="f4"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q5. Main advantage of Pandas over NumPy?</h3>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Faster</label>
+                <label><input type="radio" name="q5" value="b"> Labeled data and missing data handling</label>
+                <label><input type="radio" name="q5" value="c"> Uses less memory</label>
+                <label><input type="radio" name="q5" value="d"> Doesn't need NumPy</label>
+            </div>
+            <div class="feedback" id="f5"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q6. What does s.values return?</h3>
+            <div class="code">s = pd.Series([1, 2, 3])</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Pandas Series</label>
+                <label><input type="radio" name="q6" value="b"> NumPy array</label>
+                <label><input type="radio" name="q6" value="c"> Python list</label>
+                <label><input type="radio" name="q6" value="d"> Index values</label>
+            </div>
+            <div class="feedback" id="f6"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q7. What is a DataFrame?</h3>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> One-dimensional array</label>
+                <label><input type="radio" name="q7" value="b"> Two-dimensional labeled data structure</label>
+                <label><input type="radio" name="q7" value="c"> Three-dimensional array</label>
+                <label><input type="radio" name="q7" value="d"> Database</label>
+            </div>
+            <div class="feedback" id="f7"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q8. What is df.shape?</h3>
+            <div class="code">df = pd.DataFrame({
+    'A': [1,2,3],
+    'B': [4,5,6],
+    'C': [7,8,9]
+})</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> (9,)</label>
+                <label><input type="radio" name="q8" value="b"> (3, 3)</label>
+                <label><input type="radio" name="q8" value="c"> (3,)</label>
+                <label><input type="radio" name="q8" value="d"> 3</label>
+            </div>
+            <div class="feedback" id="f8"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q9. How to access a column?</h3>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> df.get('col')</label>
+                <label><input type="radio" name="q9" value="b"> df['col'] or df.col</label>
+                <label><input type="radio" name="q9" value="c"> df.column('col')</label>
+                <label><input type="radio" name="q9" value="d"> df.select('col')</label>
+            </div>
+            <div class="feedback" id="f9"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q10. Difference between .loc and .iloc?</h3>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Same thing</label>
+                <label><input type="radio" name="q10" value="b"> .loc uses labels, .iloc uses positions</label>
+                <label><input type="radio" name="q10" value="c"> .loc is faster</label>
+                <label><input type="radio" name="q10" value="d"> .iloc only for rows</label>
+            </div>
+            <div class="feedback" id="f10"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q11. What does df.head() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> Returns column headers</label>
+                <label><input type="radio" name="q11" value="b"> Returns first 5 rows</label>
+                <label><input type="radio" name="q11" value="c"> Returns first row</label>
+                <label><input type="radio" name="q11" value="d"> Returns metadata</label>
+            </div>
+            <div class="feedback" id="f11"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q12. What is the output?</h3>
+            <div class="code">df = pd.DataFrame({'A':[1,2], 'B':[3,4]})
+print(df.columns)</div>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> ['A', 'B']</label>
+                <label><input type="radio" name="q12" value="b"> Index(['A', 'B'], dtype='object')</label>
+                <label><input type="radio" name="q12" value="c"> [0, 1]</label>
+                <label><input type="radio" name="q12" value="d"> 2</label>
+            </div>
+            <div class="feedback" id="f12"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q13. What does df.sort_values(by='col') do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> Sorts columns alphabetically</label>
+                <label><input type="radio" name="q13" value="b"> Sorts by values in column</label>
+                <label><input type="radio" name="q13" value="c"> Returns sorted column</label>
+                <label><input type="radio" name="q13" value="d"> Counts values</label>
+            </div>
+            <div class="feedback" id="f13"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q14. What is the result?</h3>
+            <div class="code">df = pd.DataFrame({'A':[3,1,2], 'B':[6,4,5]})
+result = df.sort_index(axis=1, ascending=False)
+print(result.columns.tolist())</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> ['A', 'B']</label>
+                <label><input type="radio" name="q14" value="b"> ['B', 'A']</label>
+                <label><input type="radio" name="q14" value="c"> [0, 1, 2]</label>
+                <label><input type="radio" name="q14" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f14"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q15. How to select multiple columns?</h3>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> df['col1', 'col2']</label>
+                <label><input type="radio" name="q15" value="b"> df[['col1', 'col2']]</label>
+                <label><input type="radio" name="q15" value="c"> df.select('col1', 'col2')</label>
+                <label><input type="radio" name="q15" value="d"> df.cols(['col1', 'col2'])</label>
+            </div>
+            <div class="feedback" id="f15"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q16. What does df.to_numpy() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> Converts to Python list</label>
+                <label><input type="radio" name="q16" value="b"> Returns NumPy array (values only)</label>
+                <label><input type="radio" name="q16" value="c"> Creates NumPy file</label>
+                <label><input type="radio" name="q16" value="d"> Changes dtype</label>
+            </div>
+            <div class="feedback" id="f16"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q17. What does this select?</h3>
+            <div class="code">df.loc['2022-01-02':'2022-01-04', ['A','B']]</div>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> All columns rows 2-4</label>
+                <label><input type="radio" name="q17" value="b"> Columns A,B from index labels (inclusive)</label>
+                <label><input type="radio" name="q17" value="c"> First 2-4 elements</label>
+                <label><input type="radio" name="q17" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f17"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q18. DataFrame vs NumPy array data types?</h3>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> No difference</label>
+                <label><input type="radio" name="q18" value="b"> DataFrame: one dtype per column, NumPy: one for all</label>
+                <label><input type="radio" name="q18" value="c"> DataFrame only numbers</label>
+                <label><input type="radio" name="q18" value="d"> NumPy more flexible</label>
+            </div>
+            <div class="feedback" id="f18"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q19. What does df.info() show?</h3>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> Summary statistics</label>
+                <label><input type="radio" name="q19" value="b"> DataFrame structure and dtypes</label>
+                <label><input type="radio" name="q19" value="c"> First 5 rows</label>
+                <label><input type="radio" name="q19" value="d"> Column names only</label>
+            </div>
+            <div class="feedback" id="f19"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q20. What is the output?</h3>
+            <div class="code">df = pd.DataFrame({'A':[1,2,3]})
+print(df.iloc[0])</div>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> 1</label>
+                <label><input type="radio" name="q20" value="b"> Series with A:1</label>
+                <label><input type="radio" name="q20" value="c"> [1]</label>
+                <label><input type="radio" name="q20" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f20"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q21. What does df.describe() show?</h3>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> Column names</label>
+                <label><input type="radio" name="q21" value="b"> Statistical summary</label>
+                <label><input type="radio" name="q21" value="c"> First 5 rows</label>
+                <label><input type="radio" name="q21" value="d"> Data types</label>
+            </div>
+            <div class="feedback" id="f21"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q22. How to rename columns?</h3>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> df.columns = ['new1', 'new2']</label>
+                <label><input type="radio" name="q22" value="b"> df.rename(columns={'old':'new'})</label>
+                <label><input type="radio" name="q22" value="c"> Both a and b</label>
+                <label><input type="radio" name="q22" value="d"> df.set_columns()</label>
+            </div>
+            <div class="feedback" id="f22"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q23. What does df.drop() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> Sorts data</label>
+                <label><input type="radio" name="q23" value="b"> Removes rows or columns</label>
+                <label><input type="radio" name="q23" value="c"> Filters data</label>
+                <label><input type="radio" name="q23" value="d"> Fills missing values</label>
+            </div>
+            <div class="feedback" id="f23"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q24. What is the output?</h3>
+            <div class="code">df = pd.DataFrame({'A':[1,2,3]})
+print(len(df))</div>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> 1</label>
+                <label><input type="radio" name="q24" value="b"> 3</label>
+                <label><input type="radio" name="q24" value="c"> (3, 1)</label>
+                <label><input type="radio" name="q24" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f24"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q25. What does df.fillna() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> Removes NaN</label>
+                <label><input type="radio" name="q25" value="b"> Fills missing values with specified value</label>
+                <label><input type="radio" name="q25" value="c"> Counts NaN</label>
+                <label><input type="radio" name="q25" value="d"> Finds NaN locations</label>
+            </div>
+            <div class="feedback" id="f25"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q26. What does df.groupby() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> Sorts data</label>
+                <label><input type="radio" name="q26" value="b"> Groups rows by column values</label>
+                <label><input type="radio" name="q26" value="c"> Filters data</label>
+                <label><input type="radio" name="q26" value="d"> Joins dataframes</label>
+            </div>
+            <div class="feedback" id="f26"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q27. What is the output?</h3>
+            <div class="code">df = pd.DataFrame({'A':[1,2,3], 'B':[4,5,6]})
+print(df['A'].sum())</div>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> [1,2,3]</label>
+                <label><input type="radio" name="q27" value="b"> 6</label>
+                <label><input type="radio" name="q27" value="c"> 21</label>
+                <label><input type="radio" name="q27" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f27"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q28. How to merge two DataFrames?</h3>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> df1 + df2</label>
+                <label><input type="radio" name="q28" value="b"> pd.merge() or df.merge()</label>
+                <label><input type="radio" name="q28" value="c"> df1.add(df2)</label>
+                <label><input type="radio" name="q28" value="d"> df1.join_all(df2)</label>
+            </div>
+            <div class="feedback" id="f28"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q29. What does df.isnull() return?</h3>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> Number of nulls</label>
+                <label><input type="radio" name="q29" value="b"> Boolean DataFrame showing null locations</label>
+                <label><input type="radio" name="q29" value="c"> List of null indices</label>
+                <label><input type="radio" name="q29" value="d"> Cleaned DataFrame</label>
+            </div>
+            <div class="feedback" id="f29"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q30. What is the output?</h3>
+            <div class="code">df = pd.DataFrame({'A':[1,2,3]})
+print(df.T)</div>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> Same DataFrame</label>
+                <label><input type="radio" name="q30" value="b"> Transposed (rows become columns)</label>
+                <label><input type="radio" name="q30" value="c"> [1,2,3]</label>
+                <label><input type="radio" name="q30" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f30"></div>
+        </div>
+
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </main>
+
+    <footer class="footer">
+        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script>
+        const answers = {
+            q1:'b', q2:'b', q3:'b', q4:'b', q5:'b', q6:'b', q7:'b', q8:'b', q9:'b', q10:'b',
+            q11:'b', q12:'b', q13:'b', q14:'b', q15:'b', q16:'b', q17:'b', q18:'b', q19:'b', q20:'b',
+            q21:'b', q22:'c', q23:'b', q24:'b', q25:'b', q26:'b', q27:'b', q28:'b', q29:'b', q30:'b'
+        };
+
+        const explanations = {
+            q1:'Series is 1D labeled array.',
+            q2:'Access by label: s["b"] = 0.5.',
+            q3:'pd.Series(dict) creates from dictionary.',
+            q4:'Series has values and index.',
+            q5:'Pandas adds labels and handles missing data.',
+            q6:'.values returns NumPy array.',
+            q7:'DataFrame is 2D labeled structure.',
+            q8:'3 rows, 3 columns = (3,3).',
+            q9:'df["col"] or df.col accesses column.',
+            q10:'.loc uses labels, .iloc uses positions.',
+            q11:'head() shows first 5 rows.',
+            q12:'columns returns Index object.',
+            q13:'sort_values sorts by column values.',
+            q14:'sort_index(axis=1) sorts columns: B before A.',
+            q15:'Double brackets for multiple columns.',
+            q16:'to_numpy() returns array without labels.',
+            q17:'.loc uses label-based slicing (inclusive).',
+            q18:'DataFrame: dtype per column, NumPy: one dtype.',
+            q19:'info() shows structure and types.',
+            q20:'iloc[0] returns first row as Series.',
+            q21:'describe() shows statistics.',
+            q22:'Both methods work for renaming.',
+            q23:'drop() removes rows/columns.',
+            q24:'len() returns number of rows.',
+            q25:'fillna() fills missing values.',
+            q26:'groupby() groups by column values.',
+            q27:'sum() on column: 1+2+3 = 6.',
+            q28:'pd.merge() or df.merge() joins DataFrames.',
+            q29:'isnull() returns boolean DataFrame.',
+            q30:'.T transposes DataFrame.'
+        };
+
+        initQuiz(answers, explanations);
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN Quiz - Data Science Quizzes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Convolutional Neural Networks (CNN) Quiz</h1>
+        <p><a href="../index.html">Back to Home</a></p>
+    </header>
+
+    <main class="quiz-container">
+        <div class="score" id="score"></div>
+
+        <div class="question"><h3>Q1. What does CNN stand for?</h3><div class="options"><label><input type="radio" name="q1" value="a"> Convoluted Neural Network</label><label><input type="radio" name="q1" value="b"> Convolutional Neural Network</label><label><input type="radio" name="q1" value="c"> Complex Neural Network</label><label><input type="radio" name="q1" value="d"> Computational Neural Network</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question"><h3>Q2. CNNs are primarily used for:</h3><div class="options"><label><input type="radio" name="q2" value="a"> Text processing</label><label><input type="radio" name="q2" value="b"> Image analysis and classification</label><label><input type="radio" name="q2" value="c"> Database queries</label><label><input type="radio" name="q2" value="d"> File compression</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question"><h3>Q3. How many major operations are in CNN image classification?</h3><div class="options"><label><input type="radio" name="q3" value="a"> 2</label><label><input type="radio" name="q3" value="b"> 3</label><label><input type="radio" name="q3" value="c"> 4</label><label><input type="radio" name="q3" value="d"> 6</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question"><h3>Q4. What is a feature map in CNN?</h3><div class="options"><label><input type="radio" name="q4" value="a"> The input image</label><label><input type="radio" name="q4" value="b"> A group of visual features captured by filters</label><label><input type="radio" name="q4" value="c"> The output layer</label><label><input type="radio" name="q4" value="d"> The training data</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question"><h3>Q5. What is a convolutional kernel/filter?</h3><div class="options"><label><input type="radio" name="q5" value="a"> The output</label><label><input type="radio" name="q5" value="b"> A matrix of integers used on input pixel values</label><label><input type="radio" name="q5" value="c"> The input image</label><label><input type="radio" name="q5" value="d"> The loss function</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question"><h3>Q6. Convolution operation results in:</h3><div class="options"><label><input type="radio" name="q6" value="a"> Deleting pixels</label><label><input type="radio" name="q6" value="b"> High value if feature present, low otherwise</label><label><input type="radio" name="q6" value="c"> Random noise</label><label><input type="radio" name="q6" value="d"> Reduced dimensions only</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question"><h3>Q7. How many kernels in a convolutional layer is common?</h3><div class="options"><label><input type="radio" name="q7" value="a"> 1-5</label><label><input type="radio" name="q7" value="b"> Up to 64</label><label><input type="radio" name="q7" value="c"> 100+</label><label><input type="radio" name="q7" value="d"> Always 10</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question"><h3>Q8. What is the purpose of pooling layers?</h3><div class="options"><label><input type="radio" name="q8" value="a"> To increase image size</label><label><input type="radio" name="q8" value="b"> To downsample feature maps</label><label><input type="radio" name="q8" value="c"> To add more features</label><label><input type="radio" name="q8" value="d"> To remove all data</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question"><h3>Q9. MaxPooling calculates:</h3><div class="options"><label><input type="radio" name="q9" value="a"> The minimum value</label><label><input type="radio" name="q9" value="b"> The maximum value in patches</label><label><input type="radio" name="q9" value="c"> The average</label><label><input type="radio" name="q9" value="d"> The sum</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question"><h3>Q10. Common pooling operation size is:</h3><div class="options"><label><input type="radio" name="q10" value="a"> 1x1</label><label><input type="radio" name="q10" value="b"> 2x2 with stride 2</label><label><input type="radio" name="q10" value="c"> 10x10</label><label><input type="radio" name="q10" value="d"> 100x100</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question"><h3>Q11. Pooling reduces feature map size by factor of:</h3><div class="options"><label><input type="radio" name="q11" value="a"> 0.5</label><label><input type="radio" name="q11" value="b"> 2</label><label><input type="radio" name="q11" value="c"> 4</label><label><input type="radio" name="q11" value="d"> 10</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question"><h3>Q12. What is padding in CNN?</h3><div class="options"><label><input type="radio" name="q12" value="a"> Removing pixels</label><label><input type="radio" name="q12" value="b"> Adding pixels at border (often zeros)</label><label><input type="radio" name="q12" value="c"> Deleting layers</label><label><input type="radio" name="q12" value="d"> Increasing kernel size</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question"><h3>Q13. Why use padding?</h3><div class="options"><label><input type="radio" name="q13" value="a"> To make image smaller</label><label><input type="radio" name="q13" value="b"> To prevent losing border pixels</label><label><input type="radio" name="q13" value="c"> To increase complexity</label><label><input type="radio" name="q13" value="d"> To remove features</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question"><h3>Q14. Formula for padding to keep same output size: p =</h3><div class="options"><label><input type="radio" name="q14" value="a"> (f-1)/2</label><label><input type="radio" name="q14" value="b"> (f+1)/2</label><label><input type="radio" name="q14" value="c"> 2f</label><label><input type="radio" name="q14" value="d"> f squared</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question"><h3>Q15. What is stride in convolution?</h3><div class="options"><label><input type="radio" name="q15" value="a"> Kernel size</label><label><input type="radio" name="q15" value="b"> Step size of kernel when traversing image</label><label><input type="radio" name="q15" value="c"> Number of filters</label><label><input type="radio" name="q15" value="d"> Padding amount</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question"><h3>Q16. Normal convolution output size (nxn input, fxf filter) is:</h3><div class="options"><label><input type="radio" name="q16" value="a"> (n-f+1) x (n-f+1)</label><label><input type="radio" name="q16" value="b"> n x n</label><label><input type="radio" name="q16" value="c"> (n+f) x (n+f)</label><label><input type="radio" name="q16" value="d"> f x f</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question"><h3>Q17. What does flattening do?</h3><div class="options"><label><input type="radio" name="q17" value="a"> Removes data</label><label><input type="radio" name="q17" value="b"> Concatenates 2D feature maps into 1D vector</label><label><input type="radio" name="q17" value="c"> Increases dimensions</label><label><input type="radio" name="q17" value="d"> Applies filters</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question"><h3>Q18. CNN params formula for convolutional layer is:</h3><div class="options"><label><input type="radio" name="q18" value="a"> I x O</label><label><input type="radio" name="q18" value="b"> I x O x K (K=kernel values)</label><label><input type="radio" name="q18" value="c"> Just K</label><label><input type="radio" name="q18" value="d"> I + O + K</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question"><h3>Q19. Common kernel size for 2D convolution is:</h3><div class="options"><label><input type="radio" name="q19" value="a"> 1x1</label><label><input type="radio" name="q19" value="b"> 3x3</label><label><input type="radio" name="q19" value="c"> 10x10</label><label><input type="radio" name="q19" value="d"> 100x100</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question"><h3>Q20. Default stride value is:</h3><div class="options"><label><input type="radio" name="q20" value="a"> 0</label><label><input type="radio" name="q20" value="b"> 1</label><label><input type="radio" name="q20" value="c"> 2</label><label><input type="radio" name="q20" value="d"> 10</label></div><div class="feedback" id="f20"></div></div>
+
+        <div class="question"><h3>Q21. Fully Connected (FC) layer is at:</h3><div class="options"><label><input type="radio" name="q21" value="a"> Beginning of CNN</label><label><input type="radio" name="q21" value="b"> Middle only</label><label><input type="radio" name="q21" value="c"> End of CNN architectures</label><label><input type="radio" name="q21" value="d"> Not used in CNN</label></div><div class="feedback" id="f21"></div></div>
+
+        <div class="question"><h3>Q22. What does Class Activation Map (CAM) show?</h3><div class="options"><label><input type="radio" name="q22" value="a"> Training speed</label><label><input type="radio" name="q22" value="b"> Discriminative regions influencing the decision</label><label><input type="radio" name="q22" value="c"> Input size</label><label><input type="radio" name="q22" value="d"> Number of parameters</label></div><div class="feedback" id="f22"></div></div>
+
+        <div class="question"><h3>Q23. Blurring filters work by:</h3><div class="options"><label><input type="radio" name="q23" value="a"> Detecting edges</label><label><input type="radio" name="q23" value="b"> Taking average of pixels</label><label><input type="radio" name="q23" value="c"> Sharpening image</label><label><input type="radio" name="q23" value="d"> Removing colors</label></div><div class="feedback" id="f23"></div></div>
+
+        <div class="question"><h3>Q24. Edge detection filters:</h3><div class="options"><label><input type="radio" name="q24" value="a"> Blur images</label><label><input type="radio" name="q24" value="b"> Detect edges in images</label><label><input type="radio" name="q24" value="c"> Remove noise</label><label><input type="radio" name="q24" value="d"> Increase brightness</label></div><div class="feedback" id="f24"></div></div>
+
+        <div class="question"><h3>Q25. Gaussian filter weighs intensities according to:</h3><div class="options"><label><input type="radio" name="q25" value="a"> Uniform distribution</label><label><input type="radio" name="q25" value="b"> Normal/Gaussian distribution</label><label><input type="radio" name="q25" value="c"> Exponential distribution</label><label><input type="radio" name="q25" value="d"> Random values</label></div><div class="feedback" id="f25"></div></div>
+
+        <div class="question"><h3>Q26. Sharpen filter does:</h3><div class="options"><label><input type="radio" name="q26" value="a"> Blurs image</label><label><input type="radio" name="q26" value="b"> Opposite of blurring</label><label><input type="radio" name="q26" value="c"> Removes all features</label><label><input type="radio" name="q26" value="d"> Compresses image</label></div><div class="feedback" id="f26"></div></div>
+
+        <div class="question"><h3>Q27. Images are normally represented as:</h3><div class="options"><label><input type="radio" name="q27" value="a"> Text</label><label><input type="radio" name="q27" value="b"> 2D arrays of pixel values (0-255)</label><label><input type="radio" name="q27" value="c"> 3D only</label><label><input type="radio" name="q27" value="d"> Strings</label></div><div class="feedback" id="f27"></div></div>
+
+        <div class="question"><h3>Q28. Why do pooling layers help?</h3><div class="options"><label><input type="radio" name="q28" value="a"> Increases image size</label><label><input type="radio" name="q28" value="b"> Provides translation invariance and reduces overfitting</label><label><input type="radio" name="q28" value="c"> Makes training slower</label><label><input type="radio" name="q28" value="d"> Removes all features</label></div><div class="feedback" id="f28"></div></div>
+
+        <div class="question"><h3>Q29. AveragePooling calculates:</h3><div class="options"><label><input type="radio" name="q29" value="a"> Maximum</label><label><input type="radio" name="q29" value="b"> Average value in patches</label><label><input type="radio" name="q29" value="c"> Minimum</label><label><input type="radio" name="q29" value="d"> Sum</label></div><div class="feedback" id="f29"></div></div>
+
+        <div class="question"><h3>Q30. What happens to feature map if kernel slides by stride=2?</h3><div class="options"><label><input type="radio" name="q30" value="a"> Gets larger</label><label><input type="radio" name="q30" value="b"> Gets smaller/downsampled</label><label><input type="radio" name="q30" value="c"> Stays same</label><label><input type="radio" name="q30" value="d"> Disappears</label></div><div class="feedback" id="f30"></div></div>
+
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </main>
+
+    <footer class="footer">
+        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script>
+        const answers = {
+            q1:"b",q2:"b",q3:"c",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",
+            q11:"b",q12:"b",q13:"b",q14:"a",q15:"b",q16:"a",q17:"b",q18:"b",q19:"b",q20:"b",
+            q21:"c",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"
+        };
+
+        const explanations = {
+            q1:"CNN stands for Convolutional Neural Network.",
+            q2:"CNNs are used for image analysis and classification.",
+            q3:"4 major operations: Convolution, Activation map, Pooling, Flattening.",
+            q4:"Feature maps capture visual features from filters.",
+            q5:"Kernel is a matrix applied to input pixels.",
+            q6:"Convolution gives high value when feature is present.",
+            q7:"Up to 64 kernels is common.",
+            q8:"Pooling downsamples to reduce size.",
+            q9:"MaxPooling takes maximum value in patches.",
+            q10:"2x2 pooling with stride 2 is common.",
+            q11:"2x2 pooling reduces by factor of 2.",
+            q12:"Padding adds pixels at borders (zero-padding).",
+            q13:"Padding prevents loss of border information.",
+            q14:"p = (f-1)/2 keeps output size same as input.",
+            q15:"Stride is the step size of kernel movement.",
+            q16:"Output is (n-f+1) x (n-f+1) without padding.",
+            q17:"Flattening converts 2D maps to 1D vector for FC layer.",
+            q18:"Parameters = I x O x K where I=input, O=output channels, K=kernel.",
+            q19:"3x3 is common kernel size for 2D.",
+            q20:"Default stride is 1.",
+            q21:"FC layer is at the end of CNN.",
+            q22:"CAM shows regions that influenced the decision.",
+            q23:"Blurring filters average pixels.",
+            q24:"Edge detection filters find edges.",
+            q25:"Gaussian filter uses normal distribution weighting.",
+            q26:"Sharpen does opposite of blurring.",
+            q27:"Images are 2D arrays of pixel values 0-255.",
+            q28:"Pooling gives translation invariance and reduces overfitting.",
+            q29:"AveragePooling computes average in patches.",
+            q30:"Stride=2 downsamples the feature map."
+        };
+
+        initQuiz(answers, explanations);
+    </script>
+</body>
+</html>

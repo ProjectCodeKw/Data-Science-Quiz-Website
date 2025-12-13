@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regression Quiz - Data Science Quizzes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Regression Quiz</h1>
+        <p><a href="../index.html">Back to Home</a></p>
+    </header>
+
+    <main class="quiz-container">
+        <div class="score" id="score"></div>
+
+        <div class="question" id="q1">
+            <h3>Question 1:</h3>
+            <p>Regression maps:</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Categorical to categorical</label>
+                <label><input type="radio" name="q1" value="b"> One real-valued space to another</label>
+                <label><input type="radio" name="q1" value="c"> Text to numbers</label>
+                <label><input type="radio" name="q1" value="d"> Images to text</label>
+            </div>
+            <div class="feedback" id="f1"></div>
+        </div>
+
+        <div class="question" id="q2">
+            <h3>Question 2:</h3>
+            <p>Linear regression output is:</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Categorical</label>
+                <label><input type="radio" name="q2" value="b"> Continuous with constant slope</label>
+                <label><input type="radio" name="q2" value="c"> Always 0 or 1</label>
+                <label><input type="radio" name="q2" value="d"> Random</label>
+            </div>
+            <div class="feedback" id="f2"></div>
+        </div>
+
+        <div class="question" id="q3">
+            <h3>Question 3:</h3>
+            <p>Simple linear regression equation:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> y = mx</label>
+                <label><input type="radio" name="q3" value="b"> y = mx + b</label>
+                <label><input type="radio" name="q3" value="c"> y = x²</label>
+                <label><input type="radio" name="q3" value="d"> y = mx - b²</label>
+            </div>
+            <div class="feedback" id="f3"></div>
+        </div>
+
+        <div class="question" id="q4">
+            <h3>Question 4:</h3>
+            <p>In y = mx + b, what are m and b?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Input data</label>
+                <label><input type="radio" name="q4" value="b"> Variables the algorithm learns (slope and intercept)</label>
+                <label><input type="radio" name="q4" value="c"> Output</label>
+                <label><input type="radio" name="q4" value="d"> Constants</label>
+            </div>
+            <div class="feedback" id="f4"></div>
+        </div>
+
+        <div class="question" id="q5">
+            <h3>Question 5:</h3>
+            <p>Multivariable regression uses:</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> One variable</label>
+                <label><input type="radio" name="q5" value="b"> Multiple variables/features</label>
+                <label><input type="radio" name="q5" value="c"> No variables</label>
+                <label><input type="radio" name="q5" value="d"> Only categorical</label>
+            </div>
+            <div class="feedback" id="f5"></div>
+        </div>
+
+        <div class="question" id="q6">
+            <h3>Question 6:</h3>
+            <p>Cost function tells:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Input size</label>
+                <label><input type="radio" name="q6" value="b"> How well weights are adapted</label>
+                <label><input type="radio" name="q6" value="c"> Output format</label>
+                <label><input type="radio" name="q6" value="d"> Data type</label>
+            </div>
+            <div class="feedback" id="f6"></div>
+        </div>
+
+        <div class="question" id="q7">
+            <h3>Question 7:</h3>
+            <p>Mean Squared Error (MSE) is:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Sum of errors</label>
+                <label><input type="radio" name="q7" value="b"> Average of squared errors</label>
+                <label><input type="radio" name="q7" value="c"> Maximum error</label>
+                <label><input type="radio" name="q7" value="d"> Minimum error</label>
+            </div>
+            <div class="feedback" id="f7"></div>
+        </div>
+
+        <div class="question" id="q8">
+            <h3>Question 8:</h3>
+            <p>Gradient descent:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Increases error</label>
+                <label><input type="radio" name="q8" value="b"> Moves weights opposite to gradient to decrease error</label>
+                <label><input type="radio" name="q8" value="c"> Random search</label>
+                <label><input type="radio" name="q8" value="d"> Removes data</label>
+            </div>
+            <div class="feedback" id="f8"></div>
+        </div>
+
+        <div class="question" id="q9">
+            <h3>Question 9:</h3>
+            <p>Learning rate in gradient descent controls:</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> Data size</label>
+                <label><input type="radio" name="q9" value="b"> Step size of weight updates</label>
+                <label><input type="radio" name="q9" value="c"> Number of features</label>
+                <label><input type="radio" name="q9" value="d"> Output range</label>
+            </div>
+            <div class="feedback" id="f9"></div>
+        </div>
+
+        <div class="question" id="q10">
+            <h3>Question 10:</h3>
+            <p>Partial derivatives in gradient descent:</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Not used</label>
+                <label><input type="radio" name="q10" value="b"> Used to find gradient direction</label>
+                <label><input type="radio" name="q10" value="c"> Random</label>
+                <label><input type="radio" name="q10" value="d"> Always 0</label>
+            </div>
+            <div class="feedback" id="f10"></div>
+        </div>
+
+        <div class="question" id="q11">
+            <h3>Question 11:</h3>
+            <p>Why use gradient descent?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> To increase error</label>
+                <label><input type="radio" name="q11" value="b"> To find optimal weights minimizing cost</label>
+                <label><input type="radio" name="q11" value="c"> To delete data</label>
+                <label><input type="radio" name="q11" value="d"> To add features</label>
+            </div>
+            <div class="feedback" id="f11"></div>
+        </div>
+
+        <div class="question" id="q12">
+            <h3>Question 12:</h3>
+            <p>Cost function for linear regression often uses:</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> Maximum error</label>
+                <label><input type="radio" name="q12" value="b"> Squared errors</label>
+                <label><input type="radio" name="q12" value="c"> Absolute values only</label>
+                <label><input type="radio" name="q12" value="d"> Log values only</label>
+            </div>
+            <div class="feedback" id="f12"></div>
+        </div>
+
+        <div class="question" id="q13">
+            <h3>Question 13:</h3>
+            <p>What is the gradient?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> The cost</label>
+                <label><input type="radio" name="q13" value="b"> Slope of cost function using current weights</label>
+                <label><input type="radio" name="q13" value="c"> The output</label>
+                <label><input type="radio" name="q13" value="d"> The input</label>
+            </div>
+            <div class="feedback" id="f13"></div>
+        </div>
+
+        <div class="question" id="q14">
+            <h3>Question 14:</h3>
+            <p>Derivative of cost w.r.t. weight gives:</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> Output</label>
+                <label><input type="radio" name="q14" value="b"> Direction to adjust weight</label>
+                <label><input type="radio" name="q14" value="c"> Input value</label>
+                <label><input type="radio" name="q14" value="d"> Nothing</label>
+            </div>
+            <div class="feedback" id="f14"></div>
+        </div>
+
+        <div class="question" id="q15">
+            <h3>Question 15:</h3>
+            <p>In multivariable regression, features are:</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> One variable x</label>
+                <label><input type="radio" name="q15" value="b"> Multiple variables x, y, z, etc</label>
+                <label><input type="radio" name="q15" value="c"> No variables</label>
+                <label><input type="radio" name="q15" value="d"> Output only</label>
+            </div>
+            <div class="feedback" id="f15"></div>
+        </div>
+
+        <div class="question" id="q16">
+            <h3>Question 16:</h3>
+            <p>Coefficients/weights in multivariable regression:</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> Single value</label>
+                <label><input type="radio" name="q16" value="b"> Weight for each feature (w1, w2, w3, ...)</label>
+                <label><input type="radio" name="q16" value="c"> Random</label>
+                <label><input type="radio" name="q16" value="d"> Not used</label>
+            </div>
+            <div class="feedback" id="f16"></div>
+        </div>
+
+        <div class="question" id="q17">
+            <h3>Question 17:</h3>
+            <p>Prediction in multivariable regression:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> w×x</label>
+                <label><input type="radio" name="q17" value="b"> Sum of (wi × xi) + bias</label>
+                <label><input type="radio" name="q17" value="c"> Random</label>
+                <label><input type="radio" name="q17" value="d"> Delete data</label>
+            </div>
+            <div class="feedback" id="f17"></div>
+        </div>
+
+        <div class="question" id="q18">
+            <h3>Question 18:</h3>
+            <p>Too high learning rate causes:</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> Slow convergence</label>
+                <label><input type="radio" name="q18" value="b"> Overshooting/divergence</label>
+                <label><input type="radio" name="q18" value="c"> Perfect result</label>
+                <label><input type="radio" name="q18" value="d"> No effect</label>
+            </div>
+            <div class="feedback" id="f18"></div>
+        </div>
+
+        <div class="question" id="q19">
+            <h3>Question 19:</h3>
+            <p>Too low learning rate causes:</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> Fast convergence</label>
+                <label><input type="radio" name="q19" value="b"> Slow convergence, many iterations</label>
+                <label><input type="radio" name="q19" value="c"> Immediate solution</label>
+                <label><input type="radio" name="q19" value="d"> Divergence</label>
+            </div>
+            <div class="feedback" id="f19"></div>
+        </div>
+
+        <div class="question" id="q20">
+            <h3>Question 20:</h3>
+            <p>Optimal learning rate:</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> Always 0.1</label>
+                <label><input type="radio" name="q20" value="b"> Swiftly reaches minimum without overshooting</label>
+                <label><input type="radio" name="q20" value="c"> Always 1</label>
+                <label><input type="radio" name="q20" value="d"> Doesn't matter</label>
+            </div>
+            <div class="feedback" id="f20"></div>
+        </div>
+
+        <div class="question" id="q21">
+            <h3>Question 21:</h3>
+            <p>Matrix multiplication in regression:</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> Not used</label>
+                <label><input type="radio" name="q21" value="b"> Efficiently computes predictions for all samples</label>
+                <label><input type="radio" name="q21" value="c"> Slow method</label>
+                <label><input type="radio" name="q21" value="d"> Random</label>
+            </div>
+            <div class="feedback" id="f21"></div>
+        </div>
+
+        <div class="question" id="q22">
+            <h3>Question 22:</h3>
+            <p>Updating weights formula:</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> w = w + gradient</label>
+                <label><input type="radio" name="q22" value="b"> w = w - (learning_rate × gradient)</label>
+                <label><input type="radio" name="q22" value="c"> w = gradient</label>
+                <label><input type="radio" name="q22" value="d"> w = 0</label>
+            </div>
+            <div class="feedback" id="f22"></div>
+        </div>
+
+        <div class="question" id="q23">
+            <h3>Question 23:</h3>
+            <p>Iterations in gradient descent:</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> Always 1</label>
+                <label><input type="radio" name="q23" value="b"> Repeat until convergence/error stops decreasing</label>
+                <label><input type="radio" name="q23" value="c"> Always 100</label>
+                <label><input type="radio" name="q23" value="d"> Random number</label>
+            </div>
+            <div class="feedback" id="f23"></div>
+        </div>
+
+        <div class="question" id="q24">
+            <h3>Question 24:</h3>
+            <p>Regression can predict:</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> Only categories</label>
+                <label><input type="radio" name="q24" value="b"> Continuous values like prices, temperatures</label>
+                <label><input type="radio" name="q24" value="c"> Only 0/1</label>
+                <label><input type="radio" name="q24" value="d"> Only integers</label>
+            </div>
+            <div class="feedback" id="f24"></div>
+        </div>
+
+        <div class="question" id="q25">
+            <h3>Question 25:</h3>
+            <p>Linear regression assumes:</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> Non-linear relationship</label>
+                <label><input type="radio" name="q25" value="b"> Linear relationship between features and target</label>
+                <label><input type="radio" name="q25" value="c"> No relationship</label>
+                <label><input type="radio" name="q25" value="d"> Random relationship</label>
+            </div>
+            <div class="feedback" id="f25"></div>
+        </div>
+
+        <div class="question" id="q26">
+            <h3>Question 26:</h3>
+            <p>Feature scaling helps regression:</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> Never</label>
+                <label><input type="radio" name="q26" value="b"> Ensures features on similar scale for better convergence</label>
+                <label><input type="radio" name="q26" value="c"> Makes it slower</label>
+                <label><input type="radio" name="q26" value="d"> Removes features</label>
+            </div>
+            <div class="feedback" id="f26"></div>
+        </div>
+
+        <div class="question" id="q27">
+            <h3>Question 27:</h3>
+            <p>Batch gradient descent uses:</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> One sample</label>
+                <label><input type="radio" name="q27" value="b"> All training samples per iteration</label>
+                <label><input type="radio" name="q27" value="c"> No samples</label>
+                <label><input type="radio" name="q27" value="d"> Random sample</label>
+            </div>
+            <div class="feedback" id="f27"></div>
+        </div>
+
+        <div class="question" id="q28">
+            <h3>Question 28:</h3>
+            <p>Stochastic gradient descent uses:</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> All samples</label>
+                <label><input type="radio" name="q28" value="b"> One sample at a time</label>
+                <label><input type="radio" name="q28" value="c"> No samples</label>
+                <label><input type="radio" name="q28" value="d"> Only test data</label>
+            </div>
+            <div class="feedback" id="f28"></div>
+        </div>
+
+        <div class="question" id="q29">
+            <h3>Question 29:</h3>
+            <p>R-squared measures:</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> Error only</label>
+                <label><input type="radio" name="q29" value="b"> How well model fits data (goodness of fit)</label>
+                <label><input type="radio" name="q29" value="c"> Speed</label>
+                <label><input type="radio" name="q29" value="d"> Size</label>
+            </div>
+            <div class="feedback" id="f29"></div>
+        </div>
+
+        <div class="question" id="q30">
+            <h3>Question 30:</h3>
+            <p>Residuals in regression are:</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> Inputs</label>
+                <label><input type="radio" name="q30" value="b"> Differences between actual and predicted values</label>
+                <label><input type="radio" name="q30" value="c"> Outputs</label>
+                <label><input type="radio" name="q30" value="d"> Weights</label>
+            </div>
+            <div class="feedback" id="f30"></div>
+        </div>
+
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </main>
+
+    <footer class="footer">
+        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script>
+        const answers = {
+            q1: "b", q2: "b", q3: "b", q4: "b", q5: "b",
+            q6: "b", q7: "b", q8: "b", q9: "b", q10: "b",
+            q11: "b", q12: "b", q13: "b", q14: "b", q15: "b",
+            q16: "b", q17: "b", q18: "b", q19: "b", q20: "b",
+            q21: "b", q22: "b", q23: "b", q24: "b", q25: "b",
+            q26: "b", q27: "b", q28: "b", q29: "b", q30: "b"
+        };
+
+        const explanations = {
+            q1: "Regression maps real-valued space to another.",
+            q2: "Linear regression predicts continuous values.",
+            q3: "Simple linear: y = mx + b.",
+            q4: "m = slope, b = intercept (learned parameters).",
+            q5: "Multivariable uses multiple input features.",
+            q6: "Cost function evaluates weight quality.",
+            q7: "MSE averages squared prediction errors.",
+            q8: "Gradient descent reduces error by moving opposite gradient.",
+            q9: "Learning rate controls update step size.",
+            q10: "Partial derivatives give gradient direction.",
+            q11: "Gradient descent finds optimal weights.",
+            q12: "Linear regression often uses squared errors.",
+            q13: "Gradient is slope of cost function.",
+            q14: "Derivative shows how to adjust weight.",
+            q15: "Multiple features: x1, x2, x3, etc.",
+            q16: "One weight per feature.",
+            q17: "Prediction = Σ(wi × xi) + bias.",
+            q18: "Too high rate causes overshooting.",
+            q19: "Too low rate means slow progress.",
+            q20: "Optimal rate reaches minimum efficiently.",
+            q21: "Matrices enable efficient batch predictions.",
+            q22: "Update: w -= learning_rate × gradient.",
+            q23: "Iterate until convergence.",
+            q24: "Regression predicts continuous values.",
+            q25: "Assumes linear relationship.",
+            q26: "Scaling helps convergence in gradient descent.",
+            q27: "Batch uses all samples per iteration.",
+            q28: "Stochastic uses one sample at a time.",
+            q29: "R-squared measures goodness of fit.",
+            q30: "Residuals = actual - predicted."
+        };
+
+        initQuiz(answers, explanations);
+    </script>
+</body>
+</html>

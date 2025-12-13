@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Introduction Quiz - Data Science Quizzes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Machine Learning Introduction Quiz</h1>
+        <p><a href="../index.html">Back to Home</a></p>
+    </header>
+
+    <main class="quiz-container">
+        <div class="score" id="score"></div>
+
+        <div class="question" id="q1">
+            <h3>Question 1:</h3>
+            <p>What is Machine Learning?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> A type of database</label>
+                <label><input type="radio" name="q1" value="b"> Building mathematical models to help understand data</label>
+                <label><input type="radio" name="q1" value="c"> A programming language</label>
+                <label><input type="radio" name="q1" value="d"> A data visualization tool</label>
+            </div>
+            <div class="feedback" id="f1"></div>
+        </div>
+
+        <div class="question" id="q2">
+            <h3>Question 2:</h3>
+            <p>Which type of machine learning involves modeling the relationship between features and labels?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Unsupervised learning</label>
+                <label><input type="radio" name="q2" value="b"> Supervised learning</label>
+                <label><input type="radio" name="q2" value="c"> Reinforcement learning</label>
+                <label><input type="radio" name="q2" value="d"> Transfer learning</label>
+            </div>
+            <div class="feedback" id="f2"></div>
+        </div>
+
+        <div class="question" id="q3">
+            <h3>Question 3:</h3>
+            <p>Which of the following is a supervised learning problem?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Clustering customer groups</label>
+                <label><input type="radio" name="q3" value="b"> Dimensionality reduction</label>
+                <label><input type="radio" name="q3" value="c"> Classification of images into categories</label>
+                <label><input type="radio" name="q3" value="d"> Finding patterns in unlabeled data</label>
+            </div>
+            <div class="feedback" id="f3"></div>
+        </div>
+
+        <div class="question" id="q4">
+            <h3>Question 4:</h3>
+            <p>Regression in machine learning involves:</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Predicting discrete class labels</label>
+                <label><input type="radio" name="q4" value="b"> Predicting continuous values</label>
+                <label><input type="radio" name="q4" value="c"> Grouping similar data points</label>
+                <label><input type="radio" name="q4" value="d"> Reducing data dimensions</label>
+            </div>
+            <div class="feedback" id="f4"></div>
+        </div>
+
+        <div class="question" id="q5">
+            <h3>Question 5:</h3>
+            <p>Which category does "clustering" fall under?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Supervised learning</label>
+                <label><input type="radio" name="q5" value="b"> Unsupervised learning</label>
+                <label><input type="radio" name="q5" value="c"> Semi-supervised learning</label>
+                <label><input type="radio" name="q5" value="d"> Reinforcement learning</label>
+            </div>
+            <div class="feedback" id="f5"></div>
+        </div>
+
+        <div class="question" id="q6">
+            <h3>Question 6:</h3>
+            <p>Which category does "dimensionality reduction" fall under?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Supervised learning</label>
+                <label><input type="radio" name="q6" value="b"> Unsupervised learning</label>
+                <label><input type="radio" name="q6" value="c"> Reinforcement learning</label>
+                <label><input type="radio" name="q6" value="d"> Transfer learning</label>
+            </div>
+            <div class="feedback" id="f6"></div>
+        </div>
+
+        <div class="question" id="q7">
+            <h3>Question 7:</h3>
+            <p>In a confusion matrix, what is a "True Positive"?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Predicted negative, actually positive</label>
+                <label><input type="radio" name="q7" value="b"> Predicted positive, actually positive</label>
+                <label><input type="radio" name="q7" value="c"> Predicted positive, actually negative</label>
+                <label><input type="radio" name="q7" value="d"> Predicted negative, actually negative</label>
+            </div>
+            <div class="feedback" id="f7"></div>
+        </div>
+
+        <div class="question" id="q8">
+            <h3>Question 8:</h3>
+            <p>What is a "False Negative"?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Predicted negative, actually positive</label>
+                <label><input type="radio" name="q8" value="b"> Predicted positive, actually positive</label>
+                <label><input type="radio" name="q8" value="c"> Predicted positive, actually negative</label>
+                <label><input type="radio" name="q8" value="d"> Predicted negative, actually negative</label>
+            </div>
+            <div class="feedback" id="f8"></div>
+        </div>
+
+        <div class="question" id="q9">
+            <h3>Question 9:</h3>
+            <p>What are model parameters?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> The input data</label>
+                <label><input type="radio" name="q9" value="b"> Set of numbers learned from data that describe the model mathematically</label>
+                <label><input type="radio" name="q9" value="c"> The output predictions</label>
+                <label><input type="radio" name="q9" value="d"> The training algorithm</label>
+            </div>
+            <div class="feedback" id="f9"></div>
+        </div>
+
+        <div class="question" id="q10">
+            <h3>Question 10:</h3>
+            <p>In a classification example with 25 blue points and 22 red points, which model is better?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Always the one with 100% accuracy</label>
+                <label><input type="radio" name="q10" value="b"> The simpler model that generalizes well (91% may be better than overfitted 100%)</label>
+                <label><input type="radio" name="q10" value="c"> Always the most complex model</label>
+                <label><input type="radio" name="q10" value="d"> The one with most parameters</label>
+            </div>
+            <div class="feedback" id="f10"></div>
+        </div>
+
+        <div class="question" id="q11">
+            <h3>Question 11:</h3>
+            <p>What does unsupervised learning model?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> Relationship between features and labels</label>
+                <label><input type="radio" name="q11" value="b"> Features of a dataset without reference to any label</label>
+                <label><input type="radio" name="q11" value="c"> Only categorical variables</label>
+                <label><input type="radio" name="q11" value="d"> Time series data only</label>
+            </div>
+            <div class="feedback" id="f11"></div>
+        </div>
+
+        <div class="question" id="q12">
+            <h3>Question 12:</h3>
+            <p>Which statement about information is correct in information theory?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> High probability events contain more information</label>
+                <label><input type="radio" name="q12" value="b"> Low probability events (surprising) contain more information</label>
+                <label><input type="radio" name="q12" value="c"> All events contain equal information</label>
+                <label><input type="radio" name="q12" value="d"> Information doesn't depend on probability</label>
+            </div>
+            <div class="feedback" id="f12"></div>
+        </div>
+
+        <div class="question" id="q13">
+            <h3>Question 13:</h3>
+            <p>The information h(x) for an event x with probability P(x) is calculated as:</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> h(x) = P(x)</label>
+                <label><input type="radio" name="q13" value="b"> h(x) = -log(P(x))</label>
+                <label><input type="radio" name="q13" value="c"> h(x) = 1/P(x)</label>
+                <label><input type="radio" name="q13" value="d"> h(x) = P(x)²</label>
+            </div>
+            <div class="feedback" id="f13"></div>
+        </div>
+
+        <div class="question" id="q14">
+            <h3>Question 14:</h3>
+            <p>What is information gain?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> The total amount of data</label>
+                <label><input type="radio" name="q14" value="b"> Amount of information entropy gained from a certain procedure</label>
+                <label><input type="radio" name="q14" value="c"> The size of the dataset</label>
+                <label><input type="radio" name="q14" value="d"> The number of features</label>
+            </div>
+            <div class="feedback" id="f14"></div>
+        </div>
+
+        <div class="question" id="q15">
+            <h3>Question 15:</h3>
+            <p>In the example with three fair coins having entropy of 3, what is the information gain from looking at the third coin?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> 0 bits</label>
+                <label><input type="radio" name="q15" value="b"> 1 bit</label>
+                <label><input type="radio" name="q15" value="c"> 2 bits</label>
+                <label><input type="radio" name="q15" value="d"> 3 bits</label>
+            </div>
+            <div class="feedback" id="f15"></div>
+        </div>
+
+        <div class="question" id="q16">
+            <h3>Question 16:</h3>
+            <p>Which of these learning approaches requires labeled training data?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> Unsupervised learning</label>
+                <label><input type="radio" name="q16" value="b"> Supervised learning</label>
+                <label><input type="radio" name="q16" value="c"> Self-supervised learning</label>
+                <label><input type="radio" name="q16" value="d"> Zero-shot learning</label>
+            </div>
+            <div class="feedback" id="f16"></div>
+        </div>
+
+        <div class="question" id="q17">
+            <h3>Question 17:</h3>
+            <p>Transfer learning involves:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> Training from scratch every time</label>
+                <label><input type="radio" name="q17" value="b"> Using a pre-trained model on a new task</label>
+                <label><input type="radio" name="q17" value="c"> Only clustering</label>
+                <label><input type="radio" name="q17" value="d"> Deleting old models</label>
+            </div>
+            <div class="feedback" id="f17"></div>
+        </div>
+
+        <div class="question" id="q18">
+            <h3>Question 18:</h3>
+            <p>Few-shot learning typically learns from how many examples per class?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> 1 example</label>
+                <label><input type="radio" name="q18" value="b"> 5-50 examples</label>
+                <label><input type="radio" name="q18" value="c"> 1000+ examples</label>
+                <label><input type="radio" name="q18" value="d"> Millions of examples</label>
+            </div>
+            <div class="feedback" id="f18"></div>
+        </div>
+
+        <div class="question" id="q19">
+            <h3>Question 19:</h3>
+            <p>One-shot learning learns from:</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> No examples</label>
+                <label><input type="radio" name="q19" value="b"> 1 example per class</label>
+                <label><input type="radio" name="q19" value="c"> 10 examples per class</label>
+                <label><input type="radio" name="q19" value="d"> 100 examples per class</label>
+            </div>
+            <div class="feedback" id="f19"></div>
+        </div>
+
+        <div class="question" id="q20">
+            <h3>Question 20:</h3>
+            <p>Zero-shot learning can:</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> Only work with labeled data</label>
+                <label><input type="radio" name="q20" value="b"> Classify new classes never seen during training</label>
+                <label><input type="radio" name="q20" value="c"> Only work with images</label>
+                <label><input type="radio" name="q20" value="d"> Require millions of examples</label>
+            </div>
+            <div class="feedback" id="f20"></div>
+        </div>
+
+        <div class="question" id="q21">
+            <h3>Question 21:</h3>
+            <p>Self-supervised learning:</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> Requires manual labeling</label>
+                <label><input type="radio" name="q21" value="b"> Creates labels automatically from data structure</label>
+                <label><input type="radio" name="q21" value="c"> Only works for text</label>
+                <label><input type="radio" name="q21" value="d"> Cannot be used for images</label>
+            </div>
+            <div class="feedback" id="f21"></div>
+        </div>
+
+        <div class="question" id="q22">
+            <h3>Question 22:</h3>
+            <p>Semi-supervised learning combines:</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> Only labeled data</label>
+                <label><input type="radio" name="q22" value="b"> Only unlabeled data</label>
+                <label><input type="radio" name="q22" value="c"> Small labeled + large unlabeled data</label>
+                <label><input type="radio" name="q22" value="d"> Text and images only</label>
+            </div>
+            <div class="feedback" id="f22"></div>
+        </div>
+
+        <div class="question" id="q23">
+            <h3>Question 23:</h3>
+            <p>Reinforcement learning involves:</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> Supervised classification only</label>
+                <label><input type="radio" name="q23" value="b"> Agent learning through trial-error by maximizing rewards</label>
+                <label><input type="radio" name="q23" value="c"> Only clustering</label>
+                <label><input type="radio" name="q23" value="d"> Dimensionality reduction</label>
+            </div>
+            <div class="feedback" id="f23"></div>
+        </div>
+
+        <div class="question" id="q24">
+            <h3>Question 24:</h3>
+            <p>Meta-learning (Learning to Learn) aims to:</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> Learn only one specific task</label>
+                <label><input type="radio" name="q24" value="b"> Learn how to learn new tasks quickly</label>
+                <label><input type="radio" name="q24" value="c"> Delete previous knowledge</label>
+                <label><input type="radio" name="q24" value="d"> Only work with structured data</label>
+            </div>
+            <div class="feedback" id="f24"></div>
+        </div>
+
+        <div class="question" id="q25">
+            <h3>Question 25:</h3>
+            <p>Which learning approach is used by AlphaGo for game playing?</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> Supervised learning only</label>
+                <label><input type="radio" name="q25" value="b"> Unsupervised learning only</label>
+                <label><input type="radio" name="q25" value="c"> Reinforcement learning</label>
+                <label><input type="radio" name="q25" value="d"> Transfer learning only</label>
+            </div>
+            <div class="feedback" id="f25"></div>
+        </div>
+
+        <div class="question" id="q26">
+            <h3>Question 26:</h3>
+            <p>What type of training data does supervised learning require?</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> Unlabeled data only</label>
+                <label><input type="radio" name="q26" value="b"> Large labeled dataset (1000s-millions)</label>
+                <label><input type="radio" name="q26" value="c"> No data</label>
+                <label><input type="radio" name="q26" value="d"> Only 1-2 examples</label>
+            </div>
+            <div class="feedback" id="f26"></div>
+        </div>
+
+        <div class="question" id="q27">
+            <h3>Question 27:</h3>
+            <p>Which use case is best for transfer learning?</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> When you have millions of labeled examples</label>
+                <label><input type="radio" name="q27" value="b"> Medical image analysis with limited data</label>
+                <label><input type="radio" name="q27" value="c"> When you want to start from scratch</label>
+                <label><input type="radio" name="q27" value="d"> Simple linear problems</label>
+            </div>
+            <div class="feedback" id="f27"></div>
+        </div>
+
+        <div class="question" id="q28">
+            <h3>Question 28:</h3>
+            <p>BERT uses which learning approach?</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> Supervised learning</label>
+                <label><input type="radio" name="q28" value="b"> Self-supervised learning (mask prediction)</label>
+                <label><input type="radio" name="q28" value="c"> Reinforcement learning</label>
+                <label><input type="radio" name="q28" value="d"> Zero-shot learning</label>
+            </div>
+            <div class="feedback" id="f28"></div>
+        </div>
+
+        <div class="question" id="q29">
+            <h3>Question 29:</h3>
+            <p>Which problem type uses discrete labels?</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> Regression</label>
+                <label><input type="radio" name="q29" value="b"> Classification</label>
+                <label><input type="radio" name="q29" value="c"> Dimensionality reduction</label>
+                <label><input type="radio" name="q29" value="d"> Clustering (unlabeled)</label>
+            </div>
+            <div class="feedback" id="f29"></div>
+        </div>
+
+        <div class="question" id="q30">
+            <h3>Question 30:</h3>
+            <p>Once a machine learning model is fitted, it can be used to:</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> Only visualize data</label>
+                <label><input type="radio" name="q30" value="b"> Predict and understand aspects of newly observed data</label>
+                <label><input type="radio" name="q30" value="c"> Only store data</label>
+                <label><input type="radio" name="q30" value="d"> Delete old data</label>
+            </div>
+            <div class="feedback" id="f30"></div>
+        </div>
+
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </main>
+
+    <footer class="footer">
+        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script>
+        const answers = {
+            q1: 'b', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'a', q9: 'b', q10: 'b',
+            q11: 'b', q12: 'b', q13: 'b', q14: 'b', q15: 'b',
+            q16: 'b', q17: 'b', q18: 'b', q19: 'b', q20: 'b',
+            q21: 'b', q22: 'c', q23: 'b', q24: 'b', q25: 'c',
+            q26: 'b', q27: 'b', q28: 'b', q29: 'b', q30: 'b'
+        };
+
+        const explanations = {
+            q1: 'ML is building mathematical models to help understand data.',
+            q2: 'Supervised learning models the relationship between features and labels.',
+            q3: 'Classification (with labels) is supervised learning.',
+            q4: 'Regression predicts continuous values.',
+            q5: 'Clustering is unsupervised (no labels).',
+            q6: 'Dimensionality reduction is unsupervised learning.',
+            q7: 'True Positive: predicted positive and actually positive.',
+            q8: 'False Negative: predicted negative but actually positive.',
+            q9: 'Parameters are numbers learned from data describing the model.',
+            q10: 'A simpler model that generalizes well is often better than an overfitted model.',
+            q11: 'Unsupervised learning models features without labels.',
+            q12: 'Rare/surprising events contain more information.',
+            q13: 'Information h(x) = -log(P(x)).',
+            q14: 'Information gain is entropy gained from a procedure.',
+            q15: 'Looking at the third coin gives 1 bit of information (entropy 3 → 2).',
+            q16: 'Supervised learning requires labeled data.',
+            q17: 'Transfer learning uses pre-trained models on new tasks.',
+            q18: 'Few-shot learning uses 5-50 examples per class.',
+            q19: 'One-shot learning uses 1 example per class.',
+            q20: 'Zero-shot can classify classes never seen during training.',
+            q21: 'Self-supervised creates labels automatically from data structure.',
+            q22: 'Semi-supervised combines small labeled + large unlabeled data.',
+            q23: 'Reinforcement learning: agent learns through trial-error maximizing rewards.',
+            q24: 'Meta-learning learns how to learn new tasks quickly.',
+            q25: 'AlphaGo uses reinforcement learning.',
+            q26: 'Supervised learning needs large labeled datasets.',
+            q27: 'Transfer learning works well for medical imaging with limited data.',
+            q28: 'BERT uses self-supervised learning (mask prediction).',
+            q29: 'Classification uses discrete labels.',
+            q30: 'Fitted models predict and understand newly observed data.'
+        };
+
+        initQuiz(answers, explanations);
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsupervised Learning Quiz - Data Science Quizzes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Unsupervised Learning Quiz</h1>
+        <p><a href="../index.html">Back to Home</a></p>
+    </header>
+
+    <main class="quiz-container">
+        <div class="score" id="score"></div>
+
+        <div class="question"><h3>Q1. Unsupervised learning involves:</h3><div class="options"><label><input type="radio" name="q1" value="a"> Labeled data</label><label><input type="radio" name="q1" value="b"> Finding structure in unlabeled data</label><label><input type="radio" name="q1" value="c"> Supervised classification</label><label><input type="radio" name="q1" value="d"> Regression</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question"><h3>Q2. Unsupervised learning has:</h3><div class="options"><label><input type="radio" name="q2" value="a"> Clear error function</label><label><input type="radio" name="q2" value="b"> No error/cost function like supervised</label><label><input type="radio" name="q2" value="c"> Many labels</label><label><input type="radio" name="q2" value="d"> Perfect accuracy measure</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question"><h3>Q3. Four categories of unsupervised learning:</h3><div class="options"><label><input type="radio" name="q3" value="a"> Only clustering</label><label><input type="radio" name="q3" value="b"> Clustering, dimensionality reduction, outlier detection, novelty detection</label><label><input type="radio" name="q3" value="c"> Only regression</label><label><input type="radio" name="q3" value="d"> Only classification</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question"><h3>Q4. Clustering involves:</h3><div class="options"><label><input type="radio" name="q4" value="a"> Labeling data</label><label><input type="radio" name="q4" value="b"> Partitioning dataset into groups by similarity</label><label><input type="radio" name="q4" value="c"> Removing data</label><label><input type="radio" name="q4" value="d"> Predicting values</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question"><h3>Q5. Similarity-based clustering input:</h3><div class="options"><label><input type="radio" name="q5" value="a"> Feature matrix</label><label><input type="radio" name="q5" value="b"> Dissimilarity/distance matrix (n x n)</label><label><input type="radio" name="q5" value="c"> Labels</label><label><input type="radio" name="q5" value="d"> Targets</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question"><h3>Q6. Feature-based clustering input:</h3><div class="options"><label><input type="radio" name="q6" value="a"> Distance matrix</label><label><input type="radio" name="q6" value="b"> Feature matrix (n x D)</label><label><input type="radio" name="q6" value="c"> Labels</label><label><input type="radio" name="q6" value="d"> Single value</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question"><h3>Q7. Dimensionality reduction purpose:</h3><div class="options"><label><input type="radio" name="q7" value="a"> Increase dimensions</label><label><input type="radio" name="q7" value="b"> Reduce dimensionality for succinct representation</label><label><input type="radio" name="q7" value="c"> Add features</label><label><input type="radio" name="q7" value="d"> Remove all data</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question"><h3>Q8. Outlier detection finds:</h3><div class="options"><label><input type="radio" name="q8" value="a"> Normal patterns</label><label><input type="radio" name="q8" value="b"> Uncommon events distinguishing from rest</label><label><input type="radio" name="q8" value="c"> Average values</label><label><input type="radio" name="q8" value="d"> All data</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question"><h3>Q9. Novelty detection deals with:</h3><div class="options"><label><input type="radio" name="q9" value="a"> Static data</label><label><input type="radio" name="q9" value="b"> Changes/new patterns in data</label><label><input type="radio" name="q9" value="c"> Old data only</label><label><input type="radio" name="q9" value="d"> No changes</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question"><h3>Q10. K-means clustering:</h3><div class="options"><label><input type="radio" name="q10" value="a"> Supervised</label><label><input type="radio" name="q10" value="b"> Partitions data into K clusters</label><label><input type="radio" name="q10" value="c"> Reduces dimensions</label><label><input type="radio" name="q10" value="d"> Regression method</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question"><h3>Q11. K-means objective:</h3><div class="options"><label><input type="radio" name="q11" value="a"> Maximize distance</label><label><input type="radio" name="q11" value="b"> Minimize within-cluster variance</label><label><input type="radio" name="q11" value="c"> Maximize variance</label><label><input type="radio" name="q11" value="d"> Delete data</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question"><h3>Q12. PCA stands for:</h3><div class="options"><label><input type="radio" name="q12" value="a"> Primary Component Analysis</label><label><input type="radio" name="q12" value="b"> Principal Component Analysis</label><label><input type="radio" name="q12" value="c"> Partial Classification Algorithm</label><label><input type="radio" name="q12" value="d"> Perfect Cluster Assignment</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question"><h3>Q13. PCA is used for:</h3><div class="options"><label><input type="radio" name="q13" value="a"> Classification</label><label><input type="radio" name="q13" value="b"> Dimensionality reduction while retaining variance</label><label><input type="radio" name="q13" value="c"> Clustering</label><label><input type="radio" name="q13" value="d"> Regression</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question"><h3>Q14. PCA finds:</h3><div class="options"><label><input type="radio" name="q14" value="a"> Random directions</label><label><input type="radio" name="q14" value="b"> Principal components (directions of max variance)</label><label><input type="radio" name="q14" value="c"> Minimum variance</label><label><input type="radio" name="q14" value="d"> No patterns</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question"><h3>Q15. t-SNE is used for:</h3><div class="options"><label><input type="radio" name="q15" value="a"> Supervised learning</label><label><input type="radio" name="q15" value="b"> Dimensionality reduction, especially visualization</label><label><input type="radio" name="q15" value="c"> Increasing dimensions</label><label><input type="radio" name="q15" value="d"> Classification</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question"><h3>Q16. DBSCAN is a:</h3><div class="options"><label><input type="radio" name="q16" value="a"> Supervised method</label><label><input type="radio" name="q16" value="b"> Density-based clustering algorithm</label><label><input type="radio" name="q16" value="c"> Dim reduction</label><label><input type="radio" name="q16" value="d"> Regression</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question"><h3>Q17. Hierarchical clustering creates:</h3><div class="options"><label><input type="radio" name="q17" value="a"> Flat clusters</label><label><input type="radio" name="q17" value="b"> Tree/dendrogram of nested clusters</label><label><input type="radio" name="q17" value="c"> Single cluster</label><label><input type="radio" name="q17" value="d"> No structure</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question"><h3>Q18. Agglomerative clustering:</h3><div class="options"><label><input type="radio" name="q18" value="a"> Top-down</label><label><input type="radio" name="q18" value="b"> Bottom-up (merge clusters)</label><label><input type="radio" name="q18" value="c"> Random</label><label><input type="radio" name="q18" value="d"> No hierarchy</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question"><h3>Q19. Divisive clustering:</h3><div class="options"><label><input type="radio" name="q19" value="a"> Bottom-up</label><label><input type="radio" name="q19" value="b"> Top-down (split clusters)</label><label><input type="radio" name="q19" value="c"> Random</label><label><input type="radio" name="q19" value="d"> Flat only</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question"><h3>Q20. Silhouette score measures:</h3><div class="options"><label><input type="radio" name="q20" value="a"> Speed</label><label><input type="radio" name="q20" value="b"> How well points fit their cluster</label><label><input type="radio" name="q20" value="c"> Data size</label><label><input type="radio" name="q20" value="d"> Nothing</label></div><div class="feedback" id="f20"></div></div>
+
+        <div class="question"><h3>Q21. Elbow method helps find:</h3><div class="options"><label><input type="radio" name="q21" value="a"> Features</label><label><input type="radio" name="q21" value="b"> Optimal number of clusters K</label><label><input type="radio" name="q21" value="c"> Labels</label><label><input type="radio" name="q21" value="d"> Outliers</label></div><div class="feedback" id="f21"></div></div>
+
+        <div class="question"><h3>Q22. Autoencoders are:</h3><div class="options"><label><input type="radio" name="q22" value="a"> Supervised</label><label><input type="radio" name="q22" value="b"> Neural networks for unsupervised learning/encoding</label><label><input type="radio" name="q22" value="c"> Decision trees</label><label><input type="radio" name="q22" value="d"> Linear models</label></div><div class="feedback" id="f22"></div></div>
+
+        <div class="question"><h3>Q23. Autoencoder structure:</h3><div class="options"><label><input type="radio" name="q23" value="a"> Encoder only</label><label><input type="radio" name="q23" value="b"> Encoder-decoder compressing then reconstructing</label><label><input type="radio" name="q23" value="c"> Decoder only</label><label><input type="radio" name="q23" value="d"> No structure</label></div><div class="feedback" id="f23"></div></div>
+
+        <div class="question"><h3>Q24. Autoencoder loss:</h3><div class="options"><label><input type="radio" name="q24" value="a"> Classification error</label><label><input type="radio" name="q24" value="b"> Reconstruction error</label><label><input type="radio" name="q24" value="c"> Entropy</label><label><input type="radio" name="q24" value="d"> Accuracy</label></div><div class="feedback" id="f24"></div></div>
+
+        <div class="question"><h3>Q25. Gaussian Mixture Models (GMM):</h3><div class="options"><label><input type="radio" name="q25" value="a"> Deterministic</label><label><input type="radio" name="q25" value="b"> Probabilistic clustering assuming Gaussian distributions</label><label><input type="radio" name="q25" value="c"> Supervised</label><label><input type="radio" name="q25" value="d"> Dim reduction</label></div><div class="feedback" id="f25"></div></div>
+
+        <div class="question"><h3>Q26. Anomaly detection is:</h3><div class="options"><label><input type="radio" name="q26" value="a"> Supervised</label><label><input type="radio" name="q26" value="b"> Unsupervised task finding unusual patterns</label><label><input type="radio" name="q26" value="c"> Always accurate</label><label><input type="radio" name="q26" value="d"> Impossible</label></div><div class="feedback" id="f26"></div></div>
+
+        <div class="question"><h3>Q27. Association rules find:</h3><div class="options"><label><input type="radio" name="q27" value="a"> Labels</label><label><input type="radio" name="q27" value="b"> Relationships between variables</label><label><input type="radio" name="q27" value="c"> Clusters</label><label><input type="radio" name="q27" value="d"> Dimensions</label></div><div class="feedback" id="f27"></div></div>
+
+        <div class="question"><h3>Q28. Market basket analysis uses:</h3><div class="options"><label><input type="radio" name="q28" value="a"> Supervised learning</label><label><input type="radio" name="q28" value="b"> Association rules to find product relationships</label><label><input type="radio" name="q28" value="c"> Clustering only</label><label><input type="radio" name="q28" value="d"> Regression</label></div><div class="feedback" id="f28"></div></div>
+
+        <div class="question"><h3>Q29. Apriori algorithm is used for:</h3><div class="options"><label><input type="radio" name="q29" value="a"> Classification</label><label><input type="radio" name="q29" value="b"> Finding frequent itemsets/association rules</label><label><input type="radio" name="q29" value="c"> Regression</label><label><input type="radio" name="q29" value="d"> Supervised</label></div><div class="feedback" id="f29"></div></div>
+
+        <div class="question"><h3>Q30. Unsupervised learning applications:</h3><div class="options"><label><input type="radio" name="q30" value="a"> Only labeled tasks</label><label><input type="radio" name="q30" value="b"> Customer segmentation, recommender systems, anomaly detection</label><label><input type="radio" name="q30" value="c"> Only classification</label><label><input type="radio" name="q30" value="d"> Only regression</label></div><div class="feedback" id="f30"></div></div>
+
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </main>
+
+    <footer class="footer">
+        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script>
+        const answers = {
+            q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",
+            q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b",
+            q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"
+        };
+
+        const explanations = {
+            q1:"Unsupervised finds structure without labels.",
+            q2:"No clear error function like supervised.",
+            q3:"4 categories: clustering, dim reduction, outlier, novelty detection.",
+            q4:"Clustering partitions data into similar groups.",
+            q5:"Similarity-based uses distance matrix.",
+            q6:"Feature-based uses n x D feature matrix.",
+            q7:"Dim reduction creates succinct representations.",
+            q8:"Outlier detection finds uncommon/distinguishing events.",
+            q9:"Novelty detection finds changes/new patterns.",
+            q10:"K-means partitions into K clusters.",
+            q11:"K-means minimizes within-cluster variance.",
+            q12:"PCA = Principal Component Analysis.",
+            q13:"PCA reduces dimensions keeping variance.",
+            q14:"PCA finds max variance directions.",
+            q15:"t-SNE for dim reduction and visualization.",
+            q16:"DBSCAN is density-based clustering.",
+            q17:"Hierarchical creates nested cluster tree.",
+            q18:"Agglomerative is bottom-up merging.",
+            q19:"Divisive is top-down splitting.",
+            q20:"Silhouette measures cluster fit quality.",
+            q21:"Elbow method finds optimal K.",
+            q22:"Autoencoders: NNs for unsupervised encoding.",
+            q23:"Autoencoder: encoder compresses, decoder reconstructs.",
+            q24:"Autoencoder minimizes reconstruction error.",
+            q25:"GMM: probabilistic clustering with Gaussians.",
+            q26:"Anomaly detection finds unusual patterns (unsupervised).",
+            q27:"Association rules find variable relationships.",
+            q28:"Market basket uses association rules.",
+            q29:"Apriori finds frequent itemsets.",
+            q30:"Applications: segmentation, recommendations, anomaly detection."
+        };
+
+        initQuiz(answers, explanations);
+    </script>
+</body>
+</html>

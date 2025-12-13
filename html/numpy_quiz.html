@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumPy Quiz - Data Science Quizzes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>NumPy Quiz</h1>
+        <p><a href="../index.html">Back to Home</a></p>
+    </header>
+
+    <main class="quiz-container">
+        <div class="score" id="score"></div>
+
+        <div class="question">
+            <h3>Q1. What is the main advantage of NumPy arrays over Python lists?</h3>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> NumPy arrays can store different data types</label>
+                <label><input type="radio" name="q1" value="b"> NumPy arrays are more efficient for numerical operations</label>
+                <label><input type="radio" name="q1" value="c"> NumPy arrays are easier to create</label>
+                <label><input type="radio" name="q1" value="d"> NumPy arrays use more memory</label>
+            </div>
+            <div class="feedback" id="f1"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q2. What is the output?</h3>
+            <div class="code">x = np.array([1, 2, 3, 4])
+y = x[::-1]
+print(y[0])</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> 1</label>
+                <label><input type="radio" name="q2" value="b"> 4</label>
+                <label><input type="radio" name="q2" value="c"> [4, 3, 2, 1]</label>
+                <label><input type="radio" name="q2" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f2"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q3. How does NumPy handle mixed data types?</h3>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Raises an error</label>
+                <label><input type="radio" name="q3" value="b"> Upcasts to a common type</label>
+                <label><input type="radio" name="q3" value="c"> Keeps original types</label>
+                <label><input type="radio" name="q3" value="d"> Converts to strings</label>
+            </div>
+            <div class="feedback" id="f3"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q4. What is the shape?</h3>
+            <div class="code">grid = np.array([range(i, i+3) for i in [2,4,6]])</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> (3,)</label>
+                <label><input type="radio" name="q4" value="b"> (3, 3)</label>
+                <label><input type="radio" name="q4" value="c"> (9,)</label>
+                <label><input type="radio" name="q4" value="d"> (1, 9)</label>
+            </div>
+            <div class="feedback" id="f4"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q5. Which creates evenly spaced values between 0 and 1?</h3>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> np.arange(0, 1, 5)</label>
+                <label><input type="radio" name="q5" value="b"> np.linspace(0, 1, 5)</label>
+                <label><input type="radio" name="q5" value="c"> np.zeros(5)</label>
+                <label><input type="radio" name="q5" value="d"> np.ones(5)</label>
+            </div>
+            <div class="feedback" id="f5"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q6. What's the key difference between NumPy slices and Python list slices?</h3>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> NumPy slices are faster</label>
+                <label><input type="radio" name="q6" value="b"> NumPy slices return views, not copies</label>
+                <label><input type="radio" name="q6" value="c"> NumPy slices only work on 1D</label>
+                <label><input type="radio" name="q6" value="d"> No difference</label>
+            </div>
+            <div class="feedback" id="f6"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q7. What is the output?</h3>
+            <div class="code">x = np.array([1, 2, 3, 4])
+y = x + 5
+print(y)</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> [1, 2, 3, 4, 5]</label>
+                <label><input type="radio" name="q7" value="b"> [6, 7, 8, 9]</label>
+                <label><input type="radio" name="q7" value="c"> 15</label>
+                <label><input type="radio" name="q7" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f7"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q8. What does broadcasting allow?</h3>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Sending arrays over network</label>
+                <label><input type="radio" name="q8" value="b"> Operations on arrays of different shapes</label>
+                <label><input type="radio" name="q8" value="c"> Converting data types</label>
+                <label><input type="radio" name="q8" value="d"> Printing arrays</label>
+            </div>
+            <div class="feedback" id="f8"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q9. What is the output?</h3>
+            <div class="code">a = np.array([0, 1, 2])
+b = np.array([5, 5, 5])
+print(a + b)</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> [0, 1, 2, 5, 5, 5]</label>
+                <label><input type="radio" name="q9" value="b"> [5, 6, 7]</label>
+                <label><input type="radio" name="q9" value="c"> 18</label>
+                <label><input type="radio" name="q9" value="d"> [[0,1,2],[5,5,5]]</label>
+            </div>
+            <div class="feedback" id="f9"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q10. Which computes exponential?</h3>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> np.power()</label>
+                <label><input type="radio" name="q10" value="b"> np.exp()</label>
+                <label><input type="radio" name="q10" value="c"> np.log()</label>
+                <label><input type="radio" name="q10" value="d"> np.sqrt()</label>
+            </div>
+            <div class="feedback" id="f10"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q11. What is the output?</h3>
+            <div class="code">x = np.array([-2, -1, 0, 1, 2])
+print(np.absolute(x).sum())</div>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> 0</label>
+                <label><input type="radio" name="q11" value="b"> 6</label>
+                <label><input type="radio" name="q11" value="c"> 10</label>
+                <label><input type="radio" name="q11" value="d"> -6</label>
+            </div>
+            <div class="feedback" id="f11"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q12. What does x ** 2 do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> Square root</label>
+                <label><input type="radio" name="q12" value="b"> Square each element</label>
+                <label><input type="radio" name="q12" value="c"> 2 to power of each</label>
+                <label><input type="radio" name="q12" value="d"> Multiply by 2</label>
+            </div>
+            <div class="feedback" id="f12"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q13. What is the output?</h3>
+            <div class="code">heights = np.array([170, 180, 175, 165, 185])
+print(heights.mean())</div>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> 170</label>
+                <label><input type="radio" name="q13" value="b"> 175.0</label>
+                <label><input type="radio" name="q13" value="c"> 180</label>
+                <label><input type="radio" name="q13" value="d"> 875</label>
+            </div>
+            <div class="feedback" id="f13"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q14. Broadcasting result?</h3>
+            <div class="code">M = np.ones((3, 3))
+a = np.array([0, 1, 2])
+result = M + a</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> Error</label>
+                <label><input type="radio" name="q14" value="b"> [[1,2,3],[1,2,3],[1,2,3]]</label>
+                <label><input type="radio" name="q14" value="c"> [[1,1,1],[2,2,2],[3,3,3]]</label>
+                <label><input type="radio" name="q14" value="d"> [[1,1,1],[1,1,1],[1,1,1]]</label>
+            </div>
+            <div class="feedback" id="f14"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q15. Which computes standard deviation?</h3>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> np.var()</label>
+                <label><input type="radio" name="q15" value="b"> np.std()</label>
+                <label><input type="radio" name="q15" value="c"> np.mean()</label>
+                <label><input type="radio" name="q15" value="d"> np.median()</label>
+            </div>
+            <div class="feedback" id="f15"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q16. What is the shape?</h3>
+            <div class="code">a = np.arange(3)
+b = np.arange(3)[:, np.newaxis]
+result = a + b
+print(result.shape)</div>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> (3,)</label>
+                <label><input type="radio" name="q16" value="b"> (3, 3)</label>
+                <label><input type="radio" name="q16" value="c"> (6,)</label>
+                <label><input type="radio" name="q16" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f16"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q17. What does np.nanmean() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> It's faster</label>
+                <label><input type="radio" name="q17" value="b"> Ignores NaN values</label>
+                <label><input type="radio" name="q17" value="c"> Returns NaN if any NaN</label>
+                <label><input type="radio" name="q17" value="d"> Converts NaN to 0</label>
+            </div>
+            <div class="feedback" id="f17"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q18. Broadcasting rule?</h3>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> Same shape required</label>
+                <label><input type="radio" name="q18" value="b"> Dimensions equal or one is 1</label>
+                <label><input type="radio" name="q18" value="c"> Only 1D and 2D</label>
+                <label><input type="radio" name="q18" value="d"> Only addition</label>
+            </div>
+            <div class="feedback" id="f18"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q19. What does np.zeros((3, 4)) create?</h3>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> 3x4 array of zeros</label>
+                <label><input type="radio" name="q19" value="b"> 4x3 array of zeros</label>
+                <label><input type="radio" name="q19" value="c"> Array with 12 zeros</label>
+                <label><input type="radio" name="q19" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f19"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q20. What is the output?</h3>
+            <div class="code">x = np.array([1, 2, 3, 4, 5])
+print(x[x > 2])</div>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> [3, 4, 5]</label>
+                <label><input type="radio" name="q20" value="b"> [True, True, True, False, False]</label>
+                <label><input type="radio" name="q20" value="c"> [1, 2]</label>
+                <label><input type="radio" name="q20" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f20"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q21. What does np.arange(0, 10, 2) return?</h3>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> [0, 2, 4, 6, 8]</label>
+                <label><input type="radio" name="q21" value="b"> [0, 2, 4, 6, 8, 10]</label>
+                <label><input type="radio" name="q21" value="c"> [2, 4, 6, 8, 10]</label>
+                <label><input type="radio" name="q21" value="d"> [0, 1, 2, ..., 9]</label>
+            </div>
+            <div class="feedback" id="f21"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q22. What happens when you modify a view?</h3>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> Only view modified</label>
+                <label><input type="radio" name="q22" value="b"> Both view and original modified</label>
+                <label><input type="radio" name="q22" value="c"> Error raised</label>
+                <label><input type="radio" name="q22" value="d"> Copy auto-created</label>
+            </div>
+            <div class="feedback" id="f22"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q23. What does np.reshape() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> Changes values</label>
+                <label><input type="radio" name="q23" value="b"> Changes shape without changing data</label>
+                <label><input type="radio" name="q23" value="c"> Sorts array</label>
+                <label><input type="radio" name="q23" value="d"> Reverses array</label>
+            </div>
+            <div class="feedback" id="f23"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q24. What is the output?</h3>
+            <div class="code">x = np.array([[1, 2], [3, 4]])
+print(x.T)</div>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> [[1, 2], [3, 4]]</label>
+                <label><input type="radio" name="q24" value="b"> [[1, 3], [2, 4]]</label>
+                <label><input type="radio" name="q24" value="c"> [[4, 3], [2, 1]]</label>
+                <label><input type="radio" name="q24" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f24"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q25. What does np.concatenate() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> Joins arrays along axis</label>
+                <label><input type="radio" name="q25" value="b"> Creates new array</label>
+                <label><input type="radio" name="q25" value="c"> Splits array</label>
+                <label><input type="radio" name="q25" value="d"> Sorts elements</label>
+            </div>
+            <div class="feedback" id="f25"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q26. What is the output?</h3>
+            <div class="code">x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+print(np.vstack([x, y]))</div>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> [[1,2,3],[4,5,6]]</label>
+                <label><input type="radio" name="q26" value="b"> [1,2,3,4,5,6]</label>
+                <label><input type="radio" name="q26" value="c"> [[1,4],[2,5],[3,6]]</label>
+                <label><input type="radio" name="q26" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f26"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q27. What does np.random.seed() do?</h3>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> Generates random numbers</label>
+                <label><input type="radio" name="q27" value="b"> Sets state for reproducibility</label>
+                <label><input type="radio" name="q27" value="c"> Clears random cache</label>
+                <label><input type="radio" name="q27" value="d"> Creates random array</label>
+            </div>
+            <div class="feedback" id="f27"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q28. What is the output?</h3>
+            <div class="code">x = np.array([1, 2, 3, 4, 5])
+print(np.argmax(x))</div>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> 5</label>
+                <label><input type="radio" name="q28" value="b"> 4</label>
+                <label><input type="radio" name="q28" value="c"> [1,2,3,4,5]</label>
+                <label><input type="radio" name="q28" value="d"> 0</label>
+            </div>
+            <div class="feedback" id="f28"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q29. What does np.dot() compute?</h3>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> Element-wise multiplication</label>
+                <label><input type="radio" name="q29" value="b"> Dot product</label>
+                <label><input type="radio" name="q29" value="c"> Division</label>
+                <label><input type="radio" name="q29" value="d"> Concatenation</label>
+            </div>
+            <div class="feedback" id="f29"></div>
+        </div>
+
+        <div class="question">
+            <h3>Q30. What is the output?</h3>
+            <div class="code">x = np.array([[1, 2], [3, 4]])
+print(x.flatten())</div>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> [[1,2,3,4]]</label>
+                <label><input type="radio" name="q30" value="b"> [1,2,3,4]</label>
+                <label><input type="radio" name="q30" value="c"> [[1],[2],[3],[4]]</label>
+                <label><input type="radio" name="q30" value="d"> Error</label>
+            </div>
+            <div class="feedback" id="f30"></div>
+        </div>
+
+        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </main>
+
+    <footer class="footer">
+        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script>
+        const answers = {
+            q1:'b', q2:'b', q3:'b', q4:'b', q5:'b', q6:'b', q7:'b', q8:'b', q9:'b', q10:'b',
+            q11:'b', q12:'b', q13:'b', q14:'b', q15:'b', q16:'b', q17:'b', q18:'b', q19:'a', q20:'a',
+            q21:'a', q22:'b', q23:'b', q24:'b', q25:'a', q26:'a', q27:'b', q28:'b', q29:'b', q30:'b'
+        };
+
+        const explanations = {
+            q1:'NumPy arrays are efficient for numerical operations.',
+            q2:'[::-1] reverses to [4,3,2,1], y[0] is 4.',
+            q3:'NumPy upcasts to common type.',
+            q4:'3 rows, 3 columns = (3,3).',
+            q5:'linspace(0,1,5) creates 5 evenly spaced values.',
+            q6:'NumPy slices are views, not copies.',
+            q7:'Broadcasting: [6,7,8,9].',
+            q8:'Broadcasting allows different shape operations.',
+            q9:'Element-wise: [5,6,7].',
+            q10:'exp() computes e^x.',
+            q11:'|−2|+|−1|+|0|+|1|+|2| = 6.',
+            q12:'** squares: [1,4,9].',
+            q13:'Mean = 875/5 = 175.0.',
+            q14:'Broadcasts [0,1,2] to each row.',
+            q15:'std() computes standard deviation.',
+            q16:'Broadcasting creates (3,3).',
+            q17:'nanmean() ignores NaN.',
+            q18:'Dimensions equal or one is 1.',
+            q19:'3 rows, 4 columns.',
+            q20:'Boolean indexing: [3,4,5].',
+            q21:'arange(0,10,2) = [0,2,4,6,8].',
+            q22:'Views modify original.',
+            q23:'reshape() changes shape.',
+            q24:'Transpose: [[1,3],[2,4]].',
+            q25:'concatenate() joins arrays.',
+            q26:'vstack: [[1,2,3],[4,5,6]].',
+            q27:'seed() sets random state.',
+            q28:'argmax() returns index: 4.',
+            q29:'dot() computes dot product.',
+            q30:'flatten() makes 1D: [1,2,3,4].'
+        };
+
+        initQuiz(answers, explanations);
+    </script>
+</body>
+</html>
