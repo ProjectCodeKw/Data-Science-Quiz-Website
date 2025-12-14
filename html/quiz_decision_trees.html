@@ -1,432 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decision Trees & Random Forest Quiz - Data Science Quizzes</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Decision Trees Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Decision Trees & Random Forest Quiz</h1>
-        <p><a href="../index.html">Back to Home</a></p>
-    </header>
+    <h1>Decision Trees & Random Forest Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
 
-    <main class="quiz-container">
-        <div class="score" id="score"></div>
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Decision trees split data based on:</p><div class="options"><label><input type="radio" name="q1" value="a"> Random choice</label><label><input type="radio" name="q1" value="b"> Feature that best separates classes</label><label><input type="radio" name="q1" value="c"> Alphabetical order</label><label><input type="radio" name="q1" value="d"> Fixed rules</label></div><div class="feedback" id="f1"></div></div>
 
-        <div class="question" id="q1">
-            <h3>Question 1:</h3>
-            <p>Decision trees can be used for:</p>
-            <div class="options">
-                <label><input type="radio" name="q1" value="a"> Classification only</label>
-                <label><input type="radio" name="q1" value="b"> Regression only</label>
-                <label><input type="radio" name="q1" value="c"> Both classification and regression</label>
-                <label><input type="radio" name="q1" value="d"> Neither</label>
-            </div>
-            <div class="feedback" id="f1"></div>
-        </div>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>Entropy measures:</p><div class="options"><label><input type="radio" name="q2" value="a"> Speed</label><label><input type="radio" name="q2" value="b"> Impurity/randomness in data</label><label><input type="radio" name="q2" value="c"> Size</label><label><input type="radio" name="q2" value="d"> Color</label></div><div class="feedback" id="f2"></div></div>
 
-        <div class="question" id="q2">
-            <h3>Question 2:</h3>
-            <p>What is the root node in a decision tree?</p>
-            <div class="options">
-                <label><input type="radio" name="q2" value="a"> Leaf node</label>
-                <label><input type="radio" name="q2" value="b"> Node that divides dataset into homogeneous sets</label>
-                <label><input type="radio" name="q2" value="c"> Output node</label>
-                <label><input type="radio" name="q2" value="d"> Middle node</label>
-            </div>
-            <div class="feedback" id="f2"></div>
-        </div>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Information gain is:</p><div class="options"><label><input type="radio" name="q3" value="a"> Increase in entropy</label><label><input type="radio" name="q3" value="b"> Reduction in entropy after split</label><label><input type="radio" name="q3" value="c"> Same as entropy</label><label><input type="radio" name="q3" value="d"> Random value</label></div><div class="feedback" id="f3"></div></div>
 
-        <div class="question" id="q3">
-            <h3>Question 3:</h3>
-            <p>What is splitting in decision trees?</p>
-            <div class="options">
-                <label><input type="radio" name="q3" value="a"> Deleting nodes</label>
-                <label><input type="radio" name="q3" value="b"> Process of dividing node into sub-nodes</label>
-                <label><input type="radio" name="q3" value="c"> Combining nodes</label>
-                <label><input type="radio" name="q3" value="d"> Removing data</label>
-            </div>
-            <div class="feedback" id="f3"></div>
-        </div>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Leaf node in decision tree:</p><div class="options"><label><input type="radio" name="q4" value="a"> Splits further</label><label><input type="radio" name="q4" value="b"> Terminal node, no further splits (makes prediction)</label><label><input type="radio" name="q4" value="c"> Root node</label><label><input type="radio" name="q4" value="d"> Has no data</label></div><div class="feedback" id="f4"></div></div>
 
-        <div class="question" id="q4">
-            <h3>Question 4:</h3>
-            <p>A leaf/terminal node:</p>
-            <div class="options">
-                <label><input type="radio" name="q4" value="a"> Splits further</label>
-                <label><input type="radio" name="q4" value="b"> Does not split anymore</label>
-                <label><input type="radio" name="q4" value="c"> Is the root</label>
-                <label><input type="radio" name="q4" value="d"> Processes data</label>
-            </div>
-            <div class="feedback" id="f4"></div>
-        </div>
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Root node is:</p><div class="options"><label><input type="radio" name="q5" value="a"> Last node</label><label><input type="radio" name="q5" value="b"> Top node representing entire dataset</label><label><input type="radio" name="q5" value="c"> Middle node</label><label><input type="radio" name="q5" value="d"> Has no purpose</label></div><div class="feedback" id="f5"></div></div>
 
-        <div class="question" id="q5">
-            <h3>Question 5:</h3>
-            <p>Pruning in decision trees means:</p>
-            <div class="options">
-                <label><input type="radio" name="q5" value="a"> Adding branches</label>
-                <label><input type="radio" name="q5" value="b"> Removing sub-nodes of a decision node</label>
-                <label><input type="radio" name="q5" value="c"> Growing tree</label>
-                <label><input type="radio" name="q5" value="d"> Increasing depth</label>
-            </div>
-            <div class="feedback" id="f5"></div>
-        </div>
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Gini impurity measures:</p><div class="options"><label><input type="radio" name="q6" value="a"> Tree height</label><label><input type="radio" name="q6" value="b"> Probability of incorrect classification</label><label><input type="radio" name="q6" value="c"> Training speed</label><label><input type="radio" name="q6" value="d"> Number of nodes</label></div><div class="feedback" id="f6"></div></div>
 
-        <div class="question" id="q6">
-            <h3>Question 6:</h3>
-            <p>Common decision tree algorithms include:</p>
-            <div class="options">
-                <label><input type="radio" name="q6" value="a"> Only ID3</label>
-                <label><input type="radio" name="q6" value="b"> ID3, C4.5, CART, Random Forest</label>
-                <label><input type="radio" name="q6" value="c"> Only CART</label>
-                <label><input type="radio" name="q6" value="d"> Linear regression</label>
-            </div>
-            <div class="feedback" id="f6"></div>
-        </div>
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Pruning is:</p><div class="options"><label><input type="radio" name="q7" value="a"> Adding more branches</label><label><input type="radio" name="q7" value="b"> Removing branches to prevent overfitting</label><label><input type="radio" name="q7" value="c"> Making tree bigger</label><label><input type="radio" name="q7" value="d"> Deleting all data</label></div><div class="feedback" id="f7"></div></div>
 
-        <div class="question" id="q7">
-            <h3>Question 7:</h3>
-            <p>ID3 algorithm selects attribute with:</p>
-            <div class="options">
-                <label><input type="radio" name="q7" value="a"> Highest entropy</label>
-                <label><input type="radio" name="q7" value="b"> Smallest entropy or largest information gain</label>
-                <label><input type="radio" name="q7" value="c"> Random choice</label>
-                <label><input type="radio" name="q7" value="d"> Largest values</label>
-            </div>
-            <div class="feedback" id="f7"></div>
-        </div>
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Deep decision trees tend to:</p><div class="options"><label><input type="radio" name="q8" value="a"> Underfit</label><label><input type="radio" name="q8" value="b"> Overfit (memorize training data)</label><label><input type="radio" name="q8" value="c"> Generalize perfectly</label><label><input type="radio" name="q8" value="d"> Train slowly only</label></div><div class="feedback" id="f8"></div></div>
 
-        <div class="question" id="q8">
-            <h3>Question 8:</h3>
-            <p>Information gain measures:</p>
-            <div class="options">
-                <label><input type="radio" name="q8" value="a"> Data size</label>
-                <label><input type="radio" name="q8" value="b"> Amount of entropy gained from splitting on attribute</label>
-                <label><input type="radio" name="q8" value="c"> Number of features</label>
-                <label><input type="radio" name="q8" value="d"> Output values</label>
-            </div>
-            <div class="feedback" id="f8"></div>
-        </div>
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Random Forest is:</p><div class="options"><label><input type="radio" name="q9" value="a"> Single decision tree</label><label><input type="radio" name="q9" value="b"> Ensemble of multiple decision trees</label><label><input type="radio" name="q9" value="c"> Neural network</label><label><input type="radio" name="q9" value="d"> Linear model</label></div><div class="feedback" id="f9"></div></div>
 
-        <div class="question" id="q9">
-            <h3>Question 9:</h3>
-            <p>What does entropy measure?</p>
-            <div class="options">
-                <label><input type="radio" name="q9" value="a"> Speed</label>
-                <label><input type="radio" name="q9" value="b"> Impurity/uncertainty in dataset</label>
-                <label><input type="radio" name="q9" value="c"> Size</label>
-                <label><input type="radio" name="q9" value="d"> Accuracy</label>
-            </div>
-            <div class="feedback" id="f9"></div>
-        </div>
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Random Forest makes predictions by:</p><div class="options"><label><input type="radio" name="q10" value="a"> Using one tree</label><label><input type="radio" name="q10" value="b"> Majority voting from all trees</label><label><input type="radio" name="q10" value="c"> Taking minimum</label><label><input type="radio" name="q10" value="d"> Random guess</label></div><div class="feedback" id="f10"></div></div>
 
-        <div class="question" id="q10">
-            <h3>Question 10:</h3>
-            <p>If all samples in a node belong to one class, entropy is:</p>
-            <div class="options">
-                <label><input type="radio" name="q10" value="a"> High</label>
-                <label><input type="radio" name="q10" value="b"> 0 (pure node)</label>
-                <label><input type="radio" name="q10" value="c"> 1</label>
-                <label><input type="radio" name="q10" value="d"> Undefined</label>
-            </div>
-            <div class="feedback" id="f10"></div>
-        </div>
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Bagging (Bootstrap Aggregating):</p><div class="options"><label><input type="radio" name="q11" value="a"> Uses same data for all trees</label><label><input type="radio" name="q11" value="b"> Samples data with replacement for each tree</label><label><input type="radio" name="q11" value="c"> Removes all data</label><label><input type="radio" name="q11" value="d"> Only for testing</label></div><div class="feedback" id="f11"></div></div>
 
-        <div class="question" id="q11">
-            <h3>Question 11:</h3>
-            <p>Information gain formula: IG(S,A) =</p>
-            <div class="options">
-                <label><input type="radio" name="q11" value="a"> E(S) + E(S_v)</label>
-                <label><input type="radio" name="q11" value="b"> E(S) - weighted avg of E(S_v)</label>
-                <label><input type="radio" name="q11" value="c"> E(S) × E(S_v)</label>
-                <label><input type="radio" name="q11" value="d"> E(S) / E(S_v)</label>
-            </div>
-            <div class="feedback" id="f11"></div>
-        </div>
+        <div class="question" id="q12"><h3>Question 12:</h3><p>ID3 algorithm uses:</p><div class="options"><label><input type="radio" name="q12" value="a"> Gini impurity</label><label><input type="radio" name="q12" value="b"> Information gain (entropy)</label><label><input type="radio" name="q12" value="c"> Random splits</label><label><input type="radio" name="q12" value="d"> No criteria</label></div><div class="feedback" id="f12"></div></div>
 
-        <div class="question" id="q12">
-            <h3>Question 12:</h3>
-            <p>CART stands for:</p>
-            <div class="options">
-                <label><input type="radio" name="q12" value="a"> Computer Assisted Regression Tree</label>
-                <label><input type="radio" name="q12" value="b"> Classification And Regression Tree</label>
-                <label><input type="radio" name="q12" value="c"> Complex Algorithm for Random Trees</label>
-                <label><input type="radio" name="q12" value="d"> Categorical Regression Tool</label>
-            </div>
-            <div class="feedback" id="f12"></div>
-        </div>
+        <div class="question" id="q13"><h3>Question 13:</h3><p>CART algorithm uses:</p><div class="options"><label><input type="radio" name="q13" value="a"> Gini impurity</label><label><input type="radio" name="q13" value="b"> Only entropy</label><label><input type="radio" name="q13" value="c"> Random choice</label><label><input type="radio" name="q13" value="d"> Nothing</label></div><div class="feedback" id="f13"></div></div>
 
-        <div class="question" id="q13">
-            <h3>Question 13:</h3>
-            <p>C4.5 is:</p>
-            <div class="options">
-                <label><input type="radio" name="q13" value="a"> Unrelated to ID3</label>
-                <label><input type="radio" name="q13" value="b"> Successor of ID3</label>
-                <label><input type="radio" name="q13" value="c"> Predecessor of ID3</label>
-                <label><input type="radio" name="q13" value="d"> A clustering algorithm</label>
-            </div>
-            <div class="feedback" id="f13"></div>
-        </div>
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Decision trees can be used for:</p><div class="options"><label><input type="radio" name="q14" value="a"> Only classification</label><label><input type="radio" name="q14" value="b"> Both classification and regression</label><label><input type="radio" name="q14" value="c"> Only regression</label><label><input type="radio" name="q14" value="d"> Clustering only</label></div><div class="feedback" id="f14"></div></div>
 
-        <div class="question" id="q14">
-            <h3>Question 14:</h3>
-            <p>Random Forest is:</p>
-            <div class="options">
-                <label><input type="radio" name="q14" value="a"> One decision tree</label>
-                <label><input type="radio" name="q14" value="b"> Set of random decision trees (ensemble)</label>
-                <label><input type="radio" name="q14" value="c"> Linear model</label>
-                <label><input type="radio" name="q14" value="d"> Clustering method</label>
-            </div>
-            <div class="feedback" id="f14"></div>
-        </div>
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Advantage of decision trees:</p><div class="options"><label><input type="radio" name="q15" value="a"> Always best performance</label><label><input type="radio" name="q15" value="b"> Easy to interpret and visualize</label><label><input type="radio" name="q15" value="c"> Never overfit</label><label><input type="radio" name="q15" value="d"> Fastest algorithm</label></div><div class="feedback" id="f15"></div></div>
 
-        <div class="question" id="q15">
-            <h3>Question 15:</h3>
-            <p>Random Forest decreases:</p>
-            <div class="options">
-                <label><input type="radio" name="q15" value="a"> Accuracy</label>
-                <label><input type="radio" name="q15" value="b"> Bias and variance compared to single tree</label>
-                <label><input type="radio" name="q15" value="c"> Speed</label>
-                <label><input type="radio" name="q15" value="d"> Interpretability</label>
-            </div>
-            <div class="feedback" id="f15"></div>
-        </div>
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Feature importance in decision trees:</p><div class="options"><label><input type="radio" name="q16" value="a"> All features equally important</label><label><input type="radio" name="q16" value="b"> Features near root typically more important</label><label><input type="radio" name="q16" value="c"> Randomly assigned</label><label><input type="radio" name="q16" value="d"> Not measurable</label></div><div class="feedback" id="f16"></div></div>
 
-        <div class="question" id="q16">
-            <h3>Question 16:</h3>
-            <p>Bootstrap aggregating (bagging) involves:</p>
-            <div class="options">
-                <label><input type="radio" name="q16" value="a"> Using all data</label>
-                <label><input type="radio" name="q16" value="b"> Random sample with replacement</label>
-                <label><input type="radio" name="q16" value="c"> No sampling</label>
-                <label><input type="radio" name="q16" value="d"> Deleting data</label>
-            </div>
-            <div class="feedback" id="f16"></div>
-        </div>
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Why Random Forest reduces variance?</p><div class="options"><label><input type="radio" name="q17" value="a"> Uses one tree</label><label><input type="radio" name="q17" value="b"> Averages predictions from multiple trees</label><label><input type="radio" name="q17" value="c"> Increases variance</label><label><input type="radio" name="q17" value="d"> No effect</label></div><div class="feedback" id="f17"></div></div>
 
-        <div class="question" id="q17">
-            <h3>Question 17:</h3>
-            <p>In Random Forest, at each node we consider:</p>
-            <div class="options">
-                <label><input type="radio" name="q17" value="a"> All M attributes</label>
-                <label><input type="radio" name="q17" value="b"> Random subset m ≤ M attributes</label>
-                <label><input type="radio" name="q17" value="c"> Only 1 attribute</label>
-                <label><input type="radio" name="q17" value="d"> No attributes</label>
-            </div>
-            <div class="feedback" id="f17"></div>
-        </div>
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Pre-pruning (early stopping):</p><div class="options"><label><input type="radio" name="q18" value="a"> Prune after full tree grown</label><label><input type="radio" name="q18" value="b"> Stop growing tree early based on criteria</label><label><input type="radio" name="q18" value="c"> Never stop</label><label><input type="radio" name="q18" value="d"> Remove root</label></div><div class="feedback" id="f18"></div></div>
 
-        <div class="question" id="q18">
-            <h3>Question 18:</h3>
-            <p>Why Random Forest works: uncorrelated models:</p>
-            <div class="options">
-                <label><input type="radio" name="q18" value="a"> Compete</label>
-                <label><input type="radio" name="q18" value="b"> Protect each other from individual errors</label>
-                <label><input type="radio" name="q18" value="c"> Slow down training</label>
-                <label><input type="radio" name="q18" value="d"> Increase error</label>
-            </div>
-            <div class="feedback" id="f18"></div>
-        </div>
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Post-pruning:</p><div class="options"><label><input type="radio" name="q19" value="a"> Grow full tree then remove branches</label><label><input type="radio" name="q19" value="b"> Stop early</label><label><input type="radio" name="q19" value="c"> Add more branches</label><label><input type="radio" name="q19" value="d"> No pruning</label></div><div class="feedback" id="f19"></div></div>
 
-        <div class="question" id="q19">
-            <h3>Question 19:</h3>
-            <p>For Random Forest, training set size is:</p>
-            <div class="options">
-                <label><input type="radio" name="q19" value="a"> Always smaller</label>
-                <label><input type="radio" name="q19" value="b"> N (same as original, with replacement)</label>
-                <label><input type="radio" name="q19" value="c"> Always 10</label>
-                <label><input type="radio" name="q19" value="d"> Unlimited</label>
-            </div>
-            <div class="feedback" id="f19"></div>
-        </div>
+        <div class="question" id="q20"><h3>Question 20:</h3><p>max_depth hyperparameter controls:</p><div class="options"><label><input type="radio" name="q20" value="a"> Number of trees</label><label><input type="radio" name="q20" value="b"> Maximum depth of tree</label><label><input type="radio" name="q20" value="c"> Learning rate</label><label><input type="radio" name="q20" value="d"> Number of features</label></div><div class="feedback" id="f20"></div></div>
 
-        <div class="question" id="q20">
-            <h3>Question 20:</h3>
-            <p>When is linear model better than decision tree?</p>
-            <div class="options">
-                <label><input type="radio" name="q20" value="a"> Never</label>
-                <label><input type="radio" name="q20" value="b"> When relationship is well approximated by linear model</label>
-                <label><input type="radio" name="q20" value="c"> Always</label>
-                <label><input type="radio" name="q20" value="d"> For images only</label>
-            </div>
-            <div class="feedback" id="f20"></div>
-        </div>
+        <div class="question" id="q21"><h3>Question 21:</h3><p>min_samples_split controls:</p><div class="options"><label><input type="radio" name="q21" value="a"> Maximum samples</label><label><input type="radio" name="q21" value="b"> Minimum samples required to split a node</label><label><input type="radio" name="q21" value="c"> Tree height</label><label><input type="radio" name="q21" value="d"> Number of features</label></div><div class="feedback" id="f21"></div></div>
 
-        <div class="question" id="q21">
-            <h3>Question 21:</h3>
-            <p>When is tree model better than linear?</p>
-            <div class="options">
-                <label><input type="radio" name="q21" value="a"> Never</label>
-                <label><input type="radio" name="q21" value="b"> High non-linearity and complex relationships</label>
-                <label><input type="radio" name="q21" value="c"> Only for small data</label>
-                <label><input type="radio" name="q21" value="d"> Never for regression</label>
-            </div>
-            <div class="feedback" id="f21"></div>
-        </div>
+        <div class="question" id="q22"><h3>Question 22:</h3><p>n_estimators in Random Forest:</p><div class="options"><label><input type="radio" name="q22" value="a"> Number of features</label><label><input type="radio" name="q22" value="b"> Number of trees in forest</label><label><input type="radio" name="q22" value="c"> Tree depth</label><label><input type="radio" name="q22" value="d"> Learning rate</label></div><div class="feedback" id="f22"></div></div>
 
-        <div class="question" id="q22">
-            <h3>Question 22:</h3>
-            <p>Decision tree advantage:</p>
-            <div class="options">
-                <label><input type="radio" name="q22" value="a"> Very fast always</label>
-                <label><input type="radio" name="q22" value="b"> Easy to interpret and explain</label>
-                <label><input type="radio" name="q22" value="c"> Requires scaling</label>
-                <label><input type="radio" name="q22" value="d"> No visualization</label>
-            </div>
-            <div class="feedback" id="f22"></div>
-        </div>
+        <div class="question" id="q23"><h3>Question 23:</h3><p>Decision trees require feature scaling?</p><div class="options"><label><input type="radio" name="q23" value="a"> Yes, always</label><label><input type="radio" name="q23" value="b"> No, scale-invariant (uses splits, not distances)</label><label><input type="radio" name="q23" value="c"> Sometimes</label><label><input type="radio" name="q23" value="d"> Only for classification</label></div><div class="feedback" id="f23"></div></div>
 
-        <div class="question" id="q23">
-            <h3>Question 23:</h3>
-            <p>Feature discretization before decision tree:</p>
-            <div class="options">
-                <label><input type="radio" name="q23" value="a"> Never done</label>
-                <label><input type="radio" name="q23" value="b"> Continuous values discretized</label>
-                <label><input type="radio" name="q23" value="c"> Not needed for categorical</label>
-                <label><input type="radio" name="q23" value="d"> Removes features</label>
-            </div>
-            <div class="feedback" id="f23"></div>
-        </div>
+        <div class="question" id="q24"><h3>Question 24:</h3><p>Bootstrap sampling means:</p><div class="options"><label><input type="radio" name="q24" value="a"> Sample without replacement</label><label><input type="radio" name="q24" value="b"> Sample with replacement (same item can appear multiple times)</label><label><input type="radio" name="q24" value="c"> No sampling</label><label><input type="radio" name="q24" value="d"> Delete samples</label></div><div class="feedback" id="f24"></div></div>
 
-        <div class="question" id="q24">
-            <h3>Question 24:</h3>
-            <p>Decision tree follows which representation?</p>
-            <div class="options">
-                <label><input type="radio" name="q24" value="a"> Product of Sums</label>
-                <label><input type="radio" name="q24" value="b"> Sum of Product (SOP)</label>
-                <label><input type="radio" name="q24" value="c"> Random</label>
-                <label><input type="radio" name="q24" value="d"> Linear only</label>
-            </div>
-            <div class="feedback" id="f24"></div>
-        </div>
+        <div class="question" id="q25"><h3>Question 25:</h3><p>Random Forest uses random feature subset because:</p><div class="options"><label><input type="radio" name="q25" value="a"> Faster only</label><label><input type="radio" name="q25" value="b"> Decorrelates trees, reduces overfitting</label><label><input type="radio" name="q25" value="c"> No reason</label><label><input type="radio" name="q25" value="d"> Worse performance</label></div><div class="feedback" id="f25"></div></div>
 
-        <div class="question" id="q25">
-            <h3>Question 25:</h3>
-            <p>Gini index is used for:</p>
-            <div class="options">
-                <label><input type="radio" name="q25" value="a"> Clustering</label>
-                <label><input type="radio" name="q25" value="b"> Measuring impurity (like entropy)</label>
-                <label><input type="radio" name="q25" value="c"> Regression only</label>
-                <label><input type="radio" name="q25" value="d"> Data normalization</label>
-            </div>
-            <div class="feedback" id="f25"></div>
-        </div>
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Bias-variance tradeoff in Random Forest:</p><div class="options"><label><input type="radio" name="q26" value="a"> High bias, high variance</label><label><input type="radio" name="q26" value="b"> Low bias, lower variance than single tree</label><label><input type="radio" name="q26" value="c"> High bias, low variance</label><label><input type="radio" name="q26" value="d"> No tradeoff</label></div><div class="feedback" id="f26"></div></div>
 
-        <div class="question" id="q26">
-            <h3>Question 26:</h3>
-            <p>Overfitting in decision trees can be reduced by:</p>
-            <div class="options">
-                <label><input type="radio" name="q26" value="a"> Growing deeper</label>
-                <label><input type="radio" name="q26" value="b"> Pruning and limiting depth</label>
-                <label><input type="radio" name="q26" value="c"> Adding more features</label>
-                <label><input type="radio" name="q26" value="d"> No solution</label>
-            </div>
-            <div class="feedback" id="f26"></div>
-        </div>
+        <div class="question" id="q27"><h3>Question 27:</h3><p>Out-of-bag (OOB) samples:</p><div class="options"><label><input type="radio" name="q27" value="a"> All samples used</label><label><input type="radio" name="q27" value="b"> Samples not selected in bootstrap, used for validation</label><label><input type="radio" name="q27" value="c"> Deleted samples</label><label><input type="radio" name="q27" value="d"> Training samples</label></div><div class="feedback" id="f27"></div></div>
 
-        <div class="question" id="q27">
-            <h3>Question 27:</h3>
-            <p>ID3 processes attributes:</p>
-            <div class="options">
-                <label><input type="radio" name="q27" value="a"> Simultaneously</label>
-                <label><input type="radio" name="q27" value="b"> Iteratively, picking best unused attribute each time</label>
-                <label><input type="radio" name="q27" value="c"> Randomly</label>
-                <label><input type="radio" name="q27" value="d"> In fixed order</label>
-            </div>
-            <div class="feedback" id="f27"></div>
-        </div>
+        <div class="question" id="q28"><h3>Question 28:</h3><p>Hard voting in Random Forest:</p><div class="options"><label><input type="radio" name="q28" value="a"> Vote on probabilities</label><label><input type="radio" name="q28" value="b"> Vote on predicted class labels</label><label><input type="radio" name="q28" value="c"> No voting</label><label><input type="radio" name="q28" value="d"> Random selection</label></div><div class="feedback" id="f28"></div></div>
 
-        <div class="question" id="q28">
-            <h3>Question 28:</h3>
-            <p>Validation dataset in pruning is used to:</p>
-            <div class="options">
-                <label><input type="radio" name="q28" value="a"> Train the tree</label>
-                <label><input type="radio" name="q28" value="b"> Optimize accuracy while trimming</label>
-                <label><input type="radio" name="q28" value="c"> Delete data</label>
-                <label><input type="radio" name="q28" value="d"> Add features</label>
-            </div>
-            <div class="feedback" id="f28"></div>
-        </div>
+        <div class="question" id="q29"><h3>Question 29:</h3><p>Soft voting in Random Forest:</p><div class="options"><label><input type="radio" name="q29" value="a"> Vote on class labels</label><label><input type="radio" name="q29" value="b"> Average predicted probabilities</label><label><input type="radio" name="q29" value="c"> Random</label><label><input type="radio" name="q29" value="d"> No voting</label></div><div class="feedback" id="f29"></div></div>
 
-        <div class="question" id="q29">
-            <h3>Question 29:</h3>
-            <p>A decision node is:</p>
-            <div class="options">
-                <label><input type="radio" name="q29" value="a"> Terminal</label>
-                <label><input type="radio" name="q29" value="b"> Sub-node that splits into further sub-nodes</label>
-                <label><input type="radio" name="q29" value="c"> Root only</label>
-                <label><input type="radio" name="q29" value="d"> Leaf</label>
-            </div>
-            <div class="feedback" id="f29"></div>
-        </div>
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Gradient Boosting vs Random Forest:</p><div class="options"><label><input type="radio" name="q30" value="a"> Exact same thing</label><label><input type="radio" name="q30" value="b"> GB builds trees sequentially, RF builds in parallel</label><label><input type="radio" name="q30" value="c"> GB is faster</label><label><input type="radio" name="q30" value="d"> No difference</label></div><div class="feedback" id="f30"></div></div>
+    </div>
 
-        <div class="question" id="q30">
-            <h3>Question 30:</h3>
-            <p>Parent and child relationship:</p>
-            <div class="options">
-                <label><input type="radio" name="q30" value="a"> No relationship</label>
-                <label><input type="radio" name="q30" value="b"> Parent divides into child sub-nodes</label>
-                <label><input type="radio" name="q30" value="c"> Child divides into parent</label>
-                <label><input type="radio" name="q30" value="d"> Equal nodes</label>
-            </div>
-            <div class="feedback" id="f30"></div>
-        </div>
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Dataset: 50% Class A, 50% Class B. Entropy = ?</p><div class="options"><label><input type="radio" name="q1" value="a"> 0</label><label><input type="radio" name="q1" value="b"> 1 (maximum entropy for binary)</label><label><input type="radio" name="q1" value="c"> 0.5</label><label><input type="radio" name="q1" value="d"> 2</label></div><div class="feedback" id="f1"></div></div>
 
-        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-    </main>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>Pure node (all one class). Entropy = ?</p><div class="options"><label><input type="radio" name="q2" value="a"> 1</label><label><input type="radio" name="q2" value="b"> 0.5</label><label><input type="radio" name="q2" value="c"> 0 (no uncertainty)</label><label><input type="radio" name="q2" value="d"> Infinite</label></div><div class="feedback" id="f2"></div></div>
 
-    <footer class="footer">
-        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
-    </footer>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Attribute X gives IG=0.8, Attribute Y gives IG=0.2. Which to split on?</p><div class="options"><label><input type="radio" name="q3" value="a"> Y (lower is better)</label><label><input type="radio" name="q3" value="b"> X (higher information gain = better)</label><label><input type="radio" name="q3" value="c"> Either</label><label><input type="radio" name="q3" value="d"> Neither</label></div><div class="feedback" id="f3"></div></div>
 
-    <script src="../js/quiz.js"></script>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Why do we prune decision trees?</p><div class="options"><label><input type="radio" name="q4" value="a"> Make training slower</label><label><input type="radio" name="q4" value="b"> Prevent overfitting, improve generalization</label><label><input type="radio" name="q4" value="c"> Increase training accuracy</label><label><input type="radio" name="q4" value="d"> No reason</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Random Forest with 100 trees. One tree has 90% accuracy. Expected ensemble accuracy?</p><div class="options"><label><input type="radio" name="q5" value="a"> Exactly 90%</label><label><input type="radio" name="q5" value="b"> Higher than 90% (if trees uncorrelated)</label><label><input type="radio" name="q5" value="c"> Lower than 90%</label><label><input type="radio" name="q5" value="d"> 100%</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Why random feature selection at each split?</p><div class="options"><label><input type="radio" name="q6" value="a"> Slower training</label><label><input type="radio" name="q6" value="b"> Decorrelates trees, prevents all trees from using same strong features</label><label><input type="radio" name="q6" value="c"> Worse performance</label><label><input type="radio" name="q6" value="d"> No reason</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Bootstrap sample size N, original dataset size N. What % samples NOT selected (on average)?</p><div class="options"><label><input type="radio" name="q7" value="a"> 0%</label><label><input type="radio" name="q7" value="b"> ~37% (1-1/e, OOB samples)</label><label><input type="radio" name="q7" value="c"> 50%</label><label><input type="radio" name="q7" value="d"> 100%</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Gini impurity vs Entropy - which is faster?</p><div class="options"><label><input type="radio" name="q8" value="a"> Entropy (has log)</label><label><input type="radio" name="q8" value="b"> Gini (no log computation)</label><label><input type="radio" name="q8" value="c"> Same speed</label><label><input type="radio" name="q8" value="d"> Neither works</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Trees in Random Forest are:</p><div class="options"><label><input type="radio" name="q9" value="a"> Pruned carefully</label><label><input type="radio" name="q9" value="b"> Often grown to max depth (high variance, low bias)</label><label><input type="radio" name="q9" value="c"> Very shallow</label><label><input type="radio" name="q9" value="d"> All identical</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Linear data (simple linear relationship). Which performs better?</p><div class="options"><label><input type="radio" name="q10" value="a"> Decision tree (captures linear easily)</label><label><input type="radio" name="q10" value="b"> Linear regression (axis-aligned splits inefficient for linear)</label><label><input type="radio" name="q10" value="c"> Same performance</label><label><input type="radio" name="q10" value="d"> Neither works</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Increasing max_depth in decision tree:</p><div class="options"><label><input type="radio" name="q11" value="a"> Reduces overfitting</label><label><input type="radio" name="q11" value="b"> Increases overfitting (more complex, fits noise)</label><label><input type="radio" name="q11" value="c"> No effect</label><label><input type="radio" name="q11" value="d"> Faster training</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>min_samples_leaf=100 means:</p><div class="options"><label><input type="radio" name="q12" value="a"> Maximum 100 leaves</label><label><input type="radio" name="q12" value="b"> Each leaf must have at least 100 samples (regularization)</label><label><input type="radio" name="q12" value="c"> Only 100 samples total</label><label><input type="radio" name="q12" value="d"> 100 trees</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Random Forest: more trees (n_estimators) →</p><div class="options"><label><input type="radio" name="q13" value="a"> Worse performance</label><label><input type="radio" name="q13" value="b"> Better performance (asymptotes), never overfits from more trees</label><label><input type="radio" name="q13" value="c"> Overfitting</label><label><input type="radio" name="q13" value="d"> No change</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>All trees in RF use same strong feature. What's the problem?</p><div class="options"><label><input type="radio" name="q14" value="a"> Perfect performance</label><label><input type="radio" name="q14" value="b"> Trees highly correlated, ensemble gains minimal</label><label><input type="radio" name="q14" value="c"> Faster training</label><label><input type="radio" name="q14" value="d"> No problem</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>OOB error estimates:</p><div class="options"><label><input type="radio" name="q15" value="a"> Training error</label><label><input type="radio" name="q15" value="b"> Generalization error (like cross-validation)</label><label><input type="radio" name="q15" value="c"> Always zero</label><label><input type="radio" name="q15" value="d"> Not useful</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Why does bagging reduce variance?</p><div class="options"><label><input type="radio" name="q16" value="a"> Increases variance</label><label><input type="radio" name="q16" value="b"> Averaging multiple models reduces variance (ensemble effect)</label><label><input type="radio" name="q16" value="c"> No effect</label><label><input type="radio" name="q16" value="d"> Reduces bias only</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Categorical feature with 100 values. Decision tree can handle?</p><div class="options"><label><input type="radio" name="q17" value="a"> Cannot handle</label><label><input type="radio" name="q17" value="b"> Yes, but creates many splits (might overfit)</label><label><input type="radio" name="q17" value="c"> Only 10 values max</label><label><input type="radio" name="q17" value="d"> Requires encoding always</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Imbalanced classes (99% negative, 1% positive). Tree problem?</p><div class="options"><label><input type="radio" name="q18" value="a"> No issues</label><label><input type="radio" name="q18" value="b"> May ignore minority class, predict majority (use class weights)</label><label><input type="radio" name="q18" value="c"> Perfect for trees</label><label><input type="radio" name="q18" value="d"> Cannot train</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Feature importance calculation in RF:</p><div class="options"><label><input type="radio" name="q19" value="a"> Random assignment</label><label><input type="radio" name="q19" value="b"> Average decrease in impurity when feature used for splits</label><label><input type="radio" name="q19" value="c"> Not possible</label><label><input type="radio" name="q19" value="d"> Only first feature</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Extremely Randomized Trees (Extra Trees) vs Random Forest:</p><div class="options"><label><input type="radio" name="q20" value="a"> Identical</label><label><input type="radio" name="q20" value="b"> Extra Trees use random thresholds (more randomness, faster)</label><label><input type="radio" name="q20" value="c"> Extra Trees slower</label><label><input type="radio" name="q20" value="d"> Extra Trees worse always</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
     <script>
-        const answers = {
-            q1: "c", q2: "b", q3: "b", q4: "b", q5: "b",
-            q6: "b", q7: "b", q8: "b", q9: "b", q10: "b",
-            q11: "b", q12: "b", q13: "b", q14: "b", q15: "b",
-            q16: "b", q17: "b", q18: "b", q19: "b", q20: "b",
-            q21: "b", q22: "b", q23: "b", q24: "b", q25: "b",
-            q26: "b", q27: "b", q28: "b", q29: "b", q30: "b"
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"a",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"a",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"c",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        
+        const easyExplanations = {
+            q1:"Trees split on feature that best separates classes (max info gain or min impurity).",
+            q2:"Entropy measures impurity/randomness in data.",
+            q3:"Information gain = reduction in entropy after split.",
+            q4:"Leaf node is terminal, makes prediction, doesn't split further.",
+            q5:"Root node represents entire dataset at top of tree.",
+            q6:"Gini impurity measures probability of incorrect classification.",
+            q7:"Pruning removes branches to prevent overfitting.",
+            q8:"Deep trees overfit - memorize training data including noise.",
+            q9:"Random Forest is ensemble of multiple decision trees.",
+            q10:"RF predicts by majority voting from all trees.",
+            q11:"Bagging: sample data with replacement for each tree.",
+            q12:"ID3 uses information gain (entropy-based).",
+            q13:"CART uses Gini impurity.",
+            q14:"Trees work for classification AND regression.",
+            q15:"Trees are easy to interpret and visualize (white-box).",
+            q16:"Features near root typically more important (split early).",
+            q17:"Averaging multiple trees reduces variance.",
+            q18:"Pre-pruning stops growing tree early based on criteria.",
+            q19:"Post-pruning grows full tree then removes branches.",
+            q20:"max_depth controls maximum depth of tree.",
+            q21:"min_samples_split: minimum samples to split a node.",
+            q22:"n_estimators: number of trees in forest.",
+            q23:"Trees don't require feature scaling (use splits, not distances).",
+            q24:"Bootstrap: sample with replacement (same item can appear multiple times).",
+            q25:"Random features decorrelate trees, reduce overfitting.",
+            q26:"RF: low bias (deep trees), lower variance than single tree (averaging).",
+            q27:"OOB samples: not selected in bootstrap, used for validation.",
+            q28:"Hard voting: vote on predicted class labels.",
+            q29:"Soft voting: average predicted probabilities.",
+            q30:"Gradient Boosting builds sequentially, RF builds in parallel."
+        };
+        
+        const hardExplanations = {
+            q1:"50-50 split has maximum entropy for binary: H = -0.5*log₂(0.5) - 0.5*log₂(0.5) = 1.",
+            q2:"Pure node (all one class): P=1 or P=0 → H = 0 (no uncertainty).",
+            q3:"Higher information gain = better split. X reduces entropy by 0.8, Y only 0.2. Choose X.",
+            q4:"Pruning prevents overfitting by removing branches that capture noise, improves generalization.",
+            q5:"Ensemble of uncorrelated good trees typically outperforms individual tree. RF should exceed 90%.",
+            q6:"Random feature selection prevents all trees from using same strong feature → decorrelates trees → better ensemble.",
+            q7:"Bootstrap with replacement: probability of NOT being selected = (1-1/N)^N ≈ 1/e ≈ 37% (OOB samples).",
+            q8:"Gini faster: no logarithm computation. Entropy requires log.",
+            q9:"RF trees often grown to max depth (high variance individually), ensemble reduces variance.",
+            q10:"Linear regression better for linear data. Trees need many axis-aligned splits to approximate linear boundary.",
+            q11:"Increasing max_depth → more complex tree → fits training data better → overfits.",
+            q12:"min_samples_leaf=100: each leaf must have ≥100 samples. Prevents tiny leaves that overfit.",
+            q13:"More trees → better performance (asymptotes). RF doesn't overfit from more trees (each trained independently).",
+            q14:"If all trees use same strong feature, trees become correlated → ensemble gains minimal (defeats purpose).",
+            q15:"OOB error: each sample tested on trees that didn't see it → estimates generalization error (like CV).",
+            q16:"Averaging reduces variance: Var(average) = Var(individual) / n for independent models.",
+            q17:"Trees can handle many categorical values but create many splits → overfitting risk.",
+            q18:"Imbalanced classes: tree may predict majority class always. Use class_weight='balanced'.",
+            q19:"Feature importance: average decrease in impurity (Gini/entropy) when feature used across all trees.",
+            q20:"Extra Trees use random thresholds for splits (vs optimal) → more randomness, faster, sometimes better generalization."
         };
 
-        const explanations = {
-            q1: "Decision trees work for both classification and regression.",
-            q2: "Root node divides dataset initially.",
-            q3: "Splitting divides a node into sub-nodes.",
-            q4: "Leaf/terminal nodes don't split further.",
-            q5: "Pruning removes sub-nodes to avoid overfitting.",
-            q6: "Common: ID3, C4.5, CART, CHAID, Random Forest.",
-            q7: "ID3 picks smallest entropy/largest info gain.",
-            q8: "Info gain is entropy reduction from splitting.",
-            q9: "Entropy measures impurity/uncertainty.",
-            q10: "Pure node (one class) has entropy = 0.",
-            q11: "IG = entropy before - weighted avg entropy after.",
-            q12: "CART = Classification And Regression Tree.",
-            q13: "C4.5 is the successor/improvement of ID3.",
-            q14: "Random Forest is ensemble of random decision trees.",
-            q15: "Random Forest reduces bias and variance.",
-            q16: "Bagging uses random samples with replacement.",
-            q17: "Random Forest uses random subset of attributes at each node.",
-            q18: "Uncorrelated trees protect from individual errors.",
-            q19: "Each tree gets sample of size N with replacement.",
-            q20: "Linear better when relationship is linear.",
-            q21: "Trees better for non-linear complex relationships.",
-            q22: "Decision trees are easy to interpret.",
-            q23: "Continuous features are discretized.",
-            q24: "Decision trees follow SOP representation.",
-            q25: "Gini index measures impurity alternative to entropy.",
-            q26: "Pruning and depth limits reduce overfitting.",
-            q27: "ID3 iteratively picks best unused attribute.",
-            q28: "Validation set helps optimize pruning.",
-            q29: "Decision node splits into further sub-nodes.",
-            q30: "Parent node divides into child sub-nodes."
-        };
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
 
-        initQuiz(answers, explanations);
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>

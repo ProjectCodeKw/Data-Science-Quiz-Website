@@ -1,129 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsupervised Learning Quiz - Data Science Quizzes</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Unsupervised Learning Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Unsupervised Learning Quiz</h1>
-        <p><a href="../index.html">Back to Home</a></p>
-    </header>
+    <h1>Unsupervised Learning Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
 
-    <main class="quiz-container">
-        <div class="score" id="score"></div>
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Unsupervised learning works with:</p><div class="options"><label><input type="radio" name="q1" value="a"> Labeled data</label><label><input type="radio" name="q1" value="b"> Unlabeled data (no target labels)</label><label><input type="radio" name="q1" value="c"> Only text</label><label><input type="radio" name="q1" value="d"> Only images</label></div><div class="feedback" id="f1"></div></div>
 
-        <div class="question"><h3>Q1. Unsupervised learning involves:</h3><div class="options"><label><input type="radio" name="q1" value="a"> Labeled data</label><label><input type="radio" name="q1" value="b"> Finding structure in unlabeled data</label><label><input type="radio" name="q1" value="c"> Supervised classification</label><label><input type="radio" name="q1" value="d"> Regression</label></div><div class="feedback" id="f1"></div></div>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>K-means is used for:</p><div class="options"><label><input type="radio" name="q2" value="a"> Classification</label><label><input type="radio" name="q2" value="b"> Clustering (grouping similar data)</label><label><input type="radio" name="q2" value="c"> Regression</label><label><input type="radio" name="q2" value="d"> Sorting</label></div><div class="feedback" id="f2"></div></div>
 
-        <div class="question"><h3>Q2. Unsupervised learning has:</h3><div class="options"><label><input type="radio" name="q2" value="a"> Clear error function</label><label><input type="radio" name="q2" value="b"> No error/cost function like supervised</label><label><input type="radio" name="q2" value="c"> Many labels</label><label><input type="radio" name="q2" value="d"> Perfect accuracy measure</label></div><div class="feedback" id="f2"></div></div>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>K in K-means represents:</p><div class="options"><label><input type="radio" name="q3" value="a"> Number of iterations</label><label><input type="radio" name="q3" value="b"> Number of clusters</label><label><input type="radio" name="q3" value="c"> Number of features</label><label><input type="radio" name="q3" value="d"> Learning rate</label></div><div class="feedback" id="f3"></div></div>
 
-        <div class="question"><h3>Q3. Four categories of unsupervised learning:</h3><div class="options"><label><input type="radio" name="q3" value="a"> Only clustering</label><label><input type="radio" name="q3" value="b"> Clustering, dimensionality reduction, outlier detection, novelty detection</label><label><input type="radio" name="q3" value="c"> Only regression</label><label><input type="radio" name="q3" value="d"> Only classification</label></div><div class="feedback" id="f3"></div></div>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>K-means assigns points based on:</p><div class="options"><label><input type="radio" name="q4" value="a"> Random choice</label><label><input type="radio" name="q4" value="b"> Distance to nearest centroid</label><label><input type="radio" name="q4" value="c"> Color</label><label><input type="radio" name="q4" value="d"> Labels</label></div><div class="feedback" id="f4"></div></div>
 
-        <div class="question"><h3>Q4. Clustering involves:</h3><div class="options"><label><input type="radio" name="q4" value="a"> Labeling data</label><label><input type="radio" name="q4" value="b"> Partitioning dataset into groups by similarity</label><label><input type="radio" name="q4" value="c"> Removing data</label><label><input type="radio" name="q4" value="d"> Predicting values</label></div><div class="feedback" id="f4"></div></div>
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Centroid in K-means is:</p><div class="options"><label><input type="radio" name="q5" value="a"> Random point</label><label><input type="radio" name="q5" value="b"> Center/mean of cluster points</label><label><input type="radio" name="q5" value="c"> Outlier</label><label><input type="radio" name="q5" value="d"> Maximum value</label></div><div class="feedback" id="f5"></div></div>
 
-        <div class="question"><h3>Q5. Similarity-based clustering input:</h3><div class="options"><label><input type="radio" name="q5" value="a"> Feature matrix</label><label><input type="radio" name="q5" value="b"> Dissimilarity/distance matrix (n x n)</label><label><input type="radio" name="q5" value="c"> Labels</label><label><input type="radio" name="q5" value="d"> Targets</label></div><div class="feedback" id="f5"></div></div>
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Common distance metric in K-means:</p><div class="options"><label><input type="radio" name="q6" value="a"> Cosine only</label><label><input type="radio" name="q6" value="b"> Euclidean distance</label><label><input type="radio" name="q6" value="c"> No distance</label><label><input type="radio" name="q6" value="d"> Time</label></div><div class="feedback" id="f6"></div></div>
 
-        <div class="question"><h3>Q6. Feature-based clustering input:</h3><div class="options"><label><input type="radio" name="q6" value="a"> Distance matrix</label><label><input type="radio" name="q6" value="b"> Feature matrix (n x D)</label><label><input type="radio" name="q6" value="c"> Labels</label><label><input type="radio" name="q6" value="d"> Single value</label></div><div class="feedback" id="f6"></div></div>
+        <div class="question" id="q7"><h3>Question 7:</h3><p>PCA stands for:</p><div class="options"><label><input type="radio" name="q7" value="a"> Primary Class Analysis</label><label><input type="radio" name="q7" value="b"> Principal Component Analysis</label><label><input type="radio" name="q7" value="c"> Practical Computation Algorithm</label><label><input type="radio" name="q7" value="d"> Perfect Clustering Approach</label></div><div class="feedback" id="f7"></div></div>
 
-        <div class="question"><h3>Q7. Dimensionality reduction purpose:</h3><div class="options"><label><input type="radio" name="q7" value="a"> Increase dimensions</label><label><input type="radio" name="q7" value="b"> Reduce dimensionality for succinct representation</label><label><input type="radio" name="q7" value="c"> Add features</label><label><input type="radio" name="q7" value="d"> Remove all data</label></div><div class="feedback" id="f7"></div></div>
+        <div class="question" id="q8"><h3>Question 8:</h3><p>PCA is used for:</p><div class="options"><label><input type="radio" name="q8" value="a"> Increasing dimensions</label><label><input type="radio" name="q8" value="b"> Dimensionality reduction</label><label><input type="radio" name="q8" value="c"> Classification only</label><label><input type="radio" name="q8" value="d"> Deleting data</label></div><div class="feedback" id="f8"></div></div>
 
-        <div class="question"><h3>Q8. Outlier detection finds:</h3><div class="options"><label><input type="radio" name="q8" value="a"> Normal patterns</label><label><input type="radio" name="q8" value="b"> Uncommon events distinguishing from rest</label><label><input type="radio" name="q8" value="c"> Average values</label><label><input type="radio" name="q8" value="d"> All data</label></div><div class="feedback" id="f8"></div></div>
+        <div class="question" id="q9"><h3>Question 9:</h3><p>First principal component in PCA:</p><div class="options"><label><input type="radio" name="q9" value="a"> Random direction</label><label><input type="radio" name="q9" value="b"> Direction of maximum variance</label><label><input type="radio" name="q9" value="c"> Minimum variance</label><label><input type="radio" name="q9" value="d"> Fixed direction</label></div><div class="feedback" id="f9"></div></div>
 
-        <div class="question"><h3>Q9. Novelty detection deals with:</h3><div class="options"><label><input type="radio" name="q9" value="a"> Static data</label><label><input type="radio" name="q9" value="b"> Changes/new patterns in data</label><label><input type="radio" name="q9" value="c"> Old data only</label><label><input type="radio" name="q9" value="d"> No changes</label></div><div class="feedback" id="f9"></div></div>
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Hierarchical clustering creates:</p><div class="options"><label><input type="radio" name="q10" value="a"> Fixed k clusters</label><label><input type="radio" name="q10" value="b"> Tree of clusters (dendrogram)</label><label><input type="radio" name="q10" value="c"> No structure</label><label><input type="radio" name="q10" value="d"> Only 2 clusters</label></div><div class="feedback" id="f10"></div></div>
 
-        <div class="question"><h3>Q10. K-means clustering:</h3><div class="options"><label><input type="radio" name="q10" value="a"> Supervised</label><label><input type="radio" name="q10" value="b"> Partitions data into K clusters</label><label><input type="radio" name="q10" value="c"> Reduces dimensions</label><label><input type="radio" name="q10" value="d"> Regression method</label></div><div class="feedback" id="f10"></div></div>
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Agglomerative clustering is:</p><div class="options"><label><input type="radio" name="q11" value="a"> Top-down (divisive)</label><label><input type="radio" name="q11" value="b"> Bottom-up (merge clusters)</label><label><input type="radio" name="q11" value="c"> Random</label><label><input type="radio" name="q11" value="d"> Not a method</label></div><div class="feedback" id="f11"></div></div>
 
-        <div class="question"><h3>Q11. K-means objective:</h3><div class="options"><label><input type="radio" name="q11" value="a"> Maximize distance</label><label><input type="radio" name="q11" value="b"> Minimize within-cluster variance</label><label><input type="radio" name="q11" value="c"> Maximize variance</label><label><input type="radio" name="q11" value="d"> Delete data</label></div><div class="feedback" id="f11"></div></div>
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Divisive clustering is:</p><div class="options"><label><input type="radio" name="q12" value="a"> Bottom-up</label><label><input type="radio" name="q12" value="b"> Top-down (split clusters)</label><label><input type="radio" name="q12" value="c"> Same as K-means</label><label><input type="radio" name="q12" value="d"> Not possible</label></div><div class="feedback" id="f12"></div></div>
 
-        <div class="question"><h3>Q12. PCA stands for:</h3><div class="options"><label><input type="radio" name="q12" value="a"> Primary Component Analysis</label><label><input type="radio" name="q12" value="b"> Principal Component Analysis</label><label><input type="radio" name="q12" value="c"> Partial Classification Algorithm</label><label><input type="radio" name="q12" value="d"> Perfect Cluster Assignment</label></div><div class="feedback" id="f12"></div></div>
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Silhouette score measures:</p><div class="options"><label><input type="radio" name="q13" value="a"> Training speed</label><label><input type="radio" name="q13" value="b"> Clustering quality (compactness and separation)</label><label><input type="radio" name="q13" value="c"> Number of features</label><label><input type="radio" name="q13" value="d"> Data size</label></div><div class="feedback" id="f13"></div></div>
 
-        <div class="question"><h3>Q13. PCA is used for:</h3><div class="options"><label><input type="radio" name="q13" value="a"> Classification</label><label><input type="radio" name="q13" value="b"> Dimensionality reduction while retaining variance</label><label><input type="radio" name="q13" value="c"> Clustering</label><label><input type="radio" name="q13" value="d"> Regression</label></div><div class="feedback" id="f13"></div></div>
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Silhouette score ranges from:</p><div class="options"><label><input type="radio" name="q14" value="a"> [0, 1]</label><label><input type="radio" name="q14" value="b"> [-1, 1]</label><label><input type="radio" name="q14" value="c"> [0, 100]</label><label><input type="radio" name="q14" value="d"> No range</label></div><div class="feedback" id="f14"></div></div>
 
-        <div class="question"><h3>Q14. PCA finds:</h3><div class="options"><label><input type="radio" name="q14" value="a"> Random directions</label><label><input type="radio" name="q14" value="b"> Principal components (directions of max variance)</label><label><input type="radio" name="q14" value="c"> Minimum variance</label><label><input type="radio" name="q14" value="d"> No patterns</label></div><div class="feedback" id="f14"></div></div>
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Elbow method is used to find:</p><div class="options"><label><input type="radio" name="q15" value="a"> Best learning rate</label><label><input type="radio" name="q15" value="b"> Optimal K in K-means</label><label><input type="radio" name="q15" value="c"> Number of features</label><label><input type="radio" name="q15" value="d"> Batch size</label></div><div class="feedback" id="f15"></div></div>
 
-        <div class="question"><h3>Q15. t-SNE is used for:</h3><div class="options"><label><input type="radio" name="q15" value="a"> Supervised learning</label><label><input type="radio" name="q15" value="b"> Dimensionality reduction, especially visualization</label><label><input type="radio" name="q15" value="c"> Increasing dimensions</label><label><input type="radio" name="q15" value="d"> Classification</label></div><div class="feedback" id="f15"></div></div>
+        <div class="question" id="q16"><h3>Question 16:</h3><p>DBSCAN is:</p><div class="options"><label><input type="radio" name="q16" value="a"> Requires K parameter</label><label><input type="radio" name="q16" value="b"> Density-based clustering (finds arbitrary shapes)</label><label><input type="radio" name="q16" value="c"> Only linear clusters</label><label><input type="radio" name="q16" value="d"> Not a clustering method</label></div><div class="feedback" id="f16"></div></div>
 
-        <div class="question"><h3>Q16. DBSCAN is a:</h3><div class="options"><label><input type="radio" name="q16" value="a"> Supervised method</label><label><input type="radio" name="q16" value="b"> Density-based clustering algorithm</label><label><input type="radio" name="q16" value="c"> Dim reduction</label><label><input type="radio" name="q16" value="d"> Regression</label></div><div class="feedback" id="f16"></div></div>
+        <div class="question" id="q17"><h3>Question 17:</h3><p>DBSCAN can find:</p><div class="options"><label><input type="radio" name="q17" value="a"> Only spherical clusters</label><label><input type="radio" name="q17" value="b"> Arbitrary shapes and identifies outliers</label><label><input type="radio" name="q17" value="c"> Fixed number of clusters</label><label><input type="radio" name="q17" value="d"> No clusters</label></div><div class="feedback" id="f17"></div></div>
 
-        <div class="question"><h3>Q17. Hierarchical clustering creates:</h3><div class="options"><label><input type="radio" name="q17" value="a"> Flat clusters</label><label><input type="radio" name="q17" value="b"> Tree/dendrogram of nested clusters</label><label><input type="radio" name="q17" value="c"> Single cluster</label><label><input type="radio" name="q17" value="d"> No structure</label></div><div class="feedback" id="f17"></div></div>
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Manhattan distance is:</p><div class="options"><label><input type="radio" name="q18" value="a"> Straight line distance</label><label><input type="radio" name="q18" value="b"> Sum of absolute differences (grid-based)</label><label><input type="radio" name="q18" value="c"> Squared distance</label><label><input type="radio" name="q18" value="d"> No distance</label></div><div class="feedback" id="f18"></div></div>
 
-        <div class="question"><h3>Q18. Agglomerative clustering:</h3><div class="options"><label><input type="radio" name="q18" value="a"> Top-down</label><label><input type="radio" name="q18" value="b"> Bottom-up (merge clusters)</label><label><input type="radio" name="q18" value="c"> Random</label><label><input type="radio" name="q18" value="d"> No hierarchy</label></div><div class="feedback" id="f18"></div></div>
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Gaussian Mixture Models (GMM):</p><div class="options"><label><input type="radio" name="q19" value="a"> Only for classification</label><label><input type="radio" name="q19" value="b"> Probabilistic clustering, handles overlapping clusters</label><label><input type="radio" name="q19" value="c"> Same as K-means exactly</label><label><input type="radio" name="q19" value="d"> Not useful</label></div><div class="feedback" id="f19"></div></div>
 
-        <div class="question"><h3>Q19. Divisive clustering:</h3><div class="options"><label><input type="radio" name="q19" value="a"> Bottom-up</label><label><input type="radio" name="q19" value="b"> Top-down (split clusters)</label><label><input type="radio" name="q19" value="c"> Random</label><label><input type="radio" name="q19" value="d"> Flat only</label></div><div class="feedback" id="f19"></div></div>
+        <div class="question" id="q20"><h3>Question 20:</h3><p>T-SNE is used for:</p><div class="options"><label><input type="radio" name="q20" value="a"> Classification</label><label><input type="radio" name="q20" value="b"> Dimensionality reduction for visualization</label><label><input type="radio" name="q20" value="c"> Increasing dimensions</label><label><input type="radio" name="q20" value="d"> Deleting data</label></div><div class="feedback" id="f20"></div></div>
 
-        <div class="question"><h3>Q20. Silhouette score measures:</h3><div class="options"><label><input type="radio" name="q20" value="a"> Speed</label><label><input type="radio" name="q20" value="b"> How well points fit their cluster</label><label><input type="radio" name="q20" value="c"> Data size</label><label><input type="radio" name="q20" value="d"> Nothing</label></div><div class="feedback" id="f20"></div></div>
+        <div class="question" id="q21"><h3>Question 21:</h3><p>Anomaly detection finds:</p><div class="options"><label><input type="radio" name="q21" value="a"> Average points</label><label><input type="radio" name="q21" value="b"> Unusual/outlier points</label><label><input type="radio" name="q21" value="c"> All points equally</label><label><input type="radio" name="q21" value="d"> No points</label></div><div class="feedback" id="f21"></div></div>
 
-        <div class="question"><h3>Q21. Elbow method helps find:</h3><div class="options"><label><input type="radio" name="q21" value="a"> Features</label><label><input type="radio" name="q21" value="b"> Optimal number of clusters K</label><label><input type="radio" name="q21" value="c"> Labels</label><label><input type="radio" name="q21" value="d"> Outliers</label></div><div class="feedback" id="f21"></div></div>
+        <div class="question" id="q22"><h3>Question 22:</h3><p>Autoencoders are used for:</p><div class="options"><label><input type="radio" name="q22" value="a"> Supervised classification</label><label><input type="radio" name="q22" value="b"> Dimensionality reduction, feature learning</label><label><input type="radio" name="q22" value="c"> Increasing dimensions</label><label><input type="radio" name="q22" value="d"> Only text</label></div><div class="feedback" id="f22"></div></div>
 
-        <div class="question"><h3>Q22. Autoencoders are:</h3><div class="options"><label><input type="radio" name="q22" value="a"> Supervised</label><label><input type="radio" name="q22" value="b"> Neural networks for unsupervised learning/encoding</label><label><input type="radio" name="q22" value="c"> Decision trees</label><label><input type="radio" name="q22" value="d"> Linear models</label></div><div class="feedback" id="f22"></div></div>
+        <div class="question" id="q23"><h3>Question 23:</h3><p>K-means works best with:</p><div class="options"><label><input type="radio" name="q23" value="a"> Any shaped clusters</label><label><input type="radio" name="q23" value="b"> Spherical/circular shaped clusters</label><label><input type="radio" name="q23" value="c"> Only linear data</label><label><input type="radio" name="q23" value="d"> Overlapping clusters</label></div><div class="feedback" id="f23"></div></div>
 
-        <div class="question"><h3>Q23. Autoencoder structure:</h3><div class="options"><label><input type="radio" name="q23" value="a"> Encoder only</label><label><input type="radio" name="q23" value="b"> Encoder-decoder compressing then reconstructing</label><label><input type="radio" name="q23" value="c"> Decoder only</label><label><input type="radio" name="q23" value="d"> No structure</label></div><div class="feedback" id="f23"></div></div>
+        <div class="question" id="q24"><h3>Question 24:</h3><p>Ward's linkage in hierarchical clustering:</p><div class="options"><label><input type="radio" name="q24" value="a"> Random merge</label><label><input type="radio" name="q24" value="b"> Minimizes within-cluster variance</label><label><input type="radio" name="q24" value="c"> Maximizes distance</label><label><input type="radio" name="q24" value="d"> Not a method</label></div><div class="feedback" id="f24"></div></div>
 
-        <div class="question"><h3>Q24. Autoencoder loss:</h3><div class="options"><label><input type="radio" name="q24" value="a"> Classification error</label><label><input type="radio" name="q24" value="b"> Reconstruction error</label><label><input type="radio" name="q24" value="c"> Entropy</label><label><input type="radio" name="q24" value="d"> Accuracy</label></div><div class="feedback" id="f24"></div></div>
+        <div class="question" id="q25"><h3>Question 25:</h3><p>Cosine similarity measures:</p><div class="options"><label><input type="radio" name="q25" value="a"> Euclidean distance</label><label><input type="radio" name="q25" value="b"> Angle between vectors (good for text)</label><label><input type="radio" name="q25" value="c"> Manhattan distance</label><label><input type="radio" name="q25" value="d"> No similarity</label></div><div class="feedback" id="f25"></div></div>
 
-        <div class="question"><h3>Q25. Gaussian Mixture Models (GMM):</h3><div class="options"><label><input type="radio" name="q25" value="a"> Deterministic</label><label><input type="radio" name="q25" value="b"> Probabilistic clustering assuming Gaussian distributions</label><label><input type="radio" name="q25" value="c"> Supervised</label><label><input type="radio" name="q25" value="d"> Dim reduction</label></div><div class="feedback" id="f25"></div></div>
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Explained variance in PCA:</p><div class="options"><label><input type="radio" name="q26" value="a"> Random value</label><label><input type="radio" name="q26" value="b"> Proportion of variance captured by components</label><label><input type="radio" name="q26" value="c"> Not measurable</label><label><input type="radio" name="q26" value="d"> Always 100%</label></div><div class="feedback" id="f26"></div></div>
 
-        <div class="question"><h3>Q26. Anomaly detection is:</h3><div class="options"><label><input type="radio" name="q26" value="a"> Supervised</label><label><input type="radio" name="q26" value="b"> Unsupervised task finding unusual patterns</label><label><input type="radio" name="q26" value="c"> Always accurate</label><label><input type="radio" name="q26" value="d"> Impossible</label></div><div class="feedback" id="f26"></div></div>
+        <div class="question" id="q27"><h3>Question 27:</h3><p>Standardization before clustering:</p><div class="options"><label><input type="radio" name="q27" value="a"> Not needed</label><label><input type="radio" name="q27" value="b"> Important when features have different scales</label><label><input type="radio" name="q27" value="c"> Makes it worse</label><label><input type="radio" name="q27" value="d"> Only for classification</label></div><div class="feedback" id="f27"></div></div>
 
-        <div class="question"><h3>Q27. Association rules find:</h3><div class="options"><label><input type="radio" name="q27" value="a"> Labels</label><label><input type="radio" name="q27" value="b"> Relationships between variables</label><label><input type="radio" name="q27" value="c"> Clusters</label><label><input type="radio" name="q27" value="d"> Dimensions</label></div><div class="feedback" id="f27"></div></div>
+        <div class="question" id="q28"><h3>Question 28:</h3><p>Inertia in K-means measures:</p><div class="options"><label><input type="radio" name="q28" value="a"> Number of clusters</label><label><input type="radio" name="q28" value="b"> Sum of squared distances to nearest centroid</label><label><input type="radio" name="q28" value="c"> Learning rate</label><label><input type="radio" name="q28" value="d"> Accuracy</label></div><div class="feedback" id="f28"></div></div>
 
-        <div class="question"><h3>Q28. Market basket analysis uses:</h3><div class="options"><label><input type="radio" name="q28" value="a"> Supervised learning</label><label><input type="radio" name="q28" value="b"> Association rules to find product relationships</label><label><input type="radio" name="q28" value="c"> Clustering only</label><label><input type="radio" name="q28" value="d"> Regression</label></div><div class="feedback" id="f28"></div></div>
+        <div class="question" id="q29"><h3>Question 29:</h3><p>Mean-shift clustering:</p><div class="options"><label><input type="radio" name="q29" value="a"> Requires K</label><label><input type="radio" name="q29" value="b"> Automatically finds number of clusters</label><label><input type="radio" name="q29" value="c"> Only 2 clusters</label><label><input type="radio" name="q29" value="d"> Not a method</label></div><div class="feedback" id="f29"></div></div>
 
-        <div class="question"><h3>Q29. Apriori algorithm is used for:</h3><div class="options"><label><input type="radio" name="q29" value="a"> Classification</label><label><input type="radio" name="q29" value="b"> Finding frequent itemsets/association rules</label><label><input type="radio" name="q29" value="c"> Regression</label><label><input type="radio" name="q29" value="d"> Supervised</label></div><div class="feedback" id="f29"></div></div>
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Association rules (market basket analysis):</p><div class="options"><label><input type="radio" name="q30" value="a"> Supervised method</label><label><input type="radio" name="q30" value="b"> Finds patterns in transactions (if X then Y)</label><label><input type="radio" name="q30" value="c"> Classification only</label><label><input type="radio" name="q30" value="d"> Not unsupervised</label></div><div class="feedback" id="f30"></div></div>
+    </div>
 
-        <div class="question"><h3>Q30. Unsupervised learning applications:</h3><div class="options"><label><input type="radio" name="q30" value="a"> Only labeled tasks</label><label><input type="radio" name="q30" value="b"> Customer segmentation, recommender systems, anomaly detection</label><label><input type="radio" name="q30" value="c"> Only classification</label><label><input type="radio" name="q30" value="d"> Only regression</label></div><div class="feedback" id="f30"></div></div>
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>K too small in K-means causes:</p><div class="options"><label><input type="radio" name="q1" value="a"> Perfect clustering</label><label><input type="radio" name="q1" value="b"> Underfitting (different groups merged together)</label><label><input type="radio" name="q1" value="c"> No effect</label><label><input type="radio" name="q1" value="d"> Too many clusters</label></div><div class="feedback" id="f1"></div></div>
 
-        <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
-    </main>
+        <div class="question" id="q2"><h3>Question 2:</h3><p>K too large in K-means causes:</p><div class="options"><label><input type="radio" name="q2" value="a"> Underfitting</label><label><input type="radio" name="q2" value="b"> Overfitting (natural groups split unnecessarily)</label><label><input type="radio" name="q2" value="c"> Perfect result</label><label><input type="radio" name="q2" value="d"> No clustering</label></div><div class="feedback" id="f2"></div></div>
 
-    <footer class="footer">
-        <p>Questions generated by <strong>Claude AI</strong> for the Data Science course</p>
-    </footer>
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Why initialize K-means centroids carefully?</p><div class="options"><label><input type="radio" name="q3" value="a"> No effect</label><label><input type="radio" name="q3" value="b"> Poor initialization → local minima (K-means++ helps)</label><label><input type="radio" name="q3" value="c"> Always same result</label><label><input type="radio" name="q3" value="d"> Faster only</label></div><div class="feedback" id="f3"></div></div>
 
-    <script src="../js/quiz.js"></script>
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Euclidean vs Manhattan distance - when prefer Manhattan?</p><div class="options"><label><input type="radio" name="q4" value="a"> Always Euclidean better</label><label><input type="radio" name="q4" value="b"> Grid-like data, less sensitive to outliers</label><label><input type="radio" name="q4" value="c"> Never useful</label><label><input type="radio" name="q4" value="d"> Same thing</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>First principal component captures:</p><div class="options"><label><input type="radio" name="q5" value="a"> Minimum variance</label><label><input type="radio" name="q5" value="b"> Maximum variance (most information)</label><label><input type="radio" name="q5" value="c"> No variance</label><label><input type="radio" name="q5" value="d"> Random variance</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>PCA with 100 features, keep 95% variance. Typical number of components needed?</p><div class="options"><label><input type="radio" name="q6" value="a"> All 100</label><label><input type="radio" name="q6" value="b"> Often much fewer (10-30, depends on data)</label><label><input type="radio" name="q6" value="c"> Always 95</label><label><input type="radio" name="q6" value="d"> Just 2</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>K-means assumes:</p><div class="options"><label><input type="radio" name="q7" value="a"> Any cluster shape</label><label><input type="radio" name="q7" value="b"> Spherical clusters, similar sizes, similar density</label><label><input type="radio" name="q7" value="c"> No assumptions</label><label><input type="radio" name="q7" value="d"> Only linear data</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Silhouette score of 1 means:</p><div class="options"><label><input type="radio" name="q8" value="a"> Worst clustering</label><label><input type="radio" name="q8" value="b"> Perfect clustering (compact, well-separated)</label><label><input type="radio" name="q8" value="c"> Random clusters</label><label><input type="radio" name="q8" value="d"> Overlapping clusters</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Silhouette score of -1 means:</p><div class="options"><label><input type="radio" name="q9" value="a"> Perfect</label><label><input type="radio" name="q9" value="b"> Points likely in wrong clusters</label><label><input type="radio" name="q9" value="c"> Good clustering</label><label><input type="radio" name="q9" value="d"> No clusters</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>GMM vs K-means - key difference:</p><div class="options"><label><input type="radio" name="q10" value="a"> Identical</label><label><input type="radio" name="q10" value="b"> GMM soft clustering (probabilities), handles overlaps better</label><label><input type="radio" name="q10" value="c"> GMM always worse</label><label><input type="radio" name="q10" value="d"> No difference</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>PCA is linear or non-linear?</p><div class="options"><label><input type="radio" name="q11" value="a"> Non-linear</label><label><input type="radio" name="q11" value="b"> Linear (finds linear combinations)</label><label><input type="radio" name="q11" value="c"> Both</label><label><input type="radio" name="q11" value="d"> Neither</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>For non-linear dimensionality reduction, use:</p><div class="options"><label><input type="radio" name="q12" value="a"> Only PCA</label><label><input type="radio" name="q12" value="b"> T-SNE, UMAP, kernel PCA</label><label><input type="radio" name="q12" value="c"> K-means</label><label><input type="radio" name="q12" value="d"> Nothing</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Elbow method plots:</p><div class="options"><label><input type="radio" name="q13" value="a"> Accuracy vs K</label><label><input type="radio" name="q13" value="b"> Inertia (within-cluster sum of squares) vs K</label><label><input type="radio" name="q13" value="c"> Time vs K</label><label><input type="radio" name="q13" value="d"> Nothing</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Why curse of dimensionality affects clustering?</p><div class="options"><label><input type="radio" name="q14" value="a"> No effect</label><label><input type="radio" name="q14" value="b"> High dimensions → all points equidistant (distance loses meaning)</label><label><input type="radio" name="q14" value="c"> Makes it easier</label><label><input type="radio" name="q14" value="d"> Only helps</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>DBSCAN parameters: ε (epsilon) and minPts control:</p><div class="options"><label><input type="radio" name="q15" value="a"> Learning rate</label><label><input type="radio" name="q15" value="b"> Neighborhood radius and minimum density</label><label><input type="radio" name="q15" value="c"> Number of clusters directly</label><label><input type="radio" name="q15" value="d"> Nothing</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Hierarchical clustering advantage over K-means:</p><div class="options"><label><input type="radio" name="q16" value="a"> Faster always</label><label><input type="radio" name="q16" value="b"> Don't need to specify K beforehand, shows hierarchy</label><label><input type="radio" name="q16" value="c"> No advantage</label><label><input type="radio" name="q16" value="d"> Worse always</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Complete linkage in hierarchical clustering merges:</p><div class="options"><label><input type="radio" name="q17" value="a"> Closest points</label><label><input type="radio" name="q17" value="b"> Clusters with smallest maximum distance (farthest points closest)</label><label><input type="radio" name="q17" value="c"> Random clusters</label><label><input type="radio" name="q17" value="d"> All at once</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Single linkage tends to create:</p><div class="options"><label><input type="radio" name="q18" value="a"> Compact clusters</label><label><input type="radio" name="q18" value="b"> Chaining effect (elongated clusters)</label><label><input type="radio" name="q18" value="c"> No clusters</label><label><input type="radio" name="q18" value="d"> Perfect clusters</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Why standardize features before K-means?</p><div class="options"><label><input type="radio" name="q19" value="a"> No need</label><label><input type="radio" name="q19" value="b"> Features with large scales dominate distance calculations</label><label><input type="radio" name="q19" value="c"> Makes it worse</label><label><input type="radio" name="q19" value="d"> Only for classification</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>T-SNE vs PCA for visualization:</p><div class="options"><label><input type="radio" name="q20" value="a"> Identical results</label><label><input type="radio" name="q20" value="b"> T-SNE preserves local structure better, nonlinear (slower)</label><label><input type="radio" name="q20" value="c"> PCA always better</label><label><input type="radio" name="q20" value="d"> No difference</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
     <script>
-        const answers = {
-            q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",
-            q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b",
-            q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        
+        const easyExplanations = {
+            q1:"Unsupervised learning works with unlabeled data (no target labels).",
+            q2:"K-means clusters (groups) similar data points together.",
+            q3:"K represents number of clusters to create.",
+            q4:"K-means assigns points to nearest centroid based on distance.",
+            q5:"Centroid is center/mean of all points in cluster.",
+            q6:"Euclidean distance most common in K-means.",
+            q7:"PCA = Principal Component Analysis.",
+            q8:"PCA reduces dimensionality while preserving variance.",
+            q9:"First principal component = direction of maximum variance.",
+            q10:"Hierarchical clustering creates tree structure (dendrogram).",
+            q11:"Agglomerative: bottom-up, starts with individual points, merges clusters.",
+            q12:"Divisive: top-down, starts with one cluster, splits recursively.",
+            q13:"Silhouette score measures clustering quality (compactness and separation).",
+            q14:"Silhouette score ranges from -1 (bad) to 1 (good).",
+            q15:"Elbow method finds optimal K by plotting inertia vs K.",
+            q16:"DBSCAN: density-based, finds arbitrary shapes, doesn't require K.",
+            q17:"DBSCAN finds arbitrary shapes and identifies outliers as noise.",
+            q18:"Manhattan distance: sum of absolute differences (L1).",
+            q19:"GMM: probabilistic clustering, handles overlapping clusters better than K-means.",
+            q20:"T-SNE for dimensionality reduction and visualization.",
+            q21:"Anomaly detection finds unusual/outlier points.",
+            q22:"Autoencoders: neural networks for dimensionality reduction and feature learning.",
+            q23:"K-means works best with spherical/circular shaped clusters.",
+            q24:"Ward's linkage minimizes within-cluster variance.",
+            q25:"Cosine similarity measures angle between vectors (good for text/sparse data).",
+            q26:"Explained variance: proportion of variance captured by principal components.",
+            q27:"Standardization important when features have different scales (prevents dominance).",
+            q28:"Inertia: sum of squared distances to nearest centroid.",
+            q29:"Mean-shift automatically finds number of clusters (doesn't require K).",
+            q30:"Association rules find patterns in transactions (market basket analysis)."
+        };
+        
+        const hardExplanations = {
+            q1:"K too small → underfitting → different natural groups forced together into same cluster.",
+            q2:"K too large → overfitting → natural groups split unnecessarily into many clusters.",
+            q3:"Random init can lead to local minima. K-means++ init spreads centroids out → better results.",
+            q4:"Manhattan: grid-like movement, less sensitive to outliers than Euclidean.",
+            q5:"PC1 captures maximum variance = most information about data.",
+            q6:"Typically much fewer than original features needed for 95% variance (depends on correlation structure).",
+            q7:"K-means assumes spherical clusters of similar size and density. Fails on elongated or irregular shapes.",
+            q8:"Silhouette=1 → points very close to own cluster, far from others → perfect.",
+            q9:"Silhouette=-1 → points closer to other clusters than own → likely misclassified.",
+            q10:"GMM soft clustering (probabilities), assumes Gaussian distributions, handles overlaps better.",
+            q11:"PCA linear: finds linear combinations (weighted sums) of original features.",
+            q12:"For non-linear manifolds: T-SNE, UMAP, kernel PCA, autoencoders.",
+            q13:"Elbow: plot inertia vs K, look for \"elbow\" where improvement slows.",
+            q14:"High dimensions → all pairwise distances become similar → distance metrics lose discriminative power.",
+            q15:"ε=neighborhood radius, minPts=minimum points in neighborhood for core point.",
+            q16:"Hierarchical: don't need to specify K, provides dendrogram showing hierarchy at all levels.",
+            q17:"Complete linkage: merge clusters with smallest maximum pairwise distance → compact clusters.",
+            q18:"Single linkage: can create chaining (elongated clusters) by connecting via single close points.",
+            q19:"Features with large values (e.g., salary in thousands) dominate distance → must standardize.",
+            q20:"T-SNE better preserves local neighborhoods, nonlinear. PCA faster, preserves global structure."
         };
 
-        const explanations = {
-            q1:"Unsupervised finds structure without labels.",
-            q2:"No clear error function like supervised.",
-            q3:"4 categories: clustering, dim reduction, outlier, novelty detection.",
-            q4:"Clustering partitions data into similar groups.",
-            q5:"Similarity-based uses distance matrix.",
-            q6:"Feature-based uses n x D feature matrix.",
-            q7:"Dim reduction creates succinct representations.",
-            q8:"Outlier detection finds uncommon/distinguishing events.",
-            q9:"Novelty detection finds changes/new patterns.",
-            q10:"K-means partitions into K clusters.",
-            q11:"K-means minimizes within-cluster variance.",
-            q12:"PCA = Principal Component Analysis.",
-            q13:"PCA reduces dimensions keeping variance.",
-            q14:"PCA finds max variance directions.",
-            q15:"t-SNE for dim reduction and visualization.",
-            q16:"DBSCAN is density-based clustering.",
-            q17:"Hierarchical creates nested cluster tree.",
-            q18:"Agglomerative is bottom-up merging.",
-            q19:"Divisive is top-down splitting.",
-            q20:"Silhouette measures cluster fit quality.",
-            q21:"Elbow method finds optimal K.",
-            q22:"Autoencoders: NNs for unsupervised encoding.",
-            q23:"Autoencoder: encoder compresses, decoder reconstructs.",
-            q24:"Autoencoder minimizes reconstruction error.",
-            q25:"GMM: probabilistic clustering with Gaussians.",
-            q26:"Anomaly detection finds unusual patterns (unsupervised).",
-            q27:"Association rules find variable relationships.",
-            q28:"Market basket uses association rules.",
-            q29:"Apriori finds frequent itemsets.",
-            q30:"Applications: segmentation, recommendations, anomaly detection."
-        };
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
 
-        initQuiz(answers, explanations);
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>

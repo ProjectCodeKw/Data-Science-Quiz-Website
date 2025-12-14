@@ -1,1 +1,280 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Deep Learning Quiz</title><style>body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:20px;line-height:1.6}h1{text-align:center;color:#333}.question{border:1px solid #ccc;padding:15px;margin:15px 0;background-color:#f9f9f9}.question h3{margin-top:0}.options{margin:10px 0}.options label{display:block;padding:5px 0}code{background-color:#e8e8e8;padding:2px 6px;font-family:Courier New,monospace}pre{background-color:#e8e8e8;padding:10px;overflow-x:auto;font-family:Courier New,monospace}button{background-color:#4CAF50;color:white;padding:10px 30px;border:none;cursor:pointer;font-size:16px;display:block;margin:20px auto}button:hover{background-color:#45a049}.feedback{margin-top:10px;padding:10px;display:none}.correct{background-color:#d4edda;color:#155724;border:1px solid #c3e6cb}.incorrect{background-color:#f8d7da;color:#721c24;border:1px solid #f5c6cb}#score{text-align:center;font-size:20px;font-weight:bold;margin:20px 0;display:none}</style></head><body><h1>Deep Learning Quiz</h1><p style="text-align:center;">Answer all questions and click Submit to see your score.</p><div class="question" id="q1"><h3>Question 1:</h3><p>Deep Learning is essentially:</p><div class="options"><label><input type="radio" name="q1" value="a"> Single layer networks</label><label><input type="radio" name="q1" value="b"> Many hidden-layer neural networks</label><label><input type="radio" name="q1" value="c"> Clustering only</label><label><input type="radio" name="q1" value="d"> Linear regression</label></div><div class="feedback" id="f1"></div></div><div class="question" id="q2"><h3>Question 2:</h3><p>What enabled the rise of deep learning?</p><div class="options"><label><input type="radio" name="q2" value="a"> Less data</label><label><input type="radio" name="q2" value="b"> Computational power, GPUs, more data, better activations</label><label><input type="radio" name="q2" value="c"> Simpler algorithms</label><label><input type="radio" name="q2" value="d"> Smaller networks</label></div><div class="feedback" id="f2"></div></div><div class="question" id="q3"><h3>Question 3:</h3><p>Each hidden layer in DL provides:</p><div class="options"><label><input type="radio" name="q3" value="a"> No benefit</label><label><input type="radio" name="q3" value="b"> Level of abstraction (early:fine, later:high-level)</label><label><input type="radio" name="q3" value="c"> Same information</label><label><input type="radio" name="q3" value="d"> Random features</label></div><div class="feedback" id="f3"></div></div><div class="question" id="q4"><h3>Question 4:</h3><p>Network depth depends on:</p><div class="options"><label><input type="radio" name="q4" value="a"> Random choice</label><label><input type="radio" name="q4" value="b"> Complexity of abstraction needed</label><label><input type="radio" name="q4" value="c"> Always 3</label><label><input type="radio" name="q4" value="d"> Always 100</label></div><div class="feedback" id="f4"></div></div><div class="question" id="q5"><h3>Question 5:</h3><p>For natural language, DL learns hierarchy:</p><div class="options"><label><input type="radio" name="q5" value="a"> No hierarchy</label><label><input type="radio" name="q5" value="b"> Characters→words→phrases→sentences→paragraphs→document</label><label><input type="radio" name="q5" value="c"> Only words</label><label><input type="radio" name="q5" value="d"> Random</label></div><div class="feedback" id="f5"></div></div><div class="question" id="q6"><h3>Question 6:</h3><p>Number of neurons per hidden layer guideline:</p><div class="options"><label><input type="radio" name="q6" value="a"> Always 10</label><label><input type="radio" name="q6" value="b"> Between 2/3 and 2× input size</label><label><input type="radio" name="q6" value="c"> Always 100</label><label><input type="radio" name="q6" value="d"> Random</label></div><div class="feedback" id="f6"></div></div><div class="question" id="q7"><h3>Question 7:</h3><p>If data is linearly separable:</p><div class="options"><label><input type="radio" name="q7" value="a"> Need many layers</label><label><input type="radio" name="q7" value="b"> Don't need hidden layers</label><label><input type="radio" name="q7" value="c"> Need 10 layers</label><label><input type="radio" name="q7" value="d"> Impossible</label></div><div class="feedback" id="f7"></div></div><div class="question" id="q8"><h3>Question 8:</h3><p>For complex high-dimensional data:</p><div class="options"><label><input type="radio" name="q8" value="a"> 1 layer enough</label><label><input type="radio" name="q8" value="b"> 3+ hidden layers</label><label><input type="radio" name="q8" value="c"> No layers</label><label><input type="radio" name="q8" value="d"> Only output</label></div><div class="feedback" id="f8"></div></div><div class="question" id="q9"><h3>Question 9:</h3><p>Vanishing gradient problem:</p><div class="options"><label><input type="radio" name="q9" value="a"> Gradients explode</label><label><input type="radio" name="q9" value="b"> Gradients too small, stops learning</label><label><input type="radio" name="q9" value="c"> No problem</label><label><input type="radio" name="q9" value="d"> Random</label></div><div class="feedback" id="f9"></div></div><div class="question" id="q10"><h3>Question 10:</h3><p>Exploding gradient problem:</p><div class="options"><label><input type="radio" name="q10" value="a"> Gradients vanish</label><label><input type="radio" name="q10" value="b"> Gradients too large, unstable learning</label><label><input type="radio" name="q10" value="c"> No issue</label><label><input type="radio" name="q10" value="d"> Perfect</label></div><div class="feedback" id="f10"></div></div><div class="question" id="q11"><h3>Question 11:</h3><p>Solution for vanishing/exploding gradients:</p><div class="options"><label><input type="radio" name="q11" value="a"> Give up</label><label><input type="radio" name="q11" value="b"> Gradient clipping, better initialization, normalization</label><label><input type="radio" name="q11" value="c"> Increase depth</label><label><input type="radio" name="q11" value="d"> Remove layers</label></div><div class="feedback" id="f11"></div></div><div class="question" id="q12"><h3>Question 12:</h3><p>Gradient clipping:</p><div class="options"><label><input type="radio" name="q12" value="a"> Removes gradients</label><label><input type="radio" name="q12" value="b"> Clips gradients to not exceed threshold</label><label><input type="radio" name="q12" value="c"> Increases gradients</label><label><input type="radio" name="q12" value="d"> Random</label></div><div class="feedback" id="f12"></div></div><div class="question" id="q13"><h3>Question 13:</h3><p>Momentum in optimization:</p><div class="options"><label><input type="radio" name="q13" value="a"> Slows down</label><label><input type="radio" name="q13" value="b"> Builds inertia in search direction, overcomes oscillations</label><label><input type="radio" name="q13" value="c"> Random walk</label><label><input type="radio" name="q13" value="d"> Stops</label></div><div class="feedback" id="f13"></div></div><div class="question" id="q14"><h3>Question 14:</h3><p>Xavier/Glorot initialization helps:</p><div class="options"><label><input type="radio" name="q14" value="a"> Nothing</label><label><input type="radio" name="q14" value="b"> Equal variance for gradients forward/backward</label><label><input type="radio" name="q14" value="c"> Makes it slower</label><label><input type="radio" name="q14" value="d"> Removes layers</label></div><div class="feedback" id="f14"></div></div><div class="question" id="q15"><h3>Question 15:</h3><p>Xavier initialization formula for fan_avg:</p><div class="options"><label><input type="radio" name="q15" value="a"> fan_in only</label><label><input type="radio" name="q15" value="b"> (fan_in + fan_out)/2</label><label><input type="radio" name="q15" value="c"> fan_out only</label><label><input type="radio" name="q15" value="d"> Random</label></div><div class="feedback" id="f15"></div></div><div class="question" id="q16"><h3>Question 16:</h3><p>AdaGrad optimizer:</p><div class="options"><label><input type="radio" name="q16" value="a"> Fixed rate</label><label><input type="radio" name="q16" value="b"> Per-parameter learning rates for sparse gradients</label><label><input type="radio" name="q16" value="c"> No learning rate</label><label><input type="radio" name="q16" value="d"> Random</label></div><div class="feedback" id="f16"></div></div><div class="question" id="q17"><h3>Question 17:</h3><p>RMSProp optimizer:</p><div class="options"><label><input type="radio" name="q17" value="a"> Fixed rate</label><label><input type="radio" name="q17" value="b"> Per-param rates based on recent gradient magnitudes</label><label><input type="radio" name="q17" value="c"> No adaptation</label><label><input type="radio" name="q17" value="d"> Random</label></div><div class="feedback" id="f17"></div></div><div class="question" id="q18"><h3>Question 18:</h3><p>Best ML packages for deep learning:</p><div class="options"><label><input type="radio" name="q18" value="a"> Only Excel</label><label><input type="radio" name="q18" value="b"> Scikit-learn, Keras, PyTorch, TensorFlow</label><label><input type="radio" name="q18" value="c"> Only Matlab</label><label><input type="radio" name="q18" value="d"> Paint</label></div><div class="feedback" id="f18"></div></div><div class="question" id="q19"><h3>Question 19:</h3><p>Dense layer in DL:</p><div class="options"><label><input type="radio" name="q19" value="a"> Sparse</label><label><input type="radio" name="q19" value="b"> Fully connected layer</label><label><input type="radio" name="q19" value="c"> Convolutional</label><label><input type="radio" name="q19" value="d"> Pooling</label></div><div class="feedback" id="f19"></div></div><div class="question" id="q20"><h3>Question 20:</h3><p>Dropout layer purpose:</p><div class="options"><label><input type="radio" name="q20" value="a"> Increase size</label><label><input type="radio" name="q20" value="b"> Prevent overfitting by randomly dropping nodes</label><label><input type="radio" name="q20" value="c"> Speed up</label><label><input type="radio" name="q20" value="d"> Add layers</label></div><div class="feedback" id="f20"></div></div><div class="question" id="q21"><h3>Question 21:</h3><p>Pooling layer purpose:</p><div class="options"><label><input type="radio" name="q21" value="a"> Increase size</label><label><input type="radio" name="q21" value="b"> Reduce overfitting by down-sampling</label><label><input type="radio" name="q21" value="c"> Add complexity</label><label><input type="radio" name="q21" value="d"> No purpose</label></div><div class="feedback" id="f21"></div></div><div class="question" id="q22"><h3>Question 22:</h3><p>ReLU layer in DL:</p><div class="options"><label><input type="radio" name="q22" value="a"> Uses sigmoid</label><label><input type="radio" name="q22" value="b"> Uses Rectifier activation for better training</label><label><input type="radio" name="q22" value="c"> Linear only</label><label><input type="radio" name="q22" value="d"> Random</label></div><div class="feedback" id="f22"></div></div><div class="question" id="q23"><h3>Question 23:</h3><p>Batch Normalization:</p><div class="options"><label><input type="radio" name="q23" value="a"> Removes batches</label><label><input type="radio" name="q23" value="b"> Normalizes layer inputs to improve training</label><label><input type="radio" name="q23" value="c"> Slows training</label><label><input type="radio" name="q23" value="d"> Not useful</label></div><div class="feedback" id="f23"></div></div><div class="question" id="q24"><h3>Question 24:</h3><p>Transfer learning:</p><div class="options"><label><input type="radio" name="q24" value="a"> Start from scratch</label><label><input type="radio" name="q24" value="b"> Use pre-trained model on new task</label><label><input type="radio" name="q24" value="c"> Delete old model</label><label><input type="radio" name="q24" value="d"> Random</label></div><div class="feedback" id="f24"></div></div><div class="question" id="q25"><h3>Question 25:</h3><p>Fine-tuning in transfer learning:</p><div class="options"><label><input type="radio" name="q25" value="a"> Freeze all</label><label><input type="radio" name="q25" value="b"> Adjust pre-trained model on new small dataset</label><label><input type="radio" name="q25" value="c"> Delete weights</label><label><input type="radio" name="q25" value="d"> Random init</label></div><div class="feedback" id="f25"></div></div><div class="question" id="q26"><h3>Question 26:</h3><p>Data augmentation:</p><div class="options"><label><input type="radio" name="q26" value="a"> Deletes data</label><label><input type="radio" name="q26" value="b"> Artificially increases training data via transformations</label><label><input type="radio" name="q26" value="c"> Reduces data</label><label><input type="radio" name="q26" value="d"> No change</label></div><div class="feedback" id="f26"></div></div><div class="question" id="q27"><h3>Question 27:</h3><p>Early stopping:</p><div class="options"><label><input type="radio" name="q27" value="a"> Never stop</label><label><input type="radio" name="q27" value="b"> Stop training when validation performance stops improving</label><label><input type="radio" name="q27" value="c"> Train forever</label><label><input type="radio" name="q27" value="d"> Random</label></div><div class="feedback" id="f27"></div></div><div class="question" id="q28"><h3>Question 28:</h3><p>Learning rate decay:</p><div class="options"><label><input type="radio" name="q28" value="a"> Constant rate</label><label><input type="radio" name="q28" value="b"> Reduce learning rate over time</label><label><input type="radio" name="q28" value="c"> Increase rate</label><label><input type="radio" name="q28" value="d"> Random</label></div><div class="feedback" id="f28"></div></div><div class="question" id="q29"><h3>Question 29:</h3><p>L1 regularization:</p><div class="options"><label><input type="radio" name="q29" value="a"> No effect</label><label><input type="radio" name="q29" value="b"> Adds sum of absolute weights to loss</label><label><input type="radio" name="q29" value="c"> Doubles weights</label><label><input type="radio" name="q29" value="d"> Random</label></div><div class="feedback" id="f29"></div></div><div class="question" id="q30"><h3>Question 30:</h3><p>L2 regularization:</p><div class="options"><label><input type="radio" name="q30" value="a"> No effect</label><label><input type="radio" name="q30" value="b"> Adds sum of squared weights to loss</label><label><input type="radio" name="q30" value="c"> Triples weights</label><label><input type="radio" name="q30" value="d"> Random</label></div><div class="feedback" id="f30"></div></div><button onclick="submitQuiz()">Submit Quiz</button><div id="score"></div><script>const answers={q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};const explanations={q1:"Deep Learning = many-layer neural networks.",q2:"DL rise: compute power, GPUs, data, better activations.",q3:"Each layer: different abstraction level.",q4:"Depth depends on abstraction complexity.",q5:"NL hierarchy: chars→words→phrases→sentences→document.",q6:"Neurons: 2/3 to 2× input size typically.",q7:"Linearly separable: no hidden layers needed.",q8:"Complex data: 3+ hidden layers.",q9:"Vanishing: gradients too small, halts learning.",q10:"Exploding: gradients too large, unstable.",q11:"Solutions: clipping, init, normalization.",q12:"Clipping prevents gradient from exceeding threshold.",q13:"Momentum builds inertia, reduces oscillations.",q14:"Xavier: equal variance for gradients.",q15:"fan_avg = (fan_in + fan_out)/2.",q16:"AdaGrad: per-param rates for sparse data.",q17:"RMSProp: adaptive rates from recent gradients.",q18:"Best: Scikit-learn, Keras, PyTorch, TensorFlow.",q19:"Dense = fully connected layer.",q20:"Dropout prevents overfitting by dropping nodes.",q21:"Pooling reduces overfitting via down-sampling.",q22:"ReLU uses rectifier for better training.",q23:"BatchNorm normalizes inputs, speeds training.",q24:"Transfer learning reuses pre-trained models.",q25:"Fine-tuning adjusts pre-trained model on new data.",q26:"Augmentation increases data via transforms.",q27:"Early stopping prevents overfitting.",q28:"LR decay reduces rate over time.",q29:"L1 adds |weights| to loss (sparse weights).",q30:"L2 adds weights² to loss (weight decay)."};function submitQuiz(){let correct=0;const total=Object.keys(answers).length;for(let q in answers){const selected=document.querySelector(`input[name="${q}"]:checked`);const feedback=document.getElementById("f"+q.substring(1));if(selected){if(selected.value===answers[q]){correct++;feedback.className="feedback correct";feedback.textContent="✓ Correct! "+explanations[q];}else{feedback.className="feedback incorrect";feedback.textContent="✗ Incorrect. "+explanations[q];}}else{feedback.className="feedback incorrect";feedback.textContent="✗ No answer selected. "+explanations[q];}feedback.style.display="block";}const percentage=((correct/total)*100).toFixed(1);const scoreDiv=document.getElementById("score");scoreDiv.textContent=`Your Score: ${correct}/${total} (${percentage}%)`;scoreDiv.style.display="block";window.scrollTo(0,0);}</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Deep Learning Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Deep Learning Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
+
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Transfer learning is:</p><div class="options"><label><input type="radio" name="q1" value="a"> Training from scratch always</label><label><input type="radio" name="q1" value="b"> Using pre-trained model weights as starting point</label><label><input type="radio" name="q1" value="c"> Deleting all weights</label><label><input type="radio" name="q1" value="d"> Only for text</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question" id="q2"><h3>Question 2:</h3><p>Adam optimizer combines:</p><div class="options"><label><input type="radio" name="q2" value="a"> Nothing</label><label><input type="radio" name="q2" value="b"> Momentum and RMSProp (adaptive learning rates)</label><label><input type="radio" name="q2" value="c"> Only SGD</label><label><input type="radio" name="q2" value="d"> Random updates</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Batch normalization normalizes:</p><div class="options"><label><input type="radio" name="q3" value="a"> Only input layer</label><label><input type="radio" name="q3" value="b"> Activations across batch for each feature</label><label><input type="radio" name="q3" value="c"> Weights only</label><label><input type="radio" name="q3" value="d"> Nothing</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Fine-tuning in transfer learning means:</p><div class="options"><label><input type="radio" name="q4" value="a"> Freezing all layers</label><label><input type="radio" name="q4" value="b"> Unfreezing some layers and retraining on new data</label><label><input type="radio" name="q4" value="c"> Deleting layers</label><label><input type="radio" name="q4" value="d"> Adding more data only</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Learning rate scheduling:</p><div class="options"><label><input type="radio" name="q5" value="a"> Fixed rate always</label><label><input type="radio" name="q5" value="b"> Adjusting learning rate during training</label><label><input type="radio" name="q5" value="c"> Random rates</label><label><input type="radio" name="q5" value="d"> Not used</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>RMSProp stands for:</p><div class="options"><label><input type="radio" name="q6" value="a"> Random Mean Square</label><label><input type="radio" name="q6" value="b"> Root Mean Square Propagation</label><label><input type="radio" name="q6" value="c"> Rapid Memory System</label><label><input type="radio" name="q6" value="d"> Real Model Selection</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>AdaGrad optimizer:</p><div class="options"><label><input type="radio" name="q7" value="a"> Fixed learning rate for all parameters</label><label><input type="radio" name="q7" value="b"> Adaptive learning rate per parameter</label><label><input type="radio" name="q7" value="c"> No learning rate</label><label><input type="radio" name="q7" value="d"> Random learning</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Xavier initialization helps with:</p><div class="options"><label><input type="radio" name="q8" value="a"> Slowing training</label><label><input type="radio" name="q8" value="b"> Maintaining variance across layers, preventing vanishing/exploding</label><label><input type="radio" name="q8" value="c"> Deleting weights</label><label><input type="radio" name="q8" value="d"> No purpose</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Residual connections (ResNets):</p><div class="options"><label><input type="radio" name="q9" value="a"> Slow down training</label><label><input type="radio" name="q9" value="b"> Allow training very deep networks via skip connections</label><label><input type="radio" name="q9" value="c"> Remove layers</label><label><input type="radio" name="q9" value="d"> Only for shallow networks</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Data augmentation:</p><div class="options"><label><input type="radio" name="q10" value="a"> Deletes data</label><label><input type="radio" name="q10" value="b"> Creates variations of training data (rotation, flip, crop)</label><label><input type="radio" name="q10" value="c"> Only for testing</label><label><input type="radio" name="q10" value="d"> Not useful</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Batch normalization has learnable parameters:</p><div class="options"><label><input type="radio" name="q11" value="a"> No parameters</label><label><input type="radio" name="q11" value="b"> Gamma (scale) and Beta (shift)</label><label><input type="radio" name="q11" value="c"> Only weights</label><label><input type="radio" name="q11" value="d"> Fixed parameters</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Learning rate decay:</p><div class="options"><label><input type="radio" name="q12" value="a"> Increase rate over time</label><label><input type="radio" name="q12" value="b"> Decrease rate over time for fine-tuning</label><label><input type="radio" name="q12" value="c"> Keep constant</label><label><input type="radio" name="q12" value="d"> Random changes</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Pre-trained models (ImageNet):</p><div class="options"><label><input type="radio" name="q13" value="a"> Only for ImageNet</label><label><input type="radio" name="q13" value="b"> Can be fine-tuned for other vision tasks</label><label><input type="radio" name="q13" value="c"> Never reusable</label><label><input type="radio" name="q13" value="d"> Only text</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>One-shot learning:</p><div class="options"><label><input type="radio" name="q14" value="a"> Requires millions of examples</label><label><input type="radio" name="q14" value="b"> Learn from single example per class</label><label><input type="radio" name="q14" value="c"> No learning</label><label><input type="radio" name="q14" value="d"> Only for text</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Few-shot learning:</p><div class="options"><label><input type="radio" name="q15" value="a"> Needs huge dataset</label><label><input type="radio" name="q15" value="b"> Learn from few examples (5-50 per class)</label><label><input type="radio" name="q15" value="c"> No examples needed</label><label><input type="radio" name="q15" value="d"> Only regression</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Momentum in optimizers:</p><div class="options"><label><input type="radio" name="q16" value="a"> Slows convergence</label><label><input type="radio" name="q16" value="b"> Accelerates convergence using past gradients</label><label><input type="radio" name="q16" value="c"> Random direction</label><label><input type="radio" name="q16" value="d"> No effect</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Inception modules (GoogLeNet):</p><div class="options"><label><input type="radio" name="q17" value="a"> Single filter size</label><label><input type="radio" name="q17" value="b"> Multiple filter sizes in parallel</label><label><input type="radio" name="q17" value="c"> No convolutions</label><label><input type="radio" name="q17" value="d"> Only pooling</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Dense layers (DenseNet):</p><div class="options"><label><input type="radio" name="q18" value="a"> No connections</label><label><input type="radio" name="q18" value="b"> Each layer connects to all previous layers</label><label><input type="radio" name="q18" value="c"> Only sequential</label><label><input type="radio" name="q18" value="d"> Random connections</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Warm-up in learning rate scheduling:</p><div class="options"><label><input type="radio" name="q19" value="a"> Start high, stay high</label><label><input type="radio" name="q19" value="b"> Start low, gradually increase then decay</label><label><input type="radio" name="q19" value="c"> Random schedule</label><label><input type="radio" name="q19" value="d"> Not used</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Label smoothing:</p><div class="options"><label><input type="radio" name="q20" value="a"> Makes labels harder</label><label><input type="radio" name="q20" value="b"> Softens one-hot labels (e.g., 0.9 instead of 1.0)</label><label><input type="radio" name="q20" value="c"> Removes labels</label><label><input type="radio" name="q20" value="d"> Only for regression</label></div><div class="feedback" id="f20"></div></div>
+
+        <div class="question" id="q21"><h3>Question 21:</h3><p>Mixup augmentation:</p><div class="options"><label><input type="radio" name="q21" value="a"> Deletes data</label><label><input type="radio" name="q21" value="b"> Blends pairs of images and labels</label><label><input type="radio" name="q21" value="c"> Only crops</label><label><input type="radio" name="q21" value="d"> Not effective</label></div><div class="feedback" id="f21"></div></div>
+
+        <div class="question" id="q22"><h3>Question 22:</h3><p>Cutout augmentation:</p><div class="options"><label><input type="radio" name="q22" value="a"> Removes entire image</label><label><input type="radio" name="q22" value="b"> Masks random patches in image</label><label><input type="radio" name="q22" value="c"> Only rotates</label><label><input type="radio" name="q22" value="d"> No masking</label></div><div class="feedback" id="f22"></div></div>
+
+        <div class="question" id="q23"><h3>Question 23:</h3><p>Weight decay is equivalent to:</p><div class="options"><label><input type="radio" name="q23" value="a"> Increasing weights</label><label><input type="radio" name="q23" value="b"> L2 regularization</label><label><input type="radio" name="q23" value="c"> L1 regularization</label><label><input type="radio" name="q23" value="d"> No regularization</label></div><div class="feedback" id="f23"></div></div>
+
+        <div class="question" id="q24"><h3>Question 24:</h3><p>Cosine annealing:</p><div class="options"><label><input type="radio" name="q24" value="a"> Fixed learning rate</label><label><input type="radio" name="q24" value="b"> Learning rate follows cosine curve (smooth decay)</label><label><input type="radio" name="q24" value="c"> Linear only</label><label><input type="radio" name="q24" value="d"> Random schedule</label></div><div class="feedback" id="f24"></div></div>
+
+        <div class="question" id="q25"><h3>Question 25:</h3><p>Multi-task learning:</p><div class="options"><label><input type="radio" name="q25" value="a"> One task only</label><label><input type="radio" name="q25" value="b"> Learning multiple related tasks simultaneously</label><label><input type="radio" name="q25" value="c"> Sequential tasks</label><label><input type="radio" name="q25" value="d"> Not useful</label></div><div class="feedback" id="f25"></div></div>
+
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Knowledge distillation:</p><div class="options"><label><input type="radio" name="q26" value="a"> Deletes knowledge</label><label><input type="radio" name="q26" value="b"> Transfer knowledge from large model to small model</label><label><input type="radio" name="q26" value="c"> Only for images</label><label><input type="radio" name="q26" value="d"> Not practical</label></div><div class="feedback" id="f26"></div></div>
+
+        <div class="question" id="q27"><h3>Question 27:</h3><p>Gradient accumulation helps with:</p><div class="options"><label><input type="radio" name="q27" value="a"> Nothing</label><label><input type="radio" name="q27" value="b"> Simulating larger batch sizes with limited memory</label><label><input type="radio" name="q27" value="c"> Slower training</label><label><input type="radio" name="q27" value="d"> Deleting gradients</label></div><div class="feedback" id="f27"></div></div>
+
+        <div class="question" id="q28"><h3>Question 28:</h3><p>Mixed precision training uses:</p><div class="options"><label><input type="radio" name="q28" value="a"> Only float32</label><label><input type="radio" name="q28" value="b"> Both float16 and float32 for speed and stability</label><label><input type="radio" name="q28" value="c"> Only integers</label><label><input type="radio" name="q28" value="d"> No precision</label></div><div class="feedback" id="f28"></div></div>
+
+        <div class="question" id="q29"><h3>Question 29:</h3><p>EfficientNet scaling:</p><div class="options"><label><input type="radio" name="q29" value="a"> Only width</label><label><input type="radio" name="q29" value="b"> Balanced depth, width, and resolution scaling</label><label><input type="radio" name="q29" value="c"> Random scaling</label><label><input type="radio" name="q29" value="d"> No scaling</label></div><div class="feedback" id="f29"></div></div>
+
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Self-supervised learning:</p><div class="options"><label><input type="radio" name="q30" value="a"> Requires manual labels</label><label><input type="radio" name="q30" value="b"> Creates labels automatically from data structure</label><label><input type="radio" name="q30" value="c"> No learning</label><label><input type="radio" name="q30" value="d"> Only supervised</label></div><div class="feedback" id="f30"></div></div>
+    </div>
+
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Transfer learning: freeze early layers or late layers?</p><div class="options"><label><input type="radio" name="q1" value="a"> Late layers (task-specific)</label><label><input type="radio" name="q1" value="b"> Early layers (general features like edges)</label><label><input type="radio" name="q1" value="c"> All layers</label><label><input type="radio" name="q1" value="d"> No layers</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question" id="q2"><h3>Question 2:</h3><p>Adam vs SGD - which generalizes better?</p><div class="options"><label><input type="radio" name="q2" value="a"> Always Adam</label><label><input type="radio" name="q2" value="b"> Often SGD (with momentum) on final tuning, Adam for fast initial training</label><label><input type="radio" name="q2" value="c"> No difference</label><label><input type="radio" name="q2" value="d"> Neither works</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Batch normalization during testing:</p><div class="options"><label><input type="radio" name="q3" value="a"> Uses batch statistics</label><label><input type="radio" name="q3" value="b"> Uses running mean/std from training (not batch stats)</label><label><input type="radio" name="q3" value="c"> Disabled completely</label><label><input type="radio" name="q3" value="d"> Random</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Why batch size affects batch norm?</p><div class="options"><label><input type="radio" name="q4" value="a"> No effect</label><label><input type="radio" name="q4" value="b"> Small batches → noisy statistics, unstable training</label><label><input type="radio" name="q4" value="c"> Larger is always worse</label><label><input type="radio" name="q4" value="d"> Only affects speed</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Learning rate too high causes:</p><div class="options"><label><input type="radio" name="q5" value="a"> Perfect convergence</label><label><input type="radio" name="q5" value="b"> Oscillation, divergence, or overshooting minimum</label><label><input type="radio" name="q5" value="c"> Slower training only</label><label><input type="radio" name="q5" value="d"> No effect</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Learning rate too low causes:</p><div class="options"><label><input type="radio" name="q6" value="a"> Faster training</label><label><input type="radio" name="q6" value="b"> Extremely slow convergence, may get stuck in local minima</label><label><input type="radio" name="q6" value="c"> Perfect training</label><label><input type="radio" name="q6" value="d"> No training</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Why does Adam work well initially but SGD better for final tuning?</p><div class="options"><label><input type="radio" name="q7" value="a"> No difference</label><label><input type="radio" name="q7" value="b"> Adam's adaptive rates help early, but can overshoot fine details; SGD more stable</label><label><input type="radio" name="q7" value="c"> Random effect</label><label><input type="radio" name="q7" value="d"> Myth</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Skip connections help with:</p><div class="options"><label><input type="radio" name="q8" value="a"> Slowing training</label><label><input type="radio" name="q8" value="b"> Gradient flow in deep networks, preventing degradation</label><label><input type="radio" name="q8" value="c"> Overfitting only</label><label><input type="radio" name="q8" value="d"> Nothing</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Layer normalization vs batch normalization:</p><div class="options"><label><input type="radio" name="q9" value="a"> Identical</label><label><input type="radio" name="q9" value="b"> LayerNorm normalizes across features (good for RNNs, small batches)</label><label><input type="radio" name="q9" value="c"> LayerNorm worse always</label><label><input type="radio" name="q9" value="d"> No difference</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Why warm-up learning rate?</p><div class="options"><label><input type="radio" name="q10" value="a"> Slower training</label><label><input type="radio" name="q10" value="b"> Prevents early instability with Adam's adaptive rates</label><label><input type="radio" name="q10" value="c"> No reason</label><label><input type="radio" name="q10" value="d"> Only for testing</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Label smoothing prevents:</p><div class="options"><label><input type="radio" name="q11" value="a"> Learning</label><label><input type="radio" name="q11" value="b"> Overconfidence, improves calibration and generalization</label><label><input type="radio" name="q11" value="c"> All predictions</label><label><input type="radio" name="q11" value="d"> Nothing useful</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Transfer learning with very different domain (medical → cats):</p><div class="options"><label><input type="radio" name="q12" value="a"> Works perfectly</label><label><input type="radio" name="q12" value="b"> Less effective; may need more fine-tuning or train from scratch</label><label><input type="radio" name="q12" value="c"> Always better</label><label><input type="radio" name="q12" value="d"> Impossible</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Small dataset, transfer learning strategy:</p><div class="options"><label><input type="radio" name="q13" value="a"> Train all layers</label><label><input type="radio" name="q13" value="b"> Freeze most layers, only train top layers (prevent overfitting)</label><label><input type="radio" name="q13" value="c"> Delete all layers</label><label><input type="radio" name="q13" value="d"> No transfer learning</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Large dataset, transfer learning strategy:</p><div class="options"><label><input type="radio" name="q14" value="a"> Freeze all layers</label><label><input type="radio" name="q14" value="b"> Can fine-tune more/all layers</label><label><input type="radio" name="q14" value="c"> Don't use transfer learning</label><label><input type="radio" name="q14" value="d"> Random strategy</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Gradient accumulation with batch_size=8, accumulation_steps=4. Effective batch?</p><div class="options"><label><input type="radio" name="q15" value="a"> 8</label><label><input type="radio" name="q15" value="b"> 32 (8×4, simulates larger batch)</label><label><input type="radio" name="q15" value="c"> 4</label><label><input type="radio" name="q15" value="d"> 12</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Mixed precision training reduces:</p><div class="options"><label><input type="radio" name="q16" value="a"> Accuracy always</label><label><input type="radio" name="q16" value="b"> Memory usage and training time (with minimal accuracy loss)</label><label><input type="radio" name="q16" value="c"> Model capacity</label><label><input type="radio" name="q16" value="d"> Nothing</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Knowledge distillation temperature:</p><div class="options"><label><input type="radio" name="q17" value="a"> No effect</label><label><input type="radio" name="q17" value="b"> Higher T → softer probabilities, more information transfer</label><label><input type="radio" name="q17" value="c"> Lower is always better</label><label><input type="radio" name="q17" value="d"> Random value</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Cyclic learning rates:</p><div class="options"><label><input type="radio" name="q18" value="a"> Fixed rate</label><label><input type="radio" name="q18" value="b"> Vary between min and max cyclically (helps escape saddle points)</label><label><input type="radio" name="q18" value="c"> Only decay</label><label><input type="radio" name="q18" value="d"> Not useful</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Why does data augmentation act as regularization?</p><div class="options"><label><input type="radio" name="q19" value="a"> No effect</label><label><input type="radio" name="q19" value="b"> Creates more diverse examples, prevents memorization of specific instances</label><label><input type="radio" name="q19" value="c"> Makes training slower only</label><label><input type="radio" name="q19" value="d"> Reduces accuracy</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Pre-training on large dataset then fine-tuning works because:</p><div class="options"><label><input type="radio" name="q20" value="a"> Random effect</label><label><input type="radio" name="q20" value="b"> Learns general features (edges, textures) applicable to many tasks</label><label><input type="radio" name="q20" value="c"> Always worse than scratch</label><label><input type="radio" name="q20" value="d"> No reason</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
+    <script>
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        
+        const easyExplanations = {
+            q1:"Transfer learning uses pre-trained weights as starting point for new task.",
+            q2:"Adam combines momentum and RMSProp for adaptive learning rates.",
+            q3:"Batch norm normalizes activations across batch for each feature.",
+            q4:"Fine-tuning: unfreeze and retrain some layers on new data.",
+            q5:"Learning rate scheduling adjusts rate during training (decay, warm-up, etc.).",
+            q6:"RMSProp = Root Mean Square Propagation.",
+            q7:"AdaGrad: adaptive learning rate per parameter.",
+            q8:"Xavier init maintains variance across layers, prevents vanishing/exploding.",
+            q9:"Residual connections (skip connections) enable training very deep networks.",
+            q10:"Data augmentation creates variations (rotation, flip, crop, etc.).",
+            q11:"Batch norm has learnable gamma (scale) and beta (shift) parameters.",
+            q12:"Learning rate decay decreases rate over time for fine-tuning.",
+            q13:"Pre-trained ImageNet models can be fine-tuned for other vision tasks.",
+            q14:"One-shot learning: learn from single example per class.",
+            q15:"Few-shot learning: learn from few examples (5-50 per class).",
+            q16:"Momentum accelerates convergence using past gradient information.",
+            q17:"Inception modules use multiple filter sizes in parallel.",
+            q18:"DenseNet: each layer connects to all previous layers.",
+            q19:"Warm-up: start low learning rate, gradually increase then decay.",
+            q20:"Label smoothing softens one-hot labels (0.9 vs 1.0) to prevent overconfidence.",
+            q21:"Mixup blends pairs of images and their labels.",
+            q22:"Cutout masks random patches in images.",
+            q23:"Weight decay equivalent to L2 regularization.",
+            q24:"Cosine annealing: learning rate follows cosine curve.",
+            q25:"Multi-task learning: learning multiple related tasks simultaneously.",
+            q26:"Knowledge distillation: transfer knowledge from large to small model.",
+            q27:"Gradient accumulation simulates larger batches with limited memory.",
+            q28:"Mixed precision uses float16 and float32 for speed and stability.",
+            q29:"EfficientNet scales depth, width, and resolution in balanced way.",
+            q30:"Self-supervised creates labels automatically from data structure."
+        };
+        
+        const hardExplanations = {
+            q1:"Freeze early layers (general features like edges). Fine-tune late layers (task-specific features).",
+            q2:"Adam fast initially, SGD often generalizes better with careful tuning. Many practitioners use both.",
+            q3:"Testing: use running mean/std accumulated during training (not batch statistics).",
+            q4:"Small batch → noisy statistics → unstable batch norm. Use larger batches or layer norm.",
+            q5:"High LR → overshoots minimum → oscillates or diverges.",
+            q6:"Low LR → very slow convergence → may get stuck in local minima.",
+            q7:"Adam's adaptive rates help exploration early. SGD with momentum more stable for final fine-tuning.",
+            q8:"Skip connections provide gradient highway, preventing degradation in very deep networks.",
+            q9:"LayerNorm normalizes across features (not batch). Better for RNNs and small batch sizes.",
+            q10:"Warm-up prevents instability from Adam's poorly-estimated adaptive rates early in training.",
+            q11:"Label smoothing prevents overconfidence (predicting 1.0), improves calibration and generalization.",
+            q12:"Very different domains → less transferable features → may need more fine-tuning or train from scratch.",
+            q13:"Small dataset → freeze most layers, only train top → prevents overfitting.",
+            q14:"Large dataset → can safely fine-tune more/all layers without overfitting.",
+            q15:"Gradient accumulation: 8×4 = 32 effective batch size (accumulates gradients across 4 mini-batches).",
+            q16:"Mixed precision: float16 → faster, less memory. Critical parts stay float32 → minimal accuracy loss.",
+            q17:"Higher temperature → softer probabilities → more information in \"dark knowledge\" for student model.",
+            q18:"Cyclic LR varies between bounds → helps escape saddle points and plateaus.",
+            q19:"Augmentation creates diverse examples → model can't memorize specific instances → regularization effect.",
+            q20:"Pre-training learns general transferable features (edges, textures, shapes) applicable across tasks."
+        };
+
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

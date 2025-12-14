@@ -1,1 +1,280 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>RNN & LSTM Quiz</title><style>body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:20px;line-height:1.6}h1{text-align:center;color:#333}.question{border:1px solid #ccc;padding:15px;margin:15px 0;background-color:#f9f9f9}.question h3{margin-top:0}.options{margin:10px 0}.options label{display:block;padding:5px 0}code{background-color:#e8e8e8;padding:2px 6px;font-family:Courier New,monospace}pre{background-color:#e8e8e8;padding:10px;overflow-x:auto;font-family:Courier New,monospace}button{background-color:#4CAF50;color:white;padding:10px 30px;border:none;cursor:pointer;font-size:16px;display:block;margin:20px auto}button:hover{background-color:#45a049}.feedback{margin-top:10px;padding:10px;display:none}.correct{background-color:#d4edda;color:#155724;border:1px solid#c3e6cb}.incorrect{background-color:#f8d7da;color:#721c24;border:1px solid #f5c6cb}#score{text-align:center;font-size:20px;font-weight:bold;margin:20px 0;display:none}</style></head><body><h1>RNN & LSTM Quiz</h1><p style="text-align:center;">Answer all questions and click Submit to see your score.</p><div class="question" id="q1"><h3>Question 1:</h3><p>RNN stands for:</p><div class="options"><label><input type="radio" name="q1" value="a"> Random Neural Network</label><label><input type="radio" name="q1" value="b"> Recurrent Neural Network</label><label><input type="radio" name="q1" value="c"> Recursive Network Node</label><label><input type="radio" name="q1" value="d"> Regular Neural Network</label></div><div class="feedback" id="f1"></div></div><div class="question" id="q2"><h3>Question 2:</h3><p>RNNs are a class of networks that can:</p><div class="options"><label><input type="radio" name="q2" value="a"> Only process images</label><label><input type="radio" name="q2" value="b"> Process sequences and retain state</label><label><input type="radio" name="q2" value="c"> Only classify</label><label><input type="radio" name="q2" value="d"> Remove data</label></div><div class="feedback" id="f2"></div></div><div class="question" id="q3"><h3>Question 3:</h3><p>Why can't traditional feedforward networks handle sequences well?</p><div class="options"><label><input type="radio" name="q3" value="a"> Too slow</label><label><input type="radio" name="q3" value="b"> Assume inputs are independent of each other</label><label><input type="radio" name="q3" value="c"> Too complex</label><label><input type="radio" name="q3" value="d"> Use too much memory</label></div><div class="feedback" id="f3"></div></div><div class="question" id="q4"><h3>Question 4:</h3><p>RNNs examine each element and:</p><div class="options"><label><input type="radio" name="q4" value="a"> Delete it</label><label><input type="radio" name="q4" value="b"> Retain memory to reuse when examining next element</label><label><input type="radio" name="q4" value="c"> Ignore it</label><label><input type="radio" name="q4" value="d"> Randomize it</label></div><div class="feedback" id="f4"></div></div><div class="question" id="q5"><h3>Question 5:</h3><p>RNN applications include:</p><div class="options"><label><input type="radio" name="q5" value="a"> Only images</label><label><input type="radio" name="q5" value="b"> Text-to-speech, sentiment analysis, forecasting</label><label><input type="radio" name="q5" value="c"> Only databases</label><label><input type="radio" name="q5" value="d"> File compression</label></div><div class="feedback" id="f5"></div></div><div class="question" id="q6"><h3>Question 6:</h3><p>One-to-one RNN type:</p><div class="options"><label><input type="radio" name="q6" value="a"> Multiple inputs/outputs</label><label><input type="radio" name="q6" value="b"> One input, one output (like standard classification)</label><label><input type="radio" name="q6" value="c"> Sequence input/output</label><label><input type="radio" name="q6" value="d"> Images only</label></div><div class="feedback" id="f6"></div></div><div class="question" id="q7"><h3>Question 7:</h3><p>One-to-many RNN example:</p><div class="options"><label><input type="radio" name="q7" value="a"> Sentiment analysis</label><label><input type="radio" name="q7" value="b"> Image captioning (image→phrase)</label><label><input type="radio" name="q7" value="c"> Translation</label><label><input type="radio" name="q7" value="d"> Clustering</label></div><div class="feedback" id="f7"></div></div><div class="question" id="q8"><h3>Question 8:</h3><p>Many-to-one RNN example:</p><div class="options"><label><input type="radio" name="q8" value="a"> Image captioning</label><label><input type="radio" name="q8" value="b"> Sentiment analysis (sequence→single output)</label><label><input type="radio" name="q8" value="c"> Translation</label><label><input type="radio" name="q8" value="d"> Video processing</label></div><div class="feedback" id="f8"></div></div><div class="question" id="q9"><h3>Question 9:</h3><p>Many-to-many RNN example:</p><div class="options"><label><input type="radio" name="q9" value="a"> Simple classification</label><label><input type="radio" name="q9" value="b"> Machine translation, chatbots</label><label><input type="radio" name="q9" value="c"> Static analysis</label><label><input type="radio" name="q9" value="d"> Regression</label></div><div class="feedback" id="f9"></div></div><div class="question" id="q10"><h3>Question 10:</h3><p>In RNN math, x(t) represents:</p><div class="options"><label><input type="radio" name="q10" value="a"> Output</label><label><input type="radio" name="q10" value="b"> Input at time step t</label><label><input type="radio" name="q10" value="c"> Weight</label><label><input type="radio" name="q10" value="d"> Bias</label></div><div class="feedback" id="f10"></div></div><div class="question" id="q11"><h3>Question 11:</h3><p>In RNN, h(t) represents:</p><div class="options"><label><input type="radio" name="q11" value="a"> Input</label><label><input type="radio" name="q11" value="b"> Hidden state at time t (memory)</label><label><input type="radio" name="q11" value="c"> Output</label><label><input type="radio" name="q11" value="d"> Loss</label></div><div class="feedback" id="f11"></div></div><div class="question" id="q12"><h3>Question 12:</h3><p>RNN hidden state formula: h(t) =</p><div class="options"><label><input type="radio" name="q12" value="a"> x(t) only</label><label><input type="radio" name="q12" value="b"> f(U×x(t) + W×h(t-1))</label><label><input type="radio" name="q12" value="c"> w×x</label><label><input type="radio" name="q12" value="d"> b only</label></div><div class="feedback" id="f12"></div></div><div class="question" id="q13"><h3>Question 13:</h3><p>RNN weight matrices:</p><div class="options"><label><input type="radio" name="q13" value="a"> Change every time step</label><label><input type="radio" name="q13" value="b"> U,V,W shared across time</label><label><input type="radio" name="q13" value="c"> Random each step</label><label><input type="radio" name="q13" value="d"> Not used</label></div><div class="feedback" id="f13"></div></div><div class="question" id="q14"><h3>Question 14:</h3><p>Vanishing gradient problem:</p><div class="options"><label><input type="radio" name="q14" value="a"> Gradients too large</label><label><input type="radio" name="q14" value="b"> Gradients too small, stops learning</label><label><input type="radio" name="q14" value="c"> No gradients</label><label><input type="radio" name="q14" value="d"> Perfect gradients</label></div><div class="feedback" id="f14"></div></div><div class="question" id="q15"><h3>Question 15:</h3><p>Exploding gradient problem:</p><div class="options"><label><input type="radio" name="q15" value="a"> Gradients disappear</label><label><input type="radio" name="q15" value="b"> Gradients grow exponentially, unstable learning</label><label><input type="radio" name="q15" value="c"> Gradients perfect</label><label><input type="radio" name="q15" value="d"> No problem</label></div><div class="feedback" id="f15"></div></div><div class="question" id="q16"><h3>Question 16:</h3><p>LSTM stands for:</p><div class="options"><label><input type="radio" name="q16" value="a"> Long Short-Term Memory</label><label><input type="radio" name="q16" value="b"> Long Simple Test Model</label><label><input type="radio" name="q16" value="c"> Large Scale Training Method</label><label><input type="radio" name="q16" value="d"> Linear Sequence Time Model</label></div><div class="feedback" id="f16"></div></div><div class="question" id="q17"><h3>Question 17:</h3><p>Why LSTM over basic RNN?</p><div class="options"><label><input type="radio" name="q17" value="a"> Simpler</label><label><input type="radio" name="q17" value="b"> Can retain information for long periods</label><label><input type="radio" name="q17" value="c"> Faster only</label><label><input type="radio" name="q17" value="d"> Uses less memory</label></div><div class="feedback" id="f17"></div></div><div class="question" id="q18"><h3>Question 18:</h3><p>LSTM uses what to control information flow?</p><div class="options"><label><input type="radio" name="q18" value="a"> Random selection</label><label><input type="radio" name="q18" value="b"> Gates (forget, input, output)</label><label><input type="radio" name="q18" value="c"> Only weights</label><label><input type="radio" name="q18" value="d"> Manual control</label></div><div class="feedback" id="f18"></div></div><div class="question" id="q19"><h3>Question 19:</h3><p>LSTM forget gate decides:</p><div class="options"><label><input type="radio" name="q19" value="a"> Input size</label><label><input type="radio" name="q19" value="b"> What to remember vs forget</label><label><input type="radio" name="q19" value="c"> Output format</label><label><input type="radio" name="q19" value="d"> Learning rate</label></div><div class="feedback" id="f19"></div></div><div class="question" id="q20"><h3>Question 20:</h3><p>Forget gate output values:</p><div class="options"><label><input type="radio" name="q20" value="a"> Always 1</label><label><input type="radio" name="q20" value="b"> Between 0 and 1 (sigmoid)</label><label><input type="radio" name="q20" value="c"> Between -1 and 1</label><label><input type="radio" name="q20" value="d"> Random</label></div><div class="feedback" id="f20"></div></div><div class="question" id="q21"><h3>Question 21:</h3><p>If forget gate outputs 0:</p><div class="options"><label><input type="radio" name="q21" value="a"> Remember</label><label><input type="radio" name="q21" value="b"> Remove/forget that information</label><label><input type="radio" name="q21" value="c"> Amplify</label><label><input type="radio" name="q21" value="d"> No change</label></div><div class="feedback" id="f21"></div></div><div class="question" id="q22"><h3>Question 22:</h3><p>If forget gate outputs 1:</p><div class="options"><label><input type="radio" name="q22" value="a"> Delete</label><label><input type="radio" name="q22" value="b"> Remember that information</label><label><input type="radio" name="q22" value="c"> Ignore</label><label><input type="radio" name="q22" value="d"> Random</label></div><div class="feedback" id="f22"></div></div><div class="question" id="q23"><h3>Question 23:</h3><p>LSTM input gate decides:</p><div class="options"><label><input type="radio" name="q23" value="a"> What to delete</label><label><input type="radio" name="q23" value="b"> What values to add to cell</label><label><input type="radio" name="q23" value="c"> Output format</label><label><input type="radio" name="q23" value="d"> Nothing</label></div><div class="feedback" id="f23"></div></div><div class="question" id="q24"><h3>Question 24:</h3><p>Input gate uses which activation?</p><div class="options"><label><input type="radio" name="q24" value="a"> ReLU only</label><label><input type="radio" name="q24" value="b"> Tanh to create array (-1 to 1)</label><label><input type="radio" name="q24" value="c"> Linear</label><label><input type="radio" name="q24" value="d"> Step</label></div><div class="feedback" id="f24"></div></div><div class="question" id="q25"><h3>Question 25:</h3><p>RNN with tanh works on sequences up to:</p><div class="options"><label><input type="radio" name="q25" value="a"> 10 steps</label><label><input type="radio" name="q25" value="b"> <100 steps</label><label><input type="radio" name="q25" value="c"> 1000 steps</label><label><input type="radio" name="q25" value="d"> Unlimited</label></div><div class="feedback" id="f25"></div></div><div class="question" id="q26"><h3>Question 26:</h3><p>RNN with ReLU works on sequences up to:</p><div class="options"><label><input type="radio" name="q26" value="a"> 100 steps</label><label><input type="radio" name="q26" value="b"> <1000 steps (unstable)</label><label><input type="radio" name="q26" value="c"> 10 steps</label><label><input type="radio" name="q26" value="d"> Unlimited</label></div><div class="feedback" id="f26"></div></div><div class="question" id="q27"><h3>Question 27:</h3><p>RNN memory retention:</p><div class="options"><label><input type="radio" name="q27" value="a"> All samples equal</label><label><input type="radio" name="q27" value="b"> Recent more important, far samples less important</label><label><input type="radio" name="q27" value="c"> Only first sample</label><label><input type="radio" name="q27" value="d"> Random</label></div><div class="feedback" id="f27"></div></div><div class="question" id="q28"><h3>Question 28:</h3><p>Transformers were developed because:</p><div class="options"><label><input type="radio" name="q28" value="a"> RNNs too fast</label><label><input type="radio" name="q28" value="b"> LSTM requires sequential input, slow training</label><label><input type="radio" name="q28" value="c"> RNNs too simple</label><label><input type="radio" name="q28" value="d"> No reason</label></div><div class="feedback" id="f28"></div></div><div class="question" id="q29"><h3>Question 29:</h3><p>Transformers can:</p><div class="options"><label><input type="radio" name="q29" value="a"> Only sequential</label><label><input type="radio" name="q29" value="b"> Process many words in parallel</label><label><input type="radio" name="q29" value="c"> Only one word</label><label><input type="radio" name="q29" value="d"> Process images only</label></div><div class="feedback" id="f29"></div></div><div class="question" id="q30"><h3>Question 30:</h3><p>Attention mechanism in transformers:</p><div class="options"><label><input type="radio" name="q30" value="a"> Ignores context</label><label><input type="radio" name="q30" value="b"> Looks at input and decides which parts important</label><label><input type="radio" name="q30" value="c"> Random selection</label><label><input type="radio" name="q30" value="d"> Deletes data</label></div><div class="feedback" id="f30"></div></div><button onclick="submitQuiz()">Submit Quiz</button><div id="score"></div><script>const answers={q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"a",q17:"b",q18:"b",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};const explanations={q1:"RNN = Recurrent Neural Network.",q2:"RNNs process sequences and retain state.",q3:"Feedforward networks assume independence between inputs.",q4:"RNNs retain memory for next elements.",q5:"RNNs: text-to-speech, sentiment analysis, forecasting.",q6:"One-to-one: single input, single output.",q7:"One-to-many: image→caption sequence.",q8:"Many-to-one: sentiment analysis, text classification.",q9:"Many-to-many: translation, chatbots.",q10:"x(t) is input at time t.",q11:"h(t) is hidden state/memory at time t.",q12:"h(t) = f(U×x(t) + W×h(t-1)) with non-linear f.",q13:"Weights U,V,W are shared across all time steps.",q14:"Vanishing: gradients too small, stops learning.",q15:"Exploding: gradients too large, unstable.",q16:"LSTM = Long Short-Term Memory.",q17:"LSTM retains long-term information better.",q18:"LSTM uses gates to control information.",q19:"Forget gate decides what to remember/forget.",q20:"Forget gate uses sigmoid (0 to 1).",q21:"Forget gate 0 = remove information.",q22:"Forget gate 1 = remember information.",q23:"Input gate decides what to add.",q24:"Input gate uses tanh for value array.",q25:"RNN with tanh: <100 steps.",q26:"RNN with ReLU: <1000 steps but unstable.",q27:"Recent samples more important than distant ones.",q28:"LSTM sequential nature makes training slow.",q29:"Transformers process words in parallel.",q30:"Attention decides which parts of input are important."};function submitQuiz(){let correct=0;const total=Object.keys(answers).length;for(let q in answers){const selected=document.querySelector(`input[name="${q}"]:checked`);const feedback=document.getElementById("f"+q.substring(1));if(selected){if(selected.value===answers[q]){correct++;feedback.className="feedback correct";feedback.textContent="✓ Correct! "+explanations[q];}else{feedback.className="feedback incorrect";feedback.textContent="✗ Incorrect. "+explanations[q];}}else{feedback.className="feedback incorrect";feedback.textContent="✗ No answer selected. "+explanations[q];}feedback.style.display="block";}const percentage=((correct/total)*100).toFixed(1);const scoreDiv=document.getElementById("score");scoreDiv.textContent=`Your Score: ${correct}/${total} (${percentage}%)`;scoreDiv.style.display="block";window.scrollTo(0,0);}</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RNN/LSTM Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+        h1 { text-align: center; color: #333; }
+        .mode-buttons { text-align: center; margin: 20px 0; }
+        .mode-btn { background-color: #2196F3; color: white; padding: 10px 25px; border: none; cursor: pointer; font-size: 16px; margin: 0 10px; border-radius: 5px; }
+        .mode-btn.active { background-color: #0b7dda; }
+        .mode-btn:hover { background-color: #0b7dda; }
+        .difficulty-indicator { text-align: center; font-size: 18px; margin: 15px 0; font-weight: bold; }
+        .easy-mode { color: #4CAF50; }
+        .hard-mode { color: #f44336; }
+        .question { border: 1px solid #ccc; padding: 15px; margin: 15px 0; background-color: #f9f9f9; }
+        .question h3 { margin-top: 0; }
+        .options { margin: 10px 0; }
+        .options label { display: block; padding: 5px 0; }
+        code { background-color: #e8e8e8; padding: 2px 6px; font-family: 'Courier New', monospace; }
+        button.submit { background-color: #4CAF50; color: white; padding: 10px 30px; border: none; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; border-radius: 5px; }
+        button.submit:hover { background-color: #45a049; }
+        .feedback { margin-top: 10px; padding: 10px; display: none; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #score { text-align: center; font-size: 20px; font-weight: bold; margin: 20px 0; display: none; }
+    </style>
+</head>
+<body>
+    <h1>RNN & LSTM Quiz</h1>
+    
+    <div class="mode-buttons">
+        <button class="mode-btn active" onclick="switchMode('easy')">📘 Easy Mode (30 Questions)</button>
+        <button class="mode-btn" onclick="switchMode('hard')">🔥 Hard Mode (20 Questions)</button>
+    </div>
+    
+    <div class="difficulty-indicator">
+        <span id="difficulty-text" class="easy-mode">Current: Easy Mode - Fundamental Concepts</span>
+    </div>
+    
+    <p style="text-align: center;" id="instructions">Test your understanding of core concepts. Click Submit to see your score.</p>
+
+    <div id="easy-questions">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>RNN stands for:</p><div class="options"><label><input type="radio" name="q1" value="a"> Random Neural Network</label><label><input type="radio" name="q1" value="b"> Recurrent Neural Network</label><label><input type="radio" name="q1" value="c"> Recursive Number Network</label><label><input type="radio" name="q1" value="d"> Real Neuron Network</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question" id="q2"><h3>Question 2:</h3><p>RNNs are designed for:</p><div class="options"><label><input type="radio" name="q2" value="a"> Only images</label><label><input type="radio" name="q2" value="b"> Sequential data (text, time series, speech)</label><label><input type="radio" name="q2" value="c"> Static data only</label><label><input type="radio" name="q2" value="d"> Clustering</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question" id="q3"><h3>Question 3:</h3><p>What makes RNN different from feedforward networks?</p><div class="options"><label><input type="radio" name="q3" value="a"> More layers</label><label><input type="radio" name="q3" value="b"> Has memory/feedback connections (hidden state)</label><label><input type="radio" name="q3" value="c"> Faster training</label><label><input type="radio" name="q3" value="d"> No difference</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question" id="q4"><h3>Question 4:</h3><p>Vanishing gradient problem in RNN means:</p><div class="options"><label><input type="radio" name="q4" value="a"> Gradients explode</label><label><input type="radio" name="q4" value="b"> Gradients become too small, can't learn long dependencies</label><label><input type="radio" name="q4" value="c"> No gradients</label><label><input type="radio" name="q4" value="d"> Perfect training</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>LSTM stands for:</p><div class="options"><label><input type="radio" name="q5" value="a"> Long Short-Term Memory</label><label><input type="radio" name="q5" value="b"> Large System Training Model</label><label><input type="radio" name="q5" value="c"> Linear Standard Machine</label><label><input type="radio" name="q5" value="d"> Last State Memory</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>LSTM was invented to solve:</p><div class="options"><label><input type="radio" name="q6" value="a"> Image classification</label><label><input type="radio" name="q6" value="b"> Vanishing gradient problem in RNNs</label><label><input type="radio" name="q6" value="c"> Only speed issues</label><label><input type="radio" name="q6" value="d"> No specific problem</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>LSTM has how many gates?</p><div class="options"><label><input type="radio" name="q7" value="a"> 2</label><label><input type="radio" name="q7" value="b"> 3 (forget, input, output)</label><label><input type="radio" name="q7" value="c"> 4</label><label><input type="radio" name="q7" value="d"> 1</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Forget gate in LSTM:</p><div class="options"><label><input type="radio" name="q8" value="a"> Adds new information</label><label><input type="radio" name="q8" value="b"> Decides what information to discard from cell state</label><label><input type="radio" name="q8" value="c"> Produces output</label><label><input type="radio" name="q8" value="d"> Does nothing</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Input gate in LSTM:</p><div class="options"><label><input type="radio" name="q9" value="a"> Forgets information</label><label><input type="radio" name="q9" value="b"> Decides what new information to add to cell state</label><label><input type="radio" name="q9" value="c"> Produces final output</label><label><input type="radio" name="q9" value="d"> Deletes everything</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>Output gate in LSTM:</p><div class="options"><label><input type="radio" name="q10" value="a"> Forgets data</label><label><input type="radio" name="q10" value="b"> Adds new data</label><label><input type="radio" name="q10" value="c"> Decides what to output from cell state</label><label><input type="radio" name="q10" value="d"> Does nothing</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Gates in LSTM use which activation?</p><div class="options"><label><input type="radio" name="q11" value="a"> Sigmoid (outputs 0 to 1 for gating)</label><label><input type="radio" name="q11" value="b"> ReLU only</label><label><input type="radio" name="q11" value="c"> No activation</label><label><input type="radio" name="q11" value="d"> Softmax</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Cell state in LSTM is:</p><div class="options"><label><input type="radio" name="q12" value="a"> Temporary variable</label><label><input type="radio" name="q12" value="b"> Long-term memory that flows through the network</label><label><input type="radio" name="q12" value="c"> Only for output</label><label><input type="radio" name="q12" value="d"> Not important</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Hidden state in RNN/LSTM:</p><div class="options"><label><input type="radio" name="q13" value="a"> Passed to next time step (short-term memory)</label><label><input type="radio" name="q13" value="b"> Deleted immediately</label><label><input type="radio" name="q13" value="c"> Never used</label><label><input type="radio" name="q13" value="d"> Only for input</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>Many-to-one RNN is used for:</p><div class="options"><label><input type="radio" name="q14" value="a"> Image generation</label><label><input type="radio" name="q14" value="b"> Sentiment analysis, text classification (sequence → single output)</label><label><input type="radio" name="q14" value="c"> Translation</label><label><input type="radio" name="q14" value="d"> Nothing</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Many-to-many RNN is used for:</p><div class="options"><label><input type="radio" name="q15" value="a"> Single prediction</label><label><input type="radio" name="q15" value="b"> Machine translation, chatbots (sequence → sequence)</label><label><input type="radio" name="q15" value="c"> Image classification</label><label><input type="radio" name="q15" value="d"> Clustering</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Encoder-decoder architecture:</p><div class="options"><label><input type="radio" name="q16" value="a"> Only has encoder</label><label><input type="radio" name="q16" value="b"> Encoder compresses input, decoder generates output</label><label><input type="radio" name="q16" value="c"> Only for images</label><label><input type="radio" name="q16" value="d"> No practical use</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>In encoder-decoder, encoder outputs:</p><div class="options"><label><input type="radio" name="q17" value="a"> Final answer</label><label><input type="radio" name="q17" value="b"> Context vector / hidden state (encoding of input)</label><label><input type="radio" name="q17" value="c"> Nothing</label><label><input type="radio" name="q17" value="d"> Only images</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Bidirectional RNN:</p><div class="options"><label><input type="radio" name="q18" value="a"> Processes sequence in both directions (forward and backward)</label><label><input type="radio" name="q18" value="b"> Only forward</label><label><input type="radio" name="q18" value="c"> Only backward</label><label><input type="radio" name="q18" value="d"> Random direction</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>GRU (Gated Recurrent Unit) compared to LSTM:</p><div class="options"><label><input type="radio" name="q19" value="a"> More complex</label><label><input type="radio" name="q19" value="b"> Simpler with fewer gates (2 gates vs 3)</label><label><input type="radio" name="q19" value="c"> Completely different purpose</label><label><input type="radio" name="q19" value="d"> Worse performance always</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Vanilla RNN with tanh can handle sequences up to:</p><div class="options"><label><input type="radio" name="q20" value="a"> Infinite length</label><label><input type="radio" name="q20" value="b"> ~100 steps (then vanishing gradient)</label><label><input type="radio" name="q20" value="c"> 10,000 steps</label><label><input type="radio" name="q20" value="d"> 1 step only</label></div><div class="feedback" id="f20"></div></div>
+
+        <div class="question" id="q21"><h3>Question 21:</h3><p>Sequence-to-sequence models are used for:</p><div class="options"><label><input type="radio" name="q21" value="a"> Translation, summarization, chatbots</label><label><input type="radio" name="q21" value="b"> Only image classification</label><label><input type="radio" name="q21" value="c"> Clustering</label><label><input type="radio" name="q21" value="d"> Nothing practical</label></div><div class="feedback" id="f21"></div></div>
+
+        <div class="question" id="q22"><h3>Question 22:</h3><p>Teacher forcing in RNN training:</p><div class="options"><label><input type="radio" name="q22" value="a"> Using predicted outputs as next inputs</label><label><input type="radio" name="q22" value="b"> Using ground truth as next inputs during training</label><label><input type="radio" name="q22" value="c"> Random inputs</label><label><input type="radio" name="q22" value="d"> No inputs</label></div><div class="feedback" id="f22"></div></div>
+
+        <div class="question" id="q23"><h3>Question 23:</h3><p>Attention mechanism in RNNs:</p><div class="options"><label><input type="radio" name="q23" value="a"> Removes all gates</label><label><input type="radio" name="q23" value="b"> Allows model to focus on relevant parts of input</label><label><input type="radio" name="q23" value="c"> Makes model slower only</label><label><input type="radio" name="q23" value="d"> Not useful</label></div><div class="feedback" id="f23"></div></div>
+
+        <div class="question" id="q24"><h3>Question 24:</h3><p>Transformers were created to replace:</p><div class="options"><label><input type="radio" name="q24" value="a"> CNNs</label><label><input type="radio" name="q24" value="b"> RNNs/LSTMs (for parallelization and long-range dependencies)</label><label><input type="radio" name="q24" value="c"> All neural networks</label><label><input type="radio" name="q24" value="d"> Nothing</label></div><div class="feedback" id="f24"></div></div>
+
+        <div class="question" id="q25"><h3>Question 25:</h3><p>Main advantage of Transformers over LSTMs:</p><div class="options"><label><input type="radio" name="q25" value="a"> Slower training</label><label><input type="radio" name="q25" value="b"> Parallel processing (no sequential dependency)</label><label><input type="radio" name="q25" value="c"> More parameters always</label><label><input type="radio" name="q25" value="d"> Simpler architecture</label></div><div class="feedback" id="f25"></div></div>
+
+        <div class="question" id="q26"><h3>Question 26:</h3><p>Backpropagation through time (BPTT):</p><div class="options"><label><input type="radio" name="q26" value="a"> Not used in RNNs</label><label><input type="radio" name="q26" value="b"> Unrolls RNN through time steps for gradient calculation</label><label><input type="radio" name="q26" value="c"> Only for CNNs</label><label><input type="radio" name="q26" value="d"> Random process</label></div><div class="feedback" id="f26"></div></div>
+
+        <div class="question" id="q27"><h3>Question 27:</h3><p>Embedding layer in RNN for text:</p><div class="options"><label><input type="radio" name="q27" value="a"> Deletes words</label><label><input type="radio" name="q27" value="b"> Converts words to dense vectors</label><label><input type="radio" name="q27" value="c"> Only for numbers</label><label><input type="radio" name="q27" value="d"> Not needed</label></div><div class="feedback" id="f27"></div></div>
+
+        <div class="question" id="q28"><h3>Question 28:</h3><p>One-hot encoding for words is:</p><div class="options"><label><input type="radio" name="q28" value="a"> Dense representation</label><label><input type="radio" name="q28" value="b"> Sparse vector with single 1, rest 0s</label><label><input type="radio" name="q28" value="c"> Continuous values</label><label><input type="radio" name="q28" value="d"> Random encoding</label></div><div class="feedback" id="f28"></div></div>
+
+        <div class="question" id="q29"><h3>Question 29:</h3><p>Gradient clipping in RNN:</p><div class="options"><label><input type="radio" name="q29" value="a"> Increases gradients</label><label><input type="radio" name="q29" value="b"> Limits gradient magnitude to prevent exploding gradients</label><label><input type="radio" name="q29" value="c"> Removes all gradients</label><label><input type="radio" name="q29" value="d"> Only for CNNs</label></div><div class="feedback" id="f29"></div></div>
+
+        <div class="question" id="q30"><h3>Question 30:</h3><p>Stateful RNN:</p><div class="options"><label><input type="radio" name="q30" value="a"> Forgets everything between batches</label><label><input type="radio" name="q30" value="b"> Maintains hidden state across batches</label><label><input type="radio" name="q30" value="c"> Has no state</label><label><input type="radio" name="q30" value="d"> Only for testing</label></div><div class="feedback" id="f30"></div></div>
+    </div>
+
+    <div id="hard-questions" style="display: none;">
+        <div class="question" id="q1"><h3>Question 1:</h3><p>Forget gate outputs 0. What happens?</p><div class="options"><label><input type="radio" name="q1" value="a"> Remembers everything</label><label><input type="radio" name="q1" value="b"> Completely forgets/erases that information from cell state</label><label><input type="radio" name="q1" value="c"> Adds information</label><label><input type="radio" name="q1" value="d"> No effect</label></div><div class="feedback" id="f1"></div></div>
+
+        <div class="question" id="q2"><h3>Question 2:</h3><p>Forget gate outputs 1. What happens?</p><div class="options"><label><input type="radio" name="q2" value="a"> Forgets everything</label><label><input type="radio" name="q2" value="b"> Retains all information (passes cell state unchanged)</label><label><input type="radio" name="q2" value="c"> Random behavior</label><label><input type="radio" name="q2" value="d"> Adds new info</label></div><div class="feedback" id="f2"></div></div>
+
+        <div class="question" id="q3"><h3>Question 3:</h3><p>Why can't vanilla RNN handle long sequences?</p><div class="options"><label><input type="radio" name="q3" value="a"> Too slow only</label><label><input type="radio" name="q3" value="b"> Gradients vanish through many time steps, can't learn long dependencies</label><label><input type="radio" name="q3" value="c"> Too many parameters</label><label><input type="radio" name="q3" value="d"> No reason</label></div><div class="feedback" id="f3"></div></div>
+
+        <div class="question" id="q4"><h3>Question 4:</h3><p>How does LSTM solve vanishing gradient?</p><div class="options"><label><input type="radio" name="q4" value="a"> Uses more layers</label><label><input type="radio" name="q4" value="b"> Cell state provides gradient highway; additive updates preserve gradients</label><label><input type="radio" name="q4" value="c"> Removes all gates</label><label><input type="radio" name="q4" value="d"> Doesn't solve it</label></div><div class="feedback" id="f4"></div></div>
+
+        <div class="question" id="q5"><h3>Question 5:</h3><p>Input gate uses sigmoid AND tanh. Why both?</p><div class="options"><label><input type="radio" name="q5" value="a"> No reason</label><label><input type="radio" name="q5" value="b"> Sigmoid filters what to add (0-1), tanh creates candidate values (-1 to 1)</label><label><input type="radio" name="q5" value="c"> Redundant</label><label><input type="radio" name="q5" value="d"> Mistake</label></div><div class="feedback" id="f5"></div></div>
+
+        <div class="question" id="q6"><h3>Question 6:</h3><p>Encoder in seq2seq discards intermediate outputs. Why?</p><div class="options"><label><input type="radio" name="q6" value="a"> Mistake</label><label><input type="radio" name="q6" value="b"> Only final hidden state (context vector) matters for decoding</label><label><input type="radio" name="q6" value="c"> Always keeps them</label><label><input type="radio" name="q6" value="d"> No encoder</label></div><div class="feedback" id="f6"></div></div>
+
+        <div class="question" id="q7"><h3>Question 7:</h3><p>Context vector in encoder-decoder is:</p><div class="options"><label><input type="radio" name="q7" value="a"> Randomly generated</label><label><input type="radio" name="q7" value="b"> Bottleneck - compresses entire input sequence into fixed vector</label><label><input type="radio" name="q7" value="c"> Infinite size</label><label><input type="radio" name="q7" value="d"> Not important</label></div><div class="feedback" id="f7"></div></div>
+
+        <div class="question" id="q8"><h3>Question 8:</h3><p>Attention mechanism solves what problem?</p><div class="options"><label><input type="radio" name="q8" value="a"> Too fast training</label><label><input type="radio" name="q8" value="b"> Fixed-size context vector bottleneck in seq2seq</label><label><input type="radio" name="q8" value="c"> Too few parameters</label><label><input type="radio" name="q8" value="d"> No problem</label></div><div class="feedback" id="f8"></div></div>
+
+        <div class="question" id="q9"><h3>Question 9:</h3><p>Bidirectional RNN sees future context. When is this a problem?</p><div class="options"><label><input type="radio" name="q9" value="a"> Never</label><label><input type="radio" name="q9" value="b"> Real-time applications where future isn't available (speech recognition)</label><label><input type="radio" name="q9" value="c"> Always a problem</label><label><input type="radio" name="q9" value="d"> Only for images</label></div><div class="feedback" id="f9"></div></div>
+
+        <div class="question" id="q10"><h3>Question 10:</h3><p>GRU has 2 gates vs LSTM's 3. What's missing?</p><div class="options"><label><input type="radio" name="q10" value="a"> Output gate</label><label><input type="radio" name="q10" value="b"> Separate cell state (combines with hidden state)</label><label><input type="radio" name="q10" value="c"> Input gate</label><label><input type="radio" name="q10" value="d"> Forget gate</label></div><div class="feedback" id="f10"></div></div>
+
+        <div class="question" id="q11"><h3>Question 11:</h3><p>Why does LSTM need cell state AND hidden state?</p><div class="options"><label><input type="radio" name="q11" value="a"> Redundant</label><label><input type="radio" name="q11" value="b"> Cell=long-term memory (internal), hidden=short-term (passed out)</label><label><input type="radio" name="q11" value="c"> Same thing</label><label><input type="radio" name="q11" value="d"> Mistake</label></div><div class="feedback" id="f11"></div></div>
+
+        <div class="question" id="q12"><h3>Question 12:</h3><p>Teacher forcing speeds training but causes what problem?</p><div class="options"><label><input type="radio" name="q12" value="a"> No problems</label><label><input type="radio" name="q12" value="b"> Exposure bias - model never sees its own errors during training</label><label><input type="radio" name="q12" value="c"> Too slow</label><label><input type="radio" name="q12" value="d"> Too accurate</label></div><div class="feedback" id="f12"></div></div>
+
+        <div class="question" id="q13"><h3>Question 13:</h3><p>Transformers process sequences in parallel. What do they lose?</p><div class="options"><label><input type="radio" name="q13" value="a"> Nothing</label><label><input type="radio" name="q13" value="b"> Inherent sequential/positional information (need positional encoding)</label><label><input type="radio" name="q13" value="c"> All information</label><label><input type="radio" name="q13" value="d"> Only speed</label></div><div class="feedback" id="f13"></div></div>
+
+        <div class="question" id="q14"><h3>Question 14:</h3><p>LSTM with 256 hidden units has how many parameters per cell (approximately)?</p><div class="options"><label><input type="radio" name="q14" value="a"> 256</label><label><input type="radio" name="q14" value="b"> Very large - 4 sets of weights for 3 gates + cell</label><label><input type="radio" name="q14" value="c"> 512</label><label><input type="radio" name="q14" value="d"> 128</label></div><div class="feedback" id="f14"></div></div>
+
+        <div class="question" id="q15"><h3>Question 15:</h3><p>Truncated BPTT helps with:</p><div class="options"><label><input type="radio" name="q15" value="a"> Increasing sequence length</label><label><input type="radio" name="q15" value="b"> Memory/compute by limiting backprop through time steps</label><label><input type="radio" name="q15" value="c"> Accuracy always</label><label><input type="radio" name="q15" value="d"> Nothing</label></div><div class="feedback" id="f15"></div></div>
+
+        <div class="question" id="q16"><h3>Question 16:</h3><p>Peephole connections in LSTM:</p><div class="options"><label><input type="radio" name="q16" value="a"> Not useful</label><label><input type="radio" name="q16" value="b"> Let gates look at cell state directly (not just hidden state)</label><label><input type="radio" name="q16" value="c"> Remove gates</label><label><input type="radio" name="q16" value="d"> Only for images</label></div><div class="feedback" id="f16"></div></div>
+
+        <div class="question" id="q17"><h3>Question 17:</h3><p>Stacked/multi-layer LSTM helps with:</p><div class="options"><label><input type="radio" name="q17" value="a"> Nothing</label><label><input type="radio" name="q17" value="b"> Learning hierarchical temporal features</label><label><input type="radio" name="q17" value="c"> Slowing training only</label><label><input type="radio" name="q17" value="d"> Removing parameters</label></div><div class="feedback" id="f17"></div></div>
+
+        <div class="question" id="q18"><h3>Question 18:</h3><p>Dropout in RNN/LSTM should be applied:</p><div class="options"><label><input type="radio" name="q18" value="a"> To recurrent connections (breaks learning)</label><label><input type="radio" name="q18" value="b"> Only to input/output connections, NOT recurrent</label><label><input type="radio" name="q18" value="c"> Everywhere equally</label><label><input type="radio" name="q18" value="d"> Never</label></div><div class="feedback" id="f18"></div></div>
+
+        <div class="question" id="q19"><h3>Question 19:</h3><p>Stateful RNN maintains state across batches. When is this needed?</p><div class="options"><label><input type="radio" name="q19" value="a"> Never</label><label><input type="radio" name="q19" value="b"> Very long sequences split across batches</label><label><input type="radio" name="q19" value="c"> All cases</label><label><input type="radio" name="q19" value="d"> Only testing</label></div><div class="feedback" id="f19"></div></div>
+
+        <div class="question" id="q20"><h3>Question 20:</h3><p>Why are word embeddings better than one-hot encoding?</p><div class="options"><label><input type="radio" name="q20" value="a"> Slower</label><label><input type="radio" name="q20" value="b"> Dense, capture semantic similarity, much smaller dimension</label><label><input type="radio" name="q20" value="c"> Worse performance</label><label><input type="radio" name="q20" value="d"> Same thing</label></div><div class="feedback" id="f20"></div></div>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
+    <div id="score"></div>
+
+    <script>
+        let currentMode = 'easy';
+        
+        const easyAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"a",q6:"b",q7:"b",q8:"b",q9:"b",q10:"c",q11:"a",q12:"b",q13:"a",q14:"b",q15:"b",q16:"b",q17:"b",q18:"a",q19:"b",q20:"b",q21:"a",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
+        
+        const hardAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        
+        const easyExplanations = {
+            q1:"RNN = Recurrent Neural Network.",
+            q2:"RNNs designed for sequential data: text, time series, speech.",
+            q3:"RNNs have feedback connections and hidden state (memory).",
+            q4:"Vanishing gradient: gradients too small, can't learn long dependencies.",
+            q5:"LSTM = Long Short-Term Memory.",
+            q6:"LSTM invented to solve vanishing gradient in vanilla RNNs.",
+            q7:"LSTM has 3 gates: forget, input, output.",
+            q8:"Forget gate decides what to discard from cell state.",
+            q9:"Input gate decides what new information to add.",
+            q10:"Output gate decides what to output from cell state.",
+            q11:"Gates use sigmoid (0-1) for gating/filtering.",
+            q12:"Cell state is long-term memory flowing through network.",
+            q13:"Hidden state passed to next step (short-term memory).",
+            q14:"Many-to-one: sequence → single output (sentiment analysis).",
+            q15:"Many-to-many: sequence → sequence (translation).",
+            q16:"Encoder compresses input, decoder generates output.",
+            q17:"Encoder outputs context vector (encoding of input).",
+            q18:"Bidirectional: processes forward AND backward.",
+            q19:"GRU simpler than LSTM with 2 gates instead of 3.",
+            q20:"Vanilla RNN with tanh handles ~100 steps before vanishing gradient.",
+            q21:"Seq2seq for translation, summarization, chatbots.",
+            q22:"Teacher forcing: use ground truth as next input during training.",
+            q23:"Attention allows focusing on relevant input parts.",
+            q24:"Transformers replace RNNs for parallelization.",
+            q25:"Transformers can process in parallel (no sequential dependency).",
+            q26:"BPTT unrolls RNN through time for gradient calculation.",
+            q27:"Embedding converts words to dense vectors.",
+            q28:"One-hot: sparse vector with one 1, rest 0s.",
+            q29:"Gradient clipping prevents exploding gradients.",
+            q30:"Stateful RNN maintains hidden state across batches."
+        };
+        
+        const hardExplanations = {
+            q1:"Forget gate=0 → multiply cell state by 0 → completely erases that information.",
+            q2:"Forget gate=1 → multiply cell state by 1 → retains all information unchanged.",
+            q3:"Many time steps → gradients multiply many times → values <1 compound → vanish to zero.",
+            q4:"Cell state provides additive gradient path (not multiplicative). Gates regulate flow but gradients can bypass vanishing.",
+            q5:"Sigmoid (0-1) determines what to add, tanh (-1 to 1) creates candidate values. Product gives filtered update.",
+            q6:"Encoder only needs final hidden state as context for decoder. Intermediate outputs not needed for standard seq2seq.",
+            q7:"Context vector compresses entire input sequence into fixed-size vector → bottleneck for long sequences.",
+            q8:"Attention lets decoder look at all encoder states, not just fixed context vector → no bottleneck.",
+            q9:"Bidirectional needs full sequence. In real-time (speech recognition), future not available yet.",
+            q10:"GRU combines cell and hidden state into one. Has reset and update gates instead of forget/input/output.",
+            q11:"Cell state=internal long-term memory. Hidden state=what's passed to output and next step (short-term).",
+            q12:"Teacher forcing uses ground truth. At test time, model uses its own predictions → distribution mismatch (exposure bias).",
+            q13:"Transformers process in parallel → lose sequential order information → need positional encoding to add it back.",
+            q14:"LSTM has 4 sets of weights (forget, input, output, cell candidate) × (input_size + hidden_size) → very large.",
+            q15:"Truncated BPTT limits backprop steps → saves memory and compute for long sequences.",
+            q16:"Peephole connections let gates see cell state directly, not just filtered through hidden state.",
+            q17:"Stacked LSTMs learn hierarchical features: lower=simple patterns, higher=complex abstractions.",
+            q18:"Dropout on recurrent connections disrupts temporal learning. Only apply to input/output, not recurrent.",
+            q19:"Stateful for very long sequences where dependencies span multiple batches (e.g., streaming data).",
+            q20:"Embeddings: dense (e.g., 300D vs 10000D), capture semantics (similar words → similar vectors), learnable."
+        };
+
+        function switchMode(mode) {
+            currentMode = mode;
+            const easyDiv = document.getElementById('easy-questions');
+            const hardDiv = document.getElementById('hard-questions');
+            const diffText = document.getElementById('difficulty-text');
+            const instructions = document.getElementById('instructions');
+            const buttons = document.querySelectorAll('.mode-btn');
+            
+            document.getElementById('score').style.display = 'none';
+            document.querySelectorAll('.feedback').forEach(f => f.style.display = 'none');
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            
+            if (mode === 'easy') {
+                easyDiv.style.display = 'block';
+                hardDiv.style.display = 'none';
+                diffText.className = 'easy-mode';
+                diffText.textContent = 'Current: Easy Mode - Fundamental Concepts';
+                instructions.textContent = 'Test your understanding of core concepts. Click Submit to see your score.';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                easyDiv.style.display = 'none';
+                hardDiv.style.display = 'block';
+                diffText.className = 'hard-mode';
+                diffText.textContent = 'Current: Hard Mode - Tricky Conceptual Questions';
+                instructions.textContent = 'Advanced questions testing deep understanding and edge cases. Good luck!';
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function submitQuiz() {
+            const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
+            const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            let correct = 0;
+            const total = Object.keys(answers).length;
+            
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const feedback = document.getElementById("f" + q.substring(1));
+                
+                if (selected) {
+                    if (selected.value === answers[q]) {
+                        correct++;
+                        feedback.className = "feedback correct";
+                        feedback.textContent = "✓ Correct! " + explanations[q];
+                    } else {
+                        feedback.className = "feedback incorrect";
+                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                    }
+                } else {
+                    feedback.className = "feedback incorrect";
+                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                }
+                feedback.style.display = "block";
+            }
+            
+            const percentage = ((correct / total) * 100).toFixed(1);
+            const scoreDiv = document.getElementById("score");
+            scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
+            scoreDiv.style.display = "block";
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
