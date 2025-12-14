@@ -103,45 +103,45 @@
     </div>
 
     <div id="hard-questions" style="display: none;">
-        <div class="question" id="q1"><h3>Question 1:</h3><p>K too small in K-means causes:</p><div class="options"><label><input type="radio" name="q1" value="a"> Perfect clustering</label><label><input type="radio" name="q1" value="b"> Underfitting (different groups merged together)</label><label><input type="radio" name="q1" value="c"> No effect</label><label><input type="radio" name="q1" value="d"> Too many clusters</label></div><div class="feedback" id="f1"></div></div>
+        <div class="question" id="hq1"><h3>Question 1:</h3><p>K too small in K-means causes:</p><div class="options"><label><input type="radio" name="hq1" value="a"> Perfect clustering</label><label><input type="radio" name="hq1" value="b"> Underfitting (different groups merged together)</label><label><input type="radio" name="hq1" value="c"> No effect</label><label><input type="radio" name="hq1" value="d"> Too many clusters</label></div><div class="feedback" id="hf1"></div></div>
 
-        <div class="question" id="q2"><h3>Question 2:</h3><p>K too large in K-means causes:</p><div class="options"><label><input type="radio" name="q2" value="a"> Underfitting</label><label><input type="radio" name="q2" value="b"> Overfitting (natural groups split unnecessarily)</label><label><input type="radio" name="q2" value="c"> Perfect result</label><label><input type="radio" name="q2" value="d"> No clustering</label></div><div class="feedback" id="f2"></div></div>
+        <div class="question" id="hq2"><h3>Question 2:</h3><p>K too large in K-means causes:</p><div class="options"><label><input type="radio" name="hq2" value="a"> Underfitting</label><label><input type="radio" name="hq2" value="b"> Overfitting (natural groups split unnecessarily)</label><label><input type="radio" name="hq2" value="c"> Perfect result</label><label><input type="radio" name="hq2" value="d"> No clustering</label></div><div class="feedback" id="hf2"></div></div>
 
-        <div class="question" id="q3"><h3>Question 3:</h3><p>Why initialize K-means centroids carefully?</p><div class="options"><label><input type="radio" name="q3" value="a"> No effect</label><label><input type="radio" name="q3" value="b"> Poor initialization → local minima (K-means++ helps)</label><label><input type="radio" name="q3" value="c"> Always same result</label><label><input type="radio" name="q3" value="d"> Faster only</label></div><div class="feedback" id="f3"></div></div>
+        <div class="question" id="hq3"><h3>Question 3:</h3><p>Why initialize K-means centroids carefully?</p><div class="options"><label><input type="radio" name="hq3" value="a"> No effect</label><label><input type="radio" name="hq3" value="b"> Poor initialization → local minima (K-means++ helps)</label><label><input type="radio" name="hq3" value="c"> Always same result</label><label><input type="radio" name="hq3" value="d"> Faster only</label></div><div class="feedback" id="hf3"></div></div>
 
-        <div class="question" id="q4"><h3>Question 4:</h3><p>Euclidean vs Manhattan distance - when prefer Manhattan?</p><div class="options"><label><input type="radio" name="q4" value="a"> Always Euclidean better</label><label><input type="radio" name="q4" value="b"> Grid-like data, less sensitive to outliers</label><label><input type="radio" name="q4" value="c"> Never useful</label><label><input type="radio" name="q4" value="d"> Same thing</label></div><div class="feedback" id="f4"></div></div>
+        <div class="question" id="hq4"><h3>Question 4:</h3><p>Euclidean vs Manhattan distance - when prefer Manhattan?</p><div class="options"><label><input type="radio" name="hq4" value="a"> Always Euclidean better</label><label><input type="radio" name="hq4" value="b"> Grid-like data, less sensitive to outliers</label><label><input type="radio" name="hq4" value="c"> Never useful</label><label><input type="radio" name="hq4" value="d"> Same thing</label></div><div class="feedback" id="hf4"></div></div>
 
-        <div class="question" id="q5"><h3>Question 5:</h3><p>First principal component captures:</p><div class="options"><label><input type="radio" name="q5" value="a"> Minimum variance</label><label><input type="radio" name="q5" value="b"> Maximum variance (most information)</label><label><input type="radio" name="q5" value="c"> No variance</label><label><input type="radio" name="q5" value="d"> Random variance</label></div><div class="feedback" id="f5"></div></div>
+        <div class="question" id="hq5"><h3>Question 5:</h3><p>First principal component captures:</p><div class="options"><label><input type="radio" name="hq5" value="a"> Minimum variance</label><label><input type="radio" name="hq5" value="b"> Maximum variance (most information)</label><label><input type="radio" name="hq5" value="c"> No variance</label><label><input type="radio" name="hq5" value="d"> Random variance</label></div><div class="feedback" id="hf5"></div></div>
 
-        <div class="question" id="q6"><h3>Question 6:</h3><p>PCA with 100 features, keep 95% variance. Typical number of components needed?</p><div class="options"><label><input type="radio" name="q6" value="a"> All 100</label><label><input type="radio" name="q6" value="b"> Often much fewer (10-30, depends on data)</label><label><input type="radio" name="q6" value="c"> Always 95</label><label><input type="radio" name="q6" value="d"> Just 2</label></div><div class="feedback" id="f6"></div></div>
+        <div class="question" id="hq6"><h3>Question 6:</h3><p>PCA with 100 features, keep 95% variance. Typical number of components needed?</p><div class="options"><label><input type="radio" name="hq6" value="a"> All 100</label><label><input type="radio" name="hq6" value="b"> Often much fewer (10-30, depends on data)</label><label><input type="radio" name="hq6" value="c"> Always 95</label><label><input type="radio" name="hq6" value="d"> Just 2</label></div><div class="feedback" id="hf6"></div></div>
 
-        <div class="question" id="q7"><h3>Question 7:</h3><p>K-means assumes:</p><div class="options"><label><input type="radio" name="q7" value="a"> Any cluster shape</label><label><input type="radio" name="q7" value="b"> Spherical clusters, similar sizes, similar density</label><label><input type="radio" name="q7" value="c"> No assumptions</label><label><input type="radio" name="q7" value="d"> Only linear data</label></div><div class="feedback" id="f7"></div></div>
+        <div class="question" id="hq7"><h3>Question 7:</h3><p>K-means assumes:</p><div class="options"><label><input type="radio" name="hq7" value="a"> Any cluster shape</label><label><input type="radio" name="hq7" value="b"> Spherical clusters, similar sizes, similar density</label><label><input type="radio" name="hq7" value="c"> No assumptions</label><label><input type="radio" name="hq7" value="d"> Only linear data</label></div><div class="feedback" id="hf7"></div></div>
 
-        <div class="question" id="q8"><h3>Question 8:</h3><p>Silhouette score of 1 means:</p><div class="options"><label><input type="radio" name="q8" value="a"> Worst clustering</label><label><input type="radio" name="q8" value="b"> Perfect clustering (compact, well-separated)</label><label><input type="radio" name="q8" value="c"> Random clusters</label><label><input type="radio" name="q8" value="d"> Overlapping clusters</label></div><div class="feedback" id="f8"></div></div>
+        <div class="question" id="hq8"><h3>Question 8:</h3><p>Silhouette score of 1 means:</p><div class="options"><label><input type="radio" name="hq8" value="a"> Worst clustering</label><label><input type="radio" name="hq8" value="b"> Perfect clustering (compact, well-separated)</label><label><input type="radio" name="hq8" value="c"> Random clusters</label><label><input type="radio" name="hq8" value="d"> Overlapping clusters</label></div><div class="feedback" id="hf8"></div></div>
 
-        <div class="question" id="q9"><h3>Question 9:</h3><p>Silhouette score of -1 means:</p><div class="options"><label><input type="radio" name="q9" value="a"> Perfect</label><label><input type="radio" name="q9" value="b"> Points likely in wrong clusters</label><label><input type="radio" name="q9" value="c"> Good clustering</label><label><input type="radio" name="q9" value="d"> No clusters</label></div><div class="feedback" id="f9"></div></div>
+        <div class="question" id="hq9"><h3>Question 9:</h3><p>Silhouette score of -1 means:</p><div class="options"><label><input type="radio" name="hq9" value="a"> Perfect</label><label><input type="radio" name="hq9" value="b"> Points likely in wrong clusters</label><label><input type="radio" name="hq9" value="c"> Good clustering</label><label><input type="radio" name="hq9" value="d"> No clusters</label></div><div class="feedback" id="hf9"></div></div>
 
-        <div class="question" id="q10"><h3>Question 10:</h3><p>GMM vs K-means - key difference:</p><div class="options"><label><input type="radio" name="q10" value="a"> Identical</label><label><input type="radio" name="q10" value="b"> GMM soft clustering (probabilities), handles overlaps better</label><label><input type="radio" name="q10" value="c"> GMM always worse</label><label><input type="radio" name="q10" value="d"> No difference</label></div><div class="feedback" id="f10"></div></div>
+        <div class="question" id="hq10"><h3>Question 10:</h3><p>GMM vs K-means - key difference:</p><div class="options"><label><input type="radio" name="hq10" value="a"> Identical</label><label><input type="radio" name="hq10" value="b"> GMM soft clustering (probabilities), handles overlaps better</label><label><input type="radio" name="hq10" value="c"> GMM always worse</label><label><input type="radio" name="hq10" value="d"> No difference</label></div><div class="feedback" id="hf10"></div></div>
 
-        <div class="question" id="q11"><h3>Question 11:</h3><p>PCA is linear or non-linear?</p><div class="options"><label><input type="radio" name="q11" value="a"> Non-linear</label><label><input type="radio" name="q11" value="b"> Linear (finds linear combinations)</label><label><input type="radio" name="q11" value="c"> Both</label><label><input type="radio" name="q11" value="d"> Neither</label></div><div class="feedback" id="f11"></div></div>
+        <div class="question" id="hq11"><h3>Question 11:</h3><p>PCA is linear or non-linear?</p><div class="options"><label><input type="radio" name="hq11" value="a"> Non-linear</label><label><input type="radio" name="hq11" value="b"> Linear (finds linear combinations)</label><label><input type="radio" name="hq11" value="c"> Both</label><label><input type="radio" name="hq11" value="d"> Neither</label></div><div class="feedback" id="hf11"></div></div>
 
-        <div class="question" id="q12"><h3>Question 12:</h3><p>For non-linear dimensionality reduction, use:</p><div class="options"><label><input type="radio" name="q12" value="a"> Only PCA</label><label><input type="radio" name="q12" value="b"> T-SNE, UMAP, kernel PCA</label><label><input type="radio" name="q12" value="c"> K-means</label><label><input type="radio" name="q12" value="d"> Nothing</label></div><div class="feedback" id="f12"></div></div>
+        <div class="question" id="hq12"><h3>Question 12:</h3><p>For non-linear dimensionality reduction, use:</p><div class="options"><label><input type="radio" name="hq12" value="a"> Only PCA</label><label><input type="radio" name="hq12" value="b"> T-SNE, UMAP, kernel PCA</label><label><input type="radio" name="hq12" value="c"> K-means</label><label><input type="radio" name="hq12" value="d"> Nothing</label></div><div class="feedback" id="hf12"></div></div>
 
-        <div class="question" id="q13"><h3>Question 13:</h3><p>Elbow method plots:</p><div class="options"><label><input type="radio" name="q13" value="a"> Accuracy vs K</label><label><input type="radio" name="q13" value="b"> Inertia (within-cluster sum of squares) vs K</label><label><input type="radio" name="q13" value="c"> Time vs K</label><label><input type="radio" name="q13" value="d"> Nothing</label></div><div class="feedback" id="f13"></div></div>
+        <div class="question" id="hq13"><h3>Question 13:</h3><p>Elbow method plots:</p><div class="options"><label><input type="radio" name="hq13" value="a"> Accuracy vs K</label><label><input type="radio" name="hq13" value="b"> Inertia (within-cluster sum of squares) vs K</label><label><input type="radio" name="hq13" value="c"> Time vs K</label><label><input type="radio" name="hq13" value="d"> Nothing</label></div><div class="feedback" id="hf13"></div></div>
 
-        <div class="question" id="q14"><h3>Question 14:</h3><p>Why curse of dimensionality affects clustering?</p><div class="options"><label><input type="radio" name="q14" value="a"> No effect</label><label><input type="radio" name="q14" value="b"> High dimensions → all points equidistant (distance loses meaning)</label><label><input type="radio" name="q14" value="c"> Makes it easier</label><label><input type="radio" name="q14" value="d"> Only helps</label></div><div class="feedback" id="f14"></div></div>
+        <div class="question" id="hq14"><h3>Question 14:</h3><p>Why curse of dimensionality affects clustering?</p><div class="options"><label><input type="radio" name="hq14" value="a"> No effect</label><label><input type="radio" name="hq14" value="b"> High dimensions → all points equidistant (distance loses meaning)</label><label><input type="radio" name="hq14" value="c"> Makes it easier</label><label><input type="radio" name="hq14" value="d"> Only helps</label></div><div class="feedback" id="hf14"></div></div>
 
-        <div class="question" id="q15"><h3>Question 15:</h3><p>DBSCAN parameters: ε (epsilon) and minPts control:</p><div class="options"><label><input type="radio" name="q15" value="a"> Learning rate</label><label><input type="radio" name="q15" value="b"> Neighborhood radius and minimum density</label><label><input type="radio" name="q15" value="c"> Number of clusters directly</label><label><input type="radio" name="q15" value="d"> Nothing</label></div><div class="feedback" id="f15"></div></div>
+        <div class="question" id="hq15"><h3>Question 15:</h3><p>DBSCAN parameters: ε (epsilon) and minPts control:</p><div class="options"><label><input type="radio" name="hq15" value="a"> Learning rate</label><label><input type="radio" name="hq15" value="b"> Neighborhood radius and minimum density</label><label><input type="radio" name="hq15" value="c"> Number of clusters directly</label><label><input type="radio" name="hq15" value="d"> Nothing</label></div><div class="feedback" id="hf15"></div></div>
 
-        <div class="question" id="q16"><h3>Question 16:</h3><p>Hierarchical clustering advantage over K-means:</p><div class="options"><label><input type="radio" name="q16" value="a"> Faster always</label><label><input type="radio" name="q16" value="b"> Don't need to specify K beforehand, shows hierarchy</label><label><input type="radio" name="q16" value="c"> No advantage</label><label><input type="radio" name="q16" value="d"> Worse always</label></div><div class="feedback" id="f16"></div></div>
+        <div class="question" id="hq16"><h3>Question 16:</h3><p>Hierarchical clustering advantage over K-means:</p><div class="options"><label><input type="radio" name="hq16" value="a"> Faster always</label><label><input type="radio" name="hq16" value="b"> Don't need to specify K beforehand, shows hierarchy</label><label><input type="radio" name="hq16" value="c"> No advantage</label><label><input type="radio" name="hq16" value="d"> Worse always</label></div><div class="feedback" id="hf16"></div></div>
 
-        <div class="question" id="q17"><h3>Question 17:</h3><p>Complete linkage in hierarchical clustering merges:</p><div class="options"><label><input type="radio" name="q17" value="a"> Closest points</label><label><input type="radio" name="q17" value="b"> Clusters with smallest maximum distance (farthest points closest)</label><label><input type="radio" name="q17" value="c"> Random clusters</label><label><input type="radio" name="q17" value="d"> All at once</label></div><div class="feedback" id="f17"></div></div>
+        <div class="question" id="hq17"><h3>Question 17:</h3><p>Complete linkage in hierarchical clustering merges:</p><div class="options"><label><input type="radio" name="hq17" value="a"> Closest points</label><label><input type="radio" name="hq17" value="b"> Clusters with smallest maximum distance (farthest points closest)</label><label><input type="radio" name="hq17" value="c"> Random clusters</label><label><input type="radio" name="hq17" value="d"> All at once</label></div><div class="feedback" id="hf17"></div></div>
 
-        <div class="question" id="q18"><h3>Question 18:</h3><p>Single linkage tends to create:</p><div class="options"><label><input type="radio" name="q18" value="a"> Compact clusters</label><label><input type="radio" name="q18" value="b"> Chaining effect (elongated clusters)</label><label><input type="radio" name="q18" value="c"> No clusters</label><label><input type="radio" name="q18" value="d"> Perfect clusters</label></div><div class="feedback" id="f18"></div></div>
+        <div class="question" id="hq18"><h3>Question 18:</h3><p>Single linkage tends to create:</p><div class="options"><label><input type="radio" name="hq18" value="a"> Compact clusters</label><label><input type="radio" name="hq18" value="b"> Chaining effect (elongated clusters)</label><label><input type="radio" name="hq18" value="c"> No clusters</label><label><input type="radio" name="hq18" value="d"> Perfect clusters</label></div><div class="feedback" id="hf18"></div></div>
 
-        <div class="question" id="q19"><h3>Question 19:</h3><p>Why standardize features before K-means?</p><div class="options"><label><input type="radio" name="q19" value="a"> No need</label><label><input type="radio" name="q19" value="b"> Features with large scales dominate distance calculations</label><label><input type="radio" name="q19" value="c"> Makes it worse</label><label><input type="radio" name="q19" value="d"> Only for classification</label></div><div class="feedback" id="f19"></div></div>
+        <div class="question" id="hq19"><h3>Question 19:</h3><p>Why standardize features before K-means?</p><div class="options"><label><input type="radio" name="hq19" value="a"> No need</label><label><input type="radio" name="hq19" value="b"> Features with large scales dominate distance calculations</label><label><input type="radio" name="hq19" value="c"> Makes it worse</label><label><input type="radio" name="hq19" value="d"> Only for classification</label></div><div class="feedback" id="hf19"></div></div>
 
-        <div class="question" id="q20"><h3>Question 20:</h3><p>T-SNE vs PCA for visualization:</p><div class="options"><label><input type="radio" name="q20" value="a"> Identical results</label><label><input type="radio" name="q20" value="b"> T-SNE preserves local structure better, nonlinear (slower)</label><label><input type="radio" name="q20" value="c"> PCA always better</label><label><input type="radio" name="q20" value="d"> No difference</label></div><div class="feedback" id="f20"></div></div>
+        <div class="question" id="hq20"><h3>Question 20:</h3><p>T-SNE vs PCA for visualization:</p><div class="options"><label><input type="radio" name="hq20" value="a"> Identical results</label><label><input type="radio" name="hq20" value="b"> T-SNE preserves local structure better, nonlinear (slower)</label><label><input type="radio" name="hq20" value="c"> PCA always better</label><label><input type="radio" name="hq20" value="d"> No difference</label></div><div class="feedback" id="hf20"></div></div>
     </div>
 
     <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
@@ -152,7 +152,7 @@
         
         const easyAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
         
-        const hardAnswers = {q1:"b",q2:"b",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        const hardAnswers = {hq1:"b",hq2:"b",hq3:"b",hq4:"b",hq5:"b",hq6:"b",hq7:"b",hq8:"b",hq9:"b",hq10:"b",hq11:"b",hq12:"b",hq13:"b",hq14:"b",hq15:"b",hq16:"b",hq17:"b",hq18:"b",hq19:"b",hq20:"b"};
         
         const easyExplanations = {
             q1:"Unsupervised learning works with unlabeled data (no target labels).",
@@ -188,26 +188,26 @@
         };
         
         const hardExplanations = {
-            q1:"K too small → underfitting → different natural groups forced together into same cluster.",
-            q2:"K too large → overfitting → natural groups split unnecessarily into many clusters.",
-            q3:"Random init can lead to local minima. K-means++ init spreads centroids out → better results.",
-            q4:"Manhattan: grid-like movement, less sensitive to outliers than Euclidean.",
-            q5:"PC1 captures maximum variance = most information about data.",
-            q6:"Typically much fewer than original features needed for 95% variance (depends on correlation structure).",
-            q7:"K-means assumes spherical clusters of similar size and density. Fails on elongated or irregular shapes.",
-            q8:"Silhouette=1 → points very close to own cluster, far from others → perfect.",
-            q9:"Silhouette=-1 → points closer to other clusters than own → likely misclassified.",
-            q10:"GMM soft clustering (probabilities), assumes Gaussian distributions, handles overlaps better.",
-            q11:"PCA linear: finds linear combinations (weighted sums) of original features.",
-            q12:"For non-linear manifolds: T-SNE, UMAP, kernel PCA, autoencoders.",
-            q13:"Elbow: plot inertia vs K, look for \"elbow\" where improvement slows.",
-            q14:"High dimensions → all pairwise distances become similar → distance metrics lose discriminative power.",
-            q15:"ε=neighborhood radius, minPts=minimum points in neighborhood for core point.",
-            q16:"Hierarchical: don't need to specify K, provides dendrogram showing hierarchy at all levels.",
-            q17:"Complete linkage: merge clusters with smallest maximum pairwise distance → compact clusters.",
-            q18:"Single linkage: can create chaining (elongated clusters) by connecting via single close points.",
-            q19:"Features with large values (e.g., salary in thousands) dominate distance → must standardize.",
-            q20:"T-SNE better preserves local neighborhoods, nonlinear. PCA faster, preserves global structure."
+            hq1:"K too small → underfitting → different natural groups forced together into same cluster.",
+            hq2:"K too large → overfitting → natural groups split unnecessarily into many clusters.",
+            hq3:"Random init can lead to local minima. K-means++ init spreads centroids out → better results.",
+            hq4:"Manhattan: grid-like movement, less sensitive to outliers than Euclidean.",
+            hq5:"PC1 captures maximum variance = most information about data.",
+            hq6:"Typically much fewer than original features needed for 95% variance (depends on correlation structure).",
+            hq7:"K-means assumes spherical clusters of similar size and density. Fails on elongated or irregular shapes.",
+            hq8:"Silhouette=1 → points very close to own cluster, far from others → perfect.",
+            hq9:"Silhouette=-1 → points closer to other clusters than own → likely misclassified.",
+            hq10:"GMM soft clustering (probabilities), assumes Gaussian distributions, handles overlaps better.",
+            hq11:"PCA linear: finds linear combinations (weighted sums) of original features.",
+            hq12:"For non-linear manifolds: T-SNE, UMAP, kernel PCA, autoencoders.",
+            hq13:"Elbow: plot inertia vs K, look for \"elbow\" where improvement slows.",
+            hq14:"High dimensions → all pairwise distances become similar → distance metrics lose discriminative power.",
+            hq15:"ε=neighborhood radius, minPts=minimum points in neighborhood for core point.",
+            hq16:"Hierarchical: don't need to specify K, provides dendrogram showing hierarchy at all levels.",
+            hq17:"Complete linkage: merge clusters with smallest maximum pairwise distance → compact clusters.",
+            hq18:"Single linkage: can create chaining (elongated clusters) by connecting via single close points.",
+            hq19:"Features with large values (e.g., salary in thousands) dominate distance → must standardize.",
+            hq20:"T-SNE better preserves local neighborhoods, nonlinear. PCA faster, preserves global structure."
         };
 
         function switchMode(mode) {
@@ -246,13 +246,15 @@
         function submitQuiz() {
             const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
             const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            const prefix = currentMode === 'easy' ? 'f' : 'hf';
             let correct = 0;
             const total = Object.keys(answers).length;
-            
+
             for (let q in answers) {
                 const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const feedback = document.getElementById("f" + q.substring(1));
-                
+                const qNum = currentMode === 'easy' ? q.substring(1) : q.substring(2);
+                const feedback = document.getElementById(prefix + qNum);
+
                 if (selected) {
                     if (selected.value === answers[q]) {
                         correct++;
@@ -260,15 +262,15 @@
                         feedback.textContent = "✓ Correct! " + explanations[q];
                     } else {
                         feedback.className = "feedback incorrect";
-                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                        feedback.textContent = "✗ Incorrect. The correct answer is " + answers[q].toUpperCase() + ". " + explanations[q];
                     }
                 } else {
                     feedback.className = "feedback incorrect";
-                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                    feedback.textContent = "✗ No answer selected. The correct answer is " + answers[q].toUpperCase() + ". " + explanations[q];
                 }
                 feedback.style.display = "block";
             }
-            
+
             const percentage = ((correct / total) * 100).toFixed(1);
             const scoreDiv = document.getElementById("score");
             scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;

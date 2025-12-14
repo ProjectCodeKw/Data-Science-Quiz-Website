@@ -103,45 +103,45 @@
     </div>
 
     <div id="hard-questions" style="display: none;">
-        <div class="question" id="q1"><h3>Question 1:</h3><p>Why can't we initialize all weights to zero?</p><div class="options"><label><input type="radio" name="q1" value="a"> It's too slow</label><label><input type="radio" name="q1" value="b"> All neurons learn same features (symmetry problem); gradients are identical</label><label><input type="radio" name="q1" value="c"> It works perfectly</label><label><input type="radio" name="q1" value="d"> GPUs don't support it</label></div><div class="feedback" id="f1"></div></div>
+        <div class="question" id="hq1"><h3>Question 1:</h3><p>Why can't we initialize all weights to zero?</p><div class="options"><label><input type="radio" name="hq1" value="a"> It's too slow</label><label><input type="radio" name="hq1" value="b"> All neurons learn same features (symmetry problem); gradients are identical</label><label><input type="radio" name="hq1" value="c"> It works perfectly</label><label><input type="radio" name="hq1" value="d"> GPUs don't support it</label></div><div class="feedback" id="hf1"></div></div>
 
-        <div class="question" id="q2"><h3>Question 2:</h3><p>Without activation functions, stacking multiple layers just creates:</p><div class="options"><label><input type="radio" name="q2" value="a"> More powerful network</label><label><input type="radio" name="q2" value="b"> Equivalent to single linear layer (linear combinations stay linear)</label><label><input type="radio" name="q2" value="c"> Faster training</label><label><input type="radio" name="q2" value="d"> Better accuracy</label></div><div class="feedback" id="f2"></div></div>
+        <div class="question" id="hq2"><h3>Question 2:</h3><p>Without activation functions, stacking multiple layers just creates:</p><div class="options"><label><input type="radio" name="hq2" value="a"> More powerful network</label><label><input type="radio" name="hq2" value="b"> Equivalent to single linear layer (linear combinations stay linear)</label><label><input type="radio" name="hq2" value="c"> Faster training</label><label><input type="radio" name="hq2" value="d"> Better accuracy</label></div><div class="feedback" id="hf2"></div></div>
 
-        <div class="question" id="q3"><h3>Question 3:</h3><p>Sigmoid suffers from vanishing gradient because:</p><div class="options"><label><input type="radio" name="q3" value="a"> It's too fast</label><label><input type="radio" name="q3" value="b"> Gradient saturates (becomes very small) at extreme values</label><label><input type="radio" name="q3" value="c"> It has no gradient</label><label><input type="radio" name="q3" value="d"> It's always increasing</label></div><div class="feedback" id="f3"></div></div>
+        <div class="question" id="hq3"><h3>Question 3:</h3><p>Sigmoid suffers from vanishing gradient because:</p><div class="options"><label><input type="radio" name="hq3" value="a"> It's too fast</label><label><input type="radio" name="hq3" value="b"> Gradient saturates (becomes very small) at extreme values</label><label><input type="radio" name="hq3" value="c"> It has no gradient</label><label><input type="radio" name="hq3" value="d"> It's always increasing</label></div><div class="feedback" id="hf3"></div></div>
 
-        <div class="question" id="q4"><h3>Question 4:</h3><p>ReLU can suffer from "dying ReLU" problem when:</p><div class="options"><label><input type="radio" name="q4" value="a"> Neurons get stuck outputting 0, stop learning (negative inputs always → 0)</label><label><input type="radio" name="q4" value="b"> It works too well</label><label><input type="radio" name="q4" value="c"> Too many neurons active</label><label><input type="radio" name="q4" value="d"> Impossible to happen</label></div><div class="feedback" id="f4"></div></div>
+        <div class="question" id="hq4"><h3>Question 4:</h3><p>ReLU can suffer from "dying ReLU" problem when:</p><div class="options"><label><input type="radio" name="hq4" value="a"> Neurons get stuck outputting 0, stop learning (negative inputs always → 0)</label><label><input type="radio" name="hq4" value="b"> It works too well</label><label><input type="radio" name="hq4" value="c"> Too many neurons active</label><label><input type="radio" name="hq4" value="d"> Impossible to happen</label></div><div class="feedback" id="hf4"></div></div>
 
-        <div class="question" id="q5"><h3>Question 5:</h3><p>You have 3 inputs, 4 hidden neurons, 2 outputs. How many weights (excluding bias)?</p><div class="options"><label><input type="radio" name="q5" value="a"> 9</label><label><input type="radio" name="q5" value="b"> 20 (3×4 + 4×2)</label><label><input type="radio" name="q5" value="c"> 12</label><label><input type="radio" name="q5" value="d"> 24</label></div><div class="feedback" id="f5"></div></div>
+        <div class="question" id="hq5"><h3>Question 5:</h3><p>You have 3 inputs, 4 hidden neurons, 2 outputs. How many weights (excluding bias)?</p><div class="options"><label><input type="radio" name="hq5" value="a"> 9</label><label><input type="radio" name="hq5" value="b"> 20 (3×4 + 4×2)</label><label><input type="radio" name="hq5" value="c"> 12</label><label><input type="radio" name="hq5" value="d"> 24</label></div><div class="feedback" id="hf5"></div></div>
 
-        <div class="question" id="q6"><h3>Question 6:</h3><p>Deeper networks can represent functions with:</p><div class="options"><label><input type="radio" name="q6" value="a"> Only linear patterns</label><label><input type="radio" name="q6" value="b"> More complex patterns using fewer neurons per layer</label><label><input type="radio" name="q6" value="c"> No advantages</label><label><input type="radio" name="q6" value="d"> Only simple patterns</label></div><div class="feedback" id="f6"></div></div>
+        <div class="question" id="hq6"><h3>Question 6:</h3><p>Deeper networks can represent functions with:</p><div class="options"><label><input type="radio" name="hq6" value="a"> Only linear patterns</label><label><input type="radio" name="hq6" value="b"> More complex patterns using fewer neurons per layer</label><label><input type="radio" name="hq6" value="c"> No advantages</label><label><input type="radio" name="hq6" value="d"> Only simple patterns</label></div><div class="feedback" id="hf6"></div></div>
 
-        <div class="question" id="q7"><h3>Question 7:</h3><p>Softmax outputs sum to:</p><div class="options"><label><input type="radio" name="q7" value="a"> 0</label><label><input type="radio" name="q7" value="b"> Number of classes</label><label><input type="radio" name="q7" value="c"> 1 (probability distribution)</label><label><input type="radio" name="q7" value="d"> Infinity</label></div><div class="feedback" id="f7"></div></div>
+        <div class="question" id="hq7"><h3>Question 7:</h3><p>Softmax outputs sum to:</p><div class="options"><label><input type="radio" name="hq7" value="a"> 0</label><label><input type="radio" name="hq7" value="b"> Number of classes</label><label><input type="radio" name="hq7" value="c"> 1 (probability distribution)</label><label><input type="radio" name="hq7" value="d"> Infinity</label></div><div class="feedback" id="hf7"></div></div>
 
-        <div class="question" id="q8"><h3>Question 8:</h3><p>Binary classification output typically uses:</p><div class="options"><label><input type="radio" name="q8" value="a"> Softmax with 2 outputs</label><label><input type="radio" name="q8" value="b"> Single sigmoid output</label><label><input type="radio" name="q8" value="c"> ReLU</label><label><input type="radio" name="q8" value="d"> Tanh</label></div><div class="feedback" id="f8"></div></div>
+        <div class="question" id="hq8"><h3>Question 8:</h3><p>Binary classification output typically uses:</p><div class="options"><label><input type="radio" name="hq8" value="a"> Softmax with 2 outputs</label><label><input type="radio" name="hq8" value="b"> Single sigmoid output</label><label><input type="radio" name="hq8" value="c"> ReLU</label><label><input type="radio" name="hq8" value="d"> Tanh</label></div><div class="feedback" id="hf8"></div></div>
 
-        <div class="question" id="q9"><h3>Question 9:</h3><p>Large learning rate can cause:</p><div class="options"><label><input type="radio" name="q9" value="a"> Faster guaranteed convergence</label><label><input type="radio" name="q9" value="b"> Overshooting minimum, oscillation, or divergence</label><label><input type="radio" name="q9" value="c"> Perfect training</label><label><input type="radio" name="q9" value="d"> Slower training only</label></div><div class="feedback" id="f9"></div></div>
+        <div class="question" id="hq9"><h3>Question 9:</h3><p>Large learning rate can cause:</p><div class="options"><label><input type="radio" name="hq9" value="a"> Faster guaranteed convergence</label><label><input type="radio" name="hq9" value="b"> Overshooting minimum, oscillation, or divergence</label><label><input type="radio" name="hq9" value="c"> Perfect training</label><label><input type="radio" name="hq9" value="d"> Slower training only</label></div><div class="feedback" id="hf9"></div></div>
 
-        <div class="question" id="q10"><h3>Question 10:</h3><p>Batch size of 1 is called:</p><div class="options"><label><input type="radio" name="q10" value="a"> Batch gradient descent</label><label><input type="radio" name="q10" value="b"> Stochastic gradient descent (SGD)</label><label><input type="radio" name="q10" value="c"> Mini-batch gradient descent</label><label><input type="radio" name="q10" value="d"> Full batch</label></div><div class="feedback" id="f10"></div></div>
+        <div class="question" id="hq10"><h3>Question 10:</h3><p>Batch size of 1 is called:</p><div class="options"><label><input type="radio" name="hq10" value="a"> Batch gradient descent</label><label><input type="radio" name="hq10" value="b"> Stochastic gradient descent (SGD)</label><label><input type="radio" name="hq10" value="c"> Mini-batch gradient descent</label><label><input type="radio" name="hq10" value="d"> Full batch</label></div><div class="feedback" id="hf10"></div></div>
 
-        <div class="question" id="q11"><h3>Question 11:</h3><p>Why use mini-batches instead of full batch?</p><div class="options"><label><input type="radio" name="q11" value="a"> Less accurate</label><label><input type="radio" name="q11" value="b"> Faster updates, better memory usage, regularization effect</label><label><input type="radio" name="q11" value="c"> Slower training</label><label><input type="radio" name="q11" value="d"> No advantages</label></div><div class="feedback" id="f11"></div></div>
+        <div class="question" id="hq11"><h3>Question 11:</h3><p>Why use mini-batches instead of full batch?</p><div class="options"><label><input type="radio" name="hq11" value="a"> Less accurate</label><label><input type="radio" name="hq11" value="b"> Faster updates, better memory usage, regularization effect</label><label><input type="radio" name="hq11" value="c"> Slower training</label><label><input type="radio" name="hq11" value="d"> No advantages</label></div><div class="feedback" id="hf11"></div></div>
 
-        <div class="question" id="q12"><h3>Question 12:</h3><p>Dropout rate of 0.5 means:</p><div class="options"><label><input type="radio" name="q12" value="a"> Drop 5% of neurons</label><label><input type="radio" name="q12" value="b"> Drop 50% of neurons randomly during training</label><label><input type="radio" name="q12" value="c"> Keep 5% of neurons</label><label><input type="radio" name="q12" value="d"> No dropout</label></div><div class="feedback" id="f12"></div></div>
+        <div class="question" id="hq12"><h3>Question 12:</h3><p>Dropout rate of 0.5 means:</p><div class="options"><label><input type="radio" name="hq12" value="a"> Drop 5% of neurons</label><label><input type="radio" name="hq12" value="b"> Drop 50% of neurons randomly during training</label><label><input type="radio" name="hq12" value="c"> Keep 5% of neurons</label><label><input type="radio" name="hq12" value="d"> No dropout</label></div><div class="feedback" id="hf12"></div></div>
 
-        <div class="question" id="q13"><h3>Question 13:</h3><p>Why does dropout prevent overfitting?</p><div class="options"><label><input type="radio" name="q13" value="a"> Makes training faster</label><label><input type="radio" name="q13" value="b"> Forces network to learn robust features, not rely on specific neurons</label><label><input type="radio" name="q13" value="c"> Increases model size</label><label><input type="radio" name="q13" value="d"> Adds more layers</label></div><div class="feedback" id="f13"></div></div>
+        <div class="question" id="hq13"><h3>Question 13:</h3><p>Why does dropout prevent overfitting?</p><div class="options"><label><input type="radio" name="hq13" value="a"> Makes training faster</label><label><input type="radio" name="hq13" value="b"> Forces network to learn robust features, not rely on specific neurons</label><label><input type="radio" name="hq13" value="c"> Increases model size</label><label><input type="radio" name="hq13" value="d"> Adds more layers</label></div><div class="feedback" id="hf13"></div></div>
 
-        <div class="question" id="q14"><h3>Question 14:</h3><p>During testing/inference, dropout is:</p><div class="options"><label><input type="radio" name="q14" value="a"> Kept at same rate</label><label><input type="radio" name="q14" value="b"> Turned off (use all neurons)</label><label><input type="radio" name="q14" value="c"> Increased to 1.0</label><label><input type="radio" name="q14" value="d"> Random</label></div><div class="feedback" id="f14"></div></div>
+        <div class="question" id="hq14"><h3>Question 14:</h3><p>During testing/inference, dropout is:</p><div class="options"><label><input type="radio" name="hq14" value="a"> Kept at same rate</label><label><input type="radio" name="hq14" value="b"> Turned off (use all neurons)</label><label><input type="radio" name="hq14" value="c"> Increased to 1.0</label><label><input type="radio" name="hq14" value="d"> Random</label></div><div class="feedback" id="hf14"></div></div>
 
-        <div class="question" id="q15"><h3>Question 15:</h3><p>Gradient clipping helps with:</p><div class="options"><label><input type="radio" name="q15" value="a"> Vanishing gradients</label><label><input type="radio" name="q15" value="b"> Exploding gradients by capping maximum gradient value</label><label><input type="radio" name="q15" value="c"> Increasing gradients</label><label><input type="radio" name="q15" value="d"> Removing gradients</label></div><div class="feedback" id="f15"></div></div>
+        <div class="question" id="hq15"><h3>Question 15:</h3><p>Gradient clipping helps with:</p><div class="options"><label><input type="radio" name="hq15" value="a"> Vanishing gradients</label><label><input type="radio" name="hq15" value="b"> Exploding gradients by capping maximum gradient value</label><label><input type="radio" name="hq15" value="c"> Increasing gradients</label><label><input type="radio" name="hq15" value="d"> Removing gradients</label></div><div class="feedback" id="hf15"></div></div>
 
-        <div class="question" id="q16"><h3>Question 16:</h3><p>Why is ReLU preferred over sigmoid in hidden layers?</p><div class="options"><label><input type="radio" name="q16" value="a"> Sigmoid is always better</label><label><input type="radio" name="q16" value="b"> ReLU doesn't saturate for positive values, better gradient flow</label><label><input type="radio" name="q16" value="c"> ReLU is more complex</label><label><input type="radio" name="q16" value="d"> No difference</label></div><div class="feedback" id="f16"></div></div>
+        <div class="question" id="hq16"><h3>Question 16:</h3><p>Why is ReLU preferred over sigmoid in hidden layers?</p><div class="options"><label><input type="radio" name="hq16" value="a"> Sigmoid is always better</label><label><input type="radio" name="hq16" value="b"> ReLU doesn't saturate for positive values, better gradient flow</label><label><input type="radio" name="hq16" value="c"> ReLU is more complex</label><label><input type="radio" name="hq16" value="d"> No difference</label></div><div class="feedback" id="hf16"></div></div>
 
-        <div class="question" id="q17"><h3>Question 17:</h3><p>Weight regularization (L2) adds penalty for:</p><div class="options"><label><input type="radio" name="q17" value="a"> Small weights</label><label><input type="radio" name="q17" value="b"> Large weights (encourages smaller weights)</label><label><input type="radio" name="q17" value="c"> Any weights</label><label><input type="radio" name="q17" value="d"> No penalty</label></div><div class="feedback" id="f17"></div></div>
+        <div class="question" id="hq17"><h3>Question 17:</h3><p>Weight regularization (L2) adds penalty for:</p><div class="options"><label><input type="radio" name="hq17" value="a"> Small weights</label><label><input type="radio" name="hq17" value="b"> Large weights (encourages smaller weights)</label><label><input type="radio" name="hq17" value="c"> Any weights</label><label><input type="radio" name="hq17" value="d"> No penalty</label></div><div class="feedback" id="hf17"></div></div>
 
-        <div class="question" id="q18"><h3>Question 18:</h3><p>Training loss decreasing but validation loss increasing indicates:</p><div class="options"><label><input type="radio" name="q18" value="a"> Perfect training</label><label><input type="radio" name="q18" value="b"> Overfitting - model memorizing training data</label><label><input type="radio" name="q18" value="c"> Underfitting</label><label><input type="radio" name="q18" value="d"> Need more layers</label></div><div class="feedback" id="f18"></div></div>
+        <div class="question" id="hq18"><h3>Question 18:</h3><p>Training loss decreasing but validation loss increasing indicates:</p><div class="options"><label><input type="radio" name="hq18" value="a"> Perfect training</label><label><input type="radio" name="hq18" value="b"> Overfitting - model memorizing training data</label><label><input type="radio" name="hq18" value="c"> Underfitting</label><label><input type="radio" name="hq18" value="d"> Need more layers</label></div><div class="feedback" id="hf18"></div></div>
 
-        <div class="question" id="q19"><h3>Question 19:</h3><p>Xavier/Glorot initialization is designed to:</p><div class="options"><label><input type="radio" name="q19" value="a"> Set all weights to 1</label><label><input type="radio" name="q19" value="b"> Keep variance of activations similar across layers</label><label><input type="radio" name="q19" value="c"> Maximize weights</label><label><input type="radio" name="q19" value="d"> Set all weights to 0</label></div><div class="feedback" id="f19"></div></div>
+        <div class="question" id="hq19"><h3>Question 19:</h3><p>Xavier/Glorot initialization is designed to:</p><div class="options"><label><input type="radio" name="hq19" value="a"> Set all weights to 1</label><label><input type="radio" name="hq19" value="b"> Keep variance of activations similar across layers</label><label><input type="radio" name="hq19" value="c"> Maximize weights</label><label><input type="radio" name="hq19" value="d"> Set all weights to 0</label></div><div class="feedback" id="hf19"></div></div>
 
-        <div class="question" id="q20"><h3>Question 20:</h3><p>If all neurons in a layer output same value, this suggests:</p><div class="options"><label><input type="radio" name="q20" value="a"> Perfect training</label><label><input type="radio" name="q20" value="b"> Symmetry problem (weights initialized identically or saturated activation)</label><label><input type="radio" name="q20" value="c"> Optimal performance</label><label><input type="radio" name="q20" value="d"> Normal behavior</label></div><div class="feedback" id="f20"></div></div>
+        <div class="question" id="hq20"><h3>Question 20:</h3><p>If all neurons in a layer output same value, this suggests:</p><div class="options"><label><input type="radio" name="hq20" value="a"> Perfect training</label><label><input type="radio" name="hq20" value="b"> Symmetry problem (weights initialized identically or saturated activation)</label><label><input type="radio" name="hq20" value="c"> Optimal performance</label><label><input type="radio" name="hq20" value="d"> Normal behavior</label></div><div class="feedback" id="hf20"></div></div>
     </div>
 
     <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
@@ -152,7 +152,7 @@
         
         const easyAnswers = {q1:"b",q2:"c",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"c",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"a",q19:"b",q20:"b",q21:"b",q22:"b",q23:"b",q24:"b",q25:"b",q26:"b",q27:"b",q28:"b",q29:"b",q30:"b"};
         
-        const hardAnswers = {q1:"b",q2:"b",q3:"b",q4:"a",q5:"b",q6:"b",q7:"c",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"b",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"b"};
+        const hardAnswers = {hq1:"b",hq2:"b",hq3:"b",hq4:"a",hq5:"b",hq6:"b",hq7:"c",hq8:"b",hq9:"b",hq10:"b",hq11:"b",hq12:"b",hq13:"b",hq14:"b",hq15:"b",hq16:"b",hq17:"b",hq18:"b",hq19:"b",hq20:"b"};
         
         const easyExplanations = {
             q1:"Sigmoid: σ(x) = 1/(1+e^-x) outputs values between 0 and 1.",
@@ -188,26 +188,26 @@
         };
         
         const hardExplanations = {
-            q1:"Zero initialization: all neurons compute same function → same gradients → learn same features. Need random initialization to break symmetry.",
-            q2:"Without activation: f(W₂·(W₁·x)) = (W₂·W₁)·x = W·x, just a linear transformation. Need non-linearity to learn complex patterns.",
-            q3:"Sigmoid saturates at 0 and 1. Gradient ≈0 at extremes. Deep networks: tiny gradients multiply → vanishing.",
-            q4:"Dying ReLU: If neuron always gets negative input, output always 0 → gradient always 0 → weights never update → neuron 'dies'.",
-            q5:"Weights: input→hidden = 3×4=12, hidden→output = 4×2=8. Total = 20.",
-            q6:"Depth provides exponential expressiveness: can represent complex functions with fewer neurons per layer than wide shallow networks.",
-            q7:"Softmax converts scores to probabilities that sum to 1.",
-            q8:"Binary classification: single sigmoid output (0 to 1) or 2 softmax outputs. Sigmoid more common for binary.",
-            q9:"Large learning rate: jumps too far → overshoots minimum → oscillates or diverges.",
-            q10:"Batch size 1 = stochastic gradient descent (SGD).",
-            q11:"Mini-batches: faster updates than full batch, less noisy than SGD, better memory, regularization from sampling variability.",
-            q12:"Dropout 0.5: randomly drop 50% of neurons each iteration.",
-            q13:"Dropout forces network not to rely on any single neuron → learns robust, distributed features.",
-            q14:"During testing: use all neurons (no dropout). Training dropout is like training ensemble.",
-            q15:"Gradient clipping: if gradient norm > threshold, scale it down. Prevents exploding gradients.",
-            q16:"ReLU doesn't saturate for positive values (gradient = 1), sigmoid saturates at both ends (gradient ≈ 0).",
-            q17:"L2 regularization adds λ·||w||² to loss → penalizes large weights → encourages smaller weights.",
-            q18:"Train↓ Val↑ = overfitting. Model memorizing training specifics, not learning general patterns.",
-            q19:"Xavier/Glorot initialization: variance of inputs ≈ variance of outputs → prevents vanishing/exploding activations.",
-            q20:"All neurons same output = symmetry problem. Either initialized same or activation saturated. Need to break symmetry."
+            hq1:"Zero initialization: all neurons compute same function → same gradients → learn same features. Need random initialization to break symmetry.",
+            hq2:"Without activation: f(W₂·(W₁·x)) = (W₂·W₁)·x = W·x, just a linear transformation. Need non-linearity to learn complex patterns.",
+            hq3:"Sigmoid saturates at 0 and 1. Gradient ≈0 at extremes. Deep networks: tiny gradients multiply → vanishing.",
+            hq4:"Dying ReLU: If neuron always gets negative input, output always 0 → gradient always 0 → weights never update → neuron 'dies'.",
+            hq5:"Weights: input→hidden = 3×4=12, hidden→output = 4×2=8. Total = 20.",
+            hq6:"Depth provides exponential expressiveness: can represent complex functions with fewer neurons per layer than wide shallow networks.",
+            hq7:"Softmax converts scores to probabilities that sum to 1.",
+            hq8:"Binary classification: single sigmoid output (0 to 1) or 2 softmax outputs. Sigmoid more common for binary.",
+            hq9:"Large learning rate: jumps too far → overshoots minimum → oscillates or diverges.",
+            hq10:"Batch size 1 = stochastic gradient descent (SGD).",
+            hq11:"Mini-batches: faster updates than full batch, less noisy than SGD, better memory, regularization from sampling variability.",
+            hq12:"Dropout 0.5: randomly drop 50% of neurons each iteration.",
+            hq13:"Dropout forces network not to rely on any single neuron → learns robust, distributed features.",
+            hq14:"During testing: use all neurons (no dropout). Training dropout is like training ensemble.",
+            hq15:"Gradient clipping: if gradient norm > threshold, scale it down. Prevents exploding gradients.",
+            hq16:"ReLU doesn't saturate for positive values (gradient = 1), sigmoid saturates at both ends (gradient ≈ 0).",
+            hq17:"L2 regularization adds λ·||w||² to loss → penalizes large weights → encourages smaller weights.",
+            hq18:"Train↓ Val↑ = overfitting. Model memorizing training specifics, not learning general patterns.",
+            hq19:"Xavier/Glorot initialization: variance of inputs ≈ variance of outputs → prevents vanishing/exploding activations.",
+            hq20:"All neurons same output = symmetry problem. Either initialized same or activation saturated. Need to break symmetry."
         };
 
         function switchMode(mode) {
@@ -246,13 +246,15 @@
         function submitQuiz() {
             const answers = currentMode === 'easy' ? easyAnswers : hardAnswers;
             const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
+            const prefix = currentMode === 'easy' ? 'f' : 'hf';
             let correct = 0;
             const total = Object.keys(answers).length;
-            
+
             for (let q in answers) {
                 const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const feedback = document.getElementById("f" + q.substring(1));
-                
+                const qNum = currentMode === 'easy' ? q.substring(1) : q.substring(2);
+                const feedback = document.getElementById(prefix + qNum);
+
                 if (selected) {
                     if (selected.value === answers[q]) {
                         correct++;
@@ -260,15 +262,15 @@
                         feedback.textContent = "✓ Correct! " + explanations[q];
                     } else {
                         feedback.className = "feedback incorrect";
-                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                        feedback.textContent = "✗ Incorrect. The correct answer is " + answers[q].toUpperCase() + ". " + explanations[q];
                     }
                 } else {
                     feedback.className = "feedback incorrect";
-                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                    feedback.textContent = "✗ No answer selected. The correct answer is " + answers[q].toUpperCase() + ". " + explanations[q];
                 }
                 feedback.style.display = "block";
             }
-            
+
             const percentage = ((correct / total) * 100).toFixed(1);
             const scoreDiv = document.getElementById("score");
             scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;

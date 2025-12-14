@@ -103,45 +103,45 @@
     </div>
 
     <div id="hard-questions" style="display: none;">
-        <div class="question" id="q1"><h3>Question 1:</h3><p>You're detecting credit card fraud. Should you remove outliers in transaction amounts?</p><div class="options"><label><input type="radio" name="q1" value="a"> Yes - outliers always indicate errors</label><label><input type="radio" name="q1" value="b"> No - outliers ARE the fraud signal you're looking for</label><label><input type="radio" name="q1" value="c"> Yes - they'll hurt model performance</label><label><input type="radio" name="q1" value="d"> Only if they're beyond 3 standard deviations</label></div><div class="feedback" id="f1"></div></div>
+        <div class="question" id="hq1"><h3>Question 1:</h3><p>You're detecting credit card fraud. Should you remove outliers in transaction amounts?</p><div class="options"><label><input type="radio" name="hq1" value="a"> Yes - outliers always indicate errors</label><label><input type="radio" name="hq1" value="b"> No - outliers ARE the fraud signal you're looking for</label><label><input type="radio" name="hq1" value="c"> Yes - they'll hurt model performance</label><label><input type="radio" name="hq1" value="d"> Only if they're beyond 3 standard deviations</label></div><div class="feedback" id="hf1"></div></div>
 
-        <div class="question" id="q2"><h3>Question 2:</h3><p>High earners refuse to disclose salary in a survey. This is an example of:</p><div class="options"><label><input type="radio" name="q2" value="a"> MCAR - completely random</label><label><input type="radio" name="q2" value="b"> MAR - related to age</label><label><input type="radio" name="q2" value="c"> MNAR - missingness related to the salary value itself</label><label><input type="radio" name="q2" value="d"> Not a missing data problem</label></div><div class="feedback" id="f2"></div></div>
+        <div class="question" id="hq2"><h3>Question 2:</h3><p>High earners refuse to disclose salary in a survey. This is an example of:</p><div class="options"><label><input type="radio" name="hq2" value="a"> MCAR - completely random</label><label><input type="radio" name="hq2" value="b"> MAR - related to age</label><label><input type="radio" name="hq2" value="c"> MNAR - missingness related to the salary value itself</label><label><input type="radio" name="hq2" value="d"> Not a missing data problem</label></div><div class="feedback" id="hf2"></div></div>
 
-        <div class="question" id="q3"><h3>Question 3:</h3><p>You fill all missing ages with the mean age (35). What's the problem?</p><div class="options"><label><input type="radio" name="q3" value="a"> It's the best approach</label><label><input type="radio" name="q3" value="b"> Artificially reduces variance; everyone clusters at 35</label><label><input type="radio" name="q3" value="c"> Mean is always wrong</label><label><input type="radio" name="q3" value="d"> Should use median instead</label></div><div class="feedback" id="f3"></div></div>
+        <div class="question" id="hq3"><h3>Question 3:</h3><p>You fill all missing ages with the mean age (35). What's the problem?</p><div class="options"><label><input type="radio" name="hq3" value="a"> It's the best approach</label><label><input type="radio" name="hq3" value="b"> Artificially reduces variance; everyone clusters at 35</label><label><input type="radio" name="hq3" value="c"> Mean is always wrong</label><label><input type="radio" name="hq3" value="d"> Should use median instead</label></div><div class="feedback" id="hf3"></div></div>
 
-        <div class="question" id="q4"><h3>Question 4:</h3><p>You use label encoding on colors [Red, Blue, Green] → [0, 1, 2]. Why is this dangerous?</p><div class="options"><label><input type="radio" name="q4" value="a"> It's perfectly fine</label><label><input type="radio" name="q4" value="b"> Model may interpret ordering (Blue > Red) that doesn't exist</label><label><input type="radio" name="q4" value="c"> Colors should always be text</label><label><input type="radio" name="q4" value="d"> Numbers are too small</label></div><div class="feedback" id="f4"></div></div>
+        <div class="question" id="hq4"><h3>Question 4:</h3><p>You use label encoding on colors [Red, Blue, Green] → [0, 1, 2]. Why is this dangerous?</p><div class="options"><label><input type="radio" name="hq4" value="a"> It's perfectly fine</label><label><input type="radio" name="hq4" value="b"> Model may interpret ordering (Blue > Red) that doesn't exist</label><label><input type="radio" name="hq4" value="c"> Colors should always be text</label><label><input type="radio" name="hq4" value="d"> Numbers are too small</label></div><div class="feedback" id="hf4"></div></div>
 
-        <div class="question" id="q5"><h3>Question 5:</h3><p>IQR method vs Z-score: when is IQR better?</p><div class="options"><label><input type="radio" name="q5" value="a"> Never - Z-score is always superior</label><label><input type="radio" name="q5" value="b"> When data is not normally distributed; IQR is robust to skewness</label><label><input type="radio" name="q5" value="c"> Only for small datasets</label><label><input type="radio" name="q5" value="d"> When you have no outliers</label></div><div class="feedback" id="f5"></div></div>
+        <div class="question" id="hq5"><h3>Question 5:</h3><p>IQR method vs Z-score: when is IQR better?</p><div class="options"><label><input type="radio" name="hq5" value="a"> Never - Z-score is always superior</label><label><input type="radio" name="hq5" value="b"> When data is not normally distributed; IQR is robust to skewness</label><label><input type="radio" name="hq5" value="c"> Only for small datasets</label><label><input type="radio" name="hq5" value="d"> When you have no outliers</label></div><div class="feedback" id="hf5"></div></div>
 
-        <div class="question" id="q6"><h3>Question 6:</h3><p>You standardize training data. How should you handle test data?</p><div class="options"><label><input type="radio" name="q6" value="a"> Standardize test data using its own mean/std</label><label><input type="radio" name="q6" value="b"> Use training data's mean/std to standardize test data</label><label><input type="radio" name="q6" value="c"> Don't standardize test data at all</label><label><input type="radio" name="q6" value="d"> Combine train and test, then standardize</label></div><div class="feedback" id="f6"></div></div>
+        <div class="question" id="hq6"><h3>Question 6:</h3><p>You standardize training data. How should you handle test data?</p><div class="options"><label><input type="radio" name="hq6" value="a"> Standardize test data using its own mean/std</label><label><input type="radio" name="hq6" value="b"> Use training data's mean/std to standardize test data</label><label><input type="radio" name="hq6" value="c"> Don't standardize test data at all</label><label><input type="radio" name="hq6" value="d"> Combine train and test, then standardize</label></div><div class="feedback" id="hf6"></div></div>
 
-        <div class="question" id="q7"><h3>Question 7:</h3><p>Your dataset has 1000 rows, 200 have missing values. Using listwise deletion leaves 800 rows. What's the risk?</p><div class="options"><label><input type="radio" name="q7" value="a"> No risk - perfectly fine</label><label><input type="radio" name="q7" value="b"> Lost 20% of data; if missing isn't random, introduces bias</label><label><input type="radio" name="q7" value="c"> Too much data remains</label><label><input type="radio" name="q7" value="d"> Should remove more rows</label></div><div class="feedback" id="f7"></div></div>
+        <div class="question" id="hq7"><h3>Question 7:</h3><p>Your dataset has 1000 rows, 200 have missing values. Using listwise deletion leaves 800 rows. What's the risk?</p><div class="options"><label><input type="radio" name="hq7" value="a"> No risk - perfectly fine</label><label><input type="radio" name="hq7" value="b"> Lost 20% of data; if missing isn't random, introduces bias</label><label><input type="radio" name="hq7" value="c"> Too much data remains</label><label><input type="radio" name="hq7" value="d"> Should remove more rows</label></div><div class="feedback" id="hf7"></div></div>
 
-        <div class="question" id="q8"><h3>Question 8:</h3><p>Feature A: [1, 2, 3], Feature B: [1000, 2000, 3000]. Without scaling, what happens in gradient descent?</p><div class="options"><label><input type="radio" name="q8" value="a"> Perfect convergence</label><label><input type="radio" name="q8" value="b"> Slower convergence; oscillates more in Feature B direction</label><label><input type="radio" name="q8" value="c"> Faster convergence</label><label><input type="radio" name="q8" value="d"> No effect</label></div><div class="feedback" id="f8"></div></div>
+        <div class="question" id="hq8"><h3>Question 8:</h3><p>Feature A: [1, 2, 3], Feature B: [1000, 2000, 3000]. Without scaling, what happens in gradient descent?</p><div class="options"><label><input type="radio" name="hq8" value="a"> Perfect convergence</label><label><input type="radio" name="hq8" value="b"> Slower convergence; oscillates more in Feature B direction</label><label><input type="radio" name="hq8" value="c"> Faster convergence</label><label><input type="radio" name="hq8" value="d"> No effect</label></div><div class="feedback" id="hf8"></div></div>
 
-        <div class="question" id="q9"><h3>Question 9:</h3><p>You have ordinal data [Low, Medium, High]. Best encoding approach?</p><div class="options"><label><input type="radio" name="q9" value="a"> One-hot encoding always</label><label><input type="radio" name="q9" value="b"> Label encoding [0, 1, 2] is appropriate here (order matters)</label><label><input type="radio" name="q9" value="c"> Leave as text</label><label><input type="radio" name="q9" value="d"> Random integers</label></div><div class="feedback" id="f9"></div></div>
+        <div class="question" id="hq9"><h3>Question 9:</h3><p>You have ordinal data [Low, Medium, High]. Best encoding approach?</p><div class="options"><label><input type="radio" name="hq9" value="a"> One-hot encoding always</label><label><input type="radio" name="hq9" value="b"> Label encoding [0, 1, 2] is appropriate here (order matters)</label><label><input type="radio" name="hq9" value="c"> Leave as text</label><label><input type="radio" name="hq9" value="d"> Random integers</label></div><div class="feedback" id="hf9"></div></div>
 
-        <div class="question" id="q10"><h3>Question 10:</h3><p>Capping outliers at 95th percentile vs removing them - key difference?</p><div class="options"><label><input type="radio" name="q10" value="a"> No difference</label><label><input type="radio" name="q10" value="b"> Capping keeps data points; removal loses information entirely</label><label><input type="radio" name="q10" value="c"> Capping is always worse</label><label><input type="radio" name="q10" value="d"> Removal is faster</label></div><div class="feedback" id="f10"></div></div>
+        <div class="question" id="hq10"><h3>Question 10:</h3><p>Capping outliers at 95th percentile vs removing them - key difference?</p><div class="options"><label><input type="radio" name="hq10" value="a"> No difference</label><label><input type="radio" name="hq10" value="b"> Capping keeps data points; removal loses information entirely</label><label><input type="radio" name="hq10" value="c"> Capping is always worse</label><label><input type="radio" name="hq10" value="d"> Removal is faster</label></div><div class="feedback" id="hf10"></div></div>
 
-        <div class="question" id="q11"><h3>Question 11:</h3><p>Forward fill makes sense for time series but dangerous for what type of data?</p><div class="options"><label><input type="radio" name="q11" value="a"> Stock prices</label><label><input type="radio" name="q11" value="b"> Cross-sectional survey data (no time relationship)</label><label><input type="radio" name="q11" value="c"> Temperature readings</label><label><input type="radio" name="q11" value="d"> Sensor data</label></div><div class="feedback" id="f11"></div></div>
+        <div class="question" id="hq11"><h3>Question 11:</h3><p>Forward fill makes sense for time series but dangerous for what type of data?</p><div class="options"><label><input type="radio" name="hq11" value="a"> Stock prices</label><label><input type="radio" name="hq11" value="b"> Cross-sectional survey data (no time relationship)</label><label><input type="radio" name="hq11" value="c"> Temperature readings</label><label><input type="radio" name="hq11" value="d"> Sensor data</label></div><div class="feedback" id="hf11"></div></div>
 
-        <div class="question" id="q12"><h3>Question 12:</h3><p>You find duplicate customer records with slightly different addresses. What should you do?</p><div class="options"><label><input type="radio" name="q12" value="a"> Delete all duplicates immediately</label><label><input type="radio" name="q12" value="b"> Use fuzzy matching to identify, then merge carefully</label><label><input type="radio" name="q12" value="c"> Keep all - more data is better</label><label><input type="radio" name="q12" value="d"> Delete the first occurrence</label></div><div class="feedback" id="f12"></div></div>
+        <div class="question" id="hq12"><h3>Question 12:</h3><p>You find duplicate customer records with slightly different addresses. What should you do?</p><div class="options"><label><input type="radio" name="hq12" value="a"> Delete all duplicates immediately</label><label><input type="radio" name="hq12" value="b"> Use fuzzy matching to identify, then merge carefully</label><label><input type="radio" name="hq12" value="c"> Keep all - more data is better</label><label><input type="radio" name="hq12" value="d"> Delete the first occurrence</label></div><div class="feedback" id="hf12"></div></div>
 
-        <div class="question" id="q13"><h3>Question 13:</h3><p>Z-score gives you value of 4.5. Assuming normal distribution, this is:</p><div class="options"><label><input type="radio" name="q13" value="a"> Normal value</label><label><input type="radio" name="q13" value="b"> Moderate outlier</label><label><input type="radio" name="q13" value="c"> Extreme outlier (very rare)</label><label><input type="radio" name="q13" value="d"> Impossible value</label></div><div class="feedback" id="f13"></div></div>
+        <div class="question" id="hq13"><h3>Question 13:</h3><p>Z-score gives you value of 4.5. Assuming normal distribution, this is:</p><div class="options"><label><input type="radio" name="hq13" value="a"> Normal value</label><label><input type="radio" name="hq13" value="b"> Moderate outlier</label><label><input type="radio" name="hq13" value="c"> Extreme outlier (very rare)</label><label><input type="radio" name="hq13" value="d"> Impossible value</label></div><div class="feedback" id="hf13"></div></div>
 
-        <div class="question" id="q14"><h3>Question 14:</h3><p>Predictive imputation vs mean imputation - when is predictive better?</p><div class="options"><label><input type="radio" name="q14" value="a"> Never - mean is always best</label><label><input type="radio" name="q14" value="b"> When missing values correlate with other features</label><label><input type="radio" name="q14" value="c"> When dataset is small</label><label><input type="radio" name="q14" value="d"> Only for categorical data</label></div><div class="feedback" id="f14"></div></div>
+        <div class="question" id="hq14"><h3>Question 14:</h3><p>Predictive imputation vs mean imputation - when is predictive better?</p><div class="options"><label><input type="radio" name="hq14" value="a"> Never - mean is always best</label><label><input type="radio" name="hq14" value="b"> When missing values correlate with other features</label><label><input type="radio" name="hq14" value="c"> When dataset is small</label><label><input type="radio" name="hq14" value="d"> Only for categorical data</label></div><div class="feedback" id="hf14"></div></div>
 
-        <div class="question" id="q15"><h3>Question 15:</h3><p>Min-max normalization maps data to [0,1]. If you get a new test value LARGER than training max, what happens?</p><div class="options"><label><input type="radio" name="q15" value="a"> Error occurs</label><label><input type="radio" name="q15" value="b"> It gets normalized to a value > 1</label><label><input type="radio" name="q15" value="c"> It becomes 1</label><label><input type="radio" name="q15" value="d"> Automatically removed</label></div><div class="feedback" id="f15"></div></div>
+        <div class="question" id="hq15"><h3>Question 15:</h3><p>Min-max normalization maps data to [0,1]. If you get a new test value LARGER than training max, what happens?</p><div class="options"><label><input type="radio" name="hq15" value="a"> Error occurs</label><label><input type="radio" name="hq15" value="b"> It gets normalized to a value > 1</label><label><input type="radio" name="hq15" value="c"> It becomes 1</label><label><input type="radio" name="hq15" value="d"> Automatically removed</label></div><div class="feedback" id="hf15"></div></div>
 
-        <div class="question" id="q16"><h3>Question 16:</h3><p>You remove ALL rows with ANY missing data (30% of dataset gone). Later, test performance is poor. Why?</p><div class="options"><label><input type="radio" name="q16" value="a"> Should have removed more</label><label><input type="radio" name="q16" value="b"> Lost important patterns; if missingness wasn't random, introduced bias</label><label><input type="radio" name="q16" value="c"> Model is too simple</label><label><input type="radio" name="q16" value="d"> Need more features</label></div><div class="feedback" id="f16"></div></div>
+        <div class="question" id="hq16"><h3>Question 16:</h3><p>You remove ALL rows with ANY missing data (30% of dataset gone). Later, test performance is poor. Why?</p><div class="options"><label><input type="radio" name="hq16" value="a"> Should have removed more</label><label><input type="radio" name="hq16" value="b"> Lost important patterns; if missingness wasn't random, introduced bias</label><label><input type="radio" name="hq16" value="c"> Model is too simple</label><label><input type="radio" name="hq16" value="d"> Need more features</label></div><div class="feedback" id="hf16"></div></div>
 
-        <div class="question" id="q17"><h3>Question 17:</h3><p>Standardization creates negative values. Is this a problem?</p><div class="options"><label><input type="radio" name="q17" value="a"> Yes - must be [0,1]</label><label><input type="radio" name="q17" value="b"> No - standardization centers at 0, negatives are expected and fine</label><label><input type="radio" name="q17" value="c"> Yes - indicates errors</label><label><input type="radio" name="q17" value="d"> Only a problem for neural networks</label></div><div class="feedback" id="f17"></div></div>
+        <div class="question" id="hq17"><h3>Question 17:</h3><p>Standardization creates negative values. Is this a problem?</p><div class="options"><label><input type="radio" name="hq17" value="a"> Yes - must be [0,1]</label><label><input type="radio" name="hq17" value="b"> No - standardization centers at 0, negatives are expected and fine</label><label><input type="radio" name="hq17" value="c"> Yes - indicates errors</label><label><input type="radio" name="hq17" value="d"> Only a problem for neural networks</label></div><div class="feedback" id="hf17"></div></div>
 
-        <div class="question" id="q18"><h3>Question 18:</h3><p>IQR = Q3 - Q1 = 20. Lower fence = Q1 - 1.5×20 = 10. You have a value of 5. This is:</p><div class="options"><label><input type="radio" name="q18" value="a"> Normal value</label><label><input type="radio" name="q18" value="b"> Outlier (below lower fence)</label><label><input type="radio" name="q18" value="c"> Exactly at the fence</label><label><input type="radio" name="q18" value="d"> Impossible to determine</label></div><div class="feedback" id="f18"></div></div>
+        <div class="question" id="hq18"><h3>Question 18:</h3><p>IQR = Q3 - Q1 = 20. Lower fence = Q1 - 1.5×20 = 10. You have a value of 5. This is:</p><div class="options"><label><input type="radio" name="hq18" value="a"> Normal value</label><label><input type="radio" name="hq18" value="b"> Outlier (below lower fence)</label><label><input type="radio" name="hq18" value="c"> Exactly at the fence</label><label><input type="radio" name="hq18" value="d"> Impossible to determine</label></div><div class="feedback" id="hf18"></div></div>
 
-        <div class="question" id="q19"><h3>Question 19:</h3><p>Age = 200 years in your dataset. Best action?</p><div class="options"><label><input type="radio" name="q19" value="a"> Keep it - might be real</label><label><input type="radio" name="q19" value="b"> Remove row - obvious data entry error</label><label><input type="radio" name="q19" value="c"> Cap at 95th percentile</label><label><input type="radio" name="q19" value="d"> Apply log transformation</label></div><div class="feedback" id="f19"></div></div>
+        <div class="question" id="hq19"><h3>Question 19:</h3><p>Age = 200 years in your dataset. Best action?</p><div class="options"><label><input type="radio" name="hq19" value="a"> Keep it - might be real</label><label><input type="radio" name="hq19" value="b"> Remove row - obvious data entry error</label><label><input type="radio" name="hq19" value="c"> Cap at 95th percentile</label><label><input type="radio" name="hq19" value="d"> Apply log transformation</label></div><div class="feedback" id="hf19"></div></div>
 
-        <div class="question" id="q20"><h3>Question 20:</h3><p>You have 5 features, 10% missing in each independently. After listwise deletion, approximately how much data remains?</p><div class="options"><label><input type="radio" name="q20" value="a"> 90%</label><label><input type="radio" name="q20" value="b"> 50%</label><label><input type="radio" name="q20" value="c"> 59% (0.9^5 ≈ 0.59)</label><label><input type="radio" name="q20" value="d"> 100%</label></div><div class="feedback" id="f20"></div></div>
+        <div class="question" id="hq20"><h3>Question 20:</h3><p>You have 5 features, 10% missing in each independently. After listwise deletion, approximately how much data remains?</p><div class="options"><label><input type="radio" name="hq20" value="a"> 90%</label><label><input type="radio" name="hq20" value="b"> 50%</label><label><input type="radio" name="hq20" value="c"> 59% (0.9^5 ≈ 0.59)</label><label><input type="radio" name="hq20" value="d"> 100%</label></div><div class="feedback" id="hf20"></div></div>
     </div>
 
     <button class="submit" onclick="submitQuiz()">Submit Quiz</button>
@@ -152,7 +152,7 @@
         
         const easyAnswers = {q1:"c",q2:"c",q3:"a",q4:"b",q5:"b",q6:"a",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"c",q13:"b",q14:"c",q15:"b",q16:"c",q17:"b",q18:"b",q19:"b",q20:"b",q21:"a",q22:"c",q23:"a",q24:"b",q25:"b",q26:"c",q27:"b",q28:"a",q29:"c",q30:"b"};
         
-        const hardAnswers = {q1:"b",q2:"c",q3:"b",q4:"b",q5:"b",q6:"b",q7:"b",q8:"b",q9:"b",q10:"b",q11:"b",q12:"b",q13:"c",q14:"b",q15:"b",q16:"b",q17:"b",q18:"b",q19:"b",q20:"c"};
+        const hardAnswers = {hq1:"b",hq2:"c",hq3:"b",hq4:"b",hq5:"b",hq6:"b",hq7:"b",hq8:"b",hq9:"b",hq10:"b",hq11:"b",hq12:"b",hq13:"c",hq14:"b",hq15:"b",hq16:"b",hq17:"b",hq18:"b",hq19:"b",hq20:"c"};
         
         const easyExplanations = {
             q1:"Data scientists spend 60-80% of their time on data cleaning.",
@@ -188,26 +188,26 @@
         };
         
         const hardExplanations = {
-            q1:"In fraud detection, outliers ARE the signal! Unusual transactions are exactly what you're trying to find. Removing them defeats the purpose.",
-            q2:"This is MNAR because the missingness (refusing to disclose) is directly related to the value itself (being a high earner). Classic MNAR example.",
-            q3:"Mean imputation artificially reduces variance - all missing values become 35, creating an unrealistic spike. Real ages have natural spread.",
-            q4:"Label encoding nominal data (no order) makes the model think Green(2) > Blue(1) > Red(0), creating false relationships. Use one-hot for nominal data.",
-            q5:"IQR is robust to outliers and doesn't assume normal distribution. Z-score assumes normality and is sensitive to extreme values.",
-            q6:"CRITICAL: Use training statistics on test data to avoid data leakage. Test data's own statistics would give falsely optimistic results.",
-            q7:"Losing 20% of data is significant. If those 200 rows aren't randomly missing, you've introduced systematic bias into your dataset.",
-            q8:"Large differences in feature scales cause gradient descent to oscillate more in the direction of larger-scale features, slowing convergence.",
-            q9:"For ordinal data (Low < Medium < High), the ordering is meaningful, so label encoding [0,1,2] correctly preserves that relationship.",
-            q10:"Capping keeps all data points but limits extreme values. Removal loses those observations entirely, which might lose important information.",
-            q11:"Forward fill assumes temporal continuity. For cross-sectional data (no time relationship), filling with previous row's value is meaningless.",
-            q12:"Similar addresses likely represent same customer. Use fuzzy matching (Levenshtein distance) to identify, then merge records carefully to avoid information loss.",
-            q13:"Z-score of 4.5 is extremely rare (>99.999% percentile). This is a very extreme outlier.",
-            q14:"Predictive imputation leverages correlations with other features. If age correlates with income/education, use those to predict missing ages.",
-            q15:"Min-max doesn't clip values. A test value larger than training max will be normalized to >1, which might cause issues with some models.",
-            q16:"If missing data isn't random (MCAR), deleting those rows removes important patterns, creating sample selection bias.",
-            q17:"Standardization centers at mean=0, so values below mean become negative. This is perfectly fine and expected.",
-            q18:"Value of 5 is below the lower fence of 10, making it an outlier by IQR method.",
-            q19:"Age of 200 is clearly a data entry error (typo: maybe 20.0?). Remove or correct it - it's not a real value.",
-            q20:"With 10% missing per feature independently, keeping only complete cases: 0.9 × 0.9 × 0.9 × 0.9 × 0.9 = 0.9^5 ≈ 59%."
+            hq1:"In fraud detection, outliers ARE the signal! Unusual transactions are exactly what you're trying to find. Removing them defeats the purpose.",
+            hq2:"This is MNAR because the missingness (refusing to disclose) is directly related to the value itself (being a high earner). Classic MNAR example.",
+            hq3:"Mean imputation artificially reduces variance - all missing values become 35, creating an unrealistic spike. Real ages have natural spread.",
+            hq4:"Label encoding nominal data (no order) makes the model think Green(2) > Blue(1) > Red(0), creating false relationships. Use one-hot for nominal data.",
+            hq5:"IQR is robust to outliers and doesn't assume normal distribution. Z-score assumes normality and is sensitive to extreme values.",
+            hq6:"CRITICAL: Use training statistics on test data to avoid data leakage. Test data's own statistics would give falsely optimistic results.",
+            hq7:"Losing 20% of data is significant. If those 200 rows aren't randomly missing, you've introduced systematic bias into your dataset.",
+            hq8:"Large differences in feature scales cause gradient descent to oscillate more in the direction of larger-scale features, slowing convergence.",
+            hq9:"For ordinal data (Low < Medium < High), the ordering is meaningful, so label encoding [0,1,2] correctly preserves that relationship.",
+            hq10:"Capping keeps all data points but limits extreme values. Removal loses those observations entirely, which might lose important information.",
+            hq11:"Forward fill assumes temporal continuity. For cross-sectional data (no time relationship), filling with previous row's value is meaningless.",
+            hq12:"Similar addresses likely represent same customer. Use fuzzy matching (Levenshtein distance) to identify, then merge records carefully to avoid information loss.",
+            hq13:"Z-score of 4.5 is extremely rare (>99.999% percentile). This is a very extreme outlier.",
+            hq14:"Predictive imputation leverages correlations with other features. If age correlates with income/education, use those to predict missing ages.",
+            hq15:"Min-max doesn't clip values. A test value larger than training max will be normalized to >1, which might cause issues with some models.",
+            hq16:"If missing data isn't random (MCAR), deleting those rows removes important patterns, creating sample selection bias.",
+            hq17:"Standardization centers at mean=0, so values below mean become negative. This is perfectly fine and expected.",
+            hq18:"Value of 5 is below the lower fence of 10, making it an outlier by IQR method.",
+            hq19:"Age of 200 is clearly a data entry error (typo: maybe 20.0?). Remove or correct it - it's not a real value.",
+            hq20:"With 10% missing per feature independently, keeping only complete cases: 0.9 × 0.9 × 0.9 × 0.9 × 0.9 = 0.9^5 ≈ 59%."
         };
 
         function switchMode(mode) {
@@ -248,11 +248,13 @@
             const explanations = currentMode === 'easy' ? easyExplanations : hardExplanations;
             let correct = 0;
             const total = Object.keys(answers).length;
-            
+            const prefix = currentMode === 'easy' ? 'f' : 'hf';
+
             for (let q in answers) {
                 const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const feedback = document.getElementById("f" + q.substring(1));
-                
+                const qNum = currentMode === 'easy' ? q.substring(1) : q.substring(2);
+                const feedback = document.getElementById(prefix + qNum);
+
                 if (selected) {
                     if (selected.value === answers[q]) {
                         correct++;
@@ -260,15 +262,15 @@
                         feedback.textContent = "✓ Correct! " + explanations[q];
                     } else {
                         feedback.className = "feedback incorrect";
-                        feedback.textContent = "✗ Incorrect. " + explanations[q];
+                        feedback.textContent = "✗ Incorrect. The correct answer is " + answers[q].toUpperCase() + ". " + explanations[q];
                     }
                 } else {
                     feedback.className = "feedback incorrect";
-                    feedback.textContent = "✗ No answer selected. " + explanations[q];
+                    feedback.textContent = "✗ No answer selected. The correct answer is " + answers[q].toUpperCase() + ". " + explanations[q];
                 }
                 feedback.style.display = "block";
             }
-            
+
             const percentage = ((correct / total) * 100).toFixed(1);
             const scoreDiv = document.getElementById("score");
             scoreDiv.textContent = `Your Score: ${correct}/${total} (${percentage}%)`;
