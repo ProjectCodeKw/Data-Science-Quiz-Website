@@ -4,7 +4,7 @@ Live website (or you can run it locally):
 https://projectcodekw.github.io/Data-Science-Quiz-Website/
 
 NOTE: 
-the answers are typically pretty obvious 😂.. so maybe try solving the question without looking at the answers?
+the answers are pretty obvious 😂.. so maybe try solving the question without looking at the answers?
 
 _____________________________________________
 
